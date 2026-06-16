@@ -1,0 +1,185 @@
+{
+  "seeds": [
+    {
+      "id": "seed-instruction-001",
+      "task_family": "instruction",
+      "prompt": "Write a short paragraph (3-4 sentences) explaining what photosynthesis is, in a way a 10-year-old would understand.",
+      "expected": null,
+      "labels": null,
+      "metadata": {"difficulty": "easy", "domain": "biology"}
+    },
+    {
+      "id": "seed-instruction-002",
+      "task_family": "instruction",
+      "prompt": "Give three practical tips for someone learning a new language for the first time.",
+      "expected": null,
+      "labels": null,
+      "metadata": {"difficulty": "easy", "domain": "general"}
+    },
+    {
+      "id": "seed-qa-001",
+      "task_family": "qa",
+      "prompt": "What year did the first man walk on the moon?",
+      "expected": "1969",
+      "labels": null,
+      "metadata": {"answer_type": "year"}
+    },
+    {
+      "id": "seed-qa-002",
+      "task_family": "qa",
+      "prompt": "What is the capital city of Brazil?",
+      "expected": "Brasilia",
+      "labels": null,
+      "metadata": {"answer_type": "place"}
+    },
+    {
+      "id": "seed-qa-003",
+      "task_family": "qa",
+      "prompt": "If a train travels at 60 km/h for 2.5 hours, how far does it travel?",
+      "expected": "150 km",
+      "labels": null,
+      "metadata": {"answer_type": "numerical", "domain": "math"}
+    },
+    {
+      "id": "seed-classification-001",
+      "task_family": "classification",
+      "prompt": "The new restaurant in town has terrible service and the food was cold. Classify the sentiment of this review.",
+      "expected": "negative",
+      "labels": ["positive", "neutral", "negative"],
+      "metadata": {"domain": "sentiment"}
+    },
+    {
+      "id": "seed-classification-002",
+      "task_family": "classification",
+      "prompt": "The package arrived three days early and the product is exactly as described. Classify the sentiment of this review.",
+      "expected": "positive",
+      "labels": ["positive", "neutral", "negative"],
+      "metadata": {"domain": "sentiment"}
+    },
+    {
+      "id": "seed-classification-003",
+      "task_family": "classification",
+      "prompt": "Local school board approves new arts curriculum starting next semester. Classify the topic of this news headline.",
+      "expected": "education",
+      "labels": ["politics", "sports", "education", "health", "business", "entertainment"],
+      "metadata": {"domain": "topic"}
+    },
+    {
+      "id": "seed-summarization-001",
+      "task_family": "summarization",
+      "prompt": "Summarize in one sentence: A team of researchers in Kenya has developed a new low-cost water purification method using locally-sourced charcoal and sand. The system can produce 50 liters of clean water per day and costs less than $20 to build. Initial trials in three rural villages have shown a 95% reduction in waterborne illness among children.",
+      "expected": "Researchers in Kenya created an inexpensive water purification system that has reduced waterborne illness by 95% in tested villages.",
+      "labels": null,
+      "metadata": {"length_target": "one_sentence"}
+    },
+    {
+      "id": "seed-summarization-002",
+      "task_family": "summarization",
+      "prompt": "Summarize the main argument in one sentence: Many language-learning apps claim users can become fluent in a few months of daily practice. However, linguists studying second-language acquisition consistently find that achieving conversational fluency in an unrelated language typically requires 600 to 750 hours of focused study, with significantly more required for full literacy. Marketing claims and reality diverge sharply.",
+      "expected": "Despite app marketing claims, real fluency in a new language typically requires hundreds of hours of focused study.",
+      "labels": null,
+      "metadata": {"length_target": "one_sentence"}
+    },
+    {
+      "id": "seed-translation-001",
+      "task_family": "translation",
+      "prompt": "Translate to the target language: 'Good morning. How are you today?'",
+      "expected": null,
+      "labels": null,
+      "metadata": {"register": "polite", "domain": "greeting"}
+    },
+    {
+      "id": "seed-translation-002",
+      "task_family": "translation",
+      "prompt": "Translate to the target language: 'Where is the nearest market?'",
+      "expected": null,
+      "labels": null,
+      "metadata": {"register": "polite", "domain": "navigation"}
+    },
+    {
+      "id": "seed-reasoning-001",
+      "task_family": "reasoning",
+      "prompt": "Maria has three times as many apples as her brother. Together they have 24 apples. How many does each have? Show your reasoning step by step.",
+      "expected": "Maria has 18 apples; her brother has 6 apples.",
+      "labels": null,
+      "metadata": {"domain": "math", "steps": 3}
+    },
+    {
+      "id": "seed-reasoning-002",
+      "task_family": "reasoning",
+      "prompt": "If today is Wednesday, what day of the week will it be 100 days from now? Explain your reasoning.",
+      "expected": "Friday (100 mod 7 = 2; Wednesday + 2 days = Friday).",
+      "labels": null,
+      "metadata": {"domain": "modular_arithmetic"}
+    },
+    {
+      "id": "seed-instruction-003",
+      "task_family": "instruction",
+      "prompt": "Describe what makes a good leader, using two concrete examples.",
+      "expected": null,
+      "labels": null,
+      "metadata": {"difficulty": "medium", "domain": "general"}
+    }
+  ],
+  "example_synthetic_swahili": [
+    {
+      "id": "syn-sw-qa-001",
+      "seed_id": "seed-qa-002",
+      "task_family": "qa",
+      "target_language": "sw",
+      "prompt": "Mji mkuu wa Brazil ni mji gani?",
+      "expected": "Brasilia",
+      "metadata": {"generated_by": "example_only"},
+      "notes": "Illustrative only — produced by a quick teacher LLM run, not verified by a Kiswahili speaker."
+    },
+    {
+      "id": "syn-sw-instruction-001",
+      "seed_id": "seed-instruction-002",
+      "task_family": "instruction",
+      "target_language": "sw",
+      "prompt": "Toa vidokezo vitatu vya vitendo kwa mtu anayejifunza lugha mpya kwa mara ya kwanza.",
+      "expected": null,
+      "metadata": {"generated_by": "example_only"},
+      "notes": "Illustrative only — produced by a quick teacher LLM run, not verified by a Kiswahili speaker."
+    }
+  ],
+  "example_synthetic_tagalog": [
+    {
+      "id": "syn-tl-classification-001",
+      "seed_id": "seed-classification-001",
+      "task_family": "classification",
+      "target_language": "tl",
+      "prompt": "Ang bagong restawran sa bayan ay may napakasamang serbisyo at malamig ang pagkain. Uriin ang damdamin ng review na ito.",
+      "expected": "negatibo",
+      "labels": ["positibo", "neutral", "negatibo"],
+      "metadata": {"generated_by": "example_only"},
+      "notes": "Illustrative only — note the localized label set ('negatibo' instead of 'negative')."
+    }
+  ],
+  "examples_of_bad_generation": [
+    {
+      "id": "bad-001",
+      "issue": "literal_word_for_word_translation_losing_meaning",
+      "target_language": "sw",
+      "raw": "Mtu wa mafuriko huongoza mji.",
+      "intended_english": "The mayor leads the city.",
+      "explanation": "The teacher LLM translated 'mayor' as 'flood person' — confused the word root. Filter should catch via back-translation similarity."
+    },
+    {
+      "id": "bad-002",
+      "issue": "english_words_left_in_target_language_text",
+      "target_language": "tl",
+      "raw": "Ang capital city ng Brazil ay Brasilia.",
+      "intended_english": "The capital city of Brazil is Brasilia.",
+      "explanation": "Code-switching: 'capital city' left in English. Filter should catch via language-detection scoring on the prompt field."
+    },
+    {
+      "id": "bad-003",
+      "issue": "label_not_in_allowed_set",
+      "target_language": "sw",
+      "raw": "{'sentiment': 'mbaya sana'}",
+      "intended_english": "Label should be one of {positive, neutral, negative}",
+      "explanation": "Generator produced a free-form Swahili sentiment description instead of selecting from the localized label set. Structural filter should catch."
+    }
+  ]
+}

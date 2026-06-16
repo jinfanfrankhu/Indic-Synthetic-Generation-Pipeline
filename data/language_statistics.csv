@@ -1,0 +1,5 @@
+language,language_family,language_subfamily,writing_system,writing_system_family,cc100_size_gb,wikipedia_articles_approx,total_speakers_millions,flores200_tasks,xnli_tasks,xtreme_tasks,indicxtreme_tasks,belebele_tasks,sib200_tasks,massive_tasks,dakshina_included,glueCOS_included,UPDESH_included
+Hindi,Indo-European,Indo-Aryan,Devanagari,Brahmic (Indic),20.0,160000,600,1,1,9,9,1,1,2,True,True,True
+Urdu,Indo-European,Indo-Aryan,Nastaliq (Perso-Arabic),Perso-Arabic Abjad,7.0,190000,230,1,1,9,9,1,1,2,True,False,True
+Tamil,Dravidian,South Dravidian,Tamil script,Brahmic (Indic),5.9,160000,80,1,0,9,9,1,1,2,True,True,True
+Malayalam,Dravidian,South Dravidian,Malayalam script,Brahmic (Indic),7.6,90000,35,1,0,9,9,1,1,2,True,False,True
