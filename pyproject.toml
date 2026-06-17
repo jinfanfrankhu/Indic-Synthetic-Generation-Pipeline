@@ -1,0 +1,25 @@
+[project]
+name = "syndata"
+version = "0.1.0"
+description = "Synthetic data generation pipeline for low-resource Indic languages (Buttery)."
+requires-python = ">=3.11"
+dependencies = [
+    "pydantic>=2.0",
+    "openai>=1.0",
+    "python-dotenv>=1.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+]
+
+[project.scripts]
+syndata = "syndata.cli:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["syndata"]
