@@ -248,7 +248,11 @@ def cmd_judge_compare(args: argparse.Namespace) -> int:
             seed_id=seed.id, target_language=args.language,
             teacher_model=args.teacher, prompt_template_name=template_name,
         )
-        item = generate(seed, config, teacher)
+        try:
+            item = generate(seed, config, teacher)
+        except Exception as err:  # noqa: BLE001 — skip a seed the teacher can't generate
+            print(f"  skip {seed.id}: teacher failed ({err})", file=sys.stderr)
+            continue
         targets.append(JudgeTarget(id=item.id, label="real", seed=seed, item=item))
         if not args.no_control:
             # Control: feed judges the raw English seed as if it were the output.
@@ -262,6 +266,11 @@ def cmd_judge_compare(args: argparse.Namespace) -> int:
             targets.append(JudgeTarget(
                 id=control.id, label="CONTROL: English text", seed=seed, item=control,
             ))
+
+    if not targets:
+        print("No items generated (teacher failed for every seed — likely rate-"
+              "limited). Wait a bit and retry, or lower --workers.", file=sys.stderr)
+        return 1
 
     # 2. Score every target with every judge.
     results = run_judge_panel(

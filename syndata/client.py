@@ -56,6 +56,7 @@ class NvidiaClient:
         max_retries: int = 4,
         backoff_base: float = 1.5,
         timeout: float = 90.0,
+        rate_limit_wait: float = 12.0,
     ) -> None:
         # Imported lazily so the package (and MockClient) work without `openai`.
         from openai import OpenAI
@@ -77,6 +78,7 @@ class NvidiaClient:
         )
         self._max_retries = max_retries
         self._backoff_base = backoff_base
+        self._rate_limit_wait = rate_limit_wait
 
     def complete(
         self,
@@ -103,7 +105,13 @@ class NvidiaClient:
             except Exception as err:  # noqa: BLE001 — retry any transient API error
                 last_err = err
                 if attempt < self._max_retries - 1:
-                    time.sleep(self._backoff_base ** attempt)
+                    # Rate limits (429) need a real cool-off, not a 1-2s backoff,
+                    # or every retry burns inside the same throttle window.
+                    is_rate_limit = (
+                        type(err).__name__ == "RateLimitError" or "429" in str(err)
+                    )
+                    time.sleep(self._rate_limit_wait if is_rate_limit
+                               else self._backoff_base ** attempt)
         raise RuntimeError(
             f"NVIDIA API call failed after {self._max_retries} attempts: {last_err}"
         ) from last_err

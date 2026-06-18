@@ -42,6 +42,7 @@ DESIGN.md          # (to be written in Week 2) — answers the 5 methodology que
 - Python 3.11+, Pydantic v2, HuggingFace `datasets`
 - LLM access via `openai` SDK pointed at NVIDIA Build (`base_url=https://integrate.api.nvidia.com/v1`). Free, rate-limited tier; `NvidiaClient` has a 90s per-request timeout and disables the SDK's own retries (`max_retries=0`) so the timeout isn't silently multiplied.
 - **One `NVIDIA_API_KEY`** in `.env` (gitignored) covers every model — NVIDIA Build keys are account-level; the model is chosen per request, not by the key.
+- **Rate limit: 40 API calls/minute** (account-level, free tier). Pace concurrency with `--workers`; `NvidiaClient` waits ~12s on a 429 before retrying. At scale (Week 5), throttle generation to stay under this.
 - Teacher LLM: **DeepSeek V4 Flash** (`deepseek-ai/deepseek-v4-flash`) — chosen from the hi/ta bake-off (fast, clean JSON, fluent). See `docs/model_selection.md`.
 - Judge LLM: ensemble TBD. Candidates that respond + discriminate (English-control check): `sarvamai/sarvam-m`, `mistralai/mistral-small-4-119b-2603`, `z-ai/glm-5.1`, `nvidia/nemotron-3-super-120b-a12b`. Qwen times out; Gemma endpoint down. **Note:** runs so far are only liveness/format/trivial-discrimination screens — judge *quality* needs a human gold set (no ground truth yet).
 - Target languages: `hi` (Hindi), `ur` (Urdu), `ta` (Tamil), `ml` (Malayalam)
