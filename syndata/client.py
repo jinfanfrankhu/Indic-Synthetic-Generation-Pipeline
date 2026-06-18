@@ -43,13 +43,11 @@ class ChatClient(Protocol):
 class NvidiaClient:
     """OpenAI-compatible client for NVIDIA Build models.
 
-    Reads the API key from ``api_key`` if passed, else from the first of
-    ``NVIDIA_API_KEY`` / ``NVIDIA_QWEN_API_KEY`` set in the environment. All
-    hosted NVIDIA Build models share one key, so a single value works for both
-    teacher and judge.
+    Reads ``NVIDIA_API_KEY`` from the environment (or ``api_key`` if passed). One
+    account-level key authenticates every model in the catalog — the model is
+    chosen per request, not by the key — so a single ``NVIDIA_API_KEY`` covers
+    teacher and all judges.
     """
-
-    _KEY_ENV_VARS = ("NVIDIA_API_KEY", "NVIDIA_QWEN_API_KEY")
 
     def __init__(
         self,
@@ -62,17 +60,21 @@ class NvidiaClient:
         # Imported lazily so the package (and MockClient) work without `openai`.
         from openai import OpenAI
 
-        key = api_key or next(
-            (os.environ[v] for v in self._KEY_ENV_VARS if os.environ.get(v)), None
-        )
+        key = api_key or os.environ.get("NVIDIA_API_KEY")
         if not key:
             raise RuntimeError(
-                f"No API key found. Set one of {self._KEY_ENV_VARS} (env or .env), "
-                "or pass api_key=... (get a free key at https://build.nvidia.com)."
+                "NVIDIA_API_KEY is not set (env or .env). Get a free key at "
+                "https://build.nvidia.com — one key works for all models."
             )
         # Per-request timeout so a cold-starting or hung model fails fast and
         # the caller can retry/skip rather than blocking the whole run.
-        self._client = OpenAI(api_key=key, base_url=base_url, timeout=timeout)
+        # max_retries=0 disables the SDK's own retry loop (default 2): otherwise
+        # it silently multiplies our timeout (timeout × 3 × our retries), which
+        # turned a hung model into 20+ minute blocks. Our retry loop is the only
+        # one.
+        self._client = OpenAI(
+            api_key=key, base_url=base_url, timeout=timeout, max_retries=0,
+        )
         self._max_retries = max_retries
         self._backoff_base = backoff_base
 
@@ -137,40 +139,12 @@ class MockClient:
         )
 
 
-# Vendor prefix (the part before "/" in a model id) -> preferred key env var.
-# Each NVIDIA Build model can carry its own key; fall back to a shared key.
-_VENDOR_KEY_ENV: dict[str, str] = {
-    "qwen": "NVIDIA_QWEN_API_KEY",
-    "deepseek-ai": "NVIDIA_DEEPSEEK_API_KEY",
-    "sarvamai": "NVIDIA_SARVAM_API_KEY",
-}
-
-
-def resolve_api_key(model_id: str) -> str | None:
-    """Pick the API key for ``model_id`` by vendor prefix.
-
-    Tries the vendor-specific env var first (e.g. ``deepseek-ai/...`` ->
-    ``NVIDIA_DEEPSEEK_API_KEY``), then a shared ``NVIDIA_API_KEY``, then any
-    other ``NVIDIA_*_API_KEY`` present. Returns ``None`` if nothing is set, so
-    the caller can raise a clear error.
-    """
-    vendor = model_id.split("/", 1)[0]
-    preferred = _VENDOR_KEY_ENV.get(vendor)
-    candidates = [preferred, "NVIDIA_API_KEY", *_VENDOR_KEY_ENV.values()]
-    for var in candidates:
-        if var and os.environ.get(var):
-            return os.environ[var]
-    return None
-
-
 def build_client(name: str, **kwargs) -> ChatClient:
     """Factory: ``"mock"`` -> :class:`MockClient`, anything else -> NVIDIA.
 
-    Resolves the API key from the model id's vendor unless ``api_key`` is
-    already provided in ``kwargs``.
+    All NVIDIA models use the single ``NVIDIA_API_KEY``; the model id (``name``)
+    only selects which model the request targets.
     """
     if name == "mock":
         return MockClient()
-    if "api_key" not in kwargs:
-        kwargs["api_key"] = resolve_api_key(name)
     return NvidiaClient(**kwargs)
