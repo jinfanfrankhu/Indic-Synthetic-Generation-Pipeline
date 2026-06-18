@@ -14,17 +14,20 @@ syndata/              # Python package — all pipeline code goes here
   client.py           # ChatClient protocol; NvidiaClient (live) + MockClient (offline)
   templates.py        # prompt registry — translate vs. adapt-and-localize per task family
   generator.py        # SeedItem + GenerationConfig -> teacher call -> SyntheticItem
-  cli.py              # `syndata generate` command
+  compare.py          # model bake-off: same seeds through N models -> Markdown report
+  cli.py              # `syndata generate` + `syndata compare`
 
 data/
   language_statistics.csv   # corpus sizes, benchmark coverage, scripts per language
   seeds/
     sample_data.json         # bootstrapping seeds + bad-generation examples
-  generated/                 # JSONL generation output (created on first run)
+  generated/                 # JSONL output: <lang>/<task>/<model>_<timestamp>.jsonl (gitignored)
 
 docs/
-  lit_review.md    # notes on Bactrian-X, MURI, UPDESH, Alpaca, LLM-as-judge papers
-  sources.md       # academic citations (APA)
+  lit_review.md          # notes on Bactrian-X, MURI, UPDESH, Alpaca, LLM-as-judge papers
+  sources.md             # academic citations (APA)
+  model_selection.md     # teacher/judge model rationale + ruled-out models
+  model_comparison_*.md  # bake-off reports (committed as model-choice evidence)
 
 pyproject.toml     # deps + `syndata` console entry point
 README.md          # install, API key, CLI usage, module map
@@ -37,9 +40,10 @@ DESIGN.md          # (to be written in Week 2) — answers the 5 methodology que
 ## Stack
 
 - Python 3.11+, Pydantic v2, HuggingFace `datasets`
-- LLM access via `openai` SDK pointed at NVIDIA Build (`base_url=https://integrate.api.nvidia.com/v1`); key in `NVIDIA_API_KEY` (or `.env`). Free, rate-limited tier.
-- Teacher LLM: **Qwen3-5-122b** via NVIDIA Build (OpenAI-compatible). Exact catalog id (likely namespaced, e.g. `qwen/qwen3-...`) still to be confirmed against the live model list — passed as a CLI value, no code change needed.
-- Judge LLM: **Llama 3.3 70B** via NVIDIA Build (different model to avoid same-model bias)
+- LLM access via `openai` SDK pointed at NVIDIA Build (`base_url=https://integrate.api.nvidia.com/v1`). Free, rate-limited tier; `NvidiaClient` has a 90s per-request timeout + retry/backoff.
+- API keys live in `.env` (gitignored). Each model's key is resolved by vendor prefix: `qwen/*`→`NVIDIA_QWEN_API_KEY`, `deepseek-ai/*`→`NVIDIA_DEEPSEEK_API_KEY`, `sarvamai/*`→`NVIDIA_SARVAM_API_KEY`, falling back to a shared `NVIDIA_API_KEY` (see `client.resolve_api_key`).
+- Teacher LLM: **Qwen3.5-122b** (`qwen/qwen3.5-122b-a10b`) confirmed working live. Sarvam (`sarvamai/sarvam-m`) and DeepSeek (`deepseek-ai/deepseek-v4-flash`) under evaluation via `syndata compare` — see `docs/model_selection.md`.
+- Judge LLM: **Llama 3.3 70B** via NVIDIA Build (different model to avoid same-model bias) — note: not in the current catalog, may need re-picking from a non-teacher family.
 - Target languages: `hi` (Hindi), `ur` (Urdu), `ta` (Tamil), `ml` (Malayalam)
 - Use `--teacher mock` (offline `MockClient`) to exercise the full pipeline without a key or network.
 
@@ -50,11 +54,18 @@ DESIGN.md          # (to be written in Week 2) — answers the 5 methodology que
 - Generation strategy split by task type: top-down translation for reasoning/culture-agnostic tasks; bottom-up reverse-instruction (MURI approach) for culturally-grounded tasks
 - API budget confirmed with manager
 
-## CLI target
+## CLI
 
 ```
+# Generate (output -> data/generated/<lang>/<task>/<model>_<timestamp>.jsonl)
 syndata generate --language hi --task qa --n 500 --teacher <model> --judge <model>
+
+# Model bake-off: same seeds through several models -> docs/model_comparison_<lang>_<task>.md
+syndata compare --language hi --task qa --n 2 \
+  --models qwen/qwen3.5-122b-a10b,sarvamai/sarvam-m,deepseek-ai/deepseek-v4-flash
 ```
+
+`compare` logs per-call progress (`[n/total]`, elapsed, preview) to stderr by default.
 
 ## What still needs to be written
 
@@ -69,6 +80,9 @@ syndata generate --language hi --task qa --n 500 --teacher <model> --judge <mode
 
 - Generation pipeline in `syndata/`: seed loader, prompt templates, chat clients, generator, CLI
 - `pyproject.toml` (deps + `syndata` entry point); `README.md` stub
-- End-to-end verified with `MockClient`: CLI writes JSONL that round-trips through `SyntheticItem`
+- End-to-end verified with `MockClient` *and* live: first real Hindi QA item generated via Qwen3.5
 - Teacher responses requested as JSON; parser salvages fenced/preamble output and always keeps `raw_response`
-- Still pending: first *live* run (needs `NVIDIA_API_KEY`); `--judge` is recorded but inert until Week 4
+- Per-vendor API key resolution; 90s request timeout + retry/backoff on `NvidiaClient`
+- `syndata compare` bake-off command (verbose progress, Markdown report) for evidence-based model selection
+- Output paths are non-clobbering (`<lang>/<task>/<model>_<timestamp>.jsonl`)
+- Still pending: lock teacher/judge from the bake-off; `--judge` is recorded but inert until Week 4

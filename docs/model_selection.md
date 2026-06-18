@@ -1,6 +1,16 @@
 # Model Selection
 
-Teacher and judge models are drawn from NVIDIA Build's free hosted endpoints (OpenAI-compatible, no self-hosting). Selection optimizes for two axes that matter for this project: **Indic/multilingual quality** (not recency or coding-benchmark strength, which dominate most model marketing) and **teacher≠judge family diversity**, required by the ensemble-judging decision that addresses the ~50% human–LLM agreement on Indic linguistic plausibility reported in UPDESH. The candidate pool was filtered by *model type* first: only general-purpose chat LLMs can serve as teacher or judge, which rules out NVIDIA's safety classifiers and rerankers despite their "free endpoint" availability. The three chat LLMs below go into a small bake-off (same hi/ta seeds through each, comparing script naturality and JSON adherence); the winner becomes teacher and the judge is locked from a different family.
+Teacher and judge models are drawn from NVIDIA Build's free hosted endpoints (OpenAI-compatible, no self-hosting). Selection optimizes for two axes that matter for this project: **Indic/multilingual quality** (not recency or coding-benchmark strength, which dominate most model marketing) and **teacher≠judge family diversity**, required by the ensemble-judging decision that addresses the ~50% human–LLM agreement on Indic linguistic plausibility reported in UPDESH. The candidate pool was filtered by *model type* first: only general-purpose chat LLMs can serve as teacher or judge, which rules out NVIDIA's safety classifiers and rerankers despite their "free endpoint" availability. The three chat LLMs below went into a small bake-off (same hi/ta QA seeds through each, run via `syndata compare`), and the decision below follows from that evidence.
+
+## Decision (from the bake-off)
+
+Reports: [`model_comparison_hi_qa.md`](model_comparison_hi_qa.md), [`model_comparison_ta_qa.md`](model_comparison_ta_qa.md).
+
+ - **Teacher → DeepSeek V4 Flash** (`deepseek-ai/deepseek-v4-flash`). Fastest by far (~1–3 s/item vs ~10–20 s for Sarvam, vs Qwen timing out), clean JSON every call, and fully fluent in both Hindi and Tamil — including unprompted localization of answers into the target script (e.g. `ब्रासीलिया`, `பிரசிலியா`). The practical winner for generating thousands of items.
+ - **Judge → Sarvam-m** (`sarvamai/sarvam-m`). A different family from the teacher (preserves bias-avoidance), Indic-specialized (its Tamil phrasing was subtly more idiomatic than DeepSeek's — genitive suffixes, honorific verb forms, closer transliteration), which is exactly the competence wanted for scrutinizing Tamil/Malayalam fluency. Its tendency to emit chain-of-thought — a liability for a generator (it leaked reasoning into the output and, when untagged, defeated JSON parsing) — is an asset for a judge, consistent with the lit-review finding that explanation-generating prompts improve judge consistency.
+ - **Qwen3.5-122b — dropped.** Although it produced correct Hindi on a single warm call, it repeatedly timed out under the bake-off's concurrent load (one run hung for ~1 h without honoring the request timeout). At 122B it is too slow and unreliable to be a practical teacher at scale.
+
+Caveat: the bake-off covered QA only — the most culture-agnostic task, where Sarvam's specialization is least likely to show. A follow-up `instruction`/`classification` bake-off (bottom-up `adapt_and_localize`) would further stress-test the teacher choice before full-scale generation.
 
 ## Candidates (general chat LLMs)
 
