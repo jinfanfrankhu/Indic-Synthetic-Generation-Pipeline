@@ -12,6 +12,9 @@ renders.
 """
 from __future__ import annotations
 
+import sys
+import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -19,6 +22,12 @@ from .client import build_client
 from .data_structures import GenerationConfig, SeedItem, SyntheticItem
 from .generator import generate
 from .templates import default_template_for, language_name
+
+
+def _log(msg: str, verbose: bool) -> None:
+    """Progress to stderr (keeps stdout clean for the report path)."""
+    if verbose:
+        print(msg, file=sys.stderr, flush=True)
 
 
 @dataclass
@@ -35,43 +44,76 @@ def run_comparison(
     temperature: float = 0.7,
     max_tokens: int = 1024,
     template: str | None = None,
+    verbose: bool = True,
+    max_workers: int = 8,
+    request_timeout: float | None = None,
 ) -> dict[str, dict[str, Cell]]:
-    """Generate every ``seed`` with every ``model``.
+    """Generate every ``seed`` with every ``model``, concurrently.
 
     Returns ``{seed_id: {model: Cell}}``. Clients are built once per model;
     a build failure (e.g. missing key) is recorded against every cell for that
-    model rather than aborting the run.
+    model rather than aborting the run. The (seed × model) calls are I/O-bound,
+    so they run in a thread pool (``max_workers``); set ``max_workers=1`` to
+    serialize (e.g. to stay under a tight rate limit). With ``verbose``
+    (default), each call's outcome and elapsed time is logged to stderr as it
+    completes — order is non-deterministic under concurrency.
     """
     clients: dict[str, object] = {}
     build_errors: dict[str, str] = {}
+    client_kwargs = {} if request_timeout is None else {"timeout": request_timeout}
     for model in models:
         try:
-            clients[model] = build_client(model)
+            clients[model] = build_client(model, **client_kwargs)
+            _log(f"[client] ready: {model}", verbose)
         except Exception as err:  # noqa: BLE001 — surface, don't abort
             build_errors[model] = f"client init failed: {err}"
+            _log(f"[client] FAILED: {model} -> {err}", verbose)
 
-    results: dict[str, dict[str, Cell]] = {}
+    results: dict[str, dict[str, Cell]] = {seed.id: {} for seed in seeds}
+
+    # Build the work list, recording build-failed models up front.
+    tasks: list[tuple[SeedItem, str, GenerationConfig]] = []
     for seed in seeds:
-        row: dict[str, Cell] = {}
         tmpl = template or default_template_for(seed.task_family)
         for model in models:
             if model in build_errors:
-                row[model] = Cell(item=None, error=build_errors[model])
+                results[seed.id][model] = Cell(item=None, error=build_errors[model])
                 continue
-            config = GenerationConfig(
+            tasks.append((seed, model, GenerationConfig(
                 seed_id=seed.id,
                 target_language=language,
                 teacher_model=model,
                 temperature=temperature,
                 max_tokens=max_tokens,
                 prompt_template_name=tmpl,
-            )
+            )))
+
+    if not tasks:
+        return results
+
+    def _call(seed: SeedItem, model: str, config: GenerationConfig) -> tuple[SyntheticItem, float]:
+        start = time.monotonic()
+        item = generate(seed, config, clients[model])  # type: ignore[arg-type]
+        return item, time.monotonic() - start
+
+    total = len(tasks)
+    workers = max(1, min(max_workers, total))
+    _log(f"dispatching {total} calls across {workers} workers...", verbose)
+
+    done = 0
+    with ThreadPoolExecutor(max_workers=workers) as pool:
+        futures = {pool.submit(_call, s, m, c): (s.id, m) for (s, m, c) in tasks}
+        for fut in as_completed(futures):  # main thread — no lock needed for `done`
+            seed_id, model = futures[fut]
+            done += 1
             try:
-                item = generate(seed, config, clients[model])  # type: ignore[arg-type]
-                row[model] = Cell(item=item, error=None)
+                item, elapsed = fut.result()
+                results[seed_id][model] = Cell(item=item, error=None)
+                preview = item.prompt[:60].replace("\n", " ")
+                _log(f"[{done}/{total}] ✓ {model} on {seed_id} in {elapsed:.1f}s — {preview}", verbose)
             except Exception as err:  # noqa: BLE001
-                row[model] = Cell(item=None, error=str(err))
-        results[seed.id] = row
+                results[seed_id][model] = Cell(item=None, error=str(err))
+                _log(f"[{done}/{total}] ✗ {model} on {seed_id} failed — {err}", verbose)
     return results
 
 

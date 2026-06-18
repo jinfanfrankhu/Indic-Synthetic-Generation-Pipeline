@@ -57,6 +57,7 @@ class NvidiaClient:
         base_url: str = NVIDIA_BASE_URL,
         max_retries: int = 4,
         backoff_base: float = 1.5,
+        timeout: float = 90.0,
     ) -> None:
         # Imported lazily so the package (and MockClient) work without `openai`.
         from openai import OpenAI
@@ -69,7 +70,9 @@ class NvidiaClient:
                 f"No API key found. Set one of {self._KEY_ENV_VARS} (env or .env), "
                 "or pass api_key=... (get a free key at https://build.nvidia.com)."
             )
-        self._client = OpenAI(api_key=key, base_url=base_url)
+        # Per-request timeout so a cold-starting or hung model fails fast and
+        # the caller can retry/skip rather than blocking the whole run.
+        self._client = OpenAI(api_key=key, base_url=base_url, timeout=timeout)
         self._max_retries = max_retries
         self._backoff_base = backoff_base
 

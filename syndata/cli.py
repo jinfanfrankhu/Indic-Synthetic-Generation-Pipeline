@@ -92,8 +92,20 @@ def _build_parser() -> argparse.ArgumentParser:
         help="Comma-separated model ids to compare (e.g. qwen/...,sarvamai/sarvam-m).",
     )
     cmp.add_argument("--n", type=int, default=3, help="Number of seeds to run.")
+    cmp.add_argument(
+        "--workers",
+        type=int,
+        default=8,
+        help="Max concurrent API calls (1 = serialize, e.g. for tight rate limits).",
+    )
     cmp.add_argument("--temperature", type=float, default=0.7)
     cmp.add_argument("--max-tokens", type=int, default=1024)
+    cmp.add_argument(
+        "--timeout",
+        type=float,
+        default=None,
+        help="Per-request timeout in seconds (default: client default of 90).",
+    )
     cmp.add_argument("--seeds", default=str(DEFAULT_SEED_PATH))
     cmp.add_argument("--template", default=None, help="Prompt template override.")
     cmp.add_argument(
@@ -163,6 +175,7 @@ def cmd_compare(args: argparse.Namespace) -> int:
     results = run_comparison(
         seeds, models, args.language,
         temperature=args.temperature, max_tokens=args.max_tokens, template=args.template,
+        max_workers=args.workers, request_timeout=args.timeout,
     )
     report = render_markdown(seeds, models, results, args.language)
 
