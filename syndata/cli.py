@@ -113,6 +113,39 @@ def _build_parser() -> argparse.ArgumentParser:
         default=None,
         help="Markdown report path (default: docs/model_comparison_<lang>_<task>.md).",
     )
+
+    jc = sub.add_parser(
+        "judge-compare",
+        help="Validate judges: generate items, then score them across judge models.",
+    )
+    jc.add_argument("--language", required=True, help="Target ISO code: hi, ur, ta, ml")
+    jc.add_argument(
+        "--task", required=True, choices=[t.value for t in TaskFamily],
+        help="Task family to sample seeds from.",
+    )
+    jc.add_argument(
+        "--judges", required=True,
+        help="Comma-separated judge model ids (e.g. sarvamai/sarvam-m,google/gemma-4-31b-it).",
+    )
+    jc.add_argument(
+        "--teacher", default="deepseek-ai/deepseek-v4-flash",
+        help="Model used to generate the items being judged.",
+    )
+    jc.add_argument("--n", type=int, default=2, help="Number of seeds to generate + judge.")
+    jc.add_argument("--workers", type=int, default=6)
+    jc.add_argument("--timeout", type=float, default=None, help="Per-request timeout (s).")
+    # Reasoning judges (e.g. sarvam-m) spend many tokens on chain-of-thought
+    # before the JSON; too low a budget truncates the answer. 1024 gives room.
+    jc.add_argument("--max-tokens", type=int, default=1024)
+    jc.add_argument(
+        "--no-control", action="store_true",
+        help="Skip the English-text control rows (a judge-discrimination check).",
+    )
+    jc.add_argument("--seeds", default=str(DEFAULT_SEED_PATH))
+    jc.add_argument(
+        "--out", default=None,
+        help="Markdown report path (default: docs/judge_comparison_<lang>_<task>.md).",
+    )
     return parser
 
 
@@ -187,6 +220,63 @@ def cmd_compare(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_judge_compare(args: argparse.Namespace) -> int:
+    from datetime import datetime, timezone
+
+    from .compare import write_report
+    from .data_structures import GenerationConfig, SyntheticItem
+    from .judge import JudgeTarget, render_markdown, run_judge_panel
+
+    task = TaskFamily(args.task)
+    seeds = list(islice(filter_by_task(load_seeds(args.seeds), task), args.n))
+    if not seeds:
+        print(f"No seeds found for task '{task.value}' in {args.seeds}", file=sys.stderr)
+        return 1
+
+    judges = [m.strip() for m in args.judges.split(",") if m.strip()]
+    if not judges:
+        print("No judges given to --judges.", file=sys.stderr)
+        return 1
+
+    # 1. Generate the items to be judged, using the teacher.
+    print(f"Generating {len(seeds)} items with {args.teacher}...", file=sys.stderr)
+    teacher = build_client(args.teacher)
+    template_name = default_template_for(task)
+    targets: list[JudgeTarget] = []
+    for seed in seeds:
+        config = GenerationConfig(
+            seed_id=seed.id, target_language=args.language,
+            teacher_model=args.teacher, prompt_template_name=template_name,
+        )
+        item = generate(seed, config, teacher)
+        targets.append(JudgeTarget(id=item.id, label="real", seed=seed, item=item))
+        if not args.no_control:
+            # Control: feed judges the raw English seed as if it were the output.
+            # Fluency should score low — a discrimination sanity check.
+            control = SyntheticItem(
+                id=f"{item.id}-control", seed_id=seed.id, task_family=task,
+                target_language=args.language, prompt=seed.prompt, expected=seed.expected,
+                generation=config, generated_at=datetime.now(timezone.utc),
+                raw_response="[control: raw English seed]",
+            )
+            targets.append(JudgeTarget(
+                id=control.id, label="CONTROL: English text", seed=seed, item=control,
+            ))
+
+    # 2. Score every target with every judge.
+    results = run_judge_panel(
+        targets, judges, max_tokens=args.max_tokens,
+        request_timeout=args.timeout, max_workers=args.workers,
+    )
+    report = render_markdown(targets, judges, results)
+    out_path = Path(args.out) if args.out else (
+        DOCS_DIR / f"judge_comparison_{args.language}_{task.value}.md"
+    )
+    write_report(report, out_path)
+    print(f"Wrote judge comparison to {out_path}")
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     # Load NVIDIA_API_KEY (and friends) from a local .env if present.
     try:
@@ -201,6 +291,8 @@ def main(argv: list[str] | None = None) -> int:
         return cmd_generate(args)
     if args.command == "compare":
         return cmd_compare(args)
+    if args.command == "judge-compare":
+        return cmd_judge_compare(args)
     return 1
 
 

@@ -40,10 +40,10 @@ DESIGN.md          # (to be written in Week 2) — answers the 5 methodology que
 ## Stack
 
 - Python 3.11+, Pydantic v2, HuggingFace `datasets`
-- LLM access via `openai` SDK pointed at NVIDIA Build (`base_url=https://integrate.api.nvidia.com/v1`). Free, rate-limited tier; `NvidiaClient` has a 90s per-request timeout + retry/backoff.
-- API keys live in `.env` (gitignored). Each model's key is resolved by vendor prefix: `qwen/*`→`NVIDIA_QWEN_API_KEY`, `deepseek-ai/*`→`NVIDIA_DEEPSEEK_API_KEY`, `sarvamai/*`→`NVIDIA_SARVAM_API_KEY`, falling back to a shared `NVIDIA_API_KEY` (see `client.resolve_api_key`).
-- Teacher LLM: **Qwen3.5-122b** (`qwen/qwen3.5-122b-a10b`) confirmed working live. Sarvam (`sarvamai/sarvam-m`) and DeepSeek (`deepseek-ai/deepseek-v4-flash`) under evaluation via `syndata compare` — see `docs/model_selection.md`.
-- Judge LLM: **Llama 3.3 70B** via NVIDIA Build (different model to avoid same-model bias) — note: not in the current catalog, may need re-picking from a non-teacher family.
+- LLM access via `openai` SDK pointed at NVIDIA Build (`base_url=https://integrate.api.nvidia.com/v1`). Free, rate-limited tier; `NvidiaClient` has a 90s per-request timeout and disables the SDK's own retries (`max_retries=0`) so the timeout isn't silently multiplied.
+- **One `NVIDIA_API_KEY`** in `.env` (gitignored) covers every model — NVIDIA Build keys are account-level; the model is chosen per request, not by the key.
+- Teacher LLM: **DeepSeek V4 Flash** (`deepseek-ai/deepseek-v4-flash`) — chosen from the hi/ta bake-off (fast, clean JSON, fluent). See `docs/model_selection.md`.
+- Judge LLM: ensemble TBD. Candidates that respond + discriminate (English-control check): `sarvamai/sarvam-m`, `mistralai/mistral-small-4-119b-2603`, `z-ai/glm-5.1`, `nvidia/nemotron-3-super-120b-a12b`. Qwen times out; Gemma endpoint down. **Note:** runs so far are only liveness/format/trivial-discrimination screens — judge *quality* needs a human gold set (no ground truth yet).
 - Target languages: `hi` (Hindi), `ur` (Urdu), `ta` (Tamil), `ml` (Malayalam)
 - Use `--teacher mock` (offline `MockClient`) to exercise the full pipeline without a key or network.
 
