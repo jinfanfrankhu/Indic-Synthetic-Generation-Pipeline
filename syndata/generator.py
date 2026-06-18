@@ -33,6 +33,11 @@ def parse_response(raw: str) -> tuple[str, str | None]:
     prompt so the item is still usable and auditable.
     """
     text = raw.strip()
+    # Reasoning models (e.g. sarvam-m) prepend a <think>...</think> chain of
+    # thought — which itself contains braces — before the answer JSON. Keep only
+    # what follows the final closing tag (handles an orphaned </think> too).
+    if "</think>" in text:
+        text = text.rsplit("</think>", 1)[-1].strip()
     # Strip markdown code fences if present.
     if text.startswith("```"):
         text = text.strip("`")
