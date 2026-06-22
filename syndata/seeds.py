@@ -37,3 +37,18 @@ def load_seeds(path: str | Path = DEFAULT_SEED_PATH) -> list[SeedItem]:
 def filter_by_task(seeds: list[SeedItem], task: TaskFamily) -> list[SeedItem]:
     """Return only the seeds whose ``task_family`` matches ``task``."""
     return [s for s in seeds if s.task_family == task]
+
+
+def write_seeds(seeds: list[SeedItem], path: str | Path) -> Path:
+    """Write ``seeds`` to ``path`` as a ``{"seeds": [...]}`` JSON file.
+
+    Round-trips with :func:`load_seeds`. Parent directories are created. Written
+    with ``ensure_ascii=False`` so any non-ASCII content stays human-readable.
+    """
+    path = Path(path)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    payload = {"seeds": [s.model_dump(mode="json") for s in seeds]}
+    path.write_text(
+        json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8"
+    )
+    return path

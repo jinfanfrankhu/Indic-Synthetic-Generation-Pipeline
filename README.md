@@ -39,6 +39,29 @@ syndata generate \
   --judge meta/llama-3.3-70b-instruct
 ```
 
+### Bootstrapping seeds + batch generation
+
+The curated seed pool is small. To grow it and then sweep many languages × task
+families in one run (used to produce the Week 3 demo set):
+
+```bash
+# 1. Self-instruct ~200 new English seeds with the teacher (DeepSeek), then
+#    hand-review the output file before using it.
+syndata bootstrap-seeds --tasks all --n 200 \
+  --teacher deepseek-ai/deepseek-v4-flash
+#    -> data/seeds/bootstrapped_<timestamp>.json
+
+# 2. Generate items across all 4 languages × all task families from that file.
+syndata generate-batch \
+  --seeds data/seeds/bootstrapped_<timestamp>.json \
+  --teacher deepseek-ai/deepseek-v4-flash
+#    -> data/generated/<lang>/<task>/<model>_<timestamp>.jsonl
+```
+
+All live calls share a **36 calls/min** rate limiter (under NVIDIA's 40/min free
+cap), so `--workers` on `generate-batch` is safe; the limiter—not the worker
+count—sets the ceiling.
+
 Output is written as JSONL (one `SyntheticItem` per line) to
 `data/generated/<lang>_<task>_<n>.jsonl` by default; override with `--out`.
 
@@ -58,7 +81,9 @@ are always UTF-8 regardless.
 | `templates.py` | Build the teacher prompt. Picks **top-down translation** for reasoning/QA/summarization/translation and **bottom-up adapt-and-localize** for instruction/classification. |
 | `client.py` | `ChatClient` protocol + `NvidiaClient` (live, with retry/backoff) and `MockClient` (offline). |
 | `generator.py` | Seed + `GenerationConfig` → teacher call → parse → `SyntheticItem` with full provenance. |
-| `cli.py` | The `syndata generate` command. |
+| `bootstrap.py` | Self-instruct seed expansion + cheap pre-filters (dedup, English-only, required-fields, length). |
+| `ratelimit.py` | Shared min-interval throttle keeping live calls under the 40/min cap. |
+| `cli.py` | `generate`, `compare`, `judge-compare`, `bootstrap-seeds`, `generate-batch`. |
 
 Teacher responses are requested as JSON; the parser salvages fenced or
 preamble-wrapped output and falls back to keeping the raw text. The raw response

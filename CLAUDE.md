@@ -42,7 +42,7 @@ DESIGN.md          # (to be written in Week 2) — answers the 5 methodology que
 - Python 3.11+, Pydantic v2, HuggingFace `datasets`
 - LLM access via `openai` SDK pointed at NVIDIA Build (`base_url=https://integrate.api.nvidia.com/v1`). Free, rate-limited tier; `NvidiaClient` has a 90s per-request timeout and disables the SDK's own retries (`max_retries=0`) so the timeout isn't silently multiplied.
 - **One `NVIDIA_API_KEY`** in `.env` (gitignored) covers every model — NVIDIA Build keys are account-level; the model is chosen per request, not by the key.
-- **Rate limit: 40 API calls/minute** (account-level, free tier). Pace concurrency with `--workers`; `NvidiaClient` waits ~12s on a 429 before retrying. At scale (Week 5), throttle generation to stay under this.
+- **Rate limit: 40 API calls/minute** (account-level, free tier). `NvidiaClient` now enforces this proactively via a shared `RateLimiter` (`syndata/ratelimit.py`, default **36/min** for margin) that paces call *starts* across worker threads; the ~12s 429 backoff stays as the reactive safety net. Pace concurrency with `--workers`, but the limiter—not the worker count—sets the ceiling.
 - Teacher LLM: **DeepSeek V4 Flash** (`deepseek-ai/deepseek-v4-flash`) — chosen from the hi/ta bake-off (fast, clean JSON, fluent). See `docs/model_selection.md`.
 - Judge LLM: ensemble TBD. Candidates that respond + discriminate (English-control check): `sarvamai/sarvam-m`, `mistralai/mistral-small-4-119b-2603`, `z-ai/glm-5.1`, `nvidia/nemotron-3-super-120b-a12b`. Qwen times out; Gemma endpoint down. **Note:** runs so far are only liveness/format/trivial-discrimination screens — judge *quality* needs a human gold set (no ground truth yet).
 - Target languages: `hi` (Hindi), `ur` (Urdu), `ta` (Tamil), `ml` (Malayalam)
@@ -64,6 +64,14 @@ syndata generate --language hi --task qa --n 500 --teacher <model> --judge <mode
 # Model bake-off: same seeds through several models -> docs/model_comparison_<lang>_<task>.md
 syndata compare --language hi --task qa --n 2 \
   --models qwen/qwen3.5-122b-a10b,sarvamai/sarvam-m,deepseek-ai/deepseek-v4-flash
+
+# Self-instruct seed expansion (English) -> data/seeds/bootstrapped_<ts>.json
+# (hand-review the output before generating against it)
+syndata bootstrap-seeds --tasks all --n 200 --teacher deepseek-ai/deepseek-v4-flash
+
+# Batch sweep across all languages x tasks from a seed file -> data/generated/<lang>/<task>/...
+syndata generate-batch --seeds data/seeds/bootstrapped_<ts>.json \
+  --teacher deepseek-ai/deepseek-v4-flash --per-combo 8 --workers 4
 ```
 
 `compare` logs per-call progress (`[n/total]`, elapsed, preview) to stderr by default.
@@ -86,4 +94,6 @@ syndata compare --language hi --task qa --n 2 \
 - Per-vendor API key resolution; 90s request timeout + retry/backoff on `NvidiaClient`
 - `syndata compare` bake-off command (verbose progress, Markdown report) for evidence-based model selection
 - Output paths are non-clobbering (`<lang>/<task>/<model>_<timestamp>.jsonl`)
+- `syndata bootstrap-seeds` (self-instruct seed expansion + structural pre-filters; hand-review gate before use) and `syndata generate-batch` (concurrent sweep across languages × tasks) for the Week 3 demo set
+- Global `RateLimiter` (36/min) wired into `NvidiaClient` so every live path stays under the 40/min cap
 - Still pending: lock teacher/judge from the bake-off; `--judge` is recorded but inert until Week 4

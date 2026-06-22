@@ -146,7 +146,77 @@ def _build_parser() -> argparse.ArgumentParser:
         "--out", default=None,
         help="Markdown report path (default: docs/judge_comparison_<lang>_<task>.md).",
     )
+
+    bs = sub.add_parser(
+        "bootstrap-seeds",
+        help="Self-instruct: expand the English seed pool with the teacher model.",
+    )
+    bs.add_argument(
+        "--tasks", default="all",
+        help="Comma-separated task families or 'all' (default: all 6).",
+    )
+    bs.add_argument("--n", type=int, default=200, help="Total new seeds (split across tasks).")
+    bs.add_argument(
+        "--teacher", default="deepseek-ai/deepseek-v4-flash",
+        help="Model used to generate seeds (default: locked teacher).",
+    )
+    bs.add_argument("--per-call", type=int, default=8, help="Seeds requested per API call.")
+    bs.add_argument(
+        "--temperature", type=float, default=1.0,
+        help="Higher than generation default — bootstrapping wants diversity.",
+    )
+    bs.add_argument("--max-tokens", type=int, default=1024)
+    bs.add_argument(
+        "--seeds", default=str(DEFAULT_SEED_PATH),
+        help="Seed file used as few-shot exemplars.",
+    )
+    bs.add_argument(
+        "--out", default=None,
+        help="Output JSON (default: data/seeds/bootstrapped_<timestamp>.json).",
+    )
+
+    gb = sub.add_parser(
+        "generate-batch",
+        help="Sweep: generate items across many languages x tasks from a seed file.",
+    )
+    gb.add_argument(
+        "--languages", default="hi,ur,ta,ml",
+        help="Comma-separated ISO codes (default: all 4 targets).",
+    )
+    gb.add_argument(
+        "--tasks", default="all",
+        help="Comma-separated task families or 'all' (default: all 6).",
+    )
+    gb.add_argument(
+        "--per-combo", type=int, default=8,
+        help="Items per (language x task) combination.",
+    )
+    gb.add_argument(
+        "--teacher", default="deepseek-ai/deepseek-v4-flash",
+        help="Teacher model id (default: locked teacher).",
+    )
+    gb.add_argument(
+        "--workers", type=int, default=4,
+        help="Max concurrent calls; the rate limiter caps throughput regardless.",
+    )
+    gb.add_argument("--temperature", type=float, default=0.7)
+    gb.add_argument("--max-tokens", type=int, default=1024)
+    gb.add_argument(
+        "--seeds", default=str(DEFAULT_SEED_PATH),
+        help="Seed file (point at a bootstrapped file for diversity).",
+    )
+    gb.add_argument(
+        "--out-dir", default=str(DEFAULT_OUTPUT_DIR),
+        help="Output root (default: data/generated).",
+    )
     return parser
+
+
+def _resolve_tasks(spec: str) -> list[TaskFamily]:
+    """Parse a --tasks value ('all' or a comma list) into TaskFamily members."""
+    if spec.strip().lower() == "all":
+        return list(TaskFamily)
+    return [TaskFamily(t.strip()) for t in spec.split(",") if t.strip()]
 
 
 def cmd_generate(args: argparse.Namespace) -> int:
@@ -286,6 +356,144 @@ def cmd_judge_compare(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_bootstrap_seeds(args: argparse.Namespace) -> int:
+    from .bootstrap import bootstrap_seeds
+    from .seeds import write_seeds
+
+    tasks = _resolve_tasks(args.tasks)
+    all_seeds = load_seeds(args.seeds)
+    client = build_client(args.teacher)
+
+    # Split the requested total roughly evenly across task families.
+    per_task = max(1, args.n // len(tasks))
+    print(
+        f"Bootstrapping ~{per_task} seeds x {len(tasks)} task(s) with "
+        f"{args.teacher}...", file=sys.stderr,
+    )
+
+    collected: list = []
+    summaries: list[str] = []
+    for task in tasks:
+        examples = filter_by_task(all_seeds, task)
+        result = bootstrap_seeds(
+            task, per_task, client, args.teacher, examples,
+            per_call=args.per_call, temperature=args.temperature,
+            max_tokens=args.max_tokens,
+        )
+        collected.extend(result.seeds)
+        drops = ", ".join(f"{k}={v}" for k, v in sorted(result.drops.items())) or "none"
+        summaries.append(
+            f"  {task.value:14s} {len(result.seeds):4d}/{result.requested:<4d} accepted "
+            f"(dropped: {drops})"
+        )
+
+    if not collected:
+        print("No seeds produced (teacher failed or output unusable).", file=sys.stderr)
+        return 1
+
+    out_path = Path(args.out) if args.out else (
+        Path("data") / "seeds" / f"bootstrapped_{datetime.now():%Y%m%dT%H%M%S}.json"
+    )
+    write_seeds(collected, out_path)
+
+    print("\n".join(summaries), file=sys.stderr)
+    print(f"Wrote {len(collected)} seeds to {out_path}")
+    print("Review/edit this file by hand before running `generate-batch` against it.")
+    return 0
+
+
+def cmd_generate_batch(args: argparse.Namespace) -> int:
+    import time
+    from concurrent.futures import ThreadPoolExecutor, as_completed
+
+    languages = [c.strip() for c in args.languages.split(",") if c.strip()]
+    tasks = _resolve_tasks(args.tasks)
+    all_seeds = load_seeds(args.seeds)
+    client = build_client(args.teacher)
+    out_root = Path(args.out_dir)
+
+    # Build the work list: up to --per-combo distinct seeds per (language, task).
+    jobs: list[tuple[str, TaskFamily, object, GenerationConfig]] = []
+    for task in tasks:
+        task_seeds = filter_by_task(all_seeds, task)
+        if not task_seeds:
+            print(f"  no seeds for task '{task.value}', skipping", file=sys.stderr)
+            continue
+        chosen = list(islice(cycle(task_seeds), args.per_combo))
+        template_name = default_template_for(task)
+        for lang in languages:
+            for seed in chosen:
+                config = GenerationConfig(
+                    seed_id=seed.id, target_language=lang, teacher_model=args.teacher,
+                    temperature=args.temperature, max_tokens=args.max_tokens,
+                    prompt_template_name=template_name,
+                )
+                jobs.append((lang, task, seed, config))
+
+    if not jobs:
+        print("No jobs to run (no matching seeds).", file=sys.stderr)
+        return 1
+
+    total = len(jobs)
+    workers = max(1, min(args.workers, total))
+    print(
+        f"Generating {total} items across {len(languages)} lang(s) x {len(tasks)} "
+        f"task(s) with {args.teacher} ({workers} workers, rate-limited)...",
+        file=sys.stderr,
+    )
+
+    def _call(seed, config):
+        return generate(seed, config, client)
+
+    # Collect items per (lang, task) so each combo lands in one JSONL file.
+    buckets: dict[tuple[str, str], list] = {}
+    counts: dict[tuple[str, str], int] = {}
+    errors = 0
+    done = 0
+    with ThreadPoolExecutor(max_workers=workers) as pool:
+        futures = {
+            pool.submit(_call, seed, config): (lang, task)
+            for (lang, task, seed, config) in jobs
+        }
+        for fut in as_completed(futures):
+            lang, task = futures[fut]
+            done += 1
+            try:
+                item = fut.result()
+            except Exception as err:  # noqa: BLE001 — isolate per-item failures
+                errors += 1
+                print(f"[{done}/{total}] ✗ {lang}/{task.value} failed — {err}",
+                      file=sys.stderr)
+                continue
+            bucket = buckets.setdefault((lang, task.value), [])
+            # Disambiguate when the same seed is reused within a combo.
+            idx = len(bucket)
+            item.id = f"{item.id}-{idx:03d}"
+            bucket.append(item)
+            counts[(lang, task.value)] = counts.get((lang, task.value), 0) + 1
+            preview = item.prompt[:50].replace("\n", " ")
+            print(f"[{done}/{total}] ✓ {lang}/{task.value} {item.id} — {preview}",
+                  file=sys.stderr)
+
+    # Write one timestamped JSONL per (lang, task), reusing the standard scheme.
+    written = 0
+    for (lang, task_value), items in buckets.items():
+        out_path = _run_path(lang, TaskFamily(task_value), args.teacher)
+        if args.out_dir != str(DEFAULT_OUTPUT_DIR):
+            out_path = out_root / lang / task_value / out_path.name
+        out_path.parent.mkdir(parents=True, exist_ok=True)
+        with out_path.open("w", encoding="utf-8") as fh:
+            for item in items:
+                fh.write(item.model_dump_json() + "\n")
+        written += len(items)
+
+    print(f"\nWrote {written} items ({errors} failed) under {out_root}")
+    print("Per (language x task):")
+    for key in sorted(counts):
+        print(f"  {key[0]:4s} {key[1]:14s} {counts[key]}")
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     # Load NVIDIA_API_KEY (and friends) from a local .env if present.
     try:
@@ -302,6 +510,10 @@ def main(argv: list[str] | None = None) -> int:
         return cmd_compare(args)
     if args.command == "judge-compare":
         return cmd_judge_compare(args)
+    if args.command == "bootstrap-seeds":
+        return cmd_bootstrap_seeds(args)
+    if args.command == "generate-batch":
+        return cmd_generate_batch(args)
     return 1
 
 
