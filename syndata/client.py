@@ -20,6 +20,8 @@ import os
 import time
 from typing import Protocol, runtime_checkable
 
+from .ratelimit import RateLimiter
+
 NVIDIA_BASE_URL = "https://integrate.api.nvidia.com/v1"
 
 
@@ -57,6 +59,7 @@ class NvidiaClient:
         backoff_base: float = 1.5,
         timeout: float = 90.0,
         rate_limit_wait: float = 12.0,
+        calls_per_minute: float = 36.0,
     ) -> None:
         # Imported lazily so the package (and MockClient) work without `openai`.
         from openai import OpenAI
@@ -79,6 +82,10 @@ class NvidiaClient:
         self._max_retries = max_retries
         self._backoff_base = backoff_base
         self._rate_limit_wait = rate_limit_wait
+        # Proactive throttle shared across this client's calls (and so across all
+        # worker threads in a batch, which reuse one client). Keeps starts under
+        # the account-level 40/min cap; the 429 backoff above is the safety net.
+        self._limiter = RateLimiter(calls_per_minute)
 
     def complete(
         self,
@@ -92,6 +99,7 @@ class NvidiaClient:
         last_err: Exception | None = None
         for attempt in range(self._max_retries):
             try:
+                self._limiter.acquire()  # pace call starts under the rate cap
                 resp = self._client.chat.completions.create(
                     model=model,
                     messages=[
