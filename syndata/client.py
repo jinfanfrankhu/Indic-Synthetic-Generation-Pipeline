@@ -2,17 +2,20 @@
 Chat clients.
 
 The pipeline talks to LLMs through a narrow :class:`ChatClient` protocol so the
-generator (and, later, the judge) never depends on a concrete SDK. Two
-implementations ship today:
+generator and judge never depend on a concrete SDK or vendor. Every live provider
+exposes an OpenAI-compatible endpoint, so a single :class:`OpenAICompatibleClient`
+serves them all — only the base URL and API key differ, chosen per provider:
 
-  - :class:`NvidiaClient` — wraps the OpenAI SDK pointed at NVIDIA Build's
-    OpenAI-compatible endpoint. Teacher (Qwen3) and judge (Llama 3.3) both live
-    there; they differ only by model id.
-  - :class:`MockClient` — returns canned, deterministic output with no network
-    call. Used by the test suite and for fast iteration on the CLI/plumbing.
+  - ``nvidia``     — NVIDIA Build (``NVIDIA_API_KEY``)
+  - ``gemini``     — Google AI Studio / Gemini (``GEMINI_API_KEY`` or ``GOOGLE_API_KEY``)
+  - ``openrouter`` — OpenRouter, one key across many models (``OPENROUTER_API_KEY``)
 
-NVIDIA Build's free tier is rate-limited, so :class:`NvidiaClient` retries on
-transient errors with exponential backoff.
+A model id may carry a ``provider:`` prefix (e.g. ``gemini:gemini-2.5-flash``); a
+bare id (e.g. ``deepseek-ai/deepseek-v4-flash``) defaults to ``nvidia`` so existing
+commands keep working. :class:`MockClient` returns canned output with no network.
+
+Free tiers are rate-limited, so the client paces call *starts* with a
+:class:`RateLimiter` and retries transient errors with backoff.
 """
 from __future__ import annotations
 
@@ -23,6 +26,44 @@ from typing import Protocol, runtime_checkable
 from .ratelimit import RateLimiter
 
 NVIDIA_BASE_URL = "https://integrate.api.nvidia.com/v1"
+
+# provider name -> (OpenAI-compatible base URL, candidate API-key env var names)
+PROVIDERS: dict[str, tuple[str, tuple[str, ...]]] = {
+    "nvidia": (NVIDIA_BASE_URL, ("NVIDIA_API_KEY",)),
+    "gemini": (
+        "https://generativelanguage.googleapis.com/v1beta/openai",
+        ("GEMINI_API_KEY", "GOOGLE_API_KEY"),
+    ),
+    "openrouter": ("https://openrouter.ai/api/v1", ("OPENROUTER_API_KEY",)),
+}
+DEFAULT_PROVIDER = "nvidia"
+
+
+def parse_model(spec: str) -> tuple[str, str]:
+    """Split ``"provider:model"`` into ``(provider, model)``.
+
+    A bare id maps to the default provider. Only splits when the text before the
+    first ``:`` is a *registered* provider, so model ids that themselves contain a
+    colon (e.g. OpenRouter's ``…:free``) are never misparsed.
+    """
+    if ":" in spec:
+        head, rest = spec.split(":", 1)
+        if head in PROVIDERS:
+            return head, rest
+    return DEFAULT_PROVIDER, spec
+
+
+def _resolve_key(provider: str) -> str:
+    """First non-empty env var among the provider's candidates, or a clear error."""
+    _, envs = PROVIDERS[provider]
+    for env in envs:
+        val = os.environ.get(env)
+        if val:
+            return val
+    raise RuntimeError(
+        f"No API key for provider '{provider}'. Set one of {', '.join(envs)} in your "
+        f"environment or .env. (Gemini: get a free key at https://aistudio.google.com/apikey)"
+    )
 
 
 @runtime_checkable
@@ -42,19 +83,18 @@ class ChatClient(Protocol):
         ...
 
 
-class NvidiaClient:
-    """OpenAI-compatible client for NVIDIA Build models.
+class OpenAICompatibleClient:
+    """OpenAI-SDK client for any OpenAI-compatible endpoint (NVIDIA, Gemini, …).
 
-    Reads ``NVIDIA_API_KEY`` from the environment (or ``api_key`` if passed). One
-    account-level key authenticates every model in the catalog — the model is
-    chosen per request, not by the key — so a single ``NVIDIA_API_KEY`` covers
-    teacher and all judges.
+    The provider is fixed at construction (it sets ``base_url`` + ``api_key``); the
+    model is chosen per request. A ``provider:`` prefix on the model id is stripped
+    before the call, so the same id can flow through provenance and routing.
     """
 
     def __init__(
         self,
-        api_key: str | None = None,
-        base_url: str = NVIDIA_BASE_URL,
+        base_url: str,
+        api_key: str,
         max_retries: int = 4,
         backoff_base: float = 1.5,
         timeout: float = 90.0,
@@ -64,27 +104,20 @@ class NvidiaClient:
         # Imported lazily so the package (and MockClient) work without `openai`.
         from openai import OpenAI
 
-        key = api_key or os.environ.get("NVIDIA_API_KEY")
-        if not key:
-            raise RuntimeError(
-                "NVIDIA_API_KEY is not set (env or .env). Get a free key at "
-                "https://build.nvidia.com — one key works for all models."
-            )
-        # Per-request timeout so a cold-starting or hung model fails fast and
-        # the caller can retry/skip rather than blocking the whole run.
-        # max_retries=0 disables the SDK's own retry loop (default 2): otherwise
-        # it silently multiplies our timeout (timeout × 3 × our retries), which
-        # turned a hung model into 20+ minute blocks. Our retry loop is the only
-        # one.
+        if not api_key:
+            raise RuntimeError("OpenAICompatibleClient requires an api_key")
+        # Per-request timeout so a cold-starting or hung model fails fast and the
+        # caller can retry/skip rather than blocking. max_retries=0 disables the
+        # SDK's own retry loop so it can't silently multiply our timeout; our loop
+        # below is the only one.
         self._client = OpenAI(
-            api_key=key, base_url=base_url, timeout=timeout, max_retries=0,
+            api_key=api_key, base_url=base_url, timeout=timeout, max_retries=0,
         )
         self._max_retries = max_retries
         self._backoff_base = backoff_base
         self._rate_limit_wait = rate_limit_wait
         # Proactive throttle shared across this client's calls (and so across all
-        # worker threads in a batch, which reuse one client). Keeps starts under
-        # the account-level 40/min cap; the 429 backoff above is the safety net.
+        # worker threads in a batch, which reuse one client).
         self._limiter = RateLimiter(calls_per_minute)
 
     def complete(
@@ -96,6 +129,7 @@ class NvidiaClient:
         temperature: float,
         max_tokens: int,
     ) -> str:
+        _, model = parse_model(model)  # strip any 'provider:' routing prefix
         last_err: Exception | None = None
         for attempt in range(self._max_retries):
             try:
@@ -121,16 +155,33 @@ class NvidiaClient:
                     time.sleep(self._rate_limit_wait if is_rate_limit
                                else self._backoff_base ** attempt)
         raise RuntimeError(
-            f"NVIDIA API call failed after {self._max_retries} attempts: {last_err}"
+            f"API call to {model} failed after {self._max_retries} attempts: {last_err}"
         ) from last_err
+
+
+class NvidiaClient(OpenAICompatibleClient):
+    """Back-compat shim: NVIDIA Build is just one provider of the generic client.
+
+    Reads ``NVIDIA_API_KEY`` when no key is passed. One account-level key
+    authenticates every NVIDIA model — the model is chosen per request.
+    """
+
+    def __init__(
+        self,
+        api_key: str | None = None,
+        base_url: str = NVIDIA_BASE_URL,
+        **kwargs,
+    ) -> None:
+        super().__init__(
+            base_url=base_url, api_key=api_key or _resolve_key("nvidia"), **kwargs
+        )
 
 
 class MockClient:
     """Deterministic stand-in for an LLM — no network, no API key.
 
     Returns a JSON object shaped like what the generator's templates ask for, so
-    the full generate→parse→serialize path can be exercised offline. The echoed
-    ``user`` prompt lets tests assert that templating ran.
+    the full generate→parse→serialize path can be exercised offline.
     """
 
     def __init__(self, canned_prompt: str = "[mock target-language output]") -> None:
@@ -156,11 +207,18 @@ class MockClient:
 
 
 def build_client(name: str, **kwargs) -> ChatClient:
-    """Factory: ``"mock"`` -> :class:`MockClient`, anything else -> NVIDIA.
+    """Factory: ``"mock"`` -> :class:`MockClient`; otherwise resolve the provider.
 
-    All NVIDIA models use the single ``NVIDIA_API_KEY``; the model id (``name``)
-    only selects which model the request targets.
+    ``name`` is a model id, optionally ``provider:`` prefixed. The prefix (or the
+    default ``nvidia``) selects the base URL and API key; the model itself is sent
+    per request. ``api_key`` / ``base_url`` may be overridden via kwargs.
     """
     if name == "mock":
         return MockClient()
-    return NvidiaClient(**kwargs)
+    provider, _ = parse_model(name)
+    if provider not in PROVIDERS:
+        provider = DEFAULT_PROVIDER
+    base_url, _envs = PROVIDERS[provider]
+    api_key = kwargs.pop("api_key", None) or _resolve_key(provider)
+    base_url = kwargs.pop("base_url", base_url)
+    return OpenAICompatibleClient(base_url=base_url, api_key=api_key, **kwargs)
