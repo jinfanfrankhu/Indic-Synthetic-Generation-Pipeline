@@ -1,0 +1,1962 @@
+{
+  "bundle_id": "gold-20260625-all",
+  "created_at": "2026-06-25T18:02:08.459288+00:00",
+  "instructions_version": "v1",
+  "rating_schema": {
+    "axes": [
+      {
+        "key": "fluency",
+        "label": "Naturalness",
+        "scale": [
+          1,
+          4
+        ],
+        "needs_source": false
+      },
+      {
+        "key": "faithfulness",
+        "label": "Meaning match",
+        "scale": [
+          1,
+          4
+        ],
+        "needs_source": true
+      },
+      {
+        "key": "bias",
+        "label": "Cultural fit",
+        "scale": [
+          1,
+          4
+        ],
+        "needs_source": true
+      }
+    ],
+    "optional": [
+      "unsure",
+      "comment"
+    ]
+  },
+  "items": [
+    {
+      "task_id": "syn-hi-classification-003-007",
+      "language": "hi",
+      "task_family": "classification",
+      "source_prompt": "Local school board approves new arts curriculum starting next semester. Classify the topic of this news headline.",
+      "source_expected": "education",
+      "generated_prompt": "स्थानीय स्कूल बोर्ड ने अगले सत्र से नए कला पाठ्यक्रम को मंजूरी दी है। इस समाचार शीर्षक के विषय का वर्गीकरण करें। विकल्प: ['राजनीति', 'खेल', 'शिक्षा', 'स्वास्थ्य', 'व्यापार', 'मनोरंजन']",
+      "generated_expected": "शिक्षा",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-hi-instruction-005-004",
+      "language": "hi",
+      "task_family": "instruction",
+      "source_prompt": "Write a short, polite email asking a teacher for a one-week extension on an assignment.",
+      "source_expected": null,
+      "generated_prompt": "अपने शिक्षक को एक विनम्र ईमेल लिखकर किसी असाइनमेंट को जमा करने के लिए एक सप्ताह का अतिरिक्त समय (एक्सटेंशन) मांगिए।",
+      "generated_expected": "विषय: असाइनमेंट जमा करने की तिथि बढ़ाने हेतु अनुरोध\n\nआदरणीय महोदय/महोदया,\n\nसादर प्रणाम।\n\nमैं आपको यह सूचित करने के लिए लिख रहा हूँ कि मुझे अपने आगामी असाइनमेंट को पूरा करने में कुछ कठिनाई हो रही है। कुछ व्यक्तिगत कारणों और व्यस्तता के चलते, मुझे इसे पूरा करने के लिए थोड़ा और समय चाहिए।\n\nक्या आप कृपया मुझे इसे जमा करने के लिए एक सप्ताह का अतिरिक्त समय प्रदान कर सकते हैं? मैं आपको विश्वास दिलाता हूँ कि मैं निर्धारित समय सीमा के भीतर अपना काम पूरा कर लूँगा।\n\nआपकी सहायता के लिए मैं आपका अत्यंत आभारी रहूँगा।\n\nधन्यवाद।\n\nसादर,\n[आपका नाम]\n[आपका रोल नंबर]",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-hi-translation-002-001",
+      "language": "hi",
+      "task_family": "translation",
+      "source_prompt": "Translate to the target language: 'Where is the nearest market?'",
+      "source_expected": null,
+      "generated_prompt": "निकटतम बाज़ार कहाँ है?",
+      "generated_expected": "सबसे नज़दीकी बाज़ार कहाँ है?",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-hi-qa-001-000",
+      "language": "hi",
+      "task_family": "qa",
+      "source_prompt": "What year did the first man walk on the moon?",
+      "source_expected": "1969",
+      "generated_prompt": "किस वर्ष में पहले व्यक्ति ने चंद्रमा पर कदम रखा था?",
+      "generated_expected": "1969",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-hi-instruction-003-002",
+      "language": "hi",
+      "task_family": "instruction",
+      "source_prompt": "Describe what makes a good leader, using two concrete examples.",
+      "source_expected": null,
+      "generated_prompt": "एक अच्छे नेतृत्वकर्ता के गुणों का वर्णन कीजिए और अपने उत्तर को स्पष्ट करने के लिए दो ठोस उदाहरण दीजिए।",
+      "generated_expected": "एक कुशल नेतृत्वकर्ता वह है जो न केवल अपनी टीम को प्रेरित करता है, बल्कि कठिन परिस्थितियों में भी धैर्य बनाए रखता है। अच्छे नेतृत्व के दो मुख्य उदाहरण इस प्रकार हैं: पहला, संकट के समय अपनी टीम का मनोबल बनाए रखना, जैसे कि किसी प्रोजेक्ट की समय-सीमा नजदीक होने पर टीम को घबराने के बजाय सही दिशा दिखाना। दूसरा, निष्पक्ष निर्णय लेना और अपनी टीम के सदस्यों की मेहनत को सार्वजनिक रूप से स्वीकार करना, जिससे सदस्यों का आत्मविश्वास और कार्यक्षमता बढ़ती है।",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-hi-translation-004-007",
+      "language": "hi",
+      "task_family": "translation",
+      "source_prompt": "Translate to the target language: 'Please call me when you arrive at the station.'",
+      "source_expected": null,
+      "generated_prompt": "कृपया जब आप स्टेशन पहुँच जाएँ तो मुझे फ़ोन करें।",
+      "generated_expected": "कृपया जब आप स्टेशन पहुँच जाएँ तो मुझे फ़ोन करें।",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-hi-summarization-003-006",
+      "language": "hi",
+      "task_family": "summarization",
+      "source_prompt": "Summarize in one sentence: A city council voted to add 30 kilometers of protected bicycle lanes over the next two years, funded by a small increase in parking fees. Supporters argue the lanes will cut traffic and pollution, while some shop owners worry about losing customer parking.",
+      "source_expected": "A city council approved 30 km of new protected bike lanes funded by higher parking fees, despite some shop owners' concerns about lost parking.",
+      "generated_prompt": "एक वाक्य में सारांश लिखें: नगर परिषद ने अगले दो वर्षों में 30 किलोमीटर सुरक्षित साइकिल लेन जोड़ने के लिए मतदान किया है, जिसके लिए पार्किंग शुल्क में थोड़ी वृद्धि की जाएगी। समर्थकों का तर्क है कि इससे यातायात और प्रदूषण कम होगा, जबकि कुछ दुकानदारों को ग्राहकों की पार्किंग कम होने की चिंता है।",
+      "generated_expected": "नगर परिषद ने पार्किंग शुल्क बढ़ाकर 30 किलोमीटर नई सुरक्षित साइकिल लेन बनाने की मंजूरी दी है, हालांकि कुछ दुकानदारों को पार्किंग कम होने की चिंता है।",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-hi-instruction-001-005",
+      "language": "hi",
+      "task_family": "instruction",
+      "source_prompt": "Write a short paragraph (3-4 sentences) explaining what photosynthesis is, in a way a 10-year-old would understand.",
+      "source_expected": null,
+      "generated_prompt": "प्रकाश संश्लेषण क्या होता है, इसे एक दस साल के बच्चे को समझाने के लिए तीन-चार वाक्यों में लिखिए।",
+      "generated_expected": "प्रकाश संश्लेषण वह प्रक्रिया है जिसके द्वारा पेड़-पौधे सूरज की रोशनी का उपयोग करके अपना भोजन खुद बनाते हैं। इस प्रक्रिया में पौधे हवा से कार्बन डाइऑक्साइड और जमीन से पानी लेकर उसे ऊर्जा में बदल देते हैं। इसी दौरान वे ऑक्सीजन भी छोड़ते हैं, जो हम सभी के सांस लेने के लिए बहुत जरूरी है। संक्षेप में कहें तो, यह पौधों के खाना बनाने का अपना खास तरीका है।",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-hi-reasoning-002-001",
+      "language": "hi",
+      "task_family": "reasoning",
+      "source_prompt": "If today is Wednesday, what day of the week will it be 100 days from now? Explain your reasoning.",
+      "source_expected": "Friday (100 mod 7 = 2; Wednesday + 2 days = Friday).",
+      "generated_prompt": "यदि आज बुधवार है, तो आज से 100 दिन बाद सप्ताह का कौन सा दिन होगा? अपने तर्क की व्याख्या करें।",
+      "generated_expected": "शुक्रवार (100 को 7 से विभाजित करने पर शेषफल 2 बचता है; बुधवार + 2 दिन = शुक्रवार)।",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-hi-classification-001-005",
+      "language": "hi",
+      "task_family": "classification",
+      "source_prompt": "The new restaurant in town has terrible service and the food was cold. Classify the sentiment of this review.",
+      "source_expected": "negative",
+      "generated_prompt": "शहर में खुले नए रेस्तरां की सेवा बहुत खराब है और खाना भी ठंडा था। इस समीक्षा की भावना का वर्गीकरण करें। (विकल्प: सकारात्मक, तटस्थ, नकारात्मक)",
+      "generated_expected": "नकारात्मक",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-hi-reasoning-001-000",
+      "language": "hi",
+      "task_family": "reasoning",
+      "source_prompt": "Maria has three times as many apples as her brother. Together they have 24 apples. How many does each have? Show your reasoning step by step.",
+      "source_expected": "Maria has 18 apples; her brother has 6 apples.",
+      "generated_prompt": "मारिया के पास अपने भाई की तुलना में तीन गुना सेब हैं। उन दोनों के पास कुल मिलाकर 24 सेब हैं। प्रत्येक के पास कितने सेब हैं? अपने तर्क को चरण-दर-चरण समझाएं।",
+      "generated_expected": "मारिया के पास 18 सेब हैं और उसके भाई के पास 6 सेब हैं। तर्क: मान लीजिए भाई के पास 'x' सेब हैं, तो मारिया के पास '3x' सेब होंगे। कुल सेब 'x + 3x = 4x' हैं, जो 24 के बराबर है। इसलिए, 'x = 6'। भाई के पास 6 सेब हैं और मारिया के पास 3 गुना 6 यानी 18 सेब हैं।",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-hi-instruction-003-007",
+      "language": "hi",
+      "task_family": "instruction",
+      "source_prompt": "Describe what makes a good leader, using two concrete examples.",
+      "source_expected": null,
+      "generated_prompt": "एक अच्छे नेतृत्वकर्ता के गुणों का वर्णन कीजिए और अपने उत्तर को स्पष्ट करने के लिए दो ठोस उदाहरण दीजिए।",
+      "generated_expected": "एक अच्छा नेतृत्वकर्ता वह है जो न केवल दिशा दिखाता है, बल्कि अपनी टीम का मनोबल भी बढ़ाता है। इसके दो उदाहरण इस प्रकार हैं: पहला, एक कुशल प्रबंधक जो संकट के समय शांत रहकर अपनी टीम को सही निर्णय लेने के लिए प्रेरित करता है। दूसरा, एक ऐसा नेता जो अपनी टीम के सदस्यों की क्षमताओं को पहचानकर उन्हें आगे बढ़ने के अवसर देता है और उनकी गलतियों के लिए स्वयं जिम्मेदारी लेता है।",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-hi-translation-004-003",
+      "language": "hi",
+      "task_family": "translation",
+      "source_prompt": "Translate to the target language: 'Please call me when you arrive at the station.'",
+      "source_expected": null,
+      "generated_prompt": "कृपया स्टेशन पहुँचने पर मुझे कॉल करें।",
+      "generated_expected": "कृपया स्टेशन पहुँचने पर मुझे कॉल करें।",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-hi-qa-002-001",
+      "language": "hi",
+      "task_family": "qa",
+      "source_prompt": "What is the capital city of Brazil?",
+      "source_expected": "Brasilia",
+      "generated_prompt": "ब्राज़ील की राजधानी कौन सा शहर है?",
+      "generated_expected": "ब्रासीलिया",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-hi-summarization-002-001",
+      "language": "hi",
+      "task_family": "summarization",
+      "source_prompt": "Summarize the main argument in one sentence: Many language-learning apps claim users can become fluent in a few months of daily practice. However, linguists studying second-language acquisition consistently find that achieving conversational fluency in an unrelated language typically requires 600 to 750 hours of focused study, with significantly more required for full literacy. Marketing claims and reality diverge sharply.",
+      "source_expected": "Despite app marketing claims, real fluency in a new language typically requires hundreds of hours of focused study.",
+      "generated_prompt": "मुख्य तर्क को एक वाक्य में संक्षेप में प्रस्तुत करें: कई भाषा-शिक्षण ऐप्स दावा करते हैं कि उपयोगकर्ता दैनिक अभ्यास के कुछ महीनों में धाराप्रवाह बन सकते हैं। हालाँकि, दूसरी भाषा सीखने का अध्ययन करने वाले भाषाविद् लगातार यह पाते हैं कि एक असंबंधित भाषा में संवादात्मक प्रवाह प्राप्त करने के लिए आमतौर पर 600 से 750 घंटे के केंद्रित अध्ययन की आवश्यकता होती है, और पूर्ण साक्षरता के लिए इससे कहीं अधिक समय चाहिए होता है। विपणन के दावों और वास्तविकता में गहरा अंतर है।",
+      "generated_expected": "ऐप के विपणन दावों के विपरीत, एक नई भाषा में वास्तविक प्रवाह प्राप्त करने के लिए आमतौर पर सैकड़ों घंटों के केंद्रित अध्ययन की आवश्यकता होती है।",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-hi-instruction-001-000",
+      "language": "hi",
+      "task_family": "instruction",
+      "source_prompt": "Write a short paragraph (3-4 sentences) explaining what photosynthesis is, in a way a 10-year-old would understand.",
+      "source_expected": null,
+      "generated_prompt": "प्रकाश संश्लेषण क्या है, इसे दस साल के बच्चे को समझाने के लिए तीन से चार वाक्यों में एक छोटा सा अनुच्छेद लिखिए।",
+      "generated_expected": "प्रकाश संश्लेषण वह प्रक्रिया है जिसके द्वारा पेड़-पौधे सूरज की रोशनी का उपयोग करके अपना भोजन खुद बनाते हैं। इस प्रक्रिया में पौधे हवा से कार्बन डाइऑक्साइड और जमीन से पानी लेकर उसे ऊर्जा में बदल देते हैं। इसी दौरान वे ऑक्सीजन भी छोड़ते हैं, जो हमारे सांस लेने के लिए बहुत जरूरी है। संक्षेप में, यह पौधों के खाना पकाने का एक जादुई तरीका है।",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-hi-instruction-002-001",
+      "language": "hi",
+      "task_family": "instruction",
+      "source_prompt": "Give three practical tips for someone learning a new language for the first time.",
+      "source_expected": null,
+      "generated_prompt": "अगर कोई पहली बार कोई नई भाषा सीखने की शुरुआत कर रहा है, तो उसे सफल होने के लिए तीन व्यावहारिक सुझाव दीजिए।",
+      "generated_expected": "नई भाषा सीखने के लिए यहाँ तीन उपयोगी सुझाव दिए गए हैं: १. हर दिन अभ्यास करें: भाषा सीखने में निरंतरता बहुत महत्वपूर्ण है। दिन में भले ही कम समय दें, लेकिन रोज़ाना अभ्यास करने से आप भाषा को जल्दी आत्मसात कर पाएंगे। २. भाषा को अपने जीवन का हिस्सा बनाएं: आप जो भाषा सीख रहे हैं, उसी भाषा में फिल्में देखें, गाने सुनें या छोटे लेख पढ़ें। इससे आपकी सुनने और समझने की क्षमता में सुधार होगा। ३. गलतियाँ करने से न डरें: भाषा सीखने की प्रक्रिया में गलतियाँ होना स्वाभाविक है। बोलने का अभ्यास करते समय व्याकरण की चिंता किए बिना बेझिझक बोलें, क्योंकि अभ्यास ही आपको निपुण बनाएगा।",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-hi-instruction-002-006",
+      "language": "hi",
+      "task_family": "instruction",
+      "source_prompt": "Give three practical tips for someone learning a new language for the first time.",
+      "source_expected": null,
+      "generated_prompt": "अगर कोई व्यक्ति पहली बार कोई नई भाषा सीख रहा है, तो उसे सफल होने के लिए तीन व्यावहारिक सुझाव दीजिए।",
+      "generated_expected": "पहली बात, रोज़ाना अभ्यास करें; दूसरी, भाषा सीखने के लिए मोबाइल ऐप्स या पॉडकास्ट का उपयोग करें; और तीसरी, अपनी पसंद की विदेशी फिल्मों या गानों के माध्यम से भाषा को समझने की कोशिश करें।",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-hi-summarization-002-005",
+      "language": "hi",
+      "task_family": "summarization",
+      "source_prompt": "Summarize the main argument in one sentence: Many language-learning apps claim users can become fluent in a few months of daily practice. However, linguists studying second-language acquisition consistently find that achieving conversational fluency in an unrelated language typically requires 600 to 750 hours of focused study, with significantly more required for full literacy. Marketing claims and reality diverge sharply.",
+      "source_expected": "Despite app marketing claims, real fluency in a new language typically requires hundreds of hours of focused study.",
+      "generated_prompt": "मुख्य तर्क का एक वाक्य में सारांश लिखें: कई भाषा-शिक्षण ऐप्स दावा करते हैं कि उपयोगकर्ता दैनिक अभ्यास के कुछ महीनों में धाराप्रवाह हो सकते हैं। हालाँकि, दूसरी भाषा सीखने का अध्ययन करने वाले भाषाविदों का लगातार यह मानना है कि एक असंबद्ध भाषा में बातचीत करने में सक्षम होने के लिए आमतौर पर 600 से 750 घंटे के केंद्रित अध्ययन की आवश्यकता होती है, और पूर्ण साक्षरता के लिए इससे कहीं अधिक समय चाहिए होता है। विपणन के दावों और वास्तविकता में बहुत बड़ा अंतर है।",
+      "generated_expected": "ऐप्स के विपणन दावों के विपरीत, किसी नई भाषा में वास्तविक प्रवाह प्राप्त करने के लिए आमतौर पर सैकड़ों घंटों के केंद्रित अध्ययन की आवश्यकता होती है।",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-hi-summarization-001-000",
+      "language": "hi",
+      "task_family": "summarization",
+      "source_prompt": "Summarize in one sentence: A team of researchers in Kenya has developed a new low-cost water purification method using locally-sourced charcoal and sand. The system can produce 50 liters of clean water per day and costs less than $20 to build. Initial trials in three rural villages have shown a 95% reduction in waterborne illness among children.",
+      "source_expected": "Researchers in Kenya created an inexpensive water purification system that has reduced waterborne illness by 95% in tested villages.",
+      "generated_prompt": "एक वाक्य में सारांश लिखें: केन्या में शोधकर्ताओं की एक टीम ने स्थानीय रूप से उपलब्ध लकड़ी के कोयले और रेत का उपयोग करके जल शोधन की एक नई कम लागत वाली विधि विकसित की है। यह प्रणाली प्रतिदिन 50 लीटर स्वच्छ पानी का उत्पादन कर सकती है और इसे बनाने की लागत 20 डॉलर से कम है। तीन ग्रामीण गांवों में किए गए प्रारंभिक परीक्षणों में बच्चों में जलजनित बीमारियों में 95% की कमी देखी गई है।",
+      "generated_expected": "केन्या में शोधकर्ताओं ने जल शोधन की एक सस्ती प्रणाली बनाई है, जिसने परीक्षण किए गए गांवों में जलजनित बीमारियों को 95% तक कम कर दिया है।",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-hi-classification-005-004",
+      "language": "hi",
+      "task_family": "classification",
+      "source_prompt": "Classify the intent of this customer message: 'I would like to return the shoes I bought last week because they don't fit.'",
+      "source_expected": "return request",
+      "generated_prompt": "नीचे दिए गए ग्राहक के संदेश का उद्देश्य पहचानें: 'मैंने पिछले हफ्ते जो जूते खरीदे थे, मैं उन्हें वापस करना चाहता हूँ क्योंकि वे मुझे ठीक से नहीं आ रहे हैं।' विकल्प: ['शिकायत', 'वापसी का अनुरोध', 'सामान्य पूछताछ', 'तारीफ']",
+      "generated_expected": "वापसी का अनुरोध",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-hi-classification-003-002",
+      "language": "hi",
+      "task_family": "classification",
+      "source_prompt": "Local school board approves new arts curriculum starting next semester. Classify the topic of this news headline.",
+      "source_expected": "education",
+      "generated_prompt": "स्थानीय स्कूल बोर्ड ने अगले सेमेस्टर से नए कला पाठ्यक्रम को मंजूरी दी है। इस समाचार शीर्षक के विषय का वर्गीकरण करें। विकल्प: ['राजनीति', 'खेल', 'शिक्षा', 'स्वास्थ्य', 'व्यापार', 'मनोरंजन']",
+      "generated_expected": "शिक्षा",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-hi-summarization-004-007",
+      "language": "hi",
+      "task_family": "summarization",
+      "source_prompt": "Summarize the key finding in one sentence: A five-year study following 10,000 office workers found that those who took a short walk every hour reported less back pain and higher focus than those who sat continuously, even when both groups did the same amount of total daily exercise.",
+      "source_expected": "Taking short hourly walks reduced back pain and improved focus more than a single daily workout, according to a five-year study of office workers.",
+      "generated_prompt": "प्रमुख निष्कर्ष का एक वाक्य में सारांश दें: 10,000 कार्यालय कर्मचारियों पर किए गए पांच साल के अध्ययन में पाया गया कि जो लोग हर घंटे थोड़ी देर टहलते थे, उनमें लगातार बैठे रहने वालों की तुलना में पीठ दर्द कम था और एकाग्रता अधिक थी, भले ही दोनों समूहों ने दिन भर में समान मात्रा में व्यायाम किया हो।",
+      "generated_expected": "दस हजार कार्यालय कर्मचारियों पर किए गए पांच साल के अध्ययन के अनुसार, हर घंटे थोड़ी देर टहलने से लगातार बैठे रहने की तुलना में पीठ दर्द कम हुआ और एकाग्रता में सुधार हुआ।",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-hi-reasoning-004-003",
+      "language": "hi",
+      "task_family": "reasoning",
+      "source_prompt": "All roses are flowers. Some flowers fade quickly. Can we conclude that some roses fade quickly? Explain your reasoning.",
+      "source_expected": "No. The premises do not guarantee it — the flowers that fade quickly need not include any roses.",
+      "generated_prompt": "सभी गुलाब फूल हैं। कुछ फूल जल्दी मुरझा जाते हैं। क्या हम यह निष्कर्ष निकाल सकते हैं कि कुछ गुलाब जल्दी मुरझा जाते हैं? अपने तर्क की व्याख्या करें।",
+      "generated_expected": "नहीं। दिए गए आधार वाक्य इसकी गारंटी नहीं देते हैं — यह आवश्यक नहीं है कि जल्दी मुरझाने वाले फूलों में कोई गुलाब भी शामिल हो।",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-hi-summarization-003-002",
+      "language": "hi",
+      "task_family": "summarization",
+      "source_prompt": "Summarize in one sentence: A city council voted to add 30 kilometers of protected bicycle lanes over the next two years, funded by a small increase in parking fees. Supporters argue the lanes will cut traffic and pollution, while some shop owners worry about losing customer parking.",
+      "source_expected": "A city council approved 30 km of new protected bike lanes funded by higher parking fees, despite some shop owners' concerns about lost parking.",
+      "generated_prompt": "एक वाक्य में सारांश लिखें: नगर परिषद ने अगले दो वर्षों में 30 किलोमीटर सुरक्षित साइकिल लेन जोड़ने के लिए मतदान किया है, जिसके लिए पार्किंग शुल्क में थोड़ी वृद्धि की जाएगी। समर्थकों का तर्क है कि इससे यातायात और प्रदूषण में कमी आएगी, जबकि कुछ दुकानदारों को ग्राहकों की पार्किंग कम होने की चिंता है।",
+      "generated_expected": "नगर परिषद ने पार्किंग शुल्क बढ़ाकर 30 किलोमीटर लंबी नई सुरक्षित साइकिल लेन बनाने की मंजूरी दे दी है, हालांकि कुछ दुकानदारों को पार्किंग कम होने की चिंता है।",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-hi-classification-001-000",
+      "language": "hi",
+      "task_family": "classification",
+      "source_prompt": "The new restaurant in town has terrible service and the food was cold. Classify the sentiment of this review.",
+      "source_expected": "negative",
+      "generated_prompt": "शहर में खुले नए रेस्तरां की सेवा बहुत खराब थी और खाना भी ठंडा परोसा गया। इस समीक्षा की भावना का वर्गीकरण करें। (विकल्प: सकारात्मक, तटस्थ, नकारात्मक)",
+      "generated_expected": "नकारात्मक",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-hi-qa-003-002",
+      "language": "hi",
+      "task_family": "qa",
+      "source_prompt": "If a train travels at 60 km/h for 2.5 hours, how far does it travel?",
+      "source_expected": "150 km",
+      "generated_prompt": "यदि एक रेलगाड़ी 60 किलोमीटर प्रति घंटा की गति से 2.5 घंटे तक यात्रा करती है, तो वह कुल कितनी दूरी तय करेगी?",
+      "generated_expected": "150 किलोमीटर",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-hi-qa-001-005",
+      "language": "hi",
+      "task_family": "qa",
+      "source_prompt": "What year did the first man walk on the moon?",
+      "source_expected": "1969",
+      "generated_prompt": "किस वर्ष में पहले व्यक्ति ने चंद्रमा पर कदम रखा था?",
+      "generated_expected": "1969",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-hi-translation-001-004",
+      "language": "hi",
+      "task_family": "translation",
+      "source_prompt": "Translate to the target language: 'Good morning. How are you today?'",
+      "source_expected": null,
+      "generated_prompt": "निम्नलिखित का हिंदी में अनुवाद करें: 'Good morning. How are you today?'",
+      "generated_expected": "सुप्रभात। आप आज कैसे हैं?",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-hi-translation-001-000",
+      "language": "hi",
+      "task_family": "translation",
+      "source_prompt": "Translate to the target language: 'Good morning. How are you today?'",
+      "source_expected": null,
+      "generated_prompt": "निम्नलिखित का हिंदी में अनुवाद करें: 'Good morning. How are you today?'",
+      "generated_expected": "सुप्रभात। आज आप कैसे हैं?",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-hi-summarization-001-004",
+      "language": "hi",
+      "task_family": "summarization",
+      "source_prompt": "Summarize in one sentence: A team of researchers in Kenya has developed a new low-cost water purification method using locally-sourced charcoal and sand. The system can produce 50 liters of clean water per day and costs less than $20 to build. Initial trials in three rural villages have shown a 95% reduction in waterborne illness among children.",
+      "source_expected": "Researchers in Kenya created an inexpensive water purification system that has reduced waterborne illness by 95% in tested villages.",
+      "generated_prompt": "एक वाक्य में सारांश लिखें: केन्या में शोधकर्ताओं की एक टीम ने स्थानीय रूप से उपलब्ध लकड़ी के कोयले और रेत का उपयोग करके पानी को शुद्ध करने की एक नई कम लागत वाली विधि विकसित की है। यह प्रणाली प्रतिदिन 50 लीटर स्वच्छ पानी का उत्पादन कर सकती है और इसे बनाने में 20 डॉलर से भी कम खर्च आता है। तीन ग्रामीण गांवों में किए गए शुरुआती परीक्षणों में बच्चों में जलजनित बीमारियों में 95% की कमी देखी गई है।",
+      "generated_expected": "केन्या में शोधकर्ताओं ने पानी शुद्ध करने की एक सस्ती प्रणाली बनाई है, जिसने परीक्षण किए गए गांवों में जलजनित बीमारियों को 95% तक कम कर दिया है।",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-hi-summarization-004-003",
+      "language": "hi",
+      "task_family": "summarization",
+      "source_prompt": "Summarize the key finding in one sentence: A five-year study following 10,000 office workers found that those who took a short walk every hour reported less back pain and higher focus than those who sat continuously, even when both groups did the same amount of total daily exercise.",
+      "source_expected": "Taking short hourly walks reduced back pain and improved focus more than a single daily workout, according to a five-year study of office workers.",
+      "generated_prompt": "प्रमुख निष्कर्ष का एक वाक्य में सारांश दें: 10,000 कार्यालय कर्मचारियों पर किए गए पांच साल के अध्ययन में पाया गया कि जो लोग हर घंटे थोड़ी देर टहलते थे, उनमें लगातार बैठे रहने वालों की तुलना में पीठ दर्द कम था और एकाग्रता अधिक थी, भले ही दोनों समूहों ने कुल मिलाकर समान मात्रा में दैनिक व्यायाम किया हो।",
+      "generated_expected": "कार्यालय कर्मचारियों पर किए गए पांच साल के अध्ययन के अनुसार, हर घंटे थोड़ी देर टहलने से, दिन भर में एक बार किए गए व्यायाम की तुलना में, पीठ दर्द कम हुआ और एकाग्रता में सुधार हुआ।",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-hi-reasoning-005-004",
+      "language": "hi",
+      "task_family": "reasoning",
+      "source_prompt": "A motorcycle travels 40 km on 1 liter of petrol. How far can it travel on 6 liters? Show your reasoning step by step.",
+      "source_expected": "240 km (40 km x 6 liters = 240 km).",
+      "generated_prompt": "एक मोटरसाइकिल 1 लीटर पेट्रोल में 40 किलोमीटर चलती है। वह 6 लीटर पेट्रोल में कितनी दूर जा सकती है? अपने तर्क को चरण-दर-चरण स्पष्ट करें।",
+      "generated_expected": "240 किलोमीटर (40 किलोमीटर x 6 लीटर = 240 किलोमीटर)।",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-hi-qa-002-006",
+      "language": "hi",
+      "task_family": "qa",
+      "source_prompt": "What is the capital city of Brazil?",
+      "source_expected": "Brasilia",
+      "generated_prompt": "ब्राज़ील की राजधानी क्या है?",
+      "generated_expected": "ब्रासीलिया",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-hi-translation-003-002",
+      "language": "hi",
+      "task_family": "translation",
+      "source_prompt": "Translate to the target language: 'Thank you for your help. I really appreciate it.'",
+      "source_expected": null,
+      "generated_prompt": "निम्नलिखित अंग्रेजी वाक्य का हिंदी में अनुवाद करें: 'Thank you for your help. I really appreciate it.'",
+      "generated_expected": "आपकी मदद के लिए धन्यवाद। मैं वास्तव में इसकी सराहना करता हूँ।",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-hi-translation-003-006",
+      "language": "hi",
+      "task_family": "translation",
+      "source_prompt": "Translate to the target language: 'Thank you for your help. I really appreciate it.'",
+      "source_expected": null,
+      "generated_prompt": "निम्नलिखित अंग्रेजी वाक्य का हिंदी में अनुवाद करें: 'Thank you for your help. I really appreciate it.'",
+      "generated_expected": "आपकी मदद के लिए धन्यवाद। मैं वास्तव में इसकी सराहना करता हूँ।",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-hi-qa-005-004",
+      "language": "hi",
+      "task_family": "qa",
+      "source_prompt": "How many days are there in a leap year?",
+      "source_expected": "366",
+      "generated_prompt": "लीप वर्ष में कितने दिन होते हैं?",
+      "generated_expected": "366",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-hi-translation-002-005",
+      "language": "hi",
+      "task_family": "translation",
+      "source_prompt": "Translate to the target language: 'Where is the nearest market?'",
+      "source_expected": null,
+      "generated_prompt": "निकटतम बाज़ार कहाँ है?",
+      "generated_expected": "सबसे नज़दीकी बाज़ार कहाँ स्थित है?",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-hi-instruction-004-003",
+      "language": "hi",
+      "task_family": "instruction",
+      "source_prompt": "Explain the difference between weather and climate in three sentences.",
+      "source_expected": null,
+      "generated_prompt": "मौसम और जलवायु के बीच का अंतर तीन वाक्यों में स्पष्ट कीजिए।",
+      "generated_expected": "मौसम किसी स्थान पर वायुमंडल की अल्पकालिक स्थिति को दर्शाता है जो दिन-प्रतिदिन बदल सकती है। इसके विपरीत, जलवायु एक लंबे समय तक किसी क्षेत्र के औसत मौसम के पैटर्न का विवरण है। सरल शब्दों में, मौसम यह बताता है कि आज बाहर क्या हो रहा है, जबकि जलवायु यह बताती है कि किसी जगह का सामान्य वातावरण कैसा रहता है।",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-hi-classification-004-003",
+      "language": "hi",
+      "task_family": "classification",
+      "source_prompt": "Message: 'Congratulations! You have won a free phone. Click this link now to claim your prize.' Classify whether this message is spam.",
+      "source_expected": "spam",
+      "generated_prompt": "संदेश: 'बधाई हो! आपने एक मुफ्त फोन जीता है। अपना इनाम पाने के लिए अभी इस लिंक पर क्लिक करें।' क्या यह संदेश स्पैम है? विकल्प: [स्पैम, स्पैम नहीं]",
+      "generated_expected": "स्पैम",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-hi-classification-002-006",
+      "language": "hi",
+      "task_family": "classification",
+      "source_prompt": "The package arrived three days early and the product is exactly as described. Classify the sentiment of this review.",
+      "source_expected": "positive",
+      "generated_prompt": "पार्सल तीन दिन पहले ही मिल गया और उत्पाद बिल्कुल वैसा ही है जैसा बताया गया था। इस समीक्षा की भावना (सेंटीमेंट) का वर्गीकरण करें। विकल्प: सकारात्मक, तटस्थ, नकारात्मक।",
+      "generated_expected": "सकारात्मक",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-hi-reasoning-001-006",
+      "language": "hi",
+      "task_family": "reasoning",
+      "source_prompt": "Maria has three times as many apples as her brother. Together they have 24 apples. How many does each have? Show your reasoning step by step.",
+      "source_expected": "Maria has 18 apples; her brother has 6 apples.",
+      "generated_prompt": "मारिया के पास अपने भाई से तीन गुना अधिक सेब हैं। उन दोनों के पास कुल मिलाकर 24 सेब हैं। प्रत्येक के पास कितने सेब हैं? अपने तर्क को चरण-दर-चरण समझाएं।",
+      "generated_expected": "मारिया के पास 18 सेब हैं; उसके भाई के पास 6 सेब हैं।",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-hi-classification-002-001",
+      "language": "hi",
+      "task_family": "classification",
+      "source_prompt": "The package arrived three days early and the product is exactly as described. Classify the sentiment of this review.",
+      "source_expected": "positive",
+      "generated_prompt": "पार्सल तीन दिन पहले ही मिल गया और उत्पाद बिल्कुल वैसा ही है जैसा बताया गया था। इस समीक्षा की भावना का वर्गीकरण करें: सकारात्मक, तटस्थ, या नकारात्मक?",
+      "generated_expected": "सकारात्मक",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-hi-qa-004-003",
+      "language": "hi",
+      "task_family": "qa",
+      "source_prompt": "What is the largest planet in our solar system?",
+      "source_expected": "Jupiter",
+      "generated_prompt": "हमारे सौर मंडल का सबसे बड़ा ग्रह कौन सा है?",
+      "generated_expected": "बृहस्पति",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-hi-reasoning-002-007",
+      "language": "hi",
+      "task_family": "reasoning",
+      "source_prompt": "If today is Wednesday, what day of the week will it be 100 days from now? Explain your reasoning.",
+      "source_expected": "Friday (100 mod 7 = 2; Wednesday + 2 days = Friday).",
+      "generated_prompt": "यदि आज बुधवार है, तो आज से 100 दिन बाद सप्ताह का कौन सा दिन होगा? अपने तर्क की व्याख्या करें।",
+      "generated_expected": "शुक्रवार (100 को 7 से विभाजित करने पर शेषफल 2 बचता है; बुधवार + 2 दिन = शुक्रवार)।",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-hi-reasoning-006-005",
+      "language": "hi",
+      "task_family": "reasoning",
+      "source_prompt": "A car travels 12 miles using 0.5 gallons of gasoline. What is its fuel efficiency in miles per gallon? Show your reasoning step by step.",
+      "source_expected": "24 miles per gallon (12 miles / 0.5 gallons = 24).",
+      "generated_prompt": "एक कार 0.5 गैलन पेट्रोल का उपयोग करके 12 मील की दूरी तय करती है। मील प्रति गैलन में इसकी ईंधन दक्षता क्या है? अपने तर्क को चरण-दर-चरण स्पष्ट करें।",
+      "generated_expected": "24 मील प्रति गैलन (12 मील / 0.5 गैलन = 24)।",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-hi-reasoning-003-002",
+      "language": "hi",
+      "task_family": "reasoning",
+      "source_prompt": "A shop sells pens at 3 for 2 dollars. How much do 12 pens cost? Show your reasoning step by step.",
+      "source_expected": "8 dollars (12 / 3 = 4 sets; 4 x 2 dollars = 8 dollars).",
+      "generated_prompt": "एक दुकान में 3 पेन 2 डॉलर में बेचे जाते हैं। 12 पेन की कीमत कितनी होगी? अपने तर्क को चरण-दर-चरण समझाएं।",
+      "generated_expected": "8 डॉलर (12 / 3 = 4 सेट; 4 x 2 डॉलर = 8 डॉलर)।",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-hi-qa-003-007",
+      "language": "hi",
+      "task_family": "qa",
+      "source_prompt": "If a train travels at 60 km/h for 2.5 hours, how far does it travel?",
+      "source_expected": "150 km",
+      "generated_prompt": "यदि एक ट्रेन 60 किलोमीटर प्रति घंटे की गति से 2.5 घंटे तक यात्रा करती है, तो वह कितनी दूरी तय करेगी?",
+      "generated_expected": "150 किलोमीटर",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ml-summarization-003-002",
+      "language": "ml",
+      "task_family": "summarization",
+      "source_prompt": "Summarize in one sentence: A city council voted to add 30 kilometers of protected bicycle lanes over the next two years, funded by a small increase in parking fees. Supporters argue the lanes will cut traffic and pollution, while some shop owners worry about losing customer parking.",
+      "source_expected": "A city council approved 30 km of new protected bike lanes funded by higher parking fees, despite some shop owners' concerns about lost parking.",
+      "generated_prompt": "ഒരു വാചകത്തിൽ സംഗ്രഹിക്കുക: അടുത്ത രണ്ട് വർഷത്തിനുള്ളിൽ 30 കിലോമീറ്റർ നീളത്തിൽ സംരക്ഷിത സൈക്കിൾ പാതകൾ നിർമ്മിക്കാൻ നഗരസഭ തീരുമാനിച്ചു, ഇതിനായി പാർക്കിംഗ് ഫീസിൽ ചെറിയ വർദ്ധനവ് വരുത്തും. ഈ നടപടി ഗതാഗതക്കുരുക്കും മലിനീകരണവും കുറയ്ക്കുമെന്ന് അനുകൂലികൾ വാദിക്കുമ്പോൾ, ഉപഭോക്താക്കൾക്ക് പാർക്കിംഗ് സൗകര്യം കുറയുമോ എന്ന ആശങ്ക ചില വ്യാപാരികൾ പ്രകടിപ്പിക്കുന്നു.",
+      "generated_expected": "ചില വ്യാപാരികളുടെ ആശങ്കകൾക്കിടയിലും, പാർക്കിംഗ് ഫീസ് വർദ്ധിപ്പിച്ചുകൊണ്ട് 30 കിലോമീറ്റർ പുതിയ സംരക്ഷിത സൈക്കിൾ പാതകൾ നിർമ്മിക്കാൻ നഗരസഭ അനുമതി നൽകി.",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ml-qa-003-002",
+      "language": "ml",
+      "task_family": "qa",
+      "source_prompt": "If a train travels at 60 km/h for 2.5 hours, how far does it travel?",
+      "source_expected": "150 km",
+      "generated_prompt": "ഒരു ട്രെയിൻ മണിക്കൂറിൽ 60 കിലോമീറ്റർ വേഗതയിൽ 2.5 മണിക്കൂർ സഞ്ചരിച്ചാൽ, അത് എത്ര ദൂരം സഞ്ചരിക്കും?",
+      "generated_expected": "150 കിലോമീറ്റർ",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ml-classification-002-006",
+      "language": "ml",
+      "task_family": "classification",
+      "source_prompt": "The package arrived three days early and the product is exactly as described. Classify the sentiment of this review.",
+      "source_expected": "positive",
+      "generated_prompt": "പാക്കേജ് മൂന്ന് ദിവസം നേരത്തെ എത്തി, ഉൽപ്പന്നം പറഞ്ഞതുപോലെ തന്നെ വളരെ മികച്ചതാണ്. ഈ അഭിപ്രായത്തിന്റെ വികാരം ഏതാണെന്ന് വർഗ്ഗീകരിക്കുക: ['അനുകൂലം', 'നിഷ്പക്ഷത', 'പ്രതികൂലം']",
+      "generated_expected": "അനുകൂലം",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ml-translation-001-000",
+      "language": "ml",
+      "task_family": "translation",
+      "source_prompt": "Translate to the target language: 'Good morning. How are you today?'",
+      "source_expected": null,
+      "generated_prompt": "താഴെ പറയുന്ന വാചകം മലയാളത്തിലേക്ക് വിവർത്തനം ചെയ്യുക: 'Good morning. How are you today?'",
+      "generated_expected": "സുപ്രഭാതം. ഇന്ന് നിങ്ങൾക്ക് എങ്ങനെയുണ്ട്?",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ml-reasoning-003-002",
+      "language": "ml",
+      "task_family": "reasoning",
+      "source_prompt": "A shop sells pens at 3 for 2 dollars. How much do 12 pens cost? Show your reasoning step by step.",
+      "source_expected": "8 dollars (12 / 3 = 4 sets; 4 x 2 dollars = 8 dollars).",
+      "generated_prompt": "ഒരു കടയിൽ 3 പേനകൾക്ക് 2 ഡോളർ എന്ന നിരക്കിലാണ് വിൽക്കുന്നത്. എങ്കിൽ 12 പേനകൾക്ക് എത്ര രൂപയാകും? നിങ്ങളുടെ ഉത്തരം ഘട്ടം ഘട്ടമായി വിവരിക്കുക.",
+      "generated_expected": "8 ഡോളർ (12 / 3 = 4 സെറ്റുകൾ; 4 x 2 ഡോളർ = 8 ഡോളർ).",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ml-classification-001-000",
+      "language": "ml",
+      "task_family": "classification",
+      "source_prompt": "The new restaurant in town has terrible service and the food was cold. Classify the sentiment of this review.",
+      "source_expected": "negative",
+      "generated_prompt": "നഗരത്തിൽ പുതുതായി തുടങ്ങിയ ഹോട്ടലിലെ സേവനം വളരെ മോശമാണ്, കൂടാതെ വിളമ്പിയ ഭക്ഷണം തണുത്തുപോയിരുന്നു. ഈ അഭിപ്രായത്തിന്റെ സ്വഭാവം എന്താണെന്ന് വിലയിരുത്തുക: ['നല്ലത്', 'സാധാരണം', 'മോശം']",
+      "generated_expected": "മോശം",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ml-classification-002-001",
+      "language": "ml",
+      "task_family": "classification",
+      "source_prompt": "The package arrived three days early and the product is exactly as described. Classify the sentiment of this review.",
+      "source_expected": "positive",
+      "generated_prompt": "പാക്കേജ് മൂന്ന് ദിവസം നേരത്തെ എത്തി, ഉൽപ്പന്നം പറഞ്ഞതുപോലെ തന്നെ മികച്ചതാണ്. ഈ അഭിപ്രായത്തിന്റെ സ്വഭാവം പോസിറ്റീവാണോ, ന്യൂട്രലാണോ അതോ നെഗറ്റീവാണോ എന്ന് തരംതിരിക്കുക.",
+      "generated_expected": "പോസിറ്റീവ്",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ml-classification-004-003",
+      "language": "ml",
+      "task_family": "classification",
+      "source_prompt": "Message: 'Congratulations! You have won a free phone. Click this link now to claim your prize.' Classify whether this message is spam.",
+      "source_expected": "spam",
+      "generated_prompt": "'അഭിനന്ദനങ്ങൾ! നിങ്ങൾക്ക് ഒരു സൗജന്യ ഫോൺ ലഭിച്ചിരിക്കുന്നു. സമ്മാനം കൈപ്പറ്റാൻ ഈ ലിങ്കിൽ ഇപ്പോൾ തന്നെ ക്ലിക്ക് ചെയ്യുക.' - ഈ സന്ദേശം സ്പാം ആണോ എന്ന് തരംതിരിക്കുക.",
+      "generated_expected": "സ്പാം",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ml-instruction-004-003",
+      "language": "ml",
+      "task_family": "instruction",
+      "source_prompt": "Explain the difference between weather and climate in three sentences.",
+      "source_expected": null,
+      "generated_prompt": "കാലാവസ്ഥയും അന്തരീക്ഷസ്ഥിതിയും തമ്മിലുള്ള പ്രധാന വ്യത്യാസം എന്താണെന്ന് മൂന്ന് വാചകങ്ങളിൽ വിശദീകരിക്കാമോ?",
+      "generated_expected": "ഒരു നിശ്ചിത സമയത്ത് ഒരു സ്ഥലത്തെ അന്തരീക്ഷത്തിലുണ്ടാകുന്ന താത്കാലിക മാറ്റങ്ങളെയാണ് കാലാവസ്ഥ എന്ന് പറയുന്നത്. എന്നാൽ ദീർഘകാലമായി ഒരു പ്രദേശത്ത് അനുഭവപ്പെടുന്ന ശരാശരി അന്തരീക്ഷ അവസ്ഥയാണ് അന്തരീക്ഷസ്ഥിതി അഥവാ ക്ലൈമറ്റ്. ചുരുക്കത്തിൽ, പെട്ടെന്ന് മാറിക്കൊണ്ടിരിക്കുന്ന അവസ്ഥയാണ് കാലാവസ്ഥയെങ്കിൽ, ദീർഘകാലത്തെ ശരാശരി കണക്കുകളാണ് അന്തരീക്ഷസ്ഥിതിയെ നിർണ്ണയിക്കുന്നത്.",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ml-instruction-001-005",
+      "language": "ml",
+      "task_family": "instruction",
+      "source_prompt": "Write a short paragraph (3-4 sentences) explaining what photosynthesis is, in a way a 10-year-old would understand.",
+      "source_expected": null,
+      "generated_prompt": "പ്രകാശസംശ്ലേഷണം എന്നാൽ എന്താണെന്ന് പത്തു വയസ്സുള്ള ഒരു കുട്ടിക്ക് മനസ്സിലാകുന്ന രീതിയിൽ മൂന്നോ നാലോ വാചകങ്ങളിൽ ലളിതമായി എഴുതാമോ?",
+      "generated_expected": "സസ്യങ്ങൾ സൂര്യപ്രകാശത്തിന്റെ സഹായത്തോടെ തങ്ങൾക്ക് വേണ്ട ഭക്ഷണം സ്വയം നിർമ്മിക്കുന്ന പ്രക്രിയയാണ് പ്രകാശസംശ്ലേഷണം. ചെടികൾ അന്തരീക്ഷത്തിലെ കാർബൺ ഡൈ ഓക്സൈഡും വേരുകൾ വലിച്ചെടുക്കുന്ന വെള്ളവും ഉപയോഗിച്ചാണ് ഈ ഭക്ഷണം തയ്യാറാക്കുന്നത്. ഇതിലൂടെ ചെടികൾക്ക് വളരാൻ ആവശ്യമായ ഊർജ്ജം ലഭിക്കുകയും നമുക്ക് ശ്വസിക്കാൻ ആവശ്യമായ ഓക്സിജൻ പുറത്തുവിടുകയും ചെയ്യുന്നു.",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ml-qa-005-004",
+      "language": "ml",
+      "task_family": "qa",
+      "source_prompt": "How many days are there in a leap year?",
+      "source_expected": "366",
+      "generated_prompt": "ഒരു അധിവർഷത്തിൽ എത്ര ദിവസങ്ങളുണ്ട്?",
+      "generated_expected": "366",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ml-instruction-002-001",
+      "language": "ml",
+      "task_family": "instruction",
+      "source_prompt": "Give three practical tips for someone learning a new language for the first time.",
+      "source_expected": null,
+      "generated_prompt": "ആദ്യമായി ഒരു പുതിയ ഭാഷ പഠിക്കാൻ തുടങ്ങുന്ന ഒരാൾക്ക് ഉപകരിക്കുന്ന മൂന്ന് പ്രായോഗിക നിർദ്ദേശങ്ങൾ നൽകുക.",
+      "generated_expected": "1. ദിവസവും കുറച്ചു സമയമെങ്കിലും ആ ഭാഷ കേൾക്കാനും സംസാരിക്കാനും മാറ്റിവെക്കുക. 2. ഭാഷ പഠിക്കുന്നതിനായി മൊബൈൽ ആപ്പുകളോ ലളിതമായ കഥാപുസ്തകങ്ങളോ ഉപയോഗിക്കുക. 3. തെറ്റുകൾ വരുമോ എന്ന് ഭയക്കാതെ ആ ഭാഷയിൽ സംസാരിക്കാൻ നിരന്തരം ശ്രമിക്കുക.",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ml-reasoning-004-003",
+      "language": "ml",
+      "task_family": "reasoning",
+      "source_prompt": "All roses are flowers. Some flowers fade quickly. Can we conclude that some roses fade quickly? Explain your reasoning.",
+      "source_expected": "No. The premises do not guarantee it — the flowers that fade quickly need not include any roses.",
+      "generated_prompt": "എല്ലാ റോസാപ്പൂക്കളും പൂക്കളാണ്. ചില പൂക്കൾ വേഗത്തിൽ വാടിപ്പോകാറുണ്ട്. ഇതിൽ നിന്നും ചില റോസാപ്പൂക്കൾ വേഗത്തിൽ വാടിപ്പോകുന്നു എന്ന് നമുക്ക് അനുമാനിക്കാൻ കഴിയുമോ? നിങ്ങളുടെ ന്യായീകരണം വ്യക്തമാക്കുക.",
+      "generated_expected": "ഇല്ല. നൽകിയിരിക്കുന്ന പ്രസ്താവനകളിൽ നിന്ന് അത്തരമൊരു നിഗമനത്തിൽ എത്താൻ കഴിയില്ല. കാരണം, വേഗത്തിൽ വാടിപ്പോകുന്ന പൂക്കളിൽ റോസാപ്പൂക്കൾ ഉൾപ്പെടണമെന്നില്ല.",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ml-qa-002-006",
+      "language": "ml",
+      "task_family": "qa",
+      "source_prompt": "What is the capital city of Brazil?",
+      "source_expected": "Brasilia",
+      "generated_prompt": "ബ്രസീലിന്റെ തലസ്ഥാനം ഏതാണ്?",
+      "generated_expected": "ബ്രസീലിയ",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ml-instruction-002-006",
+      "language": "ml",
+      "task_family": "instruction",
+      "source_prompt": "Give three practical tips for someone learning a new language for the first time.",
+      "source_expected": null,
+      "generated_prompt": "ആദ്യമായി ഒരു പുതിയ ഭാഷ പഠിക്കാൻ തുടങ്ങുന്ന ഒരാൾക്ക് സഹായകമാകുന്ന മൂന്ന് പ്രായോഗിക നിർദ്ദേശങ്ങൾ നൽകുക.",
+      "generated_expected": "1. ദിവസവും കുറച്ചു സമയമെങ്കിലും ആ ഭാഷ കേൾക്കാനും സംസാരിക്കാനും മാറ്റിവെക്കുക. 2. പുതിയ വാക്കുകൾ പഠിക്കുമ്പോൾ അവ ഒറ്റപ്പെട്ട രീതിയിൽ പഠിക്കാതെ, ചെറിയ വാചകങ്ങളിൽ ഉൾപ്പെടുത്തി പഠിക്കാൻ ശ്രമിക്കുക. 3. തെറ്റുകൾ വരുമോ എന്ന് പേടിക്കാതെ ആത്മവിശ്വാസത്തോടെ സംസാരിച്ചു തുടങ്ങുക.",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ml-summarization-001-004",
+      "language": "ml",
+      "task_family": "summarization",
+      "source_prompt": "Summarize in one sentence: A team of researchers in Kenya has developed a new low-cost water purification method using locally-sourced charcoal and sand. The system can produce 50 liters of clean water per day and costs less than $20 to build. Initial trials in three rural villages have shown a 95% reduction in waterborne illness among children.",
+      "source_expected": "Researchers in Kenya created an inexpensive water purification system that has reduced waterborne illness by 95% in tested villages.",
+      "generated_prompt": "കെനിയയിലെ ഒരു സംഘം ഗവേഷകർ പ്രാദേശികമായി ലഭ്യമായ കരിയും മണലും ഉപയോഗിച്ച് ചെലവുകുറഞ്ഞ ഒരു ജലശുദ്ധീകരണ രീതി വികസിപ്പിച്ചെടുത്തിട്ടുണ്ട്. ഈ സംവിധാനത്തിന് ദിവസേന 50 ലിറ്റർ ശുദ്ധജലം ഉൽപ്പാദിപ്പിക്കാൻ കഴിയും, കൂടാതെ ഇത് നിർമ്മിക്കാൻ 20 ഡോളറിൽ താഴെ മാത്രമേ ചെലവ് വരുന്നുള്ളൂ. മൂന്ന് ഗ്രാമങ്ങളിൽ നടത്തിയ പ്രാഥമിക പരീക്ഷണങ്ങളിൽ കുട്ടികളിലെ ജലജന്യ രോഗങ്ങളിൽ 95 ശതമാനം കുറവ് രേഖപ്പെടുത്തിയിട്ടുണ്ട്. ഈ വിവരങ്ങൾ ഒരു വാക്യത്തിൽ സംഗ്രഹിക്കുക.",
+      "generated_expected": "കെനിയയിലെ ഗവേഷകർ വികസിപ്പിച്ചെടുത്ത ചെലവുകുറഞ്ഞ ജലശുദ്ധീകരണ സംവിധാനം പരീക്ഷിച്ച ഗ്രാമങ്ങളിൽ ജലജന്യ രോഗങ്ങൾ 95 ശതമാനം കുറയ്ക്കാൻ സഹായിച്ചു.",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ml-qa-003-007",
+      "language": "ml",
+      "task_family": "qa",
+      "source_prompt": "If a train travels at 60 km/h for 2.5 hours, how far does it travel?",
+      "source_expected": "150 km",
+      "generated_prompt": "ഒരു ട്രെയിൻ മണിക്കൂറിൽ 60 കിലോമീറ്റർ വേഗതയിൽ 2.5 മണിക്കൂർ സഞ്ചരിച്ചാൽ, അത് എത്ര ദൂരം സഞ്ചരിക്കും?",
+      "generated_expected": "150 കിലോമീറ്റർ",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ml-summarization-002-005",
+      "language": "ml",
+      "task_family": "summarization",
+      "source_prompt": "Summarize the main argument in one sentence: Many language-learning apps claim users can become fluent in a few months of daily practice. However, linguists studying second-language acquisition consistently find that achieving conversational fluency in an unrelated language typically requires 600 to 750 hours of focused study, with significantly more required for full literacy. Marketing claims and reality diverge sharply.",
+      "source_expected": "Despite app marketing claims, real fluency in a new language typically requires hundreds of hours of focused study.",
+      "generated_prompt": "പ്രധാന വാദം ഒരൊറ്റ വാചകത്തിൽ സംഗ്രഹിക്കുക: പല ഭാഷാ പഠന ആപ്പുകളും ദിവസേനയുള്ള പരിശീലനത്തിലൂടെ ഏതാനും മാസങ്ങൾക്കുള്ളിൽ ഭാഷയിൽ പ്രാവീണ്യം നേടാമെന്ന് അവകാശപ്പെടുന്നു. എന്നിരുന്നാലും, രണ്ടാം ഭാഷാ സ്വായത്തീകരണത്തെക്കുറിച്ച് പഠിക്കുന്ന ഭാഷാശാസ്ത്രജ്ഞർ പറയുന്നത്, തീർത്തും വ്യത്യസ്തമായ ഒരു ഭാഷയിൽ സംഭാഷണ നൈപുണ്യം നേടുന്നതിന് സാധാരണയായി 600 മുതൽ 750 മണിക്കൂർ വരെ ശ്രദ്ധ കേന്ദ്രീകരിച്ചുള്ള പഠനം ആവശ്യമാണെന്നും, പൂർണ്ണമായ സാക്ഷരതയ്ക്ക് ഇതിലും കൂടുതൽ സമയം വേണ്ടിവരുമെന്നുമാണ്. വിപണന അവകാശവാദങ്ങളും യാഥാർത്ഥ്യവും തമ്മിൽ വലിയ അന്തരം നിലനിൽക്കുന്നു.",
+      "generated_expected": "ആപ്പുകളുടെ വിപണന അവകാശവാദങ്ങൾക്ക് വിപരീതമായി, ഒരു പുതിയ ഭാഷയിൽ യഥാർത്ഥ പ്രാവീണ്യം നേടുന്നതിന് സാധാരണയായി നൂറുകണക്കിന് മണിക്കൂർ ശ്രദ്ധ കേന്ദ്രീകരിച്ചുള്ള പഠനം ആവശ്യമാണ്.",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ml-reasoning-001-000",
+      "language": "ml",
+      "task_family": "reasoning",
+      "source_prompt": "Maria has three times as many apples as her brother. Together they have 24 apples. How many does each have? Show your reasoning step by step.",
+      "source_expected": "Maria has 18 apples; her brother has 6 apples.",
+      "generated_prompt": "മരിയയുടെ കൈവശം അവളുടെ സഹോദരനുള്ളതിനേക്കാൾ മൂന്നിരട്ടി ആപ്പിളുകളുണ്ട്. അവർ രണ്ടുപേരുടെയും കൈവശം കൂടി ആകെ 24 ആപ്പിളുകളുണ്ടെങ്കിൽ, ഓരോരുത്തരുടെയും കൈവശം എത്ര ആപ്പിളുകൾ വീതമാണുള്ളത്? ഘട്ടം ഘട്ടമായുള്ള കണക്കുകൂട്ടലുകൾ സഹിതം വിശദീകരിക്കുക.",
+      "generated_expected": "മരിയയുടെ കൈവശം 18 ആപ്പിളുകളും, അവളുടെ സഹോദരന്റെ കൈവശം 6 ആപ്പിളുകളുമുണ്ട്. കണക്കുകൂട്ടൽ: സഹോദരന്റെ കൈവശമുള്ള ആപ്പിളുകളുടെ എണ്ണം 'എക്സ്' ആണെന്ന് കരുതുക. അപ്പോൾ മരിയയുടെ കൈവശം '3എക്സ്' ആപ്പിളുകൾ ഉണ്ടാകും. ആകെ ആപ്പിളുകൾ: എക്സ് + 3എക്സ് = 4എക്സ്. 4എക്സ് = 24 ആയതുകൊണ്ട്, എക്സ് = 24/4 = 6. അതിനാൽ സഹോദരന് 6 ആപ്പിളുകളും മരിയയ്ക്ക് 3 * 6 = 18 ആപ്പിളുകളും ലഭിക്കുന്നു.",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ml-summarization-001-000",
+      "language": "ml",
+      "task_family": "summarization",
+      "source_prompt": "Summarize in one sentence: A team of researchers in Kenya has developed a new low-cost water purification method using locally-sourced charcoal and sand. The system can produce 50 liters of clean water per day and costs less than $20 to build. Initial trials in three rural villages have shown a 95% reduction in waterborne illness among children.",
+      "source_expected": "Researchers in Kenya created an inexpensive water purification system that has reduced waterborne illness by 95% in tested villages.",
+      "generated_prompt": "കെനിയയിലെ ഒരു സംഘം ഗവേഷകർ പ്രാദേശികമായി ലഭ്യമായ കരിയും മണലും ഉപയോഗിച്ച് ചെലവ് കുറഞ്ഞ ഒരു ജലശുദ്ധീകരണ രീതി വികസിപ്പിച്ചെടുത്തിട്ടുണ്ട്. ഈ സംവിധാനത്തിന് ദിവസേന 50 ലിറ്റർ ശുദ്ധജലം ഉൽപ്പാദിപ്പിക്കാൻ കഴിയും, കൂടാതെ ഇത് നിർമ്മിക്കാൻ 20 ഡോളറിൽ താഴെ മാത്രമേ ചെലവാകൂ. മൂന്ന് ഗ്രാമങ്ങളിൽ നടത്തിയ പ്രാഥമിക പരീക്ഷണങ്ങളിൽ കുട്ടികളിലെ ജലജന്യ രോഗങ്ങൾ 95 ശതമാനം കുറഞ്ഞതായി കണ്ടെത്തി. ഈ വിവരങ്ങൾ ഒരു വാക്യത്തിൽ സംഗ്രഹിക്കുക.",
+      "generated_expected": "കെനിയയിലെ ഗവേഷകർ വികസിപ്പിച്ചെടുത്ത ചെലവ് കുറഞ്ഞ ജലശുദ്ധീകരണ സംവിധാനം പരീക്ഷിച്ച ഗ്രാമങ്ങളിൽ ജലജന്യ രോഗങ്ങൾ 95 ശതമാനം കുറച്ചു.",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ml-summarization-004-007",
+      "language": "ml",
+      "task_family": "summarization",
+      "source_prompt": "Summarize the key finding in one sentence: A five-year study following 10,000 office workers found that those who took a short walk every hour reported less back pain and higher focus than those who sat continuously, even when both groups did the same amount of total daily exercise.",
+      "source_expected": "Taking short hourly walks reduced back pain and improved focus more than a single daily workout, according to a five-year study of office workers.",
+      "generated_prompt": "പതിനായിരം ഓഫീസ് ജീവനക്കാരിൽ അഞ്ചു വർഷം നടത്തിയ പഠനത്തിൽ, തുടർച്ചയായി ഇരിക്കുന്നവരെ അപേക്ഷിച്ച് ഓരോ മണിക്കൂറിലും ചെറിയ രീതിയിൽ നടക്കാൻ സമയം കണ്ടെത്തിയവർക്ക് നടുവേദന കുറവാണെന്നും ഏകാഗ്രത കൂടുതലാണെന്നും കണ്ടെത്തി. ദിവസവും വ്യായാമം ചെയ്യുന്നവരാണെങ്കിൽ കൂടി ഈ മാറ്റം പ്രകടമായിരുന്നു. ഈ പ്രധാന കണ്ടെത്തൽ ഒരു വാക്യത്തിൽ സംഗ്രഹിക്കുക.",
+      "generated_expected": "ഓരോ മണിക്കൂറിലും ചെറിയ നടത്തം ശീലിക്കുന്നത് തുടർച്ചയായി വ്യായാമം ചെയ്യുന്നതിനേക്കാൾ നടുവേദന കുറയ്ക്കാനും ഏകാഗ്രത വർദ്ധിപ്പിക്കാനും സഹായിക്കുമെന്ന് അഞ്ചു വർഷം നീണ്ടുനിന്ന പഠനം വ്യക്തമാക്കുന്നു.",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ml-qa-004-003",
+      "language": "ml",
+      "task_family": "qa",
+      "source_prompt": "What is the largest planet in our solar system?",
+      "source_expected": "Jupiter",
+      "generated_prompt": "നമ്മുടെ സൗരയൂഥത്തിലെ ഏറ്റവും വലിയ ഗ്രഹം ഏതാണ്?",
+      "generated_expected": "വ്യാഴം",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ml-classification-003-002",
+      "language": "ml",
+      "task_family": "classification",
+      "source_prompt": "Local school board approves new arts curriculum starting next semester. Classify the topic of this news headline.",
+      "source_expected": "education",
+      "generated_prompt": "അടുത്ത അധ്യയന വർഷം മുതൽ പ്രാദേശിക സ്കൂളുകളിൽ പുതിയ കലാപഠന പദ്ധതി നടപ്പിലാക്കാൻ വിദ്യാഭ്യാസ സമിതി തീരുമാനിച്ചു. ഈ വാർത്താ തലക്കെട്ട് ഏത് വിഭാഗത്തിൽ ഉൾപ്പെടുന്നു എന്ന് കണ്ടെത്തുക. വിഭാഗങ്ങൾ: ['രാഷ്ട്രീയം', 'കായികം', 'വിദ്യാഭ്യാസം', 'ആരോഗ്യം', 'വാണിജ്യം', 'വിനോദം']",
+      "generated_expected": "വിദ്യാഭ്യാസം",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ml-qa-001-005",
+      "language": "ml",
+      "task_family": "qa",
+      "source_prompt": "What year did the first man walk on the moon?",
+      "source_expected": "1969",
+      "generated_prompt": "ആദ്യമായി മനുഷ്യൻ ചന്ദ്രനിൽ ഇറങ്ങിയ വർഷം ഏതാണ്?",
+      "generated_expected": "1969",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ml-classification-003-007",
+      "language": "ml",
+      "task_family": "classification",
+      "source_prompt": "Local school board approves new arts curriculum starting next semester. Classify the topic of this news headline.",
+      "source_expected": "education",
+      "generated_prompt": "അടുത്ത അധ്യയന വർഷം മുതൽ പ്രാദേശിക സ്കൂളുകളിൽ പുതിയ കലാപഠന പദ്ധതി നടപ്പിലാക്കാൻ വിദ്യാഭ്യാസ സമിതി അനുമതി നൽകി. ഈ വാർത്താ തലക്കെട്ട് ഏത് വിഭാഗത്തിൽ ഉൾപ്പെടുന്നു എന്ന് കണ്ടെത്തുക? വിഭാഗങ്ങൾ: രാഷ്ട്രീയം, കായികം, വിദ്യാഭ്യാസം, ആരോഗ്യം, വാണിജ്യം, വിനോദം.",
+      "generated_expected": "വിദ്യാഭ്യാസം",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ml-summarization-004-003",
+      "language": "ml",
+      "task_family": "summarization",
+      "source_prompt": "Summarize the key finding in one sentence: A five-year study following 10,000 office workers found that those who took a short walk every hour reported less back pain and higher focus than those who sat continuously, even when both groups did the same amount of total daily exercise.",
+      "source_expected": "Taking short hourly walks reduced back pain and improved focus more than a single daily workout, according to a five-year study of office workers.",
+      "generated_prompt": "പതിനായിരം ഓഫീസ് ജീവനക്കാരെ ഉൾപ്പെടുത്തി അഞ്ചു വർഷം നടത്തിയ പഠനത്തിൽ, തുടർച്ചയായി ഒരേയിരിപ്പിരിക്കുന്നവരെ അപേക്ഷിച്ച് ഓരോ മണിക്കൂറിലും ചെറിയ രീതിയിൽ നടക്കാൻ സമയം കണ്ടെത്തിയവർക്ക് നടുവേദന കുറവാണെന്നും ഏകാഗ്രത കൂടുതലാണെന്നും കണ്ടെത്തി. ആകെ വ്യായാമത്തിന്റെ അളവ് തുല്യമാണെങ്കിൽ പോലും ഈ മാറ്റം പ്രകടമായിരുന്നു. ഈ കണ്ടെത്തലിനെ ഒറ്റ വാചകത്തിൽ സംഗ്രഹിക്കുക.",
+      "generated_expected": "ഓഫീസ് ജീവനക്കാരിൽ അഞ്ചു വർഷം നടത്തിയ പഠനമനുസരിച്ച്, ദിവസവും ഒരു നിശ്ചിത വ്യായാമം ചെയ്യുന്നതിനേക്കാൾ ഫലപ്രദം ഓരോ മണിക്കൂറിലും ചെറിയ നടത്തം ശീലിക്കുന്നതാണെന്നും, ഇത് നടുവേദന കുറയ്ക്കാനും ഏകാഗ്രത വർദ്ധിപ്പിക്കാനും സഹായിക്കുമെന്നും തെളിഞ്ഞു.",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ml-instruction-003-002",
+      "language": "ml",
+      "task_family": "instruction",
+      "source_prompt": "Describe what makes a good leader, using two concrete examples.",
+      "source_expected": null,
+      "generated_prompt": "ഒരു നല്ല നേതാവിന് ഉണ്ടായിരിക്കേണ്ട ഗുണങ്ങൾ എന്തൊക്കെയാണെന്ന് വിവരിക്കുക. നിങ്ങളുടെ ഉത്തരത്തെ സാധൂകരിക്കാനായി രണ്ട് വ്യക്തമായ ഉദാഹരണങ്ങൾ ഉൾപ്പെടുത്തുക.",
+      "generated_expected": "ഒരു നല്ല നേതാവ് മറ്റുള്ളവരെ പ്രചോദിപ്പിക്കാനും, പ്രതിസന്ധി ഘട്ടങ്ങളിൽ പതറാതെ തീരുമാനങ്ങൾ എടുക്കാനും കഴിവുള്ളവരായിരിക്കണം. ഇതിന് രണ്ട് ഉദാഹരണങ്ങൾ താഴെ നൽകുന്നു: 1. ടീമിലെ അംഗങ്ങളുടെ അഭിപ്രായങ്ങൾക്ക് വില നൽകുകയും, എല്ലാവരെയും ഒരേപോലെ ചേർത്തുപിടിച്ച് ലക്ഷ്യത്തിലേക്ക് നയിക്കുകയും ചെയ്യുന്ന ഒരു മാനേജർ. 2. ഒരു വലിയ പ്രതിസന്ധി ഘട്ടത്തിൽ പരിഭ്രമിക്കാതെ, ശാന്തമായി കാര്യങ്ങൾ വിശകലനം ചെയ്ത് കൃത്യമായ പരിഹാരമാർഗ്ഗങ്ങൾ കണ്ടെത്തുന്ന ഒരു സാമൂഹ്യ പ്രവർത്തകൻ.",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ml-translation-004-003",
+      "language": "ml",
+      "task_family": "translation",
+      "source_prompt": "Translate to the target language: 'Please call me when you arrive at the station.'",
+      "source_expected": null,
+      "generated_prompt": "താഴെ പറയുന്ന വാചകം മലയാളത്തിലേക്ക് വിവർത്തനം ചെയ്യുക: 'Please call me when you arrive at the station.'",
+      "generated_expected": "സ്റ്റേഷനിൽ എത്തുമ്പോൾ ദയവായി എന്നെ ഒന്ന് വിളിക്കണം.",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ml-reasoning-002-007",
+      "language": "ml",
+      "task_family": "reasoning",
+      "source_prompt": "If today is Wednesday, what day of the week will it be 100 days from now? Explain your reasoning.",
+      "source_expected": "Friday (100 mod 7 = 2; Wednesday + 2 days = Friday).",
+      "generated_prompt": "ഇന്ന് ബുധനാഴ്ചയാണെങ്കിൽ, നൂറ് ദിവസങ്ങൾക്ക് ശേഷം ആഴ്ചയിലെ ഏത് ദിവസമായിരിക്കും? നിങ്ങളുടെ യുക്തി വിശദീകരിക്കുക.",
+      "generated_expected": "വെള്ളിയാഴ്ച (നൂറിനെ ഏഴ് കൊണ്ട് ഹരിച്ചാൽ ശിഷ്ടം രണ്ട് ലഭിക്കുന്നു; ബുധനാഴ്ചയോട് രണ്ട് ദിവസം കൂട്ടിയാൽ വെള്ളിയാഴ്ച കിട്ടുന്നു).",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ml-qa-001-000",
+      "language": "ml",
+      "task_family": "qa",
+      "source_prompt": "What year did the first man walk on the moon?",
+      "source_expected": "1969",
+      "generated_prompt": "ആദ്യമായി മനുഷ്യൻ ചന്ദ്രനിൽ ഇറങ്ങിയ വർഷം ഏതാണ്?",
+      "generated_expected": "1969",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ml-reasoning-006-005",
+      "language": "ml",
+      "task_family": "reasoning",
+      "source_prompt": "A car travels 12 miles using 0.5 gallons of gasoline. What is its fuel efficiency in miles per gallon? Show your reasoning step by step.",
+      "source_expected": "24 miles per gallon (12 miles / 0.5 gallons = 24).",
+      "generated_prompt": "ഒരു കാർ 0.5 ഗാലൻ പെട്രോൾ ഉപയോഗിച്ച് 12 മൈൽ ദൂരം സഞ്ചരിക്കുന്നു. എങ്കിൽ ആ കാറിന്റെ ഇന്ധനക്ഷമത (മൈൽ പെർ ഗാലൻ) എത്രയാണ്? ഘട്ടം ഘട്ടമായുള്ള കണക്കുകൂട്ടലുകൾ സഹിതം വിശദീകരിക്കുക.",
+      "generated_expected": "24 മൈൽ പെർ ഗാലൻ (12 മൈൽ / 0.5 ഗാലൻ = 24).",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ml-reasoning-001-006",
+      "language": "ml",
+      "task_family": "reasoning",
+      "source_prompt": "Maria has three times as many apples as her brother. Together they have 24 apples. How many does each have? Show your reasoning step by step.",
+      "source_expected": "Maria has 18 apples; her brother has 6 apples.",
+      "generated_prompt": "മരിയയുടെ കൈവശമുള്ള ആപ്പിളുകളുടെ എണ്ണം അവളുടെ സഹോദരന്റെ മൂന്നിരട്ടിയാണ്. ഇരുവരുടെയും കൈവശം ആകെ 24 ആപ്പിളുകൾ ഉണ്ടെങ്കിൽ, ഓരോരുത്തരുടെയും കൈവശം എത്ര ആപ്പിളുകൾ വീതമാണുള്ളത്? ഘട്ടം ഘട്ടമായുള്ള വിശദീകരണത്തോടെ ഉത്തരം നൽകുക.",
+      "generated_expected": "മരിയയുടെ കൈവശം 18 ആപ്പിളുകളും, അവളുടെ സഹോദരന്റെ കൈവശം 6 ആപ്പിളുകളും ഉണ്ട്. വിശദീകരണം: സഹോദരന്റെ കൈവശമുള്ള ആപ്പിളുകളുടെ എണ്ണം 'എക്സ്' ആണെന്ന് കരുതുക. അപ്പോൾ മരിയയുടെ കൈവശം 3എക്സ് ആപ്പിളുകൾ ഉണ്ടാകും. ഇവ രണ്ടും കൂടി കൂട്ടിയാൽ (എക്സ് + 3എക്സ്) 4എക്സ് ലഭിക്കും. 4എക്സ് = 24 ആയതുകൊണ്ട്, എക്സ് = 6. അതിനാൽ സഹോദരന് 6 ആപ്പിളുകളും, മരിയയ്ക്ക് 3 ഗുണം 6 അതായത് 18 ആപ്പിളുകളും ലഭിക്കുന്നു.",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ml-summarization-002-001",
+      "language": "ml",
+      "task_family": "summarization",
+      "source_prompt": "Summarize the main argument in one sentence: Many language-learning apps claim users can become fluent in a few months of daily practice. However, linguists studying second-language acquisition consistently find that achieving conversational fluency in an unrelated language typically requires 600 to 750 hours of focused study, with significantly more required for full literacy. Marketing claims and reality diverge sharply.",
+      "source_expected": "Despite app marketing claims, real fluency in a new language typically requires hundreds of hours of focused study.",
+      "generated_prompt": "പ്രധാന വാദം ഒരൊറ്റ വാക്യത്തിൽ സംഗ്രഹിക്കുക: പല ഭാഷാ പഠന ആപ്പുകളും ദിവസേനയുള്ള പരിശീലനത്തിലൂടെ ഏതാനും മാസങ്ങൾക്കുള്ളിൽ ഭാഷാ പ്രാവീണ്യം നേടാമെന്ന് അവകാശപ്പെടുന്നു. എന്നിരുന്നാലും, രണ്ടാം ഭാഷാ സ്വായത്തീകരണത്തെക്കുറിച്ച് പഠിക്കുന്ന ഭാഷാശാസ്ത്രജ്ഞർ പറയുന്നത്, തീർത്തും വ്യത്യസ്തമായ ഒരു ഭാഷയിൽ സംഭാഷണ നൈപുണ്യം നേടുന്നതിന് സാധാരണയായി 600 മുതൽ 750 മണിക്കൂർ വരെ ശ്രദ്ധ കേന്ദ്രീകരിച്ചുള്ള പഠനം ആവശ്യമാണെന്നും, പൂർണ്ണമായ സാക്ഷരതയ്ക്ക് ഇതിലും കൂടുതൽ സമയം വേണ്ടിവരുമെന്നുമാണ്. വിപണന അവകാശവാദങ്ങളും യാഥാർത്ഥ്യവും തമ്മിൽ വലിയ അന്തരമുണ്ട്.",
+      "generated_expected": "ആപ്പുകളുടെ പരസ്യങ്ങളിലെ അവകാശവാദങ്ങൾക്ക് വിപരീതമായി, ഒരു പുതിയ ഭാഷയിൽ യഥാർത്ഥ പ്രാവീണ്യം നേടാൻ സാധാരണയായി നൂറുകണക്കിന് മണിക്കൂർ ശ്രദ്ധ കേന്ദ്രീകരിച്ചുള്ള പഠനം ആവശ്യമാണ്.",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ml-translation-002-001",
+      "language": "ml",
+      "task_family": "translation",
+      "source_prompt": "Translate to the target language: 'Where is the nearest market?'",
+      "source_expected": null,
+      "generated_prompt": "ഏറ്റവും അടുത്തുള്ള മാർക്കറ്റ് എവിടെയാണ്?",
+      "generated_expected": null,
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ml-translation-004-007",
+      "language": "ml",
+      "task_family": "translation",
+      "source_prompt": "Translate to the target language: 'Please call me when you arrive at the station.'",
+      "source_expected": null,
+      "generated_prompt": "താഴെ പറയുന്ന വാചകം മലയാളത്തിലേക്ക് വിവർത്തനം ചെയ്യുക: 'Please call me when you arrive at the station.'",
+      "generated_expected": "നിങ്ങൾ സ്റ്റേഷനിൽ എത്തുമ്പോൾ എന്നെ ഒന്ന് വിളിക്കണം.",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ml-summarization-003-006",
+      "language": "ml",
+      "task_family": "summarization",
+      "source_prompt": "Summarize in one sentence: A city council voted to add 30 kilometers of protected bicycle lanes over the next two years, funded by a small increase in parking fees. Supporters argue the lanes will cut traffic and pollution, while some shop owners worry about losing customer parking.",
+      "source_expected": "A city council approved 30 km of new protected bike lanes funded by higher parking fees, despite some shop owners' concerns about lost parking.",
+      "generated_prompt": "താഴെ പറയുന്ന വിവരങ്ങൾ ഒരു വാക്യത്തിൽ സംഗ്രഹിക്കുക: അടുത്ത രണ്ട് വർഷത്തിനുള്ളിൽ 30 കിലോമീറ്റർ നീളത്തിൽ സുരക്ഷിതമായ സൈക്കിൾ പാതകൾ നിർമ്മിക്കാൻ നഗരസഭ തീരുമാനിച്ചു. പാർക്കിംഗ് ഫീസ് ചെറിയ തോതിൽ വർദ്ധിപ്പിച്ചാണ് ഇതിനുള്ള തുക കണ്ടെത്തുന്നത്. ഗതാഗതത്തിരക്കും മലിനീകരണവും കുറയുമെന്ന് അനുകൂലികൾ വാദിക്കുമ്പോൾ, ഉപഭോക്താക്കൾക്ക് പാർക്കിംഗ് സൗകര്യം കുറയുമെന്ന് ചില വ്യാപാരികൾ ആശങ്കപ്പെടുന്നു.",
+      "generated_expected": "ചില വ്യാപാരികളുടെ ആശങ്കകൾക്കിടയിലും, പാർക്കിംഗ് ഫീസ് വർദ്ധിപ്പിച്ചുകൊണ്ട് 30 കിലോമീറ്റർ പുതിയ സൈക്കിൾ പാതകൾ നിർമ്മിക്കാൻ നഗരസഭ അനുമതി നൽകി.",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ml-classification-001-005",
+      "language": "ml",
+      "task_family": "classification",
+      "source_prompt": "The new restaurant in town has terrible service and the food was cold. Classify the sentiment of this review.",
+      "source_expected": "negative",
+      "generated_prompt": "നഗരത്തിൽ പുതുതായി തുടങ്ങിയ ഹോട്ടലിലെ സേവനം വളരെ മോശമാണ്, കൂടാതെ വിളമ്പിയ ഭക്ഷണം തീരെ തണുത്തിരുന്നു. ഈ അഭിപ്രായത്തിന്റെ സ്വഭാവം എന്താണെന്ന് വിലയിരുത്തുക: ['അനുകൂലം', 'നിഷ്പക്ഷത', 'പ്രതികൂലം']",
+      "generated_expected": "പ്രതികൂലം",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ml-classification-005-004",
+      "language": "ml",
+      "task_family": "classification",
+      "source_prompt": "Classify the intent of this customer message: 'I would like to return the shoes I bought last week because they don't fit.'",
+      "source_expected": "return request",
+      "generated_prompt": "താഴെ പറയുന്ന ഉപഭോക്താവിന്റെ സന്ദേശത്തിന്റെ ഉദ്ദേശ്യം എന്താണെന്ന് വർഗ്ഗീകരിക്കുക: 'കഴിഞ്ഞ ആഴ്ച ഞാൻ വാങ്ങിയ ചെരിപ്പുകൾ പാകമല്ലാത്തതുകൊണ്ട് എനിക്ക് അത് തിരികെ നൽകണം.' ലഭ്യമായ വിഭാഗങ്ങൾ: ['പരാതി', 'തിരികെ നൽകാനുള്ള അപേക്ഷ', 'പൊതുവായ അന്വേഷണം', 'അഭിനന്ദനം']",
+      "generated_expected": "തിരികെ നൽകാനുള്ള അപേക്ഷ",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ml-instruction-001-000",
+      "language": "ml",
+      "task_family": "instruction",
+      "source_prompt": "Write a short paragraph (3-4 sentences) explaining what photosynthesis is, in a way a 10-year-old would understand.",
+      "source_expected": null,
+      "generated_prompt": "പ്രകാശസംശ്ലേഷണം എന്നാൽ എന്താണെന്ന് പത്തുവയസ്സുള്ള ഒരു കുട്ടിക്ക് മനസ്സിലാകുന്ന രീതിയിൽ മൂന്നോ നാലോ വാചകങ്ങളിൽ ലളിതമായി എഴുതുക.",
+      "generated_expected": "സസ്യങ്ങൾ സൂര്യപ്രകാശം ഉപയോഗിച്ച് തങ്ങൾക്ക് ആവശ്യമായ ഭക്ഷണം നിർമ്മിക്കുന്ന പ്രക്രിയയാണ് പ്രകാശസംശ്ലേഷണം. ചെടികൾ അന്തരീക്ഷത്തിലെ കാർബൺ ഡൈ ഓക്സൈഡും വേരുകൾ വഴി വലിച്ചെടുക്കുന്ന വെള്ളവും സൂര്യപ്രകാശത്തിന്റെ സഹായത്തോടെ ഗ്ലൂക്കോസ് എന്ന ഭക്ഷണമാക്കി മാറ്റുന്നു. ഈ സമയത്ത് സസ്യങ്ങൾ ഓക്സിജൻ പുറത്തുവിടുകയും ചെയ്യുന്നു, ഇത് നമുക്ക് ശ്വസിക്കാൻ അത്യാവശ്യമാണ്. ചുരുക്കത്തിൽ, സൂര്യപ്രകാശത്തെ ഊർജ്ജമാക്കി മാറ്റി വളരാൻ ചെടികൾ നടത്തുന്ന ഒരു അത്ഭുതപ്രവർത്തനമാണിത്.",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ml-translation-003-006",
+      "language": "ml",
+      "task_family": "translation",
+      "source_prompt": "Translate to the target language: 'Thank you for your help. I really appreciate it.'",
+      "source_expected": null,
+      "generated_prompt": "താഴെ പറയുന്ന വാചകം മലയാളത്തിലേക്ക് വിവർത്തനം ചെയ്യുക: 'Thank you for your help. I really appreciate it.'",
+      "generated_expected": "നിങ്ങളുടെ സഹായത്തിന് നന്ദി. ഞാൻ അത് ശരിക്കും വിലമതിക്കുന്നു.",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ml-translation-003-002",
+      "language": "ml",
+      "task_family": "translation",
+      "source_prompt": "Translate to the target language: 'Thank you for your help. I really appreciate it.'",
+      "source_expected": null,
+      "generated_prompt": "താഴെ നൽകിയിരിക്കുന്ന വാചകം മലയാളത്തിലേക്ക് വിവർത്തനം ചെയ്യുക: 'Thank you for your help. I really appreciate it.'",
+      "generated_expected": "നിങ്ങളുടെ സഹായത്തിന് നന്ദി. ഞാൻ അത് ശരിക്കും വിലമതിക്കുന്നു.",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ml-instruction-005-004",
+      "language": "ml",
+      "task_family": "instruction",
+      "source_prompt": "Write a short, polite email asking a teacher for a one-week extension on an assignment.",
+      "source_expected": null,
+      "generated_prompt": "ഒരു അസൈൻമെന്റ് സമർപ്പിക്കാൻ ഒരാഴ്ച കൂടി സമയം അനുവദിക്കണമെന്ന് ആവശ്യപ്പെട്ടുകൊണ്ട് അധ്യാപകർക്ക് അയക്കാൻ കഴിയുന്ന മാന്യമായ ഒരു ഇമെയിൽ തയ്യാറാക്കുക.",
+      "generated_expected": "വിഷയം: അസൈൻമെന്റ് സമർപ്പിക്കുന്നതിനുള്ള സമയം നീട്ടി നൽകുന്നതു സംബന്ധിച്ച്.\n\nബഹുമാനപ്പെട്ട അധ്യാപകരെ,\n\nനമസ്കാരം. ഞാൻ [വിദ്യാർത്ഥിയുടെ പേര്], [ക്ലാസ്/വിഭാഗം] വിദ്യാർത്ഥിയാണ്. താങ്കൾ നൽകിയ അസൈൻമെന്റ് പൂർത്തിയാക്കാൻ ഞാൻ ശ്രമിച്ചുകൊണ്ടിരിക്കുകയാണ്. എന്നാൽ, ചില അപ്രതീക്ഷിത കാരണങ്ങളാൽ അത് നിശ്ചയിച്ച സമയത്തിനുള്ളിൽ പൂർത്തിയാക്കാൻ എനിക്ക് സാധിക്കുന്നില്ല. അതിനാൽ, ഈ അസൈൻമെന്റ് സമർപ്പിക്കാൻ ഒരാഴ്ച കൂടി സമയം അനുവദിക്കണമെന്ന് താഴ്മയോടെ അപേക്ഷിക്കുന്നു.\n\nഈ അസൗകര്യത്തിൽ ക്ഷമ ചോദിക്കുന്നു. താങ്കളുടെ അനുകൂലമായ മറുപടിക്കായി കാത്തിരിക്കുന്നു.\n\nവിശ്വസ്തതയോടെ,\n[വിദ്യാർത്ഥിയുടെ പേര്]",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ml-reasoning-005-004",
+      "language": "ml",
+      "task_family": "reasoning",
+      "source_prompt": "A motorcycle travels 40 km on 1 liter of petrol. How far can it travel on 6 liters? Show your reasoning step by step.",
+      "source_expected": "240 km (40 km x 6 liters = 240 km).",
+      "generated_prompt": "ഒരു മോട്ടോർസൈക്കിൾ ഒരു ലിറ്റർ പെട്രോളിൽ 40 കിലോമീറ്റർ സഞ്ചരിക്കുന്നു. എങ്കിൽ 6 ലിറ്റർ പെട്രോൾ ഉപയോഗിച്ച് അത് എത്ര ദൂരം സഞ്ചരിക്കും? ഘട്ടം ഘട്ടമായുള്ള വിശദീകരണത്തോടെ ഉത്തരം നൽകുക.",
+      "generated_expected": "240 കിലോമീറ്റർ (40 കിലോമീറ്റർ x 6 ലിറ്റർ = 240 കിലോമീറ്റർ).",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ml-reasoning-002-001",
+      "language": "ml",
+      "task_family": "reasoning",
+      "source_prompt": "If today is Wednesday, what day of the week will it be 100 days from now? Explain your reasoning.",
+      "source_expected": "Friday (100 mod 7 = 2; Wednesday + 2 days = Friday).",
+      "generated_prompt": "ഇന്ന് ബുധനാഴ്ചയാണെങ്കിൽ, നൂറ് ദിവസങ്ങൾക്ക് ശേഷം ഏത് ദിവസമായിരിക്കും? നിങ്ങളുടെ യുക്തി വിശദീകരിക്കുക.",
+      "generated_expected": "വെള്ളിയാഴ്ച (നൂറിനെ ഏഴ് കൊണ്ട് ഹരിക്കുമ്പോൾ ശിഷ്ടം രണ്ട് ലഭിക്കുന്നു; ബുധനാഴ്ചയോട് രണ്ട് ദിവസം കൂട്ടിയാൽ വെള്ളിയാഴ്ച ലഭിക്കും).",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ml-instruction-003-007",
+      "language": "ml",
+      "task_family": "instruction",
+      "source_prompt": "Describe what makes a good leader, using two concrete examples.",
+      "source_expected": null,
+      "generated_prompt": "ഒരു നല്ല നേതാവിന് ഉണ്ടായിരിക്കേണ്ട ഗുണങ്ങൾ എന്തൊക്കെയാണെന്ന് വിശദീകരിക്കുക. നിങ്ങളുടെ ഉത്തരത്തെ സാധൂകരിക്കാനായി രണ്ട് വ്യക്തമായ ഉദാഹരണങ്ങൾ ഉൾപ്പെടുത്തുക.",
+      "generated_expected": "ഒരു നല്ല നേതാവ് എന്നത് കേവലം അധികാരം പ്രയോഗിക്കുന്ന ആളല്ല, മറിച്ച് തന്റെ കൂടെയുള്ളവരെ പ്രചോദിപ്പിക്കുകയും ലക്ഷ്യത്തിലേക്ക് നയിക്കുകയും ചെയ്യുന്ന വ്യക്തിയാണ്. ഇതിനായി വേണ്ട രണ്ട് പ്രധാന ഗുണങ്ങൾ താഴെ പറയുന്നവയാണ്: 1. തീരുമാനങ്ങൾ എടുക്കാനുള്ള കഴിവ്: പ്രതിസന്ധി ഘട്ടങ്ങളിൽ പതറാതെ ശരിയായ തീരുമാനങ്ങൾ എടുക്കാൻ ഒരു നേതാവിന് കഴിയണം. ഉദാഹരണത്തിന്, ഒരു പ്രോജക്റ്റ് പരാജയത്തിന്റെ വക്കിൽ നിൽക്കുമ്പോൾ, കുറ്റപ്പെടുത്തലുകൾക്ക് പകരം പരിഹാരമാർഗ്ഗങ്ങൾ കണ്ടെത്തി ടീമിനെ ആത്മവിശ്വാസത്തോടെ മുന്നോട്ട് നയിക്കുന്ന ഒരു മാനേജർ. 2. സഹാനുഭൂതി: തന്റെ സഹപ്രവർത്തകരുടെ ബുദ്ധിമുട്ടുകളും വികാരങ്ങളും മനസ്സിലാക്കി അവരോട് ചേർന്നുനിൽക്കാൻ നേതാവിന് സാധിക്കണം. ഉദാഹരണത്തിന്, ഒരു ജീവനക്കാരന്റെ കുടുംബപരമായ പ്രശ്നങ്ങൾ തിരിച്ചറിഞ്ഞ്, അവർക്ക് ജോലിയിൽ ചെറിയ ഇടവേള നൽകുകയും ആ സമയത്ത് അവരുടെ ചുമതലകൾ സ്വയം ഏറ്റെടുക്കുകയും ചെയ്യുന്ന ഒരു ടീം ലീഡർ. ഇത്തരത്തിൽ കൃത്യമായ തീരുമാനങ്ങളും സഹാനുഭൂതിയുമുള്ള ഒരാളാണ് മികച്ച നേതാവ്.",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ml-translation-002-005",
+      "language": "ml",
+      "task_family": "translation",
+      "source_prompt": "Translate to the target language: 'Where is the nearest market?'",
+      "source_expected": null,
+      "generated_prompt": "ഏറ്റവും അടുത്തുള്ള മാർക്കറ്റ് എവിടെയാണ്?",
+      "generated_expected": "ഏറ്റവും അടുത്തുള്ള മാർക്കറ്റ് എവിടെയാണ്?",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ml-qa-002-001",
+      "language": "ml",
+      "task_family": "qa",
+      "source_prompt": "What is the capital city of Brazil?",
+      "source_expected": "Brasilia",
+      "generated_prompt": "ബ്രസീലിന്റെ തലസ്ഥാന നഗരം ഏതാണ്?",
+      "generated_expected": "ബ്രസീലിയ",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ml-translation-001-004",
+      "language": "ml",
+      "task_family": "translation",
+      "source_prompt": "Translate to the target language: 'Good morning. How are you today?'",
+      "source_expected": null,
+      "generated_prompt": "താഴെ നൽകിയിരിക്കുന്ന വാചകം മലയാളത്തിലേക്ക് വിവർത്തനം ചെയ്യുക: 'Good morning. How are you today?'",
+      "generated_expected": "സുപ്രഭാതം. ഇന്ന് നിങ്ങൾക്ക് എങ്ങനെയുണ്ട്?",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ta-summarization-001-000",
+      "language": "ta",
+      "task_family": "summarization",
+      "source_prompt": "Summarize in one sentence: A team of researchers in Kenya has developed a new low-cost water purification method using locally-sourced charcoal and sand. The system can produce 50 liters of clean water per day and costs less than $20 to build. Initial trials in three rural villages have shown a 95% reduction in waterborne illness among children.",
+      "source_expected": "Researchers in Kenya created an inexpensive water purification system that has reduced waterborne illness by 95% in tested villages.",
+      "generated_prompt": "கென்யாவில் உள்ள ஆராய்ச்சியாளர்கள் குழு, உள்ளூரில் கிடைக்கும் கரியையும் மணலையும் பயன்படுத்தி குறைந்த செலவிலான புதிய நீர் சுத்திகரிப்பு முறையை உருவாக்கியுள்ளது. இந்த அமைப்பு ஒரு நாளைக்கு 50 லிட்டர் சுத்தமான நீரை வழங்கக்கூடியது மற்றும் இதை உருவாக்க 20 டாலருக்கும் குறைவான செலவே ஆகிறது. மூன்று கிராமங்களில் நடத்தப்பட்ட ஆரம்பகட்ட சோதனைகளில், குழந்தைகளிடையே நீரினால் பரவும் நோய்கள் 95 சதவீதம் குறைந்துள்ளதை இது காட்டுகிறது. இந்தத் தகவலை ஒரே வாக்கியத்தில் சுருக்கி எழுதுங்கள்.",
+      "generated_expected": "கென்ய ஆராய்ச்சியாளர்கள் உருவாக்கிய மலிவான நீர் சுத்திகரிப்பு முறையானது, சோதிக்கப்பட்ட கிராமங்களில் நீரினால் பரவும் நோய்களை 95 சதவீதம் குறைத்துள்ளது.",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ta-qa-001-000",
+      "language": "ta",
+      "task_family": "qa",
+      "source_prompt": "What year did the first man walk on the moon?",
+      "source_expected": "1969",
+      "generated_prompt": "முதல் மனிதன் நிலவில் கால் பதித்த ஆண்டு எது?",
+      "generated_expected": "1969",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ta-instruction-003-007",
+      "language": "ta",
+      "task_family": "instruction",
+      "source_prompt": "Describe what makes a good leader, using two concrete examples.",
+      "source_expected": null,
+      "generated_prompt": "ஒரு சிறந்த தலைவருக்கு இருக்க வேண்டிய பண்புகள் யாவை என்பதை விளக்கி, அதற்கு இரண்டு பொருத்தமான உதாரணங்களைத் தருக.",
+      "generated_expected": "ஒரு சிறந்த தலைவர் என்பவர் மற்றவர்களுக்கு முன்மாதிரியாகத் திகழ்பவர். இதற்கு இரண்டு உதாரணங்கள்: முதலாவதாக, ஒரு குழுவின் இலக்கை அடையத் தன்னையும் ஈடுபடுத்திக்கொண்டு, மற்றவர்களின் கருத்துகளுக்கு மதிப்பளிக்கும் ஒரு மேலாளர். இரண்டாவதாக, நெருக்கடியான நேரங்களில் பதற்றமடையாமல், தனது குழுவினருக்கு நம்பிக்கையூட்டி, சரியான முடிவுகளை எடுக்கும் ஒரு விளையாட்டு அணியின் கேப்டன்.",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ta-instruction-004-003",
+      "language": "ta",
+      "task_family": "instruction",
+      "source_prompt": "Explain the difference between weather and climate in three sentences.",
+      "source_expected": null,
+      "generated_prompt": "வானிலைக்கும் காலநிலைக்கும் இடையே உள்ள வேறுபாட்டை மூன்று வாக்கியங்களில் விளக்குக.",
+      "generated_expected": "வானிலை என்பது ஒரு குறிப்பிட்ட இடத்தில் குறுகிய காலத்தில் நிலவும் வளிமண்டல மாற்றங்களைக் குறிப்பதாகும். காலநிலை என்பது ஒரு குறிப்பிட்ட பகுதியில் நீண்ட காலத்திற்கு நிலவும் வானிலை மாற்றங்களின் சராசரி நிலையாகும். சுருக்கமாகச் சொன்னால், வானிலை என்பது அன்றாட நிகழ்வு, ஆனால் காலநிலை என்பது பல ஆண்டுகளின் ஒட்டுமொத்த சராசரி வடிவமாகும்.",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ta-qa-001-005",
+      "language": "ta",
+      "task_family": "qa",
+      "source_prompt": "What year did the first man walk on the moon?",
+      "source_expected": "1969",
+      "generated_prompt": "முதல் மனிதன் நிலவில் கால் பதித்த ஆண்டு எது?",
+      "generated_expected": "1969",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ta-reasoning-003-002",
+      "language": "ta",
+      "task_family": "reasoning",
+      "source_prompt": "A shop sells pens at 3 for 2 dollars. How much do 12 pens cost? Show your reasoning step by step.",
+      "source_expected": "8 dollars (12 / 3 = 4 sets; 4 x 2 dollars = 8 dollars).",
+      "generated_prompt": "ஒரு கடையில் 3 பேனாக்கள் 2 டாலர்களுக்கு விற்கப்படுகின்றன. 12 பேனாக்களின் விலை என்ன? உங்கள் கணக்கீட்டு முறையை படிபடியாக விளக்கவும்.",
+      "generated_expected": "8 டாலர்கள் (12 ÷ 3 = 4 தொகுதிகள்; 4 × 2 டாலர்கள் = 8 டாலர்கள்).",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ta-reasoning-002-001",
+      "language": "ta",
+      "task_family": "reasoning",
+      "source_prompt": "If today is Wednesday, what day of the week will it be 100 days from now? Explain your reasoning.",
+      "source_expected": "Friday (100 mod 7 = 2; Wednesday + 2 days = Friday).",
+      "generated_prompt": "இன்று புதன்கிழமை என்றால், இன்னும் 100 நாட்களுக்குப் பிறகு என்ன கிழமையாக இருக்கும்? உங்கள் விளக்கத்தைத் தருக.",
+      "generated_expected": "வெள்ளிக்கிழமை (100-ஐ 7-ஆல் வகுத்தால் மீதி 2 கிடைக்கும்; புதன்கிழமையுடன் 2 நாட்களைக் கூட்டினால் வெள்ளிக்கிழமை வரும்).",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ta-classification-002-006",
+      "language": "ta",
+      "task_family": "classification",
+      "source_prompt": "The package arrived three days early and the product is exactly as described. Classify the sentiment of this review.",
+      "source_expected": "positive",
+      "generated_prompt": "எங்களுடைய பார்சல் மூன்று நாட்கள் முன்பாகவே வந்துவிட்டது, மேலும் பொருள் விவரிப்பில் சொன்னது போலவே மிகச் சரியாக இருக்கிறது. இந்த விமர்சனத்தின் உணர்வை வகைப்படுத்துக: ['நேர்மறை', 'நடுநிலை', 'எதிர்மறை']",
+      "generated_expected": "நேர்மறை",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ta-reasoning-002-007",
+      "language": "ta",
+      "task_family": "reasoning",
+      "source_prompt": "If today is Wednesday, what day of the week will it be 100 days from now? Explain your reasoning.",
+      "source_expected": "Friday (100 mod 7 = 2; Wednesday + 2 days = Friday).",
+      "generated_prompt": "இன்று புதன்கிழமை என்றால், இன்னும் 100 நாட்களுக்குப் பிறகு என்ன கிழமையாக இருக்கும்? உங்கள் விளக்கத்தைத் தருக.",
+      "generated_expected": "வெள்ளிக்கிழமை (100-ஐ 7-ஆல் வகுத்தால் மீதி 2 கிடைக்கும்; புதன்கிழமையுடன் 2 நாட்களைக் கூட்டினால் வெள்ளிக்கிழமை வரும்).",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ta-summarization-003-002",
+      "language": "ta",
+      "task_family": "summarization",
+      "source_prompt": "Summarize in one sentence: A city council voted to add 30 kilometers of protected bicycle lanes over the next two years, funded by a small increase in parking fees. Supporters argue the lanes will cut traffic and pollution, while some shop owners worry about losing customer parking.",
+      "source_expected": "A city council approved 30 km of new protected bike lanes funded by higher parking fees, despite some shop owners' concerns about lost parking.",
+      "generated_prompt": "பின்வரும் செய்தியை ஒரே வாக்கியத்தில் சுருக்கவும்: நகர மன்றம் அடுத்த இரண்டு ஆண்டுகளில் 30 கிலோமீட்டர் நீளத்திற்கு பாதுகாக்கப்பட்ட மிதிவண்டிப் பாதைகளை அமைக்க வாக்களித்தது, இதற்கு வாகன நிறுத்துமிடக் கட்டணத்தை சற்று உயர்த்துவதன் மூலம் நிதி திரட்டப்படுகிறது. மிதிவண்டிப் பாதைகள் போக்குவரத்து நெரிசலையும் மாசுபாட்டையும் குறைக்கும் என்று ஆதரவாளர்கள் வாதிடுகின்றனர், அதேசமயம் சில கடை உரிமையாளர்கள் வாடிக்கையாளர் வாகனங்களை நிறுத்துவதற்கான இடம் குறைந்துவிடும் என்று கவலைப்படுகின்றனர்.",
+      "generated_expected": "சில கடை உரிமையாளர்களின் கவலைகளுக்கு மத்தியிலும், வாகன நிறுத்துமிடக் கட்டண உயர்வின் மூலம் நிதி திரட்டப்பட்டு, 30 கிலோமீட்டர் புதிய பாதுகாக்கப்பட்ட மிதிவண்டிப் பாதைகளை அமைக்க நகர மன்றம் ஒப்புதல் அளித்துள்ளது.",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ta-reasoning-001-000",
+      "language": "ta",
+      "task_family": "reasoning",
+      "source_prompt": "Maria has three times as many apples as her brother. Together they have 24 apples. How many does each have? Show your reasoning step by step.",
+      "source_expected": "Maria has 18 apples; her brother has 6 apples.",
+      "generated_prompt": "மரியாவிடம் அவளுடைய சகோதரனை விட மூன்று மடங்கு ஆப்பிள்கள் உள்ளன. அவர்கள் இருவரிடமும் சேர்த்து மொத்தம் 24 ஆப்பிள்கள் உள்ளன எனில், ஒவ்வொருவரிடமும் எத்தனை ஆப்பிள்கள் உள்ளன? உங்கள் விடைக்கான காரணத்தை படி வாரியாக விளக்கவும்.",
+      "generated_expected": "மரியாவிடம் 18 ஆப்பிள்கள் உள்ளன; அவளுடைய சகோதரனிடம் 6 ஆப்பிள்கள் உள்ளன.",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ta-summarization-001-004",
+      "language": "ta",
+      "task_family": "summarization",
+      "source_prompt": "Summarize in one sentence: A team of researchers in Kenya has developed a new low-cost water purification method using locally-sourced charcoal and sand. The system can produce 50 liters of clean water per day and costs less than $20 to build. Initial trials in three rural villages have shown a 95% reduction in waterborne illness among children.",
+      "source_expected": "Researchers in Kenya created an inexpensive water purification system that has reduced waterborne illness by 95% in tested villages.",
+      "generated_prompt": "கென்யாவைச் சேர்ந்த ஆராய்ச்சியாளர்கள் குழு, உள்ளூரில் கிடைக்கும் கரி மற்றும் மணலைப் பயன்படுத்தி மலிவான முறையில் நீரைச் சுத்திகரிக்கும் புதிய தொழில்நுட்பத்தை உருவாக்கியுள்ளது. இந்த அமைப்பு ஒரு நாளைக்கு 50 லிட்டர் சுத்தமான நீரை வழங்கக்கூடியது மற்றும் இதனை உருவாக்க 20 டாலருக்கும் குறைவான செலவே ஆகும். மூன்று கிராமங்களில் நடத்தப்பட்ட ஆரம்பகட்ட சோதனைகளில், குழந்தைகளிடையே நீரினால் பரவும் நோய்கள் 95 சதவீதம் குறைந்துள்ளமை கண்டறியப்பட்டுள்ளது. இதனை ஒரே வாக்கியத்தில் சுருக்கி எழுதுக.",
+      "generated_expected": "கென்ய ஆராய்ச்சியாளர்கள் உருவாக்கிய மலிவான நீரைச் சுத்திகரிக்கும் முறையானது, சோதனை செய்யப்பட்ட கிராமங்களில் நீரினால் பரவும் நோய்களை 95 சதவீதம் குறைத்துள்ளது.",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ta-translation-001-004",
+      "language": "ta",
+      "task_family": "translation",
+      "source_prompt": "Translate to the target language: 'Good morning. How are you today?'",
+      "source_expected": null,
+      "generated_prompt": "பின்வரும் ஆங்கில வாக்கியத்தைத் தமிழில் மொழிபெயர்க்கவும்: 'Good morning. How are you today?'",
+      "generated_expected": "காலை வணக்கம். இன்று நீங்கள் எப்படி இருக்கிறீர்கள்?",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ta-summarization-002-005",
+      "language": "ta",
+      "task_family": "summarization",
+      "source_prompt": "Summarize the main argument in one sentence: Many language-learning apps claim users can become fluent in a few months of daily practice. However, linguists studying second-language acquisition consistently find that achieving conversational fluency in an unrelated language typically requires 600 to 750 hours of focused study, with significantly more required for full literacy. Marketing claims and reality diverge sharply.",
+      "source_expected": "Despite app marketing claims, real fluency in a new language typically requires hundreds of hours of focused study.",
+      "generated_prompt": "பின்வரும் பத்தியின் முக்கிய வாதத்தை ஒரே வாக்கியத்தில் சுருக்கவும்: பல மொழி கற்றல் செயலிகள், தினமும் பயிற்சி செய்வதன் மூலம் சில மாதங்களில் சரளமாகப் பேச முடியும் என்று கூறுகின்றன. இருப்பினும், இரண்டாம் மொழி கையகப்படுத்துதலைப் படிக்கும் மொழியியலாளர்கள், தொடர்பில்லாத ஒரு மொழியில் சரளமாகப் பேசத் தொடங்க பொதுவாக 600 முதல் 750 மணிநேர தீவிரப் பயிற்சி தேவை என்றும், முழுமையான எழுத்தறிவு பெற இன்னும் அதிக நேரம் தேவைப்படும் என்றும் தொடர்ந்து கண்டறிந்துள்ளனர். சந்தைப்படுத்தல் கூற்றுகளுக்கும் யதார்த்தத்திற்கும் இடையே பெரும் வேறுபாடு உள்ளது.",
+      "generated_expected": "செயலிகளின் விளம்பரங்கள் கூறினாலும், ஒரு புதிய மொழியில் உண்மையான சரளத்தைப் பெற பொதுவாக நூற்றுக்கணக்கான மணிநேர தீவிரப் பயிற்சி தேவைப்படுகிறது.",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ta-instruction-002-006",
+      "language": "ta",
+      "task_family": "instruction",
+      "source_prompt": "Give three practical tips for someone learning a new language for the first time.",
+      "source_expected": null,
+      "generated_prompt": "புதிதாக ஒரு மொழியைக் கற்கத் தொடங்கும் ஒருவருக்கு உதவும் வகையில், நடைமுறைக்கு ஒத்துவரும் மூன்று ஆலோசனைகளை வழங்கவும்.",
+      "generated_expected": "புதிதாக ஒரு மொழியைக் கற்கத் தொடங்கும் போது, அந்த மொழியில் உள்ள எளிமையான பாடல்கள் அல்லது குறுகிய காணொளிகளைக் கேட்டுப் பழகலாம். தினமும் குறைந்தது பத்து புதிய சொற்களையாவது கற்றுக்கொண்டு, அவற்றை அன்றாடப் பேச்சில் பயன்படுத்த முயற்சிப்பது நல்ல பலனைத் தரும். இறுதியாக, இலக்கணத்தைப் பற்றி மட்டும் கவலைப்படாமல், பிழைகள் ஏற்பட்டாலும் தயங்காமல் அந்த மொழியில் பேசத் தொடங்குவது கற்றலை வேகப்படுத்தும்.",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ta-summarization-002-001",
+      "language": "ta",
+      "task_family": "summarization",
+      "source_prompt": "Summarize the main argument in one sentence: Many language-learning apps claim users can become fluent in a few months of daily practice. However, linguists studying second-language acquisition consistently find that achieving conversational fluency in an unrelated language typically requires 600 to 750 hours of focused study, with significantly more required for full literacy. Marketing claims and reality diverge sharply.",
+      "source_expected": "Despite app marketing claims, real fluency in a new language typically requires hundreds of hours of focused study.",
+      "generated_prompt": "பின்வரும் பத்தியின் முக்கிய வாதத்தை ஒரே வாக்கியத்தில் சுருக்கவும்: பல மொழி கற்றல் செயலிகள் தினசரி பயிற்சியின் மூலம் சில மாதங்களிலேயே சரளமாகப் பேச முடியும் என்று கூறுகின்றன. இருப்பினும், இரண்டாம் மொழி கையகப்படுத்துதலைப் படிக்கும் மொழியியலாளர்கள், தொடர்பில்லாத ஒரு மொழியில் உரையாடல் சரளத்தை அடைய பொதுவாக 600 முதல் 750 மணிநேர தீவிரப் படிப்பு தேவைப்படுவதாகவும், முழுமையான எழுத்தறிவு பெற இன்னும் அதிக நேரம் தேவைப்படுவதாகவும் கண்டறிந்துள்ளனர். சந்தைப்படுத்தல் கூற்றுகளுக்கும் யதார்த்தத்திற்கும் இடையே பெரும் முரண்பாடு உள்ளது.",
+      "generated_expected": "செயலிகளின் விளம்பரக் கூற்றுகளுக்கு மாறாக, ஒரு புதிய மொழியில் உண்மையான சரளத்தைப் பெற பொதுவாக நூற்றுக்கணக்கான மணிநேர தீவிரப் பயிற்சி தேவைப்படுகிறது.",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ta-instruction-001-000",
+      "language": "ta",
+      "task_family": "instruction",
+      "source_prompt": "Write a short paragraph (3-4 sentences) explaining what photosynthesis is, in a way a 10-year-old would understand.",
+      "source_expected": null,
+      "generated_prompt": "தாவரங்கள் சூரிய ஒளியைப் பயன்படுத்தி எப்படித் தங்களுக்குத் தேவையான உணவைத் தயாரித்துக் கொள்கின்றன என்பதை, ஒரு பத்து வயதுக் குழந்தைக்குப் புரியும் வகையில் மூன்று அல்லது நான்கு வரிகளில் விளக்கி எழுதுங்கள்.",
+      "generated_expected": "தாவரங்கள் சூரிய ஒளி, காற்று மற்றும் தண்ணீரைப் பயன்படுத்தித் தங்களுக்குத் தேவையான உணவைத் தாங்களே தயாரித்துக்கொள்ளும் முறைக்கு ஒளிச்சேர்க்கை என்று பெயர். செடிகளின் இலைகளில் உள்ள பச்சையம் என்ற நிறமி, சூரிய ஒளியை ஈர்த்து அந்த ஆற்றலை உணவாக மாற்றுகிறது. இந்தச் செயல்பாட்டின் மூலம் தாவரங்கள் சர்க்கரையைத் தயாரித்து வளர்வதற்குப் பயன்படுத்துகின்றன, மேலும் நமக்குத் தேவையான ஆக்சிஜனை வெளியிடுகின்றன.",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ta-instruction-002-001",
+      "language": "ta",
+      "task_family": "instruction",
+      "source_prompt": "Give three practical tips for someone learning a new language for the first time.",
+      "source_expected": null,
+      "generated_prompt": "புதிதாக ஒரு மொழியைக் கற்கத் தொடங்கும் ஒருவருக்கு உதவும் வகையில் மூன்று நடைமுறை ஆலோசனைகளை வழங்கவும்.",
+      "generated_expected": "புதிதாக ஒரு மொழியைக் கற்கத் தொடங்கும் போது, அந்த மொழியைத் தினமும் உங்கள் அன்றாட வாழ்வில் ஒரு பகுதியாக மாற்றிக்கொள்வது மிகவும் அவசியம். இதற்கான மூன்று முக்கிய ஆலோசனைகள் கீழே கொடுக்கப்பட்டுள்ளன:\n\n1. தினசரி பயிற்சி: ஒரு நாளைக்கு பல மணிநேரம் படிப்பதை விட, தினமும் குறைந்தது இருபது நிமிடங்கள் அந்த மொழியில் பேசுவதையோ அல்லது கேட்பதையோ வழக்கமாக்கிக் கொள்ளுங்கள். இது உங்கள் மூளைக்கு அந்த மொழியின் ஒலிகள் மற்றும் வாக்கிய அமைப்புகளை எளிதில் பதிய வைக்கும்.\n\n2. காட்சிக் கருவிகளைப் பயன்படுத்துதல்: நீங்கள் கற்கும் மொழியில் உள்ள சிறுவர் கதைகள், கார்ட்டூன்கள் அல்லது அந்த மொழியிலேயே உள்ள திரைப்படங்களை சப்-டைட்டில்களுடன் பாருங்கள். இது சொற்களின் பொருளைச் சூழலோடு புரிந்துகொள்ள பெரிதும் உதவும்.\n\n3. தவறுகளைக் கண்டு அஞ்சாதீர்கள்: ஒரு மொழியைக் கற்கும்போது இலக்கணப் பிழைகள் ஏற்படுவது மிகவும் இயல்பானது. தயக்கமின்றிப் பேசுவதே அந்த மொழியில் புலமை பெறச் சிறந்த வழி. நண்பர்களிடமோ அல்லது மொழிப் பரிமாற்றக் குழுக்களிலோ பிழைகளைத் திருத்திக்கொண்டு பேசப் பழகுங்கள்.",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ta-translation-001-000",
+      "language": "ta",
+      "task_family": "translation",
+      "source_prompt": "Translate to the target language: 'Good morning. How are you today?'",
+      "source_expected": null,
+      "generated_prompt": "பின்வரும் ஆங்கில வாக்கியத்தைத் தமிழில் மொழிபெயர்க்கவும்: 'Good morning. How are you today?'",
+      "generated_expected": "காலை வணக்கம். இன்று நீங்கள் எப்படி இருக்கிறீர்கள்?",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ta-classification-001-000",
+      "language": "ta",
+      "task_family": "classification",
+      "source_prompt": "The new restaurant in town has terrible service and the food was cold. Classify the sentiment of this review.",
+      "source_expected": "negative",
+      "generated_prompt": "நகரத்தில் புதிதாகத் திறக்கப்பட்ட உணவகத்தில் சேவை மிகவும் மோசமாகவும், பரிமாறப்பட்ட உணவு குளிராகவும் இருந்தது. இந்த விமர்சனத்தின் உணர்வை வகைப்படுத்துக. தெரிவுகள்: நேர்மறை, நடுநிலை, எதிர்மறை.",
+      "generated_expected": "எதிர்மறை",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ta-translation-003-006",
+      "language": "ta",
+      "task_family": "translation",
+      "source_prompt": "Translate to the target language: 'Thank you for your help. I really appreciate it.'",
+      "source_expected": null,
+      "generated_prompt": "பின்வரும் ஆங்கில வாக்கியத்தைத் தமிழில் மொழிபெயர்க்கவும்: 'Thank you for your help. I really appreciate it.'",
+      "generated_expected": "உங்கள் உதவிக்கு மிக்க நன்றி. நான் இதை மிகவும் பாராட்டுகிறேன்.",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ta-instruction-003-002",
+      "language": "ta",
+      "task_family": "instruction",
+      "source_prompt": "Describe what makes a good leader, using two concrete examples.",
+      "source_expected": null,
+      "generated_prompt": "ஒரு சிறந்த தலைவருக்கு இருக்க வேண்டிய பண்புகள் என்னென்ன என்பதை விளக்குக. உங்கள் விளக்கத்தை இரண்டு தெளிவான உதாரணங்களுடன் விவரிக்கவும்.",
+      "generated_expected": "ஒரு சிறந்த தலைவர் என்பவர் மற்றவர்களுக்கு முன்மாதிரியாகத் திகழ்பவர். இதற்கு இரண்டு உதாரணங்கள்: முதலாவதாக, ஒரு நெருக்கடியான சூழலில் குழுவினர் பதற்றமடையும் போது, அமைதியாகச் செயல்பட்டு சரியான முடிவுகளை எடுக்கும் திறன். இரண்டாவதாக, தனது குழுவில் உள்ளவர்களின் திறமைகளை அடையாளம் கண்டு, அவர்களுக்கு ஊக்கமளித்து, அவர்களின் வளர்ச்சிக்குத் தடையாக இருக்கும் தடைகளை நீக்கும் பண்பு. இத்தகைய குணங்களே ஒருவரைச் சிறந்த தலைவராக மாற்றுகின்றன.",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ta-translation-002-005",
+      "language": "ta",
+      "task_family": "translation",
+      "source_prompt": "Translate to the target language: 'Where is the nearest market?'",
+      "source_expected": null,
+      "generated_prompt": "மிக அருகிலுள்ள சந்தை எங்கே இருக்கிறது?",
+      "generated_expected": "அருகிலுள்ள சந்தை எங்கே உள்ளது?",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ta-classification-003-007",
+      "language": "ta",
+      "task_family": "classification",
+      "source_prompt": "Local school board approves new arts curriculum starting next semester. Classify the topic of this news headline.",
+      "source_expected": "education",
+      "generated_prompt": "உள்ளூர் பள்ளி வாரியம் அடுத்த பருவத்திலிருந்து புதிய கலைப் பாடத்திட்டத்தை அமல்படுத்த ஒப்புதல் அளித்துள்ளது. இந்தச் செய்தியின் தலைப்பு எந்தத் துறையைச் சார்ந்தது என்று வகைப்படுத்துக. வகைப்பாடுகள்: ['அரசியல்', 'விளையாட்டு', 'கல்வி', 'ஆரோக்கியம்', 'வணிகம்', 'பொழுதுபோக்கு']",
+      "generated_expected": "கல்வி",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ta-classification-004-003",
+      "language": "ta",
+      "task_family": "classification",
+      "source_prompt": "Message: 'Congratulations! You have won a free phone. Click this link now to claim your prize.' Classify whether this message is spam.",
+      "source_expected": "spam",
+      "generated_prompt": "செய்தி: 'வாழ்த்துக்கள்! உங்களுக்கு ஒரு இலவச அலைபேசி கிடைத்துள்ளது. உங்கள் பரிசைப் பெற இந்த இணைப்பை இப்போதே கிளிக் செய்யவும்.' இந்தச் செய்தி தேவையற்ற விளம்பரமா (ஸ்பேம்) அல்லது இல்லையா என்று வகைப்படுத்தவும்.",
+      "generated_expected": "தேவையற்ற விளம்பரம்",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ta-reasoning-005-004",
+      "language": "ta",
+      "task_family": "reasoning",
+      "source_prompt": "A motorcycle travels 40 km on 1 liter of petrol. How far can it travel on 6 liters? Show your reasoning step by step.",
+      "source_expected": "240 km (40 km x 6 liters = 240 km).",
+      "generated_prompt": "ஒரு மோட்டார் சைக்கிள் 1 லிட்டர் பெட்ரோலில் 40 கி.மீ தூரம் செல்கிறது. அதே மோட்டார் சைக்கிள் 6 லிட்டர் பெட்ரோலில் எவ்வளவு தூரம் செல்லும்? உங்கள் கணக்கீட்டிற்கான காரணங்களை படி வாரியாக விளக்குங்கள்.",
+      "generated_expected": "240 கி.மீ (40 கி.மீ x 6 லிட்டர்கள் = 240 கி.மீ).",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ta-qa-003-007",
+      "language": "ta",
+      "task_family": "qa",
+      "source_prompt": "If a train travels at 60 km/h for 2.5 hours, how far does it travel?",
+      "source_expected": "150 km",
+      "generated_prompt": "ஒரு தொடர்வண்டி மணிக்கு 60 கி.மீ வேகத்தில் 2.5 மணி நேரம் பயணம் செய்தால், அது எவ்வளவு தூரம் பயணிக்கும்?",
+      "generated_expected": "150 கி.மீ",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ta-qa-002-001",
+      "language": "ta",
+      "task_family": "qa",
+      "source_prompt": "What is the capital city of Brazil?",
+      "source_expected": "Brasilia",
+      "generated_prompt": "பிரேசில் நாட்டின் தலைநகரம் எது?",
+      "generated_expected": "பிரேசிலியா",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ta-translation-004-007",
+      "language": "ta",
+      "task_family": "translation",
+      "source_prompt": "Translate to the target language: 'Please call me when you arrive at the station.'",
+      "source_expected": null,
+      "generated_prompt": "நீங்கள் நிலையத்திற்கு வந்தவுடன் என்னை அழையுங்கள்.",
+      "generated_expected": "நீங்கள் நிலையத்திற்கு வந்தவுடன் என்னை அழையுங்கள்.",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ta-qa-003-002",
+      "language": "ta",
+      "task_family": "qa",
+      "source_prompt": "If a train travels at 60 km/h for 2.5 hours, how far does it travel?",
+      "source_expected": "150 km",
+      "generated_prompt": "ஒரு தொடர்வண்டி மணிக்கு 60 கி.மீ வேகத்தில் 2.5 மணிநேரம் பயணம் செய்தால், அது எவ்வளவு தூரம் பயணிக்கும்?",
+      "generated_expected": "150 கி.மீ",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ta-translation-003-002",
+      "language": "ta",
+      "task_family": "translation",
+      "source_prompt": "Translate to the target language: 'Thank you for your help. I really appreciate it.'",
+      "source_expected": null,
+      "generated_prompt": "பின்வரும் ஆங்கில வாக்கியத்தைத் தமிழில் மொழிபெயர்க்கவும்: 'Thank you for your help. I really appreciate it.'",
+      "generated_expected": "உங்கள் உதவிக்கு நன்றி. நான் இதை உண்மையிலேயே பாராட்டுகிறேன்.",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ta-translation-004-003",
+      "language": "ta",
+      "task_family": "translation",
+      "source_prompt": "Translate to the target language: 'Please call me when you arrive at the station.'",
+      "source_expected": null,
+      "generated_prompt": "பின்வரும் ஆங்கில வாக்கியத்தைத் தமிழுக்கு மொழிபெயர்க்கவும்: 'Please call me when you arrive at the station.'",
+      "generated_expected": "நீங்கள் நிலையத்திற்கு வந்தவுடன் எனக்கு அழையுங்கள்.",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ta-reasoning-001-006",
+      "language": "ta",
+      "task_family": "reasoning",
+      "source_prompt": "Maria has three times as many apples as her brother. Together they have 24 apples. How many does each have? Show your reasoning step by step.",
+      "source_expected": "Maria has 18 apples; her brother has 6 apples.",
+      "generated_prompt": "மரியாவிடம் அவளுடைய சகோதரனை விட மூன்று மடங்கு ஆப்பிள்கள் உள்ளன. அவர்கள் இருவரிடமும் சேர்த்து மொத்தம் 24 ஆப்பிள்கள் உள்ளன. ஒவ்வொருவரிடமும் எத்தனை ஆப்பிள்கள் உள்ளன? உங்கள் கணக்கீட்டு முறையை படி வாரியாக விளக்கவும்.",
+      "generated_expected": "மரியாவிடம் 18 ஆப்பிள்களும், அவளுடைய சகோதரனிடம் 6 ஆப்பிள்களும் உள்ளன.",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ta-instruction-005-004",
+      "language": "ta",
+      "task_family": "instruction",
+      "source_prompt": "Write a short, polite email asking a teacher for a one-week extension on an assignment.",
+      "source_expected": null,
+      "generated_prompt": "உங்கள் ஆசிரியருக்கு ஒரு மின்னஞ்சல் எழுதுங்கள். அதில், நீங்கள் சமர்ப்பிக்க வேண்டிய வீட்டுப் பாடத்தை முடிப்பதற்கு கூடுதலாக ஒரு வாரம் அவகாசம் கேட்டு, பணிவாகவும் மரியாதையாகவும் கோரிக்கை விடுங்கள்.",
+      "generated_expected": "மதிப்பிற்குரிய ஐயா/அம்மா, வணக்கம். நான் உங்கள் வகுப்பில் பயிலும் மாணவன். வரும் திங்கள்கிழமை சமர்ப்பிக்க வேண்டிய வீட்டுப் பாடத்தை முடிக்க எனக்கு கூடுதல் நேரம் தேவைப்படுகிறது. சில தவிர்க்க முடியாத காரணங்களால் என்னால் குறித்த நேரத்தில் அதை முடிக்க இயலவில்லை. எனவே, எனக்கு மேலும் ஒரு வாரம் கால அவகாசம் வழங்கி உதவினால் மிக்க உதவியாக இருக்கும். தங்களின் புரிதலுக்கு நன்றி. இப்படிக்கு, தங்கள் உண்மையுள்ள, [மாணவர் பெயர்].",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ta-translation-002-001",
+      "language": "ta",
+      "task_family": "translation",
+      "source_prompt": "Translate to the target language: 'Where is the nearest market?'",
+      "source_expected": null,
+      "generated_prompt": "அருகிலுள்ள சந்தை எங்கே இருக்கிறது?",
+      "generated_expected": null,
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ta-classification-001-005",
+      "language": "ta",
+      "task_family": "classification",
+      "source_prompt": "The new restaurant in town has terrible service and the food was cold. Classify the sentiment of this review.",
+      "source_expected": "negative",
+      "generated_prompt": "ஊரில் புதிதாகத் திறக்கப்பட்ட உணவகத்தில் சேவை மிகவும் மோசமாக இருந்தது, மேலும் பரிமாறப்பட்ட உணவும் ஆறிப்போய் இருந்தது. இந்த விமர்சனத்தின் உணர்வை வகைப்படுத்துக. விருப்பங்கள்: [நேர்மறை, நடுநிலை, எதிர்மறை].",
+      "generated_expected": "எதிர்மறை",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ta-classification-003-002",
+      "language": "ta",
+      "task_family": "classification",
+      "source_prompt": "Local school board approves new arts curriculum starting next semester. Classify the topic of this news headline.",
+      "source_expected": "education",
+      "generated_prompt": "உள்ளூர் பள்ளி வாரியம் அடுத்த பருவத்திலிருந்து புதிய கலைப் பாடத்திட்டத்தை அமல்படுத்த ஒப்புதல் அளித்துள்ளது. இந்தச் செய்தியின் தலைப்பு எந்தத் துறையைச் சார்ந்தது என்று வகைப்படுத்துக. வகைப்பாடுகள்: ['அரசியல்', 'விளையாட்டு', 'கல்வி', 'மருத்துவம்', 'வணிகம்', 'பொழுதுபோக்கு']",
+      "generated_expected": "கல்வி",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ta-qa-004-003",
+      "language": "ta",
+      "task_family": "qa",
+      "source_prompt": "What is the largest planet in our solar system?",
+      "source_expected": "Jupiter",
+      "generated_prompt": "நமது சூரிய குடும்பத்தில் உள்ள மிகப்பெரிய கோள் எது?",
+      "generated_expected": "வியாழன்",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ta-reasoning-006-005",
+      "language": "ta",
+      "task_family": "reasoning",
+      "source_prompt": "A car travels 12 miles using 0.5 gallons of gasoline. What is its fuel efficiency in miles per gallon? Show your reasoning step by step.",
+      "source_expected": "24 miles per gallon (12 miles / 0.5 gallons = 24).",
+      "generated_prompt": "ஒரு மகிழுந்து 0.5 காலன்கள் பெட்ரோலைப் பயன்படுத்தி 12 மைல்கள் தூரம் பயணிக்கிறது. அந்த மகிழுந்தின் எரிபொருள் சிக்கனத் திறன் (மைல்/காலன்) என்ன? உங்கள் கணக்கீட்டு முறையை படிவாரியாக விளக்கவும்.",
+      "generated_expected": "ஒரு காலனுக்கு 24 மைல்கள் (12 மைல்கள் / 0.5 காலன்கள் = 24).",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ta-reasoning-004-003",
+      "language": "ta",
+      "task_family": "reasoning",
+      "source_prompt": "All roses are flowers. Some flowers fade quickly. Can we conclude that some roses fade quickly? Explain your reasoning.",
+      "source_expected": "No. The premises do not guarantee it — the flowers that fade quickly need not include any roses.",
+      "generated_prompt": "அனைத்து ரோஜாக்களும் பூக்கள். சில பூக்கள் விரைவில் வாடிவிடும். இதிலிருந்து சில ரோஜாக்கள் விரைவில் வாடிவிடும் என்று நாம் முடிவு செய்ய முடியுமா? உங்கள் காரணத்தை விளக்குக.",
+      "generated_expected": "முடியாது. கொடுக்கப்பட்டுள்ள கூற்றுகள் இதை உறுதிப்படுத்தவில்லை — விரைவில் வாடும் பூக்களில் ரோஜாக்களும் இருக்க வேண்டும் என்ற அவசியம் இல்லை.",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ta-summarization-004-007",
+      "language": "ta",
+      "task_family": "summarization",
+      "source_prompt": "Summarize the key finding in one sentence: A five-year study following 10,000 office workers found that those who took a short walk every hour reported less back pain and higher focus than those who sat continuously, even when both groups did the same amount of total daily exercise.",
+      "source_expected": "Taking short hourly walks reduced back pain and improved focus more than a single daily workout, according to a five-year study of office workers.",
+      "generated_prompt": "பத்தாயிரம் அலுவலகப் பணியாளர்களிடம் ஐந்து ஆண்டுகளாக மேற்கொள்ளப்பட்ட ஆய்வில், தொடர்ந்து அமர்ந்திருப்பவர்களை விட, ஒவ்வொரு மணி நேரத்திற்கும் ஒருமுறை நடைப்பயிற்சி மேற்கொண்டவர்களுக்கு முதுகு வலி குறைவாக இருப்பதும், கவனத்திறன் அதிகமாக இருப்பதும் கண்டறியப்பட்டது. இரு குழுவினரும் சமமான அளவு உடற்பயிற்சி செய்த போதிலும் இந்த வேறுபாடு காணப்பட்டது. ஆய்வின் முக்கியக் கண்டுபிடிப்பை ஒரே வாக்கியத்தில் சுருக்கி எழுதுக.",
+      "generated_expected": "ஐந்து ஆண்டுகளாக அலுவலகப் பணியாளர்களிடம் நடத்தப்பட்ட ஆய்வின்படி, ஒருமுறை மட்டும் உடற்பயிற்சி செய்வதை விட, ஒவ்வொரு மணி நேரத்திற்கும் ஒருமுறை நடைப்பயிற்சி மேற்கொள்வது முதுகு வலியைத் குறைத்து கவனத்திறனை மேம்படுத்துகிறது.",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ta-classification-002-001",
+      "language": "ta",
+      "task_family": "classification",
+      "source_prompt": "The package arrived three days early and the product is exactly as described. Classify the sentiment of this review.",
+      "source_expected": "positive",
+      "generated_prompt": "இந்த பார்சல் மூன்று நாட்களுக்கு முன்பே வந்துவிட்டது, பொருளும் விளக்கப்பட்டிருந்தபடியே மிகச் சரியாக உள்ளது. இந்த விமர்சனத்தின் உணர்வை வகைப்படுத்துக: ['நேர்மறை', 'நடுநிலை', 'எதிர்மறை']",
+      "generated_expected": "நேர்மறை",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ta-summarization-003-006",
+      "language": "ta",
+      "task_family": "summarization",
+      "source_prompt": "Summarize in one sentence: A city council voted to add 30 kilometers of protected bicycle lanes over the next two years, funded by a small increase in parking fees. Supporters argue the lanes will cut traffic and pollution, while some shop owners worry about losing customer parking.",
+      "source_expected": "A city council approved 30 km of new protected bike lanes funded by higher parking fees, despite some shop owners' concerns about lost parking.",
+      "generated_prompt": "பின்வரும் செய்தியை ஒரே வாக்கியத்தில் சுருக்கவும்: நகர மன்றம் அடுத்த இரண்டு ஆண்டுகளில் 30 கிலோமீட்டர் நீளத்திற்குப் பாதுகாக்கப்பட்ட மிதிவண்டிப் பாதைகளை உருவாக்க வாக்களித்துள்ளது, இதற்கு வாகன நிறுத்துமிடக் கட்டணத்தை உயர்த்துவதன் மூலம் நிதி திரட்டப்பட உள்ளது. மிதிவண்டிப் பாதைகள் போக்குவரத்து நெரிசலையும் மாசுபாட்டையும் குறைக்கும் என்று ஆதரவாளர்கள் வாதிடுகின்றனர், அதேசமயம் சில கடை உரிமையாளர்கள் வாடிக்கையாளர் வாகனங்களை நிறுத்துவதற்கான இடம் குறையும் என்று கவலைப்படுகின்றனர்.",
+      "generated_expected": "சில கடை உரிமையாளர்களின் கவலைகளுக்கு மத்தியிலும், வாகன நிறுத்துமிடக் கட்டணத்தை உயர்த்துவதன் மூலம் நிதியளிக்கப்படும் 30 கி.மீ புதிய பாதுகாக்கப்பட்ட மிதிவண்டிப் பாதைகளை உருவாக்க நகர மன்றம் ஒப்புதல் அளித்துள்ளது.",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ta-instruction-001-005",
+      "language": "ta",
+      "task_family": "instruction",
+      "source_prompt": "Write a short paragraph (3-4 sentences) explaining what photosynthesis is, in a way a 10-year-old would understand.",
+      "source_expected": null,
+      "generated_prompt": "ஒளிச்சேர்க்கை என்றால் என்ன என்பதை பத்து வயது சிறுவன் எளிதாகப் புரிந்துகொள்ளும் வகையில் மூன்று அல்லது நான்கு வாக்கியங்களில் விளக்கி எழுதுங்கள்.",
+      "generated_expected": "தாவரங்கள் தங்களுக்குத் தேவையான உணவைத் தாங்களே தயாரித்துக்கொள்ளும் முறைக்கு ஒளிச்சேர்க்கை என்று பெயர். சூரிய ஒளி, காற்று மற்றும் தண்ணீரைப் பயன்படுத்தி, தாவரங்கள் தங்கள் இலைகளில் உள்ள பச்சையத்தின் உதவியுடன் சர்க்கரையை உணவாக உருவாக்குகின்றன. இந்தச் செயல்பாட்டின் போது, தாவரங்கள் நாம் சுவாசிக்கத் தேவையான ஆக்சிஜனை வெளியிடுகின்றன. இதனால் தான் செடி கொடிகள் பூமியில் உயிர்கள் வாழ்வதற்கு மிக முக்கியமானதாக இருக்கின்றன.",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ta-summarization-004-003",
+      "language": "ta",
+      "task_family": "summarization",
+      "source_prompt": "Summarize the key finding in one sentence: A five-year study following 10,000 office workers found that those who took a short walk every hour reported less back pain and higher focus than those who sat continuously, even when both groups did the same amount of total daily exercise.",
+      "source_expected": "Taking short hourly walks reduced back pain and improved focus more than a single daily workout, according to a five-year study of office workers.",
+      "generated_prompt": "ஐந்தாண்டு கால ஆய்வில், அலுவலகத்தில் பணிபுரியும் 10,000 பேரிடம் நடத்தப்பட்ட ஆய்வில், தொடர்ந்து அமர்ந்திருப்பவர்களை விட, ஒவ்வொரு மணி நேரத்திற்கும் ஒருமுறை நடைப்பயிற்சி மேற்கொண்டவர்களுக்கு முதுகு வலி குறைவாக இருப்பதும், கவனத்திறன் அதிகமாக இருப்பதும் கண்டறியப்பட்டது. இரு குழுவினரும் தினசரி ஒரே அளவு உடற்பயிற்சி செய்திருந்தாலும் இந்த வேறுபாடு இருந்தது. இந்த ஆய்வின் முக்கிய முடிவை ஒரே வாக்கியத்தில் சுருக்கி எழுதுக.",
+      "generated_expected": "அலுவலகப் பணியாளர்களிடம் நடத்தப்பட்ட ஐந்தாண்டு கால ஆய்வின்படி, நாள் முழுவதும் ஒரே இடத்தில் அமர்ந்து வேலை செய்வதை விட, ஒவ்வொரு மணி நேரத்திற்கும் ஒருமுறை சிறு நடைப்பயிற்சி மேற்கொள்வது முதுகு வலியை குறைத்து, கவனத்திறனை மேம்படுத்துகிறது.",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ta-qa-005-004",
+      "language": "ta",
+      "task_family": "qa",
+      "source_prompt": "How many days are there in a leap year?",
+      "source_expected": "366",
+      "generated_prompt": "லீப் ஆண்டில் எத்தனை நாட்கள் உள்ளன?",
+      "generated_expected": "366",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ta-classification-005-004",
+      "language": "ta",
+      "task_family": "classification",
+      "source_prompt": "Classify the intent of this customer message: 'I would like to return the shoes I bought last week because they don't fit.'",
+      "source_expected": "return request",
+      "generated_prompt": "வாடிக்கையாளர் அனுப்பிய இந்தச் செய்தியின் நோக்கத்தை வகைப்படுத்துக: 'கடந்த வாரம் நான் வாங்கிய காலணிகள் சரியாகப் பொருந்தவில்லை, அதனால் அதைத் திருப்பித் தர விரும்புகிறேன்.' கீழ்க்கண்ட விருப்பங்களிலிருந்து சரியானதைத் தேர்ந்தெடுக்கவும்: [புகார், திரும்பப் பெறும் கோரிக்கை, பொதுவான வினவல், பாராட்டு].",
+      "generated_expected": "திரும்பப் பெறும் கோரிக்கை",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ta-qa-002-006",
+      "language": "ta",
+      "task_family": "qa",
+      "source_prompt": "What is the capital city of Brazil?",
+      "source_expected": "Brasilia",
+      "generated_prompt": "பிரேசிலின் தலைநகரம் எது?",
+      "generated_expected": "பிரேசிலியா",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ur-qa-003-007",
+      "language": "ur",
+      "task_family": "qa",
+      "source_prompt": "If a train travels at 60 km/h for 2.5 hours, how far does it travel?",
+      "source_expected": "150 km",
+      "generated_prompt": "اگر ایک ٹرین 60 کلومیٹر فی گھنٹہ کی رفتار سے 2.5 گھنٹے تک سفر کرے، تو وہ کل کتنا فاصلہ طے کرے گی؟",
+      "generated_expected": "150 کلومیٹر",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ur-classification-002-001",
+      "language": "ur",
+      "task_family": "classification",
+      "source_prompt": "The package arrived three days early and the product is exactly as described. Classify the sentiment of this review.",
+      "source_expected": "positive",
+      "generated_prompt": "پارسل تین دن پہلے ہی موصول ہو گیا اور پروڈکٹ بالکل ویسی ہی ہے جیسی بیان کی گئی تھی۔ اس جائزے کے جذبات کی درجہ بندی کریں۔ (مثبت، غیر جانبدار، یا منفی)",
+      "generated_expected": "مثبت",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ur-summarization-003-006",
+      "language": "ur",
+      "task_family": "summarization",
+      "source_prompt": "Summarize in one sentence: A city council voted to add 30 kilometers of protected bicycle lanes over the next two years, funded by a small increase in parking fees. Supporters argue the lanes will cut traffic and pollution, while some shop owners worry about losing customer parking.",
+      "source_expected": "A city council approved 30 km of new protected bike lanes funded by higher parking fees, despite some shop owners' concerns about lost parking.",
+      "generated_prompt": "درج ذیل پیراگراف کا ایک جملے میں خلاصہ کریں: سٹی کونسل نے اگلے دو سالوں میں 30 کلومیٹر طویل محفوظ بائیسکل لین بنانے کے حق میں ووٹ دیا ہے، جس کے اخراجات پارکنگ فیس میں معمولی اضافے سے پورے کیے جائیں گے۔ حامیوں کا استدلال ہے کہ ان لینز سے ٹریفک اور آلودگی میں کمی آئے گی، جبکہ کچھ دکان داروں کو گاہکوں کے لیے پارکنگ ختم ہونے کا خدشہ ہے۔",
+      "generated_expected": "سٹی کونسل نے پارکنگ فیس میں اضافے سے فنڈز فراہم کر کے 30 کلومیٹر نئی محفوظ بائیسکل لین بنانے کی منظوری دے دی ہے، اگرچہ کچھ دکان داروں کو پارکنگ ختم ہونے پر تحفظات ہیں۔",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ur-classification-002-006",
+      "language": "ur",
+      "task_family": "classification",
+      "source_prompt": "The package arrived three days early and the product is exactly as described. Classify the sentiment of this review.",
+      "source_expected": "positive",
+      "generated_prompt": "پارسل تین دن پہلے ہی موصول ہو گیا اور پروڈکٹ بالکل ویسی ہی ہے جیسا کہ بیان کیا گیا تھا۔ اس جائزے کے تاثر کی درجہ بندی کریں۔ (مثبت، غیر جانبدار، یا منفی)",
+      "generated_expected": "مثبت",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ur-instruction-004-003",
+      "language": "ur",
+      "task_family": "instruction",
+      "source_prompt": "Explain the difference between weather and climate in three sentences.",
+      "source_expected": null,
+      "generated_prompt": "موسم اور آب و ہوا کے درمیان فرق کو تین جملوں میں بیان کریں۔",
+      "generated_expected": "موسم سے مراد کسی مخصوص جگہ پر مختصر وقت کے لیے فضا کی کیفیت ہوتی ہے، جیسے آج کی بارش یا دھوپ۔ اس کے برعکس، آب و ہوا کسی علاقے میں طویل عرصے تک رہنے والے موسمی حالات کا اوسط مجموعہ ہے۔ مختصراً یہ کہ موسم فوری تبدیلی کا نام ہے جبکہ آب و ہوا ایک طویل مدتی موسمیاتی نمونہ ہے۔",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ur-instruction-003-007",
+      "language": "ur",
+      "task_family": "instruction",
+      "source_prompt": "Describe what makes a good leader, using two concrete examples.",
+      "source_expected": null,
+      "generated_prompt": "ایک اچھے رہنما کی خوبیاں بیان کریں اور اپنی بات کی وضاحت کے لیے دو ٹھوس مثالیں دیں۔",
+      "generated_expected": "ایک اچھے رہنما کی بنیادی خوبیوں میں دیانتداری، بصیرت اور اپنی ٹیم کو ساتھ لے کر چلنے کی صلاحیت شامل ہے۔ مثال کے طور پر، ایک اچھا لیڈر بحران کے وقت گھبرانے کے بجائے پرسکون رہ کر درست فیصلے کرتا ہے، جیسا کہ ایک پراجیکٹ مینیجر جو مشکل ڈیڈ لائن کے دوران اپنی ٹیم کا حوصلہ بڑھاتا ہے اور ان کے کام میں آنے والی رکاوٹیں دور کرتا ہے۔ دوسری مثال ایک ایسے کپتان کی ہو سکتی ہے جو اپنی ٹیم کی شکست کے بعد خود ذمہ داری قبول کرتا ہے اور کھلاڑیوں پر تنقید کرنے کے بجائے ان کی حوصلہ افزائی کرتا ہے تاکہ وہ اگلی بار بہتر کارکردگی دکھا سکیں۔",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ur-summarization-003-002",
+      "language": "ur",
+      "task_family": "summarization",
+      "source_prompt": "Summarize in one sentence: A city council voted to add 30 kilometers of protected bicycle lanes over the next two years, funded by a small increase in parking fees. Supporters argue the lanes will cut traffic and pollution, while some shop owners worry about losing customer parking.",
+      "source_expected": "A city council approved 30 km of new protected bike lanes funded by higher parking fees, despite some shop owners' concerns about lost parking.",
+      "generated_prompt": "مندرجہ ذیل عبارت کا ایک جملے میں خلاصہ کریں: سٹی کونسل نے اگلے دو سالوں میں 30 کلومیٹر طویل محفوظ بائیسکل لین بنانے کے لیے ووٹ دیا ہے، جس کے اخراجات پارکنگ فیس میں معمولی اضافے سے پورے کیے جائیں گے۔ حامیوں کا کہنا ہے کہ ان لینز سے ٹریفک اور آلودگی میں کمی آئے گی، جبکہ کچھ دکانداروں کو گاہکوں کے لیے پارکنگ ختم ہونے کا خدشہ ہے۔",
+      "generated_expected": "سٹی کونسل نے پارکنگ فیس میں اضافے کے ذریعے 30 کلومیٹر نئی محفوظ بائیسکل لینز بنانے کی منظوری دے دی ہے، اگرچہ کچھ دکانداروں کو پارکنگ ختم ہونے کے حوالے سے تحفظات ہیں۔",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ur-summarization-004-003",
+      "language": "ur",
+      "task_family": "summarization",
+      "source_prompt": "Summarize the key finding in one sentence: A five-year study following 10,000 office workers found that those who took a short walk every hour reported less back pain and higher focus than those who sat continuously, even when both groups did the same amount of total daily exercise.",
+      "source_expected": "Taking short hourly walks reduced back pain and improved focus more than a single daily workout, according to a five-year study of office workers.",
+      "generated_prompt": "ایک پانچ سالہ تحقیق، جس میں دس ہزار دفتری ملازمین کا جائزہ لیا گیا، کے اہم نتائج کو ایک جملے میں خلاصہ کریں۔ تحقیق سے پتہ چلا کہ جو لوگ ہر گھنٹے بعد تھوڑی دیر کے لیے چہل قدمی کرتے تھے، ان میں کمر درد کی شکایت کم تھی اور ان کی توجہ دیگر لوگوں کے مقابلے میں زیادہ مرکوز رہتی تھی، چاہے دونوں گروپس نے دن بھر میں مجموعی طور پر ایک جتنی ہی ورزش کیوں نہ کی ہو۔",
+      "generated_expected": "دس ہزار دفتری ملازمین پر کی گئی پانچ سالہ تحقیق کے مطابق، ہر گھنٹے بعد تھوڑی دیر کے لیے چہل قدمی کرنا، دن بھر میں صرف ایک بار ورزش کرنے کی نسبت کمر درد میں کمی اور توجہ مرکوز رکھنے میں زیادہ مؤثر ثابت ہوا۔",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ur-reasoning-002-007",
+      "language": "ur",
+      "task_family": "reasoning",
+      "source_prompt": "If today is Wednesday, what day of the week will it be 100 days from now? Explain your reasoning.",
+      "source_expected": "Friday (100 mod 7 = 2; Wednesday + 2 days = Friday).",
+      "generated_prompt": "اگر آج بدھ کا دن ہے، تو آج سے 100 دن بعد ہفتے کا کون سا دن ہوگا؟ اپنی دلیل کی وضاحت کریں۔",
+      "generated_expected": "جمعہ (100 کو 7 پر تقسیم کرنے سے باقی 2 بچتا ہے؛ بدھ کے بعد 2 دن = جمعہ)۔",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ur-reasoning-001-006",
+      "language": "ur",
+      "task_family": "reasoning",
+      "source_prompt": "Maria has three times as many apples as her brother. Together they have 24 apples. How many does each have? Show your reasoning step by step.",
+      "source_expected": "Maria has 18 apples; her brother has 6 apples.",
+      "generated_prompt": "ماریہ کے پاس اپنے بھائی سے تین گنا زیادہ سیب ہیں۔ دونوں کے پاس کل ملا کر 24 سیب ہیں۔ بتائیے کہ ہر ایک کے پاس کتنے سیب ہیں؟ اپنے استدلال کو مرحلہ وار واضح کریں۔",
+      "generated_expected": "ماریہ کے پاس 18 سیب ہیں اور اس کے بھائی کے پاس 6 سیب ہیں۔ استدلال: فرض کریں بھائی کے پاس سیبوں کی تعداد 'س' ہے۔ تب ماریہ کے پاس 3س سیب ہوں گے۔ دونوں کا مجموعہ 4س = 24 ہے، جس کا مطلب ہے کہ س = 6۔ لہذا، بھائی کے پاس 6 اور ماریہ کے پاس 3 ضرب 6 یعنی 18 سیب ہیں۔",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ur-qa-001-000",
+      "language": "ur",
+      "task_family": "qa",
+      "source_prompt": "What year did the first man walk on the moon?",
+      "source_expected": "1969",
+      "generated_prompt": "انسان نے پہلی بار چاند پر قدم کس سال رکھا تھا؟",
+      "generated_expected": "1969",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ur-classification-001-000",
+      "language": "ur",
+      "task_family": "classification",
+      "source_prompt": "The new restaurant in town has terrible service and the food was cold. Classify the sentiment of this review.",
+      "source_expected": "negative",
+      "generated_prompt": "شہر میں کھلے نئے ریستوران کی سروس بہت ناقص ہے اور کھانا بھی ٹھنڈا تھا۔ اس تبصرے کے تاثر کی درجہ بندی کریں۔ (مثبت، غیر جانبدار، منفی)",
+      "generated_expected": "منفی",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ur-classification-003-007",
+      "language": "ur",
+      "task_family": "classification",
+      "source_prompt": "Local school board approves new arts curriculum starting next semester. Classify the topic of this news headline.",
+      "source_expected": "education",
+      "generated_prompt": "مقامی اسکول بورڈ نے اگلے سمسٹر سے فنونِ لطیفہ کے نئے نصاب کی منظوری دے دی ہے۔ اس خبر کی سرخی کے موضوع کی درجہ بندی کریں۔ لیبلز: ['سیاست'، 'کھیل'، 'تعلیم'، 'صحت'، 'کاروبار'، 'تفریح']",
+      "generated_expected": "تعلیم",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ur-reasoning-005-004",
+      "language": "ur",
+      "task_family": "reasoning",
+      "source_prompt": "A motorcycle travels 40 km on 1 liter of petrol. How far can it travel on 6 liters? Show your reasoning step by step.",
+      "source_expected": "240 km (40 km x 6 liters = 240 km).",
+      "generated_prompt": "ایک موٹر سائیکل 1 لیٹر پیٹرول میں 40 کلومیٹر کا فاصلہ طے کرتی ہے۔ بتائیے کہ وہ 6 لیٹر پیٹرول میں کتنا فاصلہ طے کر سکے گی؟ اپنے جواب کی وضاحت قدم بہ قدم کریں۔",
+      "generated_expected": "240 کلومیٹر (40 کلومیٹر ضرب 6 لیٹر برابر ہے 240 کلومیٹر)۔",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ur-classification-005-004",
+      "language": "ur",
+      "task_family": "classification",
+      "source_prompt": "Classify the intent of this customer message: 'I would like to return the shoes I bought last week because they don't fit.'",
+      "source_expected": "return request",
+      "generated_prompt": "درج ذیل گاہک کے پیغام کا مقصد بتائیں: 'میں نے پچھلے ہفتے جو جوتے خریدے تھے، میں انہیں واپس کرنا چاہتا ہوں کیونکہ وہ میرے سائز کے مطابق نہیں ہیں۔' لیبلز: ['شکایت', 'واپسی کی درخواست', 'عام پوچھ گچھ', 'تعریف']",
+      "generated_expected": "واپسی کی درخواست",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ur-instruction-003-002",
+      "language": "ur",
+      "task_family": "instruction",
+      "source_prompt": "Describe what makes a good leader, using two concrete examples.",
+      "source_expected": null,
+      "generated_prompt": "ایک اچھے لیڈر کی خصوصیات بیان کریں اور اپنی بات کی وضاحت کے لیے دو ٹھوس مثالیں دیں۔",
+      "generated_expected": "ایک بہترین لیڈر وہ ہے جو اپنی ٹیم کو ساتھ لے کر چلے اور مشکل وقت میں بھی ہمت نہ ہارے۔ پہلی مثال: ایک اچھا لیڈر اپنی ٹیم کے ارکان کی صلاحیتوں کو پہچانتا ہے اور انہیں آگے بڑھنے کے مواقع دیتا ہے، جیسے کہ ایک پروجیکٹ مینیجر جو اپنے ماتحتوں کو مشکل کام سونپ کر ان کا اعتماد بڑھاتا ہے۔ دوسری مثال: ایک مثالی لیڈر اپنی غلطیوں کی ذمہ داری خود لیتا ہے، جیسے کہ ایک کپتان جو ٹیم کی ہار کی صورت میں خود کو ذمہ دار ٹھہراتا ہے اور جیت کا سہرا اپنے کھلاڑیوں کے سر باندھتا ہے۔",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ur-translation-004-007",
+      "language": "ur",
+      "task_family": "translation",
+      "source_prompt": "Translate to the target language: 'Please call me when you arrive at the station.'",
+      "source_expected": null,
+      "generated_prompt": "درج ذیل جملے کا اردو میں ترجمہ کریں: 'Please call me when you arrive at the station.'",
+      "generated_expected": "براہ کرم جب آپ اسٹیشن پہنچ جائیں تو مجھے کال کریں۔",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ur-translation-001-004",
+      "language": "ur",
+      "task_family": "translation",
+      "source_prompt": "Translate to the target language: 'Good morning. How are you today?'",
+      "source_expected": null,
+      "generated_prompt": "درج ذیل جملے کا اردو میں ترجمہ کریں: 'Good morning. How are you today?'",
+      "generated_expected": "صبح بخیر۔ آپ آج کیسے ہیں؟",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ur-reasoning-003-002",
+      "language": "ur",
+      "task_family": "reasoning",
+      "source_prompt": "A shop sells pens at 3 for 2 dollars. How much do 12 pens cost? Show your reasoning step by step.",
+      "source_expected": "8 dollars (12 / 3 = 4 sets; 4 x 2 dollars = 8 dollars).",
+      "generated_prompt": "ایک دکان پر 3 قلم 2 ڈالر میں فروخت ہوتے ہیں۔ 12 قلموں کی قیمت کتنی ہوگی؟ اپنے استدلال کو مرحلہ وار واضح کریں۔",
+      "generated_expected": "8 ڈالر (12 تقسیم 3 برابر ہے 4 سیٹ؛ 4 ضرب 2 ڈالر برابر ہے 8 ڈالر)۔",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ur-instruction-002-006",
+      "language": "ur",
+      "task_family": "instruction",
+      "source_prompt": "Give three practical tips for someone learning a new language for the first time.",
+      "source_expected": null,
+      "generated_prompt": "اگر کوئی شخص پہلی بار کوئی نئی زبان سیکھ رہا ہو تو اسے تین عملی مشورے دیں؟",
+      "generated_expected": "پہلا مشورہ یہ ہے کہ روزانہ کی بنیاد پر زبان سننے کی عادت ڈالیں، چاہے وہ پوڈکاسٹ ہو یا فلمیں، تاکہ کانوں کو زبان کے لہجے کی عادت ہو جائے۔ دوسرا مشورہ یہ ہے کہ چھوٹے چھوٹے جملوں سے شروعات کریں اور گرامر کی غلطیوں سے ڈرے بغیر بولنے کی مشق کریں، کیونکہ اعتماد ہی روانی لاتا ہے۔ تیسرا مشورہ یہ ہے کہ سیکھنے کے عمل کو دلچسپ بنانے کے لیے اپنی پسندیدہ کتابوں یا ویڈیوز کا انتخاب کریں تاکہ آپ کی دلچسپی برقرار رہے۔",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ur-qa-003-002",
+      "language": "ur",
+      "task_family": "qa",
+      "source_prompt": "If a train travels at 60 km/h for 2.5 hours, how far does it travel?",
+      "source_expected": "150 km",
+      "generated_prompt": "اگر ایک ٹرین 60 کلومیٹر فی گھنٹہ کی رفتار سے 2.5 گھنٹے تک سفر کرے، تو وہ کل کتنا فاصلہ طے کرے گی؟",
+      "generated_expected": "150 کلومیٹر",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ur-reasoning-004-003",
+      "language": "ur",
+      "task_family": "reasoning",
+      "source_prompt": "All roses are flowers. Some flowers fade quickly. Can we conclude that some roses fade quickly? Explain your reasoning.",
+      "source_expected": "No. The premises do not guarantee it — the flowers that fade quickly need not include any roses.",
+      "generated_prompt": "تمام گلاب پھول ہیں۔ کچھ پھول جلدی مرجھا جاتے ہیں۔ کیا ہم یہ نتیجہ اخذ کر سکتے ہیں کہ کچھ گلاب جلدی مرجھا جاتے ہیں؟ اپنے استدلال کی وضاحت کریں۔",
+      "generated_expected": "نہیں۔ دی گئی معلومات سے اس بات کی ضمانت نہیں ملتی، کیونکہ یہ ضروری نہیں کہ جلدی مرجھانے والے پھولوں میں کوئی گلاب بھی شامل ہو۔",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ur-instruction-001-005",
+      "language": "ur",
+      "task_family": "instruction",
+      "source_prompt": "Write a short paragraph (3-4 sentences) explaining what photosynthesis is, in a way a 10-year-old would understand.",
+      "source_expected": null,
+      "generated_prompt": "تصویر کشی یا فوٹو سنتھیسز (photosynthesis) کے عمل کو دس سال کے بچے کو سمجھانے کے لیے تین سے چار جملوں پر مشتمل ایک مختصر پیراگراف لکھیں۔",
+      "generated_expected": "جس طرح انسانوں کو زندہ رہنے کے لیے کھانے کی ضرورت ہوتی ہے، اسی طرح پودے بھی اپنا کھانا خود تیار کرتے ہیں۔ اس عمل میں پودے سورج کی روشنی، ہوا اور پانی کا استعمال کر کے اپنی خوراک اور آکسیجن بناتے ہیں۔ اسی عمل کو فوٹو سنتھیسز کہا جاتا ہے، جس کی بدولت پودے بڑے ہوتے ہیں اور ہمیں سانس لینے کے لیے صاف ہوا فراہم کرتے ہیں۔",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ur-reasoning-001-000",
+      "language": "ur",
+      "task_family": "reasoning",
+      "source_prompt": "Maria has three times as many apples as her brother. Together they have 24 apples. How many does each have? Show your reasoning step by step.",
+      "source_expected": "Maria has 18 apples; her brother has 6 apples.",
+      "generated_prompt": "ماریہ کے پاس اپنے بھائی سے تین گنا زیادہ سیب ہیں۔ دونوں کے پاس کل ملا کر 24 سیب ہیں۔ بتائیں کہ ہر ایک کے پاس کتنے سیب ہیں؟ اپنے استدلال کو مرحلہ وار واضح کریں۔",
+      "generated_expected": "ماریہ کے پاس 18 سیب ہیں اور اس کے بھائی کے پاس 6 سیب ہیں۔ استدلال: فرض کریں بھائی کے پاس 'سین' سیب ہیں، تو ماریہ کے پاس '3 سین' سیب ہوں گے۔ دونوں کا مجموعہ '4 سین' ہے جو کہ 24 کے برابر ہے۔ لہٰذا، 'سین' برابر ہے 24 تقسیم 4 یعنی 6 کے۔ اس طرح بھائی کے پاس 6 اور ماریہ کے پاس 6 ضرب 3 یعنی 18 سیب ہیں۔",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ur-summarization-002-005",
+      "language": "ur",
+      "task_family": "summarization",
+      "source_prompt": "Summarize the main argument in one sentence: Many language-learning apps claim users can become fluent in a few months of daily practice. However, linguists studying second-language acquisition consistently find that achieving conversational fluency in an unrelated language typically requires 600 to 750 hours of focused study, with significantly more required for full literacy. Marketing claims and reality diverge sharply.",
+      "source_expected": "Despite app marketing claims, real fluency in a new language typically requires hundreds of hours of focused study.",
+      "generated_prompt": "مندرجہ ذیل عبارت کا مرکزی خیال ایک جملے میں بیان کریں: بہت سی زبانیں سکھانے والی ایپس دعویٰ کرتی ہیں کہ صارف روزانہ کی مشق سے چند مہینوں میں روانی حاصل کر سکتے ہیں۔ تاہم، دوسری زبان سیکھنے کے عمل کا مطالعہ کرنے والے ماہرینِ لسانیات کا متفقہ طور پر ماننا ہے کہ کسی غیر متعلقہ زبان میں بات چیت کی روانی حاصل کرنے کے لیے عام طور پر 600 سے 750 گھنٹے کی توجہ مرکوز مطالعے کی ضرورت ہوتی ہے، جبکہ مکمل مہارت کے لیے اس سے کہیں زیادہ وقت درکار ہوتا ہے۔ مارکیٹنگ کے دعوے اور حقیقت میں واضح تضاد پایا جاتا ہے۔",
+      "generated_expected": "ایپس کے مارکیٹنگ دعووں کے برعکس، کسی نئی زبان میں حقیقی روانی حاصل کرنے کے لیے عام طور پر سینکڑوں گھنٹے کے توجہ مرکوز مطالعے کی ضرورت ہوتی ہے۔",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ur-summarization-002-001",
+      "language": "ur",
+      "task_family": "summarization",
+      "source_prompt": "Summarize the main argument in one sentence: Many language-learning apps claim users can become fluent in a few months of daily practice. However, linguists studying second-language acquisition consistently find that achieving conversational fluency in an unrelated language typically requires 600 to 750 hours of focused study, with significantly more required for full literacy. Marketing claims and reality diverge sharply.",
+      "source_expected": "Despite app marketing claims, real fluency in a new language typically requires hundreds of hours of focused study.",
+      "generated_prompt": "مندرجہ ذیل اقتباس کا مرکزی استدلال ایک جملے میں بیان کریں: بہت سی زبان سکھانے والی ایپس دعویٰ کرتی ہیں کہ صارفین روزانہ کی مشق سے چند مہینوں میں روانی حاصل کر سکتے ہیں۔ تاہم، دوسری زبان سیکھنے کے عمل کا مطالعہ کرنے والے ماہرینِ لسانیات کا مستقل مشاہدہ ہے کہ کسی غیر متعلقہ زبان میں بات چیت کی روانی حاصل کرنے کے لیے عام طور پر 600 سے 750 گھنٹے کی توجہ مرکوز مطالعہ درکار ہوتا ہے، جبکہ مکمل خواندگی کے لیے اس سے کہیں زیادہ وقت کی ضرورت ہوتی ہے۔ مارکیٹنگ کے دعووں اور حقیقت میں بہت زیادہ تضاد پایا جاتا ہے۔",
+      "generated_expected": "ایپس کے مارکیٹنگ دعووں کے برعکس، کسی نئی زبان میں حقیقی روانی حاصل کرنے کے لیے عام طور پر سیکڑوں گھنٹوں کی توجہ مرکوز محنت درکار ہوتی ہے۔",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ur-summarization-001-000",
+      "language": "ur",
+      "task_family": "summarization",
+      "source_prompt": "Summarize in one sentence: A team of researchers in Kenya has developed a new low-cost water purification method using locally-sourced charcoal and sand. The system can produce 50 liters of clean water per day and costs less than $20 to build. Initial trials in three rural villages have shown a 95% reduction in waterborne illness among children.",
+      "source_expected": "Researchers in Kenya created an inexpensive water purification system that has reduced waterborne illness by 95% in tested villages.",
+      "generated_prompt": "کینیا کے محققین کی ایک ٹیم نے مقامی طور پر دستیاب کوئلے اور ریت کا استعمال کرتے ہوئے پانی صاف کرنے کا ایک نیا سستا طریقہ تیار کیا ہے۔ یہ نظام روزانہ 50 لیٹر صاف پانی فراہم کر سکتا ہے اور اس کی تعمیر پر 20 ڈالر سے بھی کم لاگت آتی ہے۔ دیہی علاقوں کے تین دیہاتوں میں ہونے والی ابتدائی آزمائشوں میں بچوں میں پانی سے پیدا ہونے والی بیماریوں میں 95 فیصد کمی دیکھی گئی ہے۔ اس کا ایک جملے میں خلاصہ کریں۔",
+      "generated_expected": "کینیا کے محققین نے پانی صاف کرنے کا ایک سستا نظام تیار کیا ہے جس نے تجربہ کیے گئے دیہاتوں میں پانی سے پیدا ہونے والی بیماریوں میں 95 فیصد تک کمی کی ہے۔",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ur-classification-001-005",
+      "language": "ur",
+      "task_family": "classification",
+      "source_prompt": "The new restaurant in town has terrible service and the food was cold. Classify the sentiment of this review.",
+      "source_expected": "negative",
+      "generated_prompt": "شہر میں کھلے نئے ریستوران کی سروس بہت ناقص ہے اور کھانا بھی ٹھنڈا تھا۔ اس جائزے کے تاثر کی درجہ بندی کریں۔ (مثبت، غیر جانبدار، یا منفی)",
+      "generated_expected": "منفی",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ur-reasoning-006-005",
+      "language": "ur",
+      "task_family": "reasoning",
+      "source_prompt": "A car travels 12 miles using 0.5 gallons of gasoline. What is its fuel efficiency in miles per gallon? Show your reasoning step by step.",
+      "source_expected": "24 miles per gallon (12 miles / 0.5 gallons = 24).",
+      "generated_prompt": "ایک کار 0.5 گیلن پیٹرول استعمال کر کے 12 میل کا فاصلہ طے کرتی ہے۔ اس کار کی ایندھن کی کارکردگی میل فی گیلن میں کیا ہے؟ اپنے استدلال کو مرحلہ وار واضح کریں۔",
+      "generated_expected": "24 میل فی گیلن (12 میل تقسیم 0.5 گیلن برابر ہے 24 کے)۔",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ur-translation-004-003",
+      "language": "ur",
+      "task_family": "translation",
+      "source_prompt": "Translate to the target language: 'Please call me when you arrive at the station.'",
+      "source_expected": null,
+      "generated_prompt": "درج ذیل جملے کا اردو میں ترجمہ کریں: 'Please call me when you arrive at the station.'",
+      "generated_expected": "جب آپ اسٹیشن پہنچ جائیں تو براہ کرم مجھے کال کریں۔",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ur-translation-003-002",
+      "language": "ur",
+      "task_family": "translation",
+      "source_prompt": "Translate to the target language: 'Thank you for your help. I really appreciate it.'",
+      "source_expected": null,
+      "generated_prompt": "مندرجہ ذیل جملے کا اردو میں ترجمہ کریں: 'Thank you for your help. I really appreciate it.'",
+      "generated_expected": "آپ کی مدد کا شکریہ۔ میں واقعی اس کی قدر کرتا ہوں۔",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ur-instruction-002-001",
+      "language": "ur",
+      "task_family": "instruction",
+      "source_prompt": "Give three practical tips for someone learning a new language for the first time.",
+      "source_expected": null,
+      "generated_prompt": "اگر کوئی شخص پہلی بار کوئی نئی زبان سیکھنے کی شروعات کر رہا ہو، تو اسے کامیاب بنانے کے لیے تین عملی مشورے دیں۔",
+      "generated_expected": "پہلا مشورہ یہ ہے کہ روزانہ کی بنیاد پر زبان سننے کی عادت ڈالیں، چاہے وہ پوڈ کاسٹ ہو یا فلمیں، تاکہ کان زبان کے لہجے سے مانوس ہو سکیں۔ دوسرا مشورہ یہ ہے کہ سیکھنے کے عمل کو دلچسپ بنانے کے لیے اپنی پسندیدہ کتابیں یا کارٹون اسی زبان میں دیکھیں، کیونکہ اس سے الفاظ کا ذخیرہ تیزی سے بڑھتا ہے۔ تیسرا اور سب سے اہم مشورہ یہ ہے کہ غلطیاں کرنے سے نہ گھبرائیں اور روزمرہ کی چھوٹی چھوٹی چیزوں کو نئی زبان میں بولنے کی عملی مشق کریں، کیونکہ بول چال ہی زبان میں مہارت حاصل کرنے کا بہترین طریقہ ہے۔",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ur-summarization-001-004",
+      "language": "ur",
+      "task_family": "summarization",
+      "source_prompt": "Summarize in one sentence: A team of researchers in Kenya has developed a new low-cost water purification method using locally-sourced charcoal and sand. The system can produce 50 liters of clean water per day and costs less than $20 to build. Initial trials in three rural villages have shown a 95% reduction in waterborne illness among children.",
+      "source_expected": "Researchers in Kenya created an inexpensive water purification system that has reduced waterborne illness by 95% in tested villages.",
+      "generated_prompt": "کینیا میں محققین کی ایک ٹیم نے مقامی طور پر دستیاب کوئلے اور ریت کا استعمال کرتے ہوئے پانی کو صاف کرنے کا ایک نیا اور سستا طریقہ وضع کیا ہے۔ یہ نظام روزانہ 50 لیٹر صاف پانی فراہم کر سکتا ہے اور اس کی تعمیر پر 20 ڈالر سے بھی کم خرچ آتا ہے۔ دیہی علاقوں کے تین دیہاتوں میں ابتدائی تجربات سے بچوں میں پانی سے پیدا ہونے والی بیماریوں میں 95 فیصد کمی دیکھی گئی ہے۔ اس عبارت کا ایک جملے میں خلاصہ بیان کریں۔",
+      "generated_expected": "کینیا کے محققین نے پانی صاف کرنے کا ایک سستا نظام تیار کیا ہے جس سے تجرباتی دیہاتوں میں پانی سے پیدا ہونے والی بیماریوں کی شرح میں 95 فیصد کمی آئی ہے۔",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ur-qa-001-005",
+      "language": "ur",
+      "task_family": "qa",
+      "source_prompt": "What year did the first man walk on the moon?",
+      "source_expected": "1969",
+      "generated_prompt": "پہلا انسان کس سال چاند پر چلا تھا؟",
+      "generated_expected": "1969",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ur-translation-002-001",
+      "language": "ur",
+      "task_family": "translation",
+      "source_prompt": "Translate to the target language: 'Where is the nearest market?'",
+      "source_expected": null,
+      "generated_prompt": "قریبی بازار کہاں ہے؟",
+      "generated_expected": null,
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ur-summarization-004-007",
+      "language": "ur",
+      "task_family": "summarization",
+      "source_prompt": "Summarize the key finding in one sentence: A five-year study following 10,000 office workers found that those who took a short walk every hour reported less back pain and higher focus than those who sat continuously, even when both groups did the same amount of total daily exercise.",
+      "source_expected": "Taking short hourly walks reduced back pain and improved focus more than a single daily workout, according to a five-year study of office workers.",
+      "generated_prompt": "پانچ سالہ مطالعہ جس میں دس ہزار دفتری ملازمین کا جائزہ لیا گیا، اس کے اہم نتائج کو ایک جملے میں خلاصہ کریں: تحقیق سے پتہ چلا کہ جو لوگ ہر گھنٹے بعد تھوڑی دیر کے لیے چہل قدمی کرتے تھے، ان میں مسلسل بیٹھے رہنے والوں کی نسبت کمر درد کی شکایت کم تھی اور توجہ مرکوز کرنے کی صلاحیت زیادہ تھی، حالانکہ دونوں گروپوں کی روزانہ کی کل ورزش کا دورانیہ ایک جیسا ہی تھا۔",
+      "generated_expected": "دس ہزار دفتری ملازمین پر کی گئی پانچ سالہ تحقیق کے مطابق، ہر گھنٹے بعد تھوڑی دیر کے لیے چہل قدمی کرنا، ایک ہی بار کی جانے والی روزانہ کی ورزش کی نسبت کمر کے درد کو کم کرنے اور توجہ بڑھانے میں زیادہ موثر ہے۔",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ur-qa-002-001",
+      "language": "ur",
+      "task_family": "qa",
+      "source_prompt": "What is the capital city of Brazil?",
+      "source_expected": "Brasilia",
+      "generated_prompt": "برازیل کا دارالحکومت کون سا شہر ہے؟",
+      "generated_expected": "برازیلیا",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ur-instruction-005-004",
+      "language": "ur",
+      "task_family": "instruction",
+      "source_prompt": "Write a short, polite email asking a teacher for a one-week extension on an assignment.",
+      "source_expected": null,
+      "generated_prompt": "اپنے استاد کو ایک مختصر اور شائستہ ای میل لکھیں جس میں آپ کسی تعلیمی تفویض (اسائنمنٹ) کو جمع کروانے کے لیے ایک ہفتے کی مزید مہلت کی درخواست کریں۔",
+      "generated_expected": "محترم استاد صاحب، امید ہے کہ آپ خیریت سے ہوں گے۔ میں آپ کو یہ ای میل اپنی تفویض کے سلسلے میں لکھ رہا ہوں۔ کچھ ذاتی مصروفیات کی وجہ سے میں اسے مقررہ وقت پر مکمل نہیں کر پا رہا ہوں۔ کیا آپ مہربانی فرما کر مجھے اسے جمع کروانے کے لیے ایک ہفتے کی اضافی مہلت عنایت کر سکتے ہیں؟ آپ کے تعاون کا بہت شکریہ۔",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ur-classification-003-002",
+      "language": "ur",
+      "task_family": "classification",
+      "source_prompt": "Local school board approves new arts curriculum starting next semester. Classify the topic of this news headline.",
+      "source_expected": "education",
+      "generated_prompt": "مقامی اسکول بورڈ نے اگلی سمسٹر سے آرٹس کے نئے نصاب کی منظوری دے دی ہے۔ اس خبر کی سرخی کے موضوع کی درجہ بندی کریں۔ لیبلز: ['سیاست', 'کھیل', 'تعلیم', 'صحت', 'کاروبار', 'تفریح']",
+      "generated_expected": "تعلیم",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ur-classification-004-003",
+      "language": "ur",
+      "task_family": "classification",
+      "source_prompt": "Message: 'Congratulations! You have won a free phone. Click this link now to claim your prize.' Classify whether this message is spam.",
+      "source_expected": "spam",
+      "generated_prompt": "پیغام: 'مبارک ہو! آپ نے ایک مفت موبائل فون جیتا ہے۔ اپنا انعام حاصل کرنے کے لیے ابھی اس لنک پر کلک کریں۔' بتائیں کہ کیا یہ پیغام سپیم ہے؟",
+      "generated_expected": "سپیم",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ur-translation-002-005",
+      "language": "ur",
+      "task_family": "translation",
+      "source_prompt": "Translate to the target language: 'Where is the nearest market?'",
+      "source_expected": null,
+      "generated_prompt": "سب سے قریبی بازار کہاں ہے؟",
+      "generated_expected": null,
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ur-qa-002-006",
+      "language": "ur",
+      "task_family": "qa",
+      "source_prompt": "What is the capital city of Brazil?",
+      "source_expected": "Brasilia",
+      "generated_prompt": "برازیل کا دارالحکومت کون سا شہر ہے؟",
+      "generated_expected": "برازیلیا",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ur-instruction-001-000",
+      "language": "ur",
+      "task_family": "instruction",
+      "source_prompt": "Write a short paragraph (3-4 sentences) explaining what photosynthesis is, in a way a 10-year-old would understand.",
+      "source_expected": null,
+      "generated_prompt": "تصویر کشی (فوٹوسنتھیسز) کیا ہے؟ اس عمل کی وضاحت تین سے چار جملوں میں اس طرح کریں کہ ایک دس سالہ بچہ آسانی سے سمجھ سکے۔",
+      "generated_expected": "تصویر کشی وہ عمل ہے جس کے ذریعے پودے سورج کی روشنی، پانی اور ہوا کا استعمال کر کے اپنی خوراک خود تیار کرتے ہیں۔ بالکل اسی طرح جیسے ہم کھانا کھاتے ہیں، پودے سورج کی توانائی سے اپنی طاقت حاصل کرتے ہیں۔ اس عمل کے دوران وہ آکسیجن بھی خارج کرتے ہیں جو ہمارے سانس لینے کے لیے بہت ضروری ہے۔",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ur-qa-004-003",
+      "language": "ur",
+      "task_family": "qa",
+      "source_prompt": "What is the largest planet in our solar system?",
+      "source_expected": "Jupiter",
+      "generated_prompt": "ہمارے نظامِ شمسی کا سب سے بڑا سیارہ کون سا ہے؟",
+      "generated_expected": "مشتری",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ur-qa-005-004",
+      "language": "ur",
+      "task_family": "qa",
+      "source_prompt": "How many days are there in a leap year?",
+      "source_expected": "366",
+      "generated_prompt": "لیپ کے سال میں کتنے دن ہوتے ہیں؟",
+      "generated_expected": "366",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ur-translation-001-000",
+      "language": "ur",
+      "task_family": "translation",
+      "source_prompt": "Translate to the target language: 'Good morning. How are you today?'",
+      "source_expected": null,
+      "generated_prompt": "مندرجہ ذیل جملے کا اردو میں ترجمہ کریں: 'Good morning. How are you today?'",
+      "generated_expected": "صبح بخیر۔ آپ آج کیسے ہیں؟",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ur-reasoning-002-001",
+      "language": "ur",
+      "task_family": "reasoning",
+      "source_prompt": "If today is Wednesday, what day of the week will it be 100 days from now? Explain your reasoning.",
+      "source_expected": "Friday (100 mod 7 = 2; Wednesday + 2 days = Friday).",
+      "generated_prompt": "اگر آج بدھ کا دن ہے، تو آج سے 100 دن بعد ہفتے کا کون سا دن ہوگا؟ اپنی دلیل کی وضاحت کریں۔",
+      "generated_expected": "جمعہ (100 کو 7 پر تقسیم کرنے سے باقی 2 بچتا ہے؛ بدھ + 2 دن = جمعہ)۔",
+      "show_source": true
+    },
+    {
+      "task_id": "syn-ur-translation-003-006",
+      "language": "ur",
+      "task_family": "translation",
+      "source_prompt": "Translate to the target language: 'Thank you for your help. I really appreciate it.'",
+      "source_expected": null,
+      "generated_prompt": "مندرجہ ذیل جملے کا اردو میں ترجمہ کریں: 'Thank you for your help. I really appreciate it.'",
+      "generated_expected": "آپ کی مدد کا شکریہ۔ میں واقعی اس کی قدر کرتا ہوں۔",
+      "show_source": true
+    }
+  ]
+}
