@@ -27,6 +27,7 @@ env/
 data/generated/
 data/filtered/
 data/runs/
+data/gold/
 *.jsonl
 
 # Outputs
