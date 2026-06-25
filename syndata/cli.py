@@ -23,12 +23,16 @@ from .seeds import DEFAULT_SEED_PATH, filter_by_task, load_seeds
 from .templates import default_template_for
 
 DEFAULT_OUTPUT_DIR = Path("data") / "generated"
+GOLD_DIR = Path("data") / "gold"
 DOCS_DIR = Path("docs")
 
 
 def _model_slug(model: str) -> str:
-    """Filesystem-safe model id, e.g. ``qwen/qwen3.5-122b-a10b`` -> ``qwen_qwen3.5-122b-a10b``."""
-    return model.replace("/", "_")
+    """Filesystem-safe model id: ``gemini:gemini-2.5-flash`` -> ``gemini_gemini-2.5-flash``.
+
+    Replaces both ``/`` and the ``provider:`` prefix's ``:`` (illegal in Windows paths).
+    """
+    return model.replace("/", "_").replace(":", "_")
 
 
 def _run_path(language: str, task: TaskFamily, model: str) -> Path:
@@ -199,6 +203,10 @@ def _build_parser() -> argparse.ArgumentParser:
         "--workers", type=int, default=4,
         help="Max concurrent calls; the rate limiter caps throughput regardless.",
     )
+    gb.add_argument(
+        "--calls-per-minute", type=float, default=36.0,
+        help="Rate-limiter ceiling for call starts (lower if the account 429s).",
+    )
     gb.add_argument("--temperature", type=float, default=0.7)
     gb.add_argument("--max-tokens", type=int, default=1024)
     gb.add_argument(
@@ -209,6 +217,94 @@ def _build_parser() -> argparse.ArgumentParser:
         "--out-dir", default=str(DEFAULT_OUTPUT_DIR),
         help="Output root (default: data/generated).",
     )
+
+    js = sub.add_parser(
+        "judge-score",
+        help="Run the judge ensemble over a generated pool; persist ensemble + per-judge scores.",
+    )
+    js.add_argument(
+        "--generated", default=str(DEFAULT_OUTPUT_DIR),
+        help="Dir (recursed for *.jsonl) or a single JSONL file of generated items.",
+    )
+    js.add_argument(
+        "--judges", required=True,
+        help="Comma-separated judge model ids (the ensemble).",
+    )
+    js.add_argument("--aggregate", default="mean", choices=["mean", "median"])
+    js.add_argument("--seeds", default=str(DEFAULT_SEED_PATH))
+    js.add_argument("--workers", type=int, default=6)
+    js.add_argument(
+        "--calls-per-minute", type=float, default=None,
+        help="Pace each judge's call starts (set for low-RPM providers like Gemini).",
+    )
+    js.add_argument("--max-tokens", type=int, default=1024)
+    js.add_argument("--timeout", type=float, default=None, help="Per-request timeout (s).")
+    js.add_argument(
+        "--out", default=None,
+        help="Ensemble scores JSONL (default: data/gold/scores_<ts>.jsonl). "
+             "Per-judge scores written alongside as *.per_judge.jsonl.",
+    )
+
+    eg = sub.add_parser(
+        "export-gold",
+        help="Assemble a blind rater bundle + private manifest from a judged pool.",
+    )
+    eg.add_argument(
+        "--generated", default=str(DEFAULT_OUTPUT_DIR),
+        help="Dir (recursed for *.jsonl) or a single JSONL file of generated items.",
+    )
+    eg.add_argument(
+        "--scores", required=True,
+        help="Ensemble scores JSONL produced by `judge-score`.",
+    )
+    eg.add_argument("--seeds", default=str(DEFAULT_SEED_PATH))
+    eg.add_argument(
+        "--per-language", type=int, default=80,
+        help="Target items per language in the gold set.",
+    )
+    eg.add_argument(
+        "--normal-frac", type=float, default=0.6,
+        help="Fraction sampled as 'normal'; the rest are judge-borderline.",
+    )
+    eg.add_argument("--raters-per-language", type=int, default=2)
+    eg.add_argument(
+        "--overlap", type=float, default=0.2,
+        help="Fraction of items double-rated (needs >=2 raters/language).",
+    )
+    eg.add_argument(
+        "--rng-seed", type=int, default=0,
+        help="Seed for deterministic sampling + rater assignment.",
+    )
+    eg.add_argument("--bundle-id", default=None)
+    eg.add_argument("--out-dir", default=str(GOLD_DIR))
+
+    dr = sub.add_parser(
+        "generate-drip",
+        help="Resilient serial drip generation with escalating backoff (for throttled endpoints).",
+    )
+    dr.add_argument("--languages", default="hi,ur,ta,ml")
+    dr.add_argument("--tasks", default="all")
+    dr.add_argument(
+        "--per-combo", type=int, default=8,
+        help="Target items per (language x task); already-present items are skipped.",
+    )
+    dr.add_argument("--teacher", default="deepseek-ai/deepseek-v4-flash")
+    dr.add_argument("--temperature", type=float, default=0.7)
+    dr.add_argument("--max-tokens", type=int, default=1024)
+    dr.add_argument(
+        "--calls-per-minute", type=float, default=12.0,
+        help="Gentle proactive pace between calls; backoff handles the rest.",
+    )
+    dr.add_argument(
+        "--backoffs", default="60,300,900",
+        help="Comma-separated escalating wait seconds on failure; last value repeats.",
+    )
+    dr.add_argument(
+        "--max-attempts", type=int, default=6,
+        help="Per-item attempts before skipping it and moving on.",
+    )
+    dr.add_argument("--seeds", default=str(DEFAULT_SEED_PATH))
+    dr.add_argument("--out-dir", default=str(DEFAULT_OUTPUT_DIR))
     return parser
 
 
@@ -409,7 +505,7 @@ def cmd_generate_batch(args: argparse.Namespace) -> int:
     languages = [c.strip() for c in args.languages.split(",") if c.strip()]
     tasks = _resolve_tasks(args.tasks)
     all_seeds = load_seeds(args.seeds)
-    client = build_client(args.teacher)
+    client = build_client(args.teacher, calls_per_minute=args.calls_per_minute)
     out_root = Path(args.out_dir)
 
     # Build the work list: up to --per-combo distinct seeds per (language, task).
@@ -445,52 +541,308 @@ def cmd_generate_batch(args: argparse.Namespace) -> int:
     def _call(seed, config):
         return generate(seed, config, client)
 
-    # Collect items per (lang, task) so each combo lands in one JSONL file.
-    buckets: dict[tuple[str, str], list] = {}
-    counts: dict[tuple[str, str], int] = {}
-    errors = 0
-    done = 0
-    with ThreadPoolExecutor(max_workers=workers) as pool:
-        futures = {
-            pool.submit(_call, seed, config): (lang, task)
-            for (lang, task, seed, config) in jobs
-        }
-        for fut in as_completed(futures):
-            lang, task = futures[fut]
-            done += 1
-            try:
-                item = fut.result()
-            except Exception as err:  # noqa: BLE001 — isolate per-item failures
-                errors += 1
-                print(f"[{done}/{total}] ✗ {lang}/{task.value} failed — {err}",
-                      file=sys.stderr)
-                continue
-            bucket = buckets.setdefault((lang, task.value), [])
-            # Disambiguate when the same seed is reused within a combo.
-            idx = len(bucket)
-            item.id = f"{item.id}-{idx:03d}"
-            bucket.append(item)
-            counts[(lang, task.value)] = counts.get((lang, task.value), 0) + 1
-            preview = item.prompt[:50].replace("\n", " ")
-            print(f"[{done}/{total}] ✓ {lang}/{task.value} {item.id} — {preview}",
-                  file=sys.stderr)
-
-    # Write one timestamped JSONL per (lang, task), reusing the standard scheme.
-    written = 0
-    for (lang, task_value), items in buckets.items():
+    def _path_for(lang: str, task_value: str) -> Path:
         out_path = _run_path(lang, TaskFamily(task_value), args.teacher)
         if args.out_dir != str(DEFAULT_OUTPUT_DIR):
             out_path = out_root / lang / task_value / out_path.name
         out_path.parent.mkdir(parents=True, exist_ok=True)
-        with out_path.open("w", encoding="utf-8") as fh:
-            for item in items:
-                fh.write(item.model_dump_json() + "\n")
-        written += len(items)
+        return out_path
+
+    # Stream each item to its (lang, task) file as it completes and flush, so a
+    # throttled or interrupted run keeps whatever it already produced (rather than
+    # buffering everything and writing only at the end — which loses all progress
+    # if the account rate-limits mid-run).
+    handles: dict[tuple[str, str], object] = {}
+    counts: dict[tuple[str, str], int] = {}
+    errors = 0
+    done = 0
+    try:
+        with ThreadPoolExecutor(max_workers=workers) as pool:
+            futures = {
+                pool.submit(_call, seed, config): (lang, task)
+                for (lang, task, seed, config) in jobs
+            }
+            for fut in as_completed(futures):
+                lang, task = futures[fut]
+                done += 1
+                try:
+                    item = fut.result()
+                except Exception as err:  # noqa: BLE001 — isolate per-item failures
+                    errors += 1
+                    print(f"[{done}/{total}] ✗ {lang}/{task.value} failed — {err}",
+                          file=sys.stderr)
+                    continue
+                key = (lang, task.value)
+                if key not in handles:
+                    handles[key] = _path_for(lang, task.value).open("w", encoding="utf-8")
+                # Disambiguate when the same seed is reused within a combo.
+                idx = counts.get(key, 0)
+                item.id = f"{item.id}-{idx:03d}"
+                handles[key].write(item.model_dump_json() + "\n")
+                handles[key].flush()
+                counts[key] = idx + 1
+                preview = item.prompt[:50].replace("\n", " ")
+                print(f"[{done}/{total}] ✓ {lang}/{task.value} {item.id} — {preview}",
+                      file=sys.stderr)
+    finally:
+        for fh in handles.values():
+            fh.close()
+
+    written = sum(counts.values())
 
     print(f"\nWrote {written} items ({errors} failed) under {out_root}")
     print("Per (language x task):")
     for key in sorted(counts):
         print(f"  {key[0]:4s} {key[1]:14s} {counts[key]}")
+    return 0
+
+
+def _resolve_generated(spec: str) -> list[Path]:
+    """A generated-items spec is either a single JSONL file or a dir to recurse."""
+    p = Path(spec)
+    if p.is_file():
+        return [p]
+    if p.is_dir():
+        return sorted(p.rglob("*.jsonl"))
+    return []
+
+
+def cmd_judge_score(args: argparse.Namespace) -> int:
+    from .filters.llm_judge import aggregate_scores
+    from .gold import load_items
+    from .judge import JudgeTarget, run_judge_panel
+    from .seeds import load_seeds
+
+    paths = _resolve_generated(args.generated)
+    if not paths:
+        print(f"No generated JSONL found at {args.generated}", file=sys.stderr)
+        return 1
+    items = load_items(paths)
+    seeds_by_id = {s.id: s for s in load_seeds(args.seeds)}
+
+    targets: list[JudgeTarget] = []
+    missing = 0
+    for item in items:
+        seed = seeds_by_id.get(item.seed_id)
+        if seed is None:
+            missing += 1
+            continue
+        targets.append(JudgeTarget(id=item.id, label="real", seed=seed, item=item))
+    if not targets:
+        print("No items with a matching seed to judge.", file=sys.stderr)
+        return 1
+
+    judges = [m.strip() for m in args.judges.split(",") if m.strip()]
+    if not judges:
+        print("No judges given to --judges.", file=sys.stderr)
+        return 1
+    print(
+        f"Scoring {len(targets)} items with {len(judges)} judge(s) "
+        f"({missing} skipped for missing seed)...", file=sys.stderr,
+    )
+    results = run_judge_panel(
+        targets, judges, max_tokens=args.max_tokens,
+        request_timeout=args.timeout, max_workers=args.workers,
+        calls_per_minute=args.calls_per_minute,
+    )
+
+    ensemble_lines: list[str] = []
+    per_judge_lines: list[str] = []
+    scored = failed = 0
+    for t in targets:
+        cells = results[t.id]
+        good = [c.score for c in cells.values() if c.score is not None]
+        per_judge_lines.extend(c.score.model_dump_json() for c in cells.values() if c.score)
+        if not good:
+            failed += 1
+            continue
+        ensemble_lines.append(aggregate_scores(good, args.aggregate).model_dump_json())
+        scored += 1
+
+    out_path = Path(args.out) if args.out else (
+        GOLD_DIR / f"scores_{datetime.now():%Y%m%dT%H%M%S}.jsonl"
+    )
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    out_path.write_text("\n".join(ensemble_lines) + "\n", encoding="utf-8")
+    pj_path = out_path.parent / (out_path.stem + ".per_judge.jsonl")
+    pj_path.write_text("\n".join(per_judge_lines) + "\n", encoding="utf-8")
+
+    print(f"Scored {scored} items ({failed} had no usable judge output).")
+    print(f"Ensemble scores -> {out_path}")
+    print(f"Per-judge scores -> {pj_path}")
+    return 0
+
+
+def _combo_existing_count(out_root: Path, lang: str, task_value: str) -> int:
+    """Count distinct item ids already on disk for a (language, task) combo."""
+    import json
+
+    combo_dir = out_root / lang / task_value
+    if not combo_dir.exists():
+        return 0
+    ids: set[str] = set()
+    for f in combo_dir.glob("*.jsonl"):
+        with f.open(encoding="utf-8") as fh:
+            for line in fh:
+                line = line.strip()
+                if line:
+                    try:
+                        ids.add(json.loads(line)["id"])
+                    except (json.JSONDecodeError, KeyError):
+                        pass
+    return len(ids)
+
+
+def cmd_generate_drip(args: argparse.Namespace) -> int:
+    import time
+
+    languages = [c.strip() for c in args.languages.split(",") if c.strip()]
+    tasks = _resolve_tasks(args.tasks)
+    all_seeds = load_seeds(args.seeds)
+    out_root = Path(args.out_dir)
+    backoffs = [float(x) for x in args.backoffs.split(",") if x.strip()] or [60.0, 300.0, 900.0]
+    # Fail-fast client: our loop owns retries/backoff, so disable the inner hammer
+    # (max_retries=1) that otherwise keeps pounding a throttled endpoint.
+    client = build_client(args.teacher, max_retries=1, calls_per_minute=args.calls_per_minute)
+    teacher_slug = _model_slug(args.teacher)
+
+    # Per-combo target seeds + how many already exist (for resumable fill).
+    combos = []
+    for task in tasks:
+        task_seeds = filter_by_task(all_seeds, task)
+        if not task_seeds:
+            print(f"  no seeds for task '{task.value}', skipping", file=sys.stderr)
+            continue
+        chosen = list(islice(cycle(task_seeds), args.per_combo))
+        template_name = default_template_for(task)
+        for lang in languages:
+            existing = _combo_existing_count(out_root, lang, task.value)
+            combos.append((lang, task, chosen, template_name, existing))
+
+    # Index-major job list: fill position 0 across all combos, then 1, ... so even a
+    # partial drip yields balanced coverage; skip positions already on disk.
+    jobs = []
+    for idx in range(args.per_combo):
+        for (lang, task, chosen, template_name, existing) in combos:
+            if idx < existing:
+                continue
+            seed = chosen[idx]
+            config = GenerationConfig(
+                seed_id=seed.id, target_language=lang, teacher_model=args.teacher,
+                temperature=args.temperature, max_tokens=args.max_tokens,
+                prompt_template_name=template_name,
+            )
+            jobs.append((lang, task, idx, seed, config))
+
+    if not jobs:
+        print("Pool already at target — nothing to drip.")
+        return 0
+
+    total = len(jobs)
+    print(
+        f"Drip: filling {total} items (per_combo={args.per_combo}), serial with "
+        f"escalating backoff {backoffs}s (last repeats), max {args.max_attempts} "
+        f"attempts/item.", file=sys.stderr,
+    )
+
+    handles: dict[tuple[str, str], object] = {}
+
+    def _handle(lang: str, task_value: str):
+        key = (lang, task_value)
+        if key not in handles:
+            p = out_root / lang / task_value / f"drip_{teacher_slug}.jsonl"
+            p.parent.mkdir(parents=True, exist_ok=True)
+            handles[key] = p.open("a", encoding="utf-8")  # append: resumable across runs
+        return handles[key]
+
+    done = success = skipped = 0
+    try:
+        for (lang, task, idx, seed, config) in jobs:
+            done += 1
+            attempt = 0
+            while True:
+                try:
+                    item = generate(seed, config, client)
+                    item.id = f"{item.id}-{idx:03d}"
+                    fh = _handle(lang, task.value)
+                    fh.write(item.model_dump_json() + "\n")
+                    fh.flush()
+                    success += 1
+                    preview = item.prompt[:45].replace("\n", " ")
+                    print(f"[{done}/{total}] ✓ {lang}/{task.value} #{idx} — {preview}",
+                          file=sys.stderr, flush=True)
+                    break
+                except Exception as err:  # noqa: BLE001 — back off and retry the same item
+                    attempt += 1
+                    if attempt >= args.max_attempts:
+                        skipped += 1
+                        print(f"[{done}/{total}] ✗ {lang}/{task.value} #{idx} — gave up "
+                              f"after {args.max_attempts} attempts ({err})",
+                              file=sys.stderr, flush=True)
+                        break
+                    wait = backoffs[min(attempt - 1, len(backoffs) - 1)]
+                    print(f"[{done}/{total}] … {lang}/{task.value} #{idx} attempt {attempt} "
+                          f"failed; waiting {wait:.0f}s", file=sys.stderr, flush=True)
+                    time.sleep(wait)
+    finally:
+        for fh in handles.values():
+            fh.close()
+
+    print(f"\nDrip complete: {success} generated, {skipped} skipped, of {total} targeted "
+          f"under {out_root}")
+    return 0
+
+
+def cmd_export_gold(args: argparse.Namespace) -> int:
+    import random
+
+    from .gold import (
+        build_bundle, build_manifest, load_items, load_scores, select_gold_set, write_json,
+    )
+    from .seeds import load_seeds
+
+    paths = _resolve_generated(args.generated)
+    if not paths:
+        print(f"No generated JSONL found at {args.generated}", file=sys.stderr)
+        return 1
+    items = load_items(paths)
+    scores = load_scores(Path(args.scores))
+    seeds_by_id = {s.id: s for s in load_seeds(args.seeds)}
+
+    rng = random.Random(args.rng_seed)
+    selected = select_gold_set(
+        items, scores, per_language=args.per_language,
+        normal_frac=args.normal_frac, rng=rng,
+    )
+    if not selected:
+        print("No scored items to sample (is --scores aligned with --generated?).",
+              file=sys.stderr)
+        return 1
+
+    bundle_id = args.bundle_id or f"gold-{datetime.now():%Y%m%d}-all"
+    bundle = build_bundle(selected, seeds_by_id, bundle_id=bundle_id)
+    manifest = build_manifest(
+        selected, scores, bundle_id=bundle_id,
+        raters_per_language=args.raters_per_language, overlap_frac=args.overlap, rng=rng,
+    )
+
+    out_dir = Path(args.out_dir)
+    write_json(bundle, out_dir / "rater_bundle.json")
+    write_json(manifest, out_dir / "assignment_manifest.json")
+
+    total = sum(len(v) for v in selected.values())
+    print(f"Bundle '{bundle_id}': {total} items across {len(selected)} language(s)")
+    for lang in sorted(selected):
+        strata = [s for _, s in selected[lang]]
+        n_overlap = sum(
+            1 for a in manifest["assignments"]
+            if a["overlap"] and a["task_id"] in {i.id for i, _ in selected[lang]}
+        )
+        print(f"  {lang}: {len(strata)} items "
+              f"({strata.count('normal')} normal, {strata.count('borderline')} borderline; "
+              f"{n_overlap} double-rated)")
+    print(f"Wrote {out_dir / 'rater_bundle.json'} (blind) and "
+          f"{out_dir / 'assignment_manifest.json'} (private)")
     return 0
 
 
@@ -514,6 +866,12 @@ def main(argv: list[str] | None = None) -> int:
         return cmd_bootstrap_seeds(args)
     if args.command == "generate-batch":
         return cmd_generate_batch(args)
+    if args.command == "judge-score":
+        return cmd_judge_score(args)
+    if args.command == "export-gold":
+        return cmd_export_gold(args)
+    if args.command == "generate-drip":
+        return cmd_generate_drip(args)
     return 1
 
 

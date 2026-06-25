@@ -140,12 +140,18 @@ def run_judge_panel(
     max_tokens: int = 512,
     request_timeout: float | None = None,
     max_workers: int = 6,
+    calls_per_minute: float | None = None,
     verbose: bool = True,
 ) -> dict[str, dict[str, JudgeCell]]:
     """Score every target with every judge concurrently. Returns {target_id: {judge: cell}}."""
     from .client import build_client
 
-    client_kwargs = {} if request_timeout is None else {"timeout": request_timeout}
+    client_kwargs: dict[str, object] = {}
+    if request_timeout is not None:
+        client_kwargs["timeout"] = request_timeout
+    if calls_per_minute is not None:
+        # Pace each judge's calls (needed for low-RPM providers like Gemini).
+        client_kwargs["calls_per_minute"] = calls_per_minute
     clients: dict[str, ChatClient] = {}
     build_errors: dict[str, str] = {}
     for judge in judges:
