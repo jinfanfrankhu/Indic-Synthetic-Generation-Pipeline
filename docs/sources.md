@@ -104,6 +104,18 @@ Khanuja, S., Dandapat, S., Srinivasan, A., Sitaram, S., & Choudhury, M. (2020). 
 
 ---
 
+## Sentence Embeddings (back-translation similarity metric)
+
+Reimers, N., & Gurevych, I. (2019). Sentence-BERT: Sentence embeddings using Siamese BERT-networks. In *Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP)* (pp. 3982–3992). Association for Computational Linguistics. https://arxiv.org/abs/1908.10084
+
+> Introduces SBERT, a siamese/triplet fine-tuning of BERT that produces sentence embeddings whose cosine similarity is semantically meaningful and computable in O(1) per pair, versus BERT's ~65-hour pairwise regression cost on 10k sentences. Justifies using `sentence-transformers` cosine (rather than BERTScore or n-gram metrics) for the back-translation consistency filter: it is fast, local (no API calls), and scores meaning-level adequacy rather than surface overlap.
+
+Reimers, N., & Gurevych, I. (2020). Making monolingual sentence embeddings multilingual using knowledge distillation. In *Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP)* (pp. 4512–4525). Association for Computational Linguistics. https://arxiv.org/abs/2004.09813
+
+> Distills a multilingual student model so that translations map to nearby points in a shared embedding space, enabling cross-lingual cosine similarity. Basis for the `paraphrase-multilingual-*` checkpoints; covers all four study languages (hi, ur, ta, ml) and supports comparing source-language and back-translated text in one space.
+
+---
+
 ## Resource Level Classification
 
 Joshi, P., Santy, S., Budhiraja, A., Bali, K., & Choudhury, M. (2020). The state and fate of linguistic diversity and inclusion in the NLP world. In *Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics* (pp. 6282–6293). https://arxiv.org/abs/2004.09095

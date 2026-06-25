@@ -39,3 +39,14 @@
 
  - Fine-tune Meta's LLaMa 7B model to Alpaca. Used OpenAI API to generate instruction following examples from seeds.
  - LLaMa 7B was just text, didn't have instruction-tuning.
+
+
+## Sentence-BERT / sentence-transformers: https://arxiv.org/abs/1908.10084
+
+ - Why we use it: the back-translation filter needs a semantic-similarity score between the English seed and the back-translated generation. SBERT encodes each sentence to a fixed vector once, so similarity is a single cosine — O(1) per pair, runs locally, no extra teacher/judge API calls (matters under the 40/min NVIDIA cap).
+ - Contrast with the obvious alternatives:
+    - **BERTScore** does token-level greedy matching every comparison (no reusable sentence vector) and correlates with fluency more than with adequacy — heavier and less aligned with what we want to measure.
+    - **spBLEU/ChrF** (the FLORES MT metrics) are surface n-gram overlap; back-translation paraphrases heavily, so lexical overlap punishes valid paraphrases. Embedding cosine is meaning-level, which is the right granularity for a consistency check.
+ - SBERT vs. vanilla BERT: averaging BERT's token vectors gives sentence embeddings *worse* than GloVe for similarity; SBERT's siamese fine-tuning on NLI/STS is what makes cosine meaningful. So "use sentence-transformers" is a deliberate choice, not just "embed with a transformer."
+ - Multilingual: Reimers & Gurevych (2020) distill a multilingual student so paraphrase-multilingual MiniLM/mpnet land translations and their source in a *shared* space — cross-lingual cosine is meaningful, which is exactly the back-translation setup (English seed vs. back-translated English, but also lets us sanity-check target-language pairs in one space). Models cover all four of our languages.
+ - Practical: relative score only (we threshold against the gold set in Phase B, not an absolute cutoff); pick a paraphrase-multilingual model for speed, document the exact checkpoint for reproducibility.

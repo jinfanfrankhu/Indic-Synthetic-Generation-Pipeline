@@ -119,6 +119,118 @@
       "expected": null,
       "labels": null,
       "metadata": {"difficulty": "medium", "domain": "general"}
+    },
+    {
+      "id": "seed-instruction-004",
+      "task_family": "instruction",
+      "prompt": "Explain the difference between weather and climate in three sentences.",
+      "expected": null,
+      "labels": null,
+      "metadata": {"difficulty": "medium", "domain": "science"}
+    },
+    {
+      "id": "seed-instruction-005",
+      "task_family": "instruction",
+      "prompt": "Write a short, polite email asking a teacher for a one-week extension on an assignment.",
+      "expected": null,
+      "labels": null,
+      "metadata": {"difficulty": "medium", "domain": "everyday", "register": "polite"}
+    },
+    {
+      "id": "seed-qa-004",
+      "task_family": "qa",
+      "prompt": "What is the largest planet in our solar system?",
+      "expected": "Jupiter",
+      "labels": null,
+      "metadata": {"answer_type": "entity", "domain": "science"}
+    },
+    {
+      "id": "seed-qa-005",
+      "task_family": "qa",
+      "prompt": "How many days are there in a leap year?",
+      "expected": "366",
+      "labels": null,
+      "metadata": {"answer_type": "numerical", "domain": "general"}
+    },
+    {
+      "id": "seed-classification-004",
+      "task_family": "classification",
+      "prompt": "Message: 'Congratulations! You have won a free phone. Click this link now to claim your prize.' Classify whether this message is spam.",
+      "expected": "spam",
+      "labels": ["spam", "not spam"],
+      "metadata": {"domain": "spam_detection"}
+    },
+    {
+      "id": "seed-classification-005",
+      "task_family": "classification",
+      "prompt": "Classify the intent of this customer message: 'I would like to return the shoes I bought last week because they don't fit.'",
+      "expected": "return request",
+      "labels": ["complaint", "return request", "general inquiry", "compliment"],
+      "metadata": {"domain": "intent"}
+    },
+    {
+      "id": "seed-summarization-003",
+      "task_family": "summarization",
+      "prompt": "Summarize in one sentence: A city council voted to add 30 kilometers of protected bicycle lanes over the next two years, funded by a small increase in parking fees. Supporters argue the lanes will cut traffic and pollution, while some shop owners worry about losing customer parking.",
+      "expected": "A city council approved 30 km of new protected bike lanes funded by higher parking fees, despite some shop owners' concerns about lost parking.",
+      "labels": null,
+      "metadata": {"length_target": "one_sentence"}
+    },
+    {
+      "id": "seed-summarization-004",
+      "task_family": "summarization",
+      "prompt": "Summarize the key finding in one sentence: A five-year study following 10,000 office workers found that those who took a short walk every hour reported less back pain and higher focus than those who sat continuously, even when both groups did the same amount of total daily exercise.",
+      "expected": "Taking short hourly walks reduced back pain and improved focus more than a single daily workout, according to a five-year study of office workers.",
+      "labels": null,
+      "metadata": {"length_target": "one_sentence"}
+    },
+    {
+      "id": "seed-translation-003",
+      "task_family": "translation",
+      "prompt": "Translate to the target language: 'Thank you for your help. I really appreciate it.'",
+      "expected": null,
+      "labels": null,
+      "metadata": {"register": "polite", "domain": "gratitude"}
+    },
+    {
+      "id": "seed-translation-004",
+      "task_family": "translation",
+      "prompt": "Translate to the target language: 'Please call me when you arrive at the station.'",
+      "expected": null,
+      "labels": null,
+      "metadata": {"register": "polite", "domain": "everyday"}
+    },
+    {
+      "id": "seed-reasoning-003",
+      "task_family": "reasoning",
+      "prompt": "A shop sells pens at 3 for 2 dollars. How much do 12 pens cost? Show your reasoning step by step.",
+      "expected": "8 dollars (12 / 3 = 4 sets; 4 x 2 dollars = 8 dollars).",
+      "labels": null,
+      "metadata": {"domain": "math", "steps": 2}
+    },
+    {
+      "id": "seed-reasoning-004",
+      "task_family": "reasoning",
+      "prompt": "All roses are flowers. Some flowers fade quickly. Can we conclude that some roses fade quickly? Explain your reasoning.",
+      "expected": "No. The premises do not guarantee it — the flowers that fade quickly need not include any roses.",
+      "labels": null,
+      "metadata": {"domain": "logic", "type": "syllogism"}
+    },
+    {
+      "id": "seed-reasoning-005",
+      "task_family": "reasoning",
+      "prompt": "A motorcycle travels 40 km on 1 liter of petrol. How far can it travel on 6 liters? Show your reasoning step by step.",
+      "expected": "240 km (40 km x 6 liters = 240 km).",
+      "labels": null,
+      "metadata": {"domain": "math", "units": "metric", "steps": 2}
+    },
+    {
+      "id": "seed-reasoning-006",
+      "task_family": "reasoning",
+      "prompt": "A car travels 12 miles using 0.5 gallons of gasoline. What is its fuel efficiency in miles per gallon? Show your reasoning step by step.",
+      "expected": "24 miles per gallon (12 miles / 0.5 gallons = 24).",
+      "labels": null,
+      "metadata": {"domain": "math", "units": "imperial", "steps": 2, "localization_probe": true, "note": "English-source imperial units (miles, gallons, 'gasoline'). A culturally appropriate rendering for South Asian languages would convert to km/liters and use 'petrol'; keeping imperial units signals English-source bias. Localizing changes the numeric answer, so back-translation faithfulness may read low even on good output — a deliberate faithfulness-vs-bias tension case."}
     }
   ],
   "example_synthetic_swahili": [
