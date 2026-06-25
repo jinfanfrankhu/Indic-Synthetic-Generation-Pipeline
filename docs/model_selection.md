@@ -1,12 +1,28 @@
 # Model Selection
 
-Teacher and judge models are drawn from NVIDIA Build's free hosted endpoints (OpenAI-compatible, no self-hosting). Selection optimizes for two axes that matter for this project: **Indic/multilingual quality** (not recency or coding-benchmark strength, which dominate most model marketing) and **teacher≠judge family diversity**, required by the ensemble-judging decision that addresses the ~50% human–LLM agreement on Indic linguistic plausibility reported in UPDESH. The candidate pool was filtered by *model type* first: only general-purpose chat LLMs can serve as teacher or judge, which rules out NVIDIA's safety classifiers and rerankers despite their "free endpoint" availability. The three chat LLMs below went into a small bake-off (same hi/ta QA seeds through each, run via `syndata compare`), and the decision below follows from that evidence.
+Teacher and judge models are drawn from NVIDIA Build's free hosted endpoints (OpenAI-compatible, no self-hosting). Selection optimizes for two axes that matter for this project: **Indic/multilingual quality** (not recency or coding-benchmark strength, which dominate most model marketing) and **teacher≠judge family diversity**, required by the ensemble-judging decision that addresses the ~50% human–LLM agreement on Indic linguistic plausibility reported in UPDESH. The candidate pool was filtered by *model type* first: only general-purpose chat LLMs can serve as teacher or judge, which rules out NVIDIA's safety classifiers and rerankers despite their "free endpoint" availability. The three chat LLMs below went into a small bake-off (same hi/ta QA seeds through each, run via `syndata compare`), and the decision below follows from that evidence. **Update (Week 4): the teacher has since migrated off NVIDIA Build to Google AI Studio (Gemini) — see the migration note immediately below; the NVIDIA judge analysis still stands.**
+
+## Update (Week 4) — teacher migrated to Google AI Studio (Gemini)
+
+NVIDIA Build's free hosted tier proved **unusable for batch generation**. It allows a short burst (~15–20 calls), then imposes a per-model `429` lockout lasting **1–3+ hours** (NVIDIA staff confirm on their forums that these endpoints are "only to be used for experimentation, development, testing and research"). DeepSeek V4 Flash — the teacher chosen below — was hit hardest; a 4-worker burst earned a multi-hour lockout, and even serial ~18/min re-throttled after ~19 calls. The fix isn't more retries (those *amplify* the lockout); it's a different provider.
+
+We added a provider registry to `syndata/client.py` (one OpenAI-compatible `OpenAICompatibleClient`; model ids may carry a `provider:` prefix — `gemini:`, `openrouter:`, default `nvidia`) and moved the **teacher** to Google AI Studio's free tier. Gemini is also rate-limited, but *per-model* and **without** multi-hour lockouts. Usable text models, from the AI Studio usage dashboard:
+
+| model | RPM | RPD | note |
+| --- | --- | --- | --- |
+| gemini-2.5 / 3 / 3.5-flash | 5 | 20 | far too few/day for batch |
+| **gemini-3.1-flash-lite** | 15 | **500** | **chosen teacher** |
+| gemma-4-31b-it | 15 | 1500 | slow (~17–18 s/item), emits a `<thought>…` preamble our parser can't recover |
+
+**New teacher → `gemini:gemini-3.1-flash-lite`.** From the re-run hi QA bake-off ([`model_comparison_hi_qa.md`](model_comparison_hi_qa.md)): clean JSON, ~1 s/item, fluent Hindi with the answer localized to Devanagari (`ब्रासीलिया`), and 500 calls/day — the only candidate that is *both* high quality and high-enough volume. gemma-4-31b (1500/day) was rejected as slow and verbose; the 20/day Flash models can't sustain a batch; gemini-3.5-flash returned 503 (overloaded). DeepSeek V4 Flash remains the documented fallback, and the offline `MockClient` path is unchanged. Judges can run on NVIDIA (analysis below) or, via the new prefixes, on `gemini:`/`openrouter:`.
+
+The original NVIDIA bake-off is retained below as the historical record.
 
 ## Decision (from the bake-off)
 
 Reports: [`model_comparison_hi_qa.md`](model_comparison_hi_qa.md), [`model_comparison_ta_qa.md`](model_comparison_ta_qa.md).
 
- - **Teacher → DeepSeek V4 Flash** (`deepseek-ai/deepseek-v4-flash`). Fastest by far (~1–3 s/item vs ~10–20 s for Sarvam, vs Qwen timing out), clean JSON every call, and fully fluent in both Hindi and Tamil — including unprompted localization of answers into the target script (e.g. `ब्रासीलिया`, `பிரசிலியா`). The practical winner for generating thousands of items.
+ - **Teacher → DeepSeek V4 Flash** (`deepseek-ai/deepseek-v4-flash`) — *superseded in Week 4 (see migration note above); kept as fallback.* Fastest by far (~1–3 s/item vs ~10–20 s for Sarvam, vs Qwen timing out), clean JSON every call, and fully fluent in both Hindi and Tamil — including unprompted localization of answers into the target script (e.g. `ब्रासीलिया`, `பிரசிலியா`). The practical winner *on quality* — but NVIDIA's free-tier batch lockouts made it impractical at volume, forcing the move to Gemini.
  - **Judge → an ensemble (see [Judging](#judging) below).** Not a single model: per UPDESH / the LLM-as-judge literature, cross-lingual judges are individually unreliable (~0.3 Fleiss' κ), and majority voting across *decorrelated* models is the proposed remedy.
  - **Qwen3.5-122b — dropped.** Although it produced correct Hindi on a single warm call, it repeatedly timed out under the bake-off's concurrent load (one run hung for ~1 h without honoring the request timeout). At 122B it is too slow and unreliable to be a practical teacher at scale.
 

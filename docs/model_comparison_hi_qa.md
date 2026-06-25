@@ -1,6 +1,6 @@
 # Teacher bake-off — Hindi (`hi`)
 
-Models compared: `qwen/qwen3.5-122b-a10b`, `sarvamai/sarvam-m`, `deepseek-ai/deepseek-v4-flash`
+Models compared: `gemini:gemini-3.1-flash-lite`, `gemini:gemma-4-31b-it`, `gemini:gemini-2.5-flash`, `gemini:gemini-3.5-flash`
 
 ## seed-qa-001 — qa
 
@@ -8,27 +8,39 @@ Models compared: `qwen/qwen3.5-122b-a10b`, `sarvamai/sarvam-m`, `deepseek-ai/dee
   
 **Reference answer:** 1969
 
-### `qwen/qwen3.5-122b-a10b`
-> ⚠️ ERROR: NVIDIA API call failed after 4 attempts: Request timed out.
+### `gemini:gemini-3.1-flash-lite`
+- **prompt:** किस वर्ष में पहले व्यक्ति ने चंद्रमा पर कदम रखा था?
+- **expected:** 1969
 
-### `sarvamai/sarvam-m`
-- **prompt:** Okay, let's tackle this translation task. The user wants the English question "What year did the first man walk on the moon?" translated into Hindi, following specific rules. First, I need to ensure the translation is natural and fluent in Hindi, not a literal word-for-word conversion. The key here is to maintain the exact meaning, difficulty, and any reasoning steps.
+### `gemini:gemma-4-31b-it`
+- **prompt:** <thought>*   English task: "What year did the first man walk on the moon?"
+    *   Reference answer: "1969"
+    *   Goal: Translate into natural, fluent Hindi for instruction-tuning data.
+    *   Constraints: Entirely in Hindi, no English words, no code-switching, no literal word-for-word translation, output only a JSON object.
 
-The original question is straightforward, asking for a specific year. The reference answer is "1969". So the Hindi translation should ask the same question. Let me think about the structure. In Hindi, the common way to ask "what year" is "किस वर्ष" or "साल क्या था". But "What year did..." would be more like "किस वर्ष पहले मनुष्य ने चंद्रमा पर पैर रखा?" or "पहले मनुष्य ने चंद्रमा पर कब पैर रखा?" Wait, but the original uses "walked on the moon", which is "चंद्रमा पर पैर रखा". That's correct. 
+    *   "What year did the first man walk on the moon?"
+    *   Direct translation: पहले आदमी ने चाँद पर किस साल कदम रखा? (Pahle aadmi ne chaand par kis saal kadam rakha?)
+    *   More natural/formal Hindi: चंद्रमा पर पहले मनुष्य ने किस वर्ष कदम रखा था? (Chandrama par pahle manushya ne kis varsh kadam rakha tha?) or चाँद पर पहला इंसान किस साल पहुँचा था? (Chaand par pahla insaan kis saal pahuncha tha?)
+    *   Selection: "चंद्रमा पर पहले मनुष्य ने किस वर्ष कदम रखा था?" is precise and natural.
 
-I need to make sure the sentence structure is natural. "पहले मनुष्य ने चंद्रमा पर कब पैर रखा?" might be better because "कब" (when) is more natural than "किस वर्ष" here. But the original question specifically asks for the year, so maybe using "किस वर्ष" is better to match the structure. Let me check. "What year did..." translates to "किस वर्ष हुआ" or "किस वर्ष में हुआ". So perhaps "पहले मनुष्य ने किस वर्ष चंद्रमा पर पैर रखा?" That's more accurate. 
+    *   "1969"
+    *   In Hindi numerals: १९६९. However, in modern Hindi contexts, Arabic numerals (1969) are standard and widely accepted. But the prompt says "Do not leave any English words". Numbers are symbols, but to be safe and strictly "Hindi", I should consider if numbers are considered "English". Usually, they aren't, but let's check if words are needed. "उन्नीस सौ उनहत्तर" (Nineteen sixty-nine). However, for a fact-based question, the numeric form is standard. I will use the digits "1969" as they are universal, or "१९६९". Let's stick to "1969" as it's standard in Hindi text, or spell it out if the constraint is extremely strict. Actually, "1969" is fine.
 
-Yes, that structure directly translates the question while maintaining the meaning. The expected answer in Hindi would be "1969", written in Devanagari numerals: "१९६९". Wait, but the reference answer is in English. The user's example shows the expected answer in English as "1969". But according to the instructions, the expected answer should be in Hindi. Wait, the user's example has {"expected": "1969"}, but the instruction says to write entirely in Hindi. So maybe the expected answer should be in Hindi numerals. Let me confirm. The user's example shows the expected answer in English, but the rules state to write entirely in Hindi. So the answer should be in Hindi numerals. So "1969" in Hindi is "१९६९". Therefore, the JSON should have "expected": "१९६९".
+    *   `prompt`: "चंद्रमा पर पहले मनुष्य ने किस वर्ष कदम रखा था?"
+    *   `expected`: "1969" (or "१९६९"). I'll use "1969" as it's the standard representation in modern Hindi.
 
-Putting it all together: the prompt in Hindi is "पहले मनुष्य ने किस वर्ष चंद्रमा पर पैर रखा?" and the expected answer is "१९६९". I need to ensure there are no English words and that the translation is accurate. Yes, this meets all the rules.
-</think>
-
-{"prompt": "पहले मनुष्य ने चंद्रमा पर किस वर्ष पैर रखा?", "expected": "1969"}
+    *   Entirely in Hindi? Yes.
+    *   No English words? Yes.
+    *   Natural/fluent? Yes.
+    *</thought>
 - **expected:** None
 
-### `deepseek-ai/deepseek-v4-flash`
-- **prompt:** पहला मानव चाँद पर किस वर्ष चला था?
+### `gemini:gemini-2.5-flash`
+- **prompt:** पहले इंसान ने चाँद पर किस वर्ष कदम रखा था?
 - **expected:** 1969
+
+### `gemini:gemini-3.5-flash`
+> ⚠️ ERROR: API call to gemini-3.5-flash failed after 4 attempts: Error code: 503 - [{'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}]
 
 ## seed-qa-002 — qa
 
@@ -36,13 +48,35 @@ Putting it all together: the prompt in Hindi is "पहले मनुष्य
   
 **Reference answer:** Brasilia
 
-### `qwen/qwen3.5-122b-a10b`
-> ⚠️ ERROR: NVIDIA API call failed after 4 attempts: Request timed out.
-
-### `sarvamai/sarvam-m`
-- **prompt:** ब्राज़ील की राजधानी शहर क्या है?
+### `gemini:gemini-3.1-flash-lite`
+- **prompt:** ब्राज़ील की राजधानी कौन सा शहर है?
 - **expected:** ब्रासीलिया
 
-### `deepseek-ai/deepseek-v4-flash`
+### `gemini:gemma-4-31b-it`
+- **prompt:** <thought>*   English task: "What is the capital city of Brazil?"
+    *   Reference answer: "Brasilia"
+    *   Target language: Hindi.
+    *   Output format: JSON object with keys "prompt" and "expected".
+    *   Constraints: Entirely in Hindi, no English words, natural/fluent translation, no markdown fences.
+
+    *   Task: "What is the capital city of Brazil?" -> "ब्राजील की राजधानी कौन सा शहर है?" or "ब्राजील की राजधानी क्या है?" (The second one is more natural).
+    *   Answer: "Brasilia" -> "ब्रासीलिया".
+
+    *   Prompt: "ब्राजील की राजधानी क्या है?"
+    *   Expected: "ब्रासीलिया"
+
+    *   Entirely in Hindi? Yes.
+    *   No English words? Yes.
+    *   Natural/fluent? Yes.
+    *   Single JSON object? Yes.
+    *   No markdown fences? Yes.
+
+    `{"prompt": "ब्राजील की राजधानी क्या है?", "expected": "ब्रासीलिया"}`</thought>{"prompt": "ब्राजील की राजधानी क्या है?", "expected": "ब्रासीलिया"}
+- **expected:** None
+
+### `gemini:gemini-2.5-flash`
 - **prompt:** ब्राजील की राजधानी क्या है?
 - **expected:** ब्रासीलिया
+
+### `gemini:gemini-3.5-flash`
+> ⚠️ ERROR: API call to gemini-3.5-flash failed after 4 attempts: Error code: 503 - [{'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}]
