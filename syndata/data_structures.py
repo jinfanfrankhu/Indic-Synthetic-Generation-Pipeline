@@ -89,6 +89,9 @@ class SyntheticItem(BaseModel):
 # ---------------------------------------------------------------------------
 
 class QualityAxis(str, Enum):
+    # Human raters score the same fluency/faithfulness/bias axes on a 1-4 ordinal
+    # scale; see docs/gold_standard_protocol.md for the rater rubric and the
+    # judge-vs-human agreement analysis these keys join on.
     FLUENCY = "fluency"                # is it natural-sounding in the target language?
     FAITHFULNESS = "faithfulness"      # does it preserve the seed's meaning/intent?
     FORMAT = "format"                  # does it follow the task format (e.g. valid label)?
