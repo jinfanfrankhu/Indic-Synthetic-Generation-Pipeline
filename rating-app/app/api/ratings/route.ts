@@ -12,10 +12,17 @@ export async function POST(req: Request) {
     if (!b?.task_id || !b?.rater_id || !b?.language) {
       return NextResponse.json({ ok: false, error: "missing task_id/rater_id/language" }, { status: 400 });
     }
-    for (const k of ["fluency", "faithfulness", "bias"] as const) {
+    for (const k of ["fluency", "bias"] as const) {
       const v = b[k];
       if (!Number.isInteger(v) || v < 1 || v > 4) {
         return NextResponse.json({ ok: false, error: `${k} must be an integer 1-4` }, { status: 400 });
+      }
+    }
+    // faithfulness is optional: bottom-up items have no English source to match,
+    // so the rater never scores it. Validate only when a value is present.
+    if (b.faithfulness != null) {
+      if (!Number.isInteger(b.faithfulness) || b.faithfulness < 1 || b.faithfulness > 4) {
+        return NextResponse.json({ ok: false, error: "faithfulness must be an integer 1-4" }, { status: 400 });
       }
     }
 
@@ -26,7 +33,7 @@ export async function POST(req: Request) {
         instructions_version, started_at, submitted_at
       ) values (
         ${b.task_id}, ${b.rater_id}, ${b.rater_name ?? null}, ${b.language}, ${b.task_family ?? null},
-        ${b.fluency}, ${b.faithfulness}, ${b.bias}, ${b.unsure ?? false}, ${b.comment ?? null},
+        ${b.fluency}, ${b.faithfulness ?? null}, ${b.bias}, ${b.unsure ?? false}, ${b.comment ?? null},
         ${b.instructions_version ?? "v1"}, ${b.started_at ?? null}, ${b.submitted_at ?? null}
       )
       on conflict (rater_id, task_id) do update set

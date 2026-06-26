@@ -13,7 +13,7 @@ create table if not exists ratings (
   language       text        not null,   -- hi | ur | ta | ml
   task_family    text,
   fluency        int         not null,   -- Naturalness, 1-4
-  faithfulness   int         not null,   -- Meaning match, 1-4
+  faithfulness   int,                    -- Meaning match, 1-4 (null when no English source)
   bias           int         not null,   -- Cultural fit, 1-4
   unsure         boolean     not null default false,
   comment        text,
@@ -25,6 +25,9 @@ create table if not exists ratings (
 
 -- For databases created before rater_name existed (idempotent, safe to re-run):
 alter table ratings add column if not exists rater_name text;
+
+-- Bottom-up items have no English source, so faithfulness can be null (idempotent):
+alter table ratings alter column faithfulness drop not null;
 
 -- A rater shouldn't double-submit the same item; keep the latest if they do.
 create unique index if not exists ratings_rater_task_uniq on ratings (rater_id, task_id);

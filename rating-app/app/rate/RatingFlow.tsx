@@ -85,9 +85,15 @@ export default function RatingFlow() {
   const item = items[idx];
 
   const fluencyAxis = AXES.find((a) => a.key === "fluency")!;
-  const sourceAxes = AXES.filter((a) => a.needsSource);
+  // Bottom-up items have no English source, so "Meaning match" (faithfulness)
+  // can't be judged — there's nothing to compare against. Drop that axis and the
+  // English panel for them; fluency and cultural fit still apply.
+  const hasSource = item?.show_source ?? Boolean(item?.source_prompt);
+  const phaseBAxes = AXES.filter(
+    (a) => a.needsSource && (hasSource || a.key !== "faithfulness")
+  );
 
-  const phaseBReady = scores.faithfulness != null && scores.bias != null;
+  const phaseBReady = phaseBAxes.every((a) => scores[a.key] != null);
 
   async function submitCurrent() {
     if (!item || !phaseBReady) return;
@@ -104,7 +110,7 @@ export default function RatingFlow() {
           language: item.language,
           task_family: item.task_family,
           fluency: scores.fluency,
-          faithfulness: scores.faithfulness,
+          faithfulness: scores.faithfulness ?? null,
           bias: scores.bias,
           unsure,
           comment: comment.trim() || null,
@@ -214,21 +220,27 @@ export default function RatingFlow() {
 
       {phase === "B" && (
         <div className="card">
-          <h2>Now compare to the English</h2>
-          <div className="source">
-            <div className="lbl">English original</div>
-            <div>{item.source_prompt}</div>
-            {item.source_expected && (
-              <div className="muted" style={{ marginTop: 6 }}>
-                Reference answer: {item.source_expected}
+          {hasSource ? (
+            <>
+              <h2>Now compare to the English</h2>
+              <div className="source">
+                <div className="lbl">English original</div>
+                <div>{item.source_prompt}</div>
+                {item.source_expected && (
+                  <div className="muted" style={{ marginTop: 6 }}>
+                    Reference answer: {item.source_expected}
+                  </div>
+                )}
               </div>
-            )}
-          </div>
+            </>
+          ) : (
+            <h2>A couple more questions</h2>
+          )}
           <div className="subject" dir="auto" lang={lang}>
             {item.generated_prompt}
           </div>
 
-          {sourceAxes.map((ax) => (
+          {phaseBAxes.map((ax) => (
             <div key={ax.key}>
               <div className="q">
                 <span className="ax">{ax.label}</span> — {ax.question}

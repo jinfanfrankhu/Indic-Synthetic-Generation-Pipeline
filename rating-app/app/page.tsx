@@ -14,6 +14,10 @@ export default function Home() {
   return (
     <>
       <h1>Native-speaker rating</h1>
+      <p>
+        Thank you SO much for participating! It really means a lot to me :) Don&apos;t
+        worry if you don&apos;t finish. After every question, we save your answers.
+      </p>
       <p className="muted">
         You&apos;ll see ~20 short machine-generated tasks in your language. Rate each on
         three quick questions. There are no right answers: your honest judgement as a
