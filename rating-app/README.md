@@ -46,7 +46,7 @@ cp ../data/gold/rater_bundle.json public/rater_bundle.json
 ## Getting ratings back out
 Each row mirrors syndata's `ratings.jsonl` schema. Export for the κ analysis:
 ```bash
-psql "$DATABASE_URL" -c "\copy (select task_id, rater_id, language, task_family, fluency, faithfulness, bias, unsure, comment, instructions_version, started_at, submitted_at from ratings) to 'ratings.csv' csv header"
+psql "$DATABASE_URL" -c "\copy (select task_id, rater_id, rater_name, language, task_family, fluency, faithfulness, bias, unsure, comment, instructions_version, started_at, submitted_at from ratings) to 'ratings.csv' csv header"
 ```
 Then join `task_id` against `data/gold/assignment_manifest.json` (the private answer key
 with the judge scores) to compute judge-vs-human agreement.

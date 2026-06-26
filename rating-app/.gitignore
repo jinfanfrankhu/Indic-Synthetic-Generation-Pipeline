@@ -18,7 +18,7 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-_build.log
+_*.log
 
 # local env files (Neon DATABASE_URL lives here)
 .env

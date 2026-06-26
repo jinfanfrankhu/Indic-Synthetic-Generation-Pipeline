@@ -8,7 +8,8 @@
 create table if not exists ratings (
   id             bigserial primary key,
   task_id        text        not null,   -- == SyntheticItem.id (join key)
-  rater_id       text        not null,
+  rater_id       text        not null,   -- auto-generated GUID per session
+  rater_name     text,                   -- optional self-identification (for thanks/QC)
   language       text        not null,   -- hi | ur | ta | ml
   task_family    text,
   fluency        int         not null,   -- Naturalness, 1-4
@@ -21,6 +22,9 @@ create table if not exists ratings (
   submitted_at   timestamptz,
   created_at     timestamptz not null default now()
 );
+
+-- For databases created before rater_name existed (idempotent, safe to re-run):
+alter table ratings add column if not exists rater_name text;
 
 -- A rater shouldn't double-submit the same item; keep the latest if they do.
 create unique index if not exists ratings_rater_task_uniq on ratings (rater_id, task_id);

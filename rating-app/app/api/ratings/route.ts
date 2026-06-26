@@ -21,15 +21,16 @@ export async function POST(req: Request) {
 
     await sql`
       insert into ratings (
-        task_id, rater_id, language, task_family,
+        task_id, rater_id, rater_name, language, task_family,
         fluency, faithfulness, bias, unsure, comment,
         instructions_version, started_at, submitted_at
       ) values (
-        ${b.task_id}, ${b.rater_id}, ${b.language}, ${b.task_family ?? null},
+        ${b.task_id}, ${b.rater_id}, ${b.rater_name ?? null}, ${b.language}, ${b.task_family ?? null},
         ${b.fluency}, ${b.faithfulness}, ${b.bias}, ${b.unsure ?? false}, ${b.comment ?? null},
         ${b.instructions_version ?? "v1"}, ${b.started_at ?? null}, ${b.submitted_at ?? null}
       )
       on conflict (rater_id, task_id) do update set
+        rater_name = excluded.rater_name,
         fluency = excluded.fluency,
         faithfulness = excluded.faithfulness,
         bias = excluded.bias,

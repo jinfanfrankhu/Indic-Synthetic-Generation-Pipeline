@@ -57,6 +57,8 @@ export default function RatingFlow() {
   const params = useSearchParams();
   const lang = params.get("lang") ?? "";
   const rater = params.get("rater") ?? "";
+  const name = params.get("name") ?? "";
+  const displayName = name || "anonymous";
 
   const [allItems, setAllItems] = useState<BundleItem[] | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -98,6 +100,7 @@ export default function RatingFlow() {
         body: JSON.stringify({
           task_id: item.task_id,
           rater_id: rater,
+          rater_name: name || null,
           language: item.language,
           task_family: item.task_family,
           fluency: scores.fluency,
@@ -157,8 +160,8 @@ export default function RatingFlow() {
       <>
         <h1>All done — thank you! 🙏</h1>
         <p className="muted">
-          You rated {items.length} items as <strong>{rater}</strong>. Your ratings are
-          saved. You can close this tab.
+          You rated {items.length} items as <strong>{displayName}</strong>. Your ratings
+          are saved. You can close this tab.
         </p>
         <Link href="/">Rate another set →</Link>
       </>
@@ -173,7 +176,7 @@ export default function RatingFlow() {
         <span className="muted">
           Item {idx + 1} of {items.length}
         </span>
-        <span className="muted">{rater} · {lang}</span>
+        <span className="muted">{displayName} · {lang}</span>
       </div>
       <div className="progress">
         <span style={{ width: `${pct}%` }} />
