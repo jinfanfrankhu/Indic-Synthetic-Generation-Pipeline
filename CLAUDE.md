@@ -71,18 +71,29 @@ syndata bootstrap-seeds --tasks all --n 200 --teacher deepseek-ai/deepseek-v4-fl
 # Batch sweep across all languages x tasks from a seed file -> data/generated/<lang>/<task>/...
 syndata generate-batch --seeds data/seeds/bootstrapped_<ts>.json \
   --teacher deepseek-ai/deepseek-v4-flash --per-combo 8 --workers 4
+
+# Resilient serial fill (preferred for throttled endpoints; resumable) -> same layout
+syndata generate-drip --languages hi,ur,ta,ml --tasks all --per-combo 20 \
+  --teacher gemini:gemini-3.1-flash-lite --calls-per-minute 12 --seeds data/seeds/<ts>.json
+
+# Quality-filter chain -> data/filtered/verdicts_<ts>.jsonl + docs/filter_retention_<ts>.md
+# Deterministic gates only (no API); add --judges / --back-translate for score-only passes.
+syndata filter --generated data/generated
 ```
 
 `compare` logs per-call progress (`[n/total]`, elapsed, preview) to stderr by default.
 
 ## What still needs to be written
 
-- `DESIGN.md` — 5 methodology decisions (seed strategy, direct-gen vs. translate, filter aggressiveness, bias, evaluation)
 - `METHODOLOGY.md` — 2,500–3,500 word paper-style writeup
-- Quality filters in `syndata/filters/` (LLM-judge, language-ID gate, back-translation, structural) — Week 4+
-- Test suite (`MockClient` is built to be the fixture)
 - Jupyter notebook (exploratory analysis)
 - 5-slide presentation PDF
+- Threshold calibration: subjective filters (LLM-judge, back-translation) run score-only until tuned against the human gold set
+
+Done since the skeleton: `DESIGN.md` (the 5 methodology decisions); all four quality
+filters in `syndata/filters/` (structural, language-ID, LLM-judge, back-translation)
+plus the `syndata filter` chain + retention reporting; a `tests/` suite (40 tests,
+deterministic + injectable fakes, no API/torch needed).
 
 ## Done (Week 3 — pipeline skeleton)
 
