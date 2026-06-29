@@ -17,9 +17,17 @@ Filters that ship:
 """
 from __future__ import annotations
 
+from .back_translation import (
+    BackTranslationFilter,
+    DEFAULT_SBERT_MODEL,
+    Embedder,
+    SbertEmbedder,
+    cosine,
+)
 from .base import FilterChain, FilterVerdict
 from .language_id import LanguageIDFilter
 from .llm_judge import EnsembleJudgement, LLMJudgeFilter, aggregate_scores
+from .retention import GroupRetention, PassStat, RetentionReport, render_markdown, summarize
 from .structural import StructuralFilter
 
 __all__ = [
@@ -30,4 +38,14 @@ __all__ = [
     "LLMJudgeFilter",
     "EnsembleJudgement",
     "aggregate_scores",
+    "BackTranslationFilter",
+    "Embedder",
+    "SbertEmbedder",
+    "DEFAULT_SBERT_MODEL",
+    "cosine",
+    "GroupRetention",
+    "PassStat",
+    "RetentionReport",
+    "render_markdown",
+    "summarize",
 ]

@@ -13,6 +13,13 @@ dependencies = [
 dev = [
     "pytest>=8.0",
 ]
+# Heavy, platform-specific (pulls in PyTorch). Required ONLY to run the
+# back-translation filter with a real SBERT model; the filter's logic and tests
+# use an injectable Embedder and need nothing here. Install with:
+#   pip install -e .[backtranslation]
+backtranslation = [
+    "sentence-transformers>=2.2",
+]
 
 [project.scripts]
 syndata = "syndata.cli:main"

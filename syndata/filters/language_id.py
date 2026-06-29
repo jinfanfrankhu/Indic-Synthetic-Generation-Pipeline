@@ -17,15 +17,27 @@ Limitation: a script gate cannot distinguish languages that *share* a script
 (e.g. Urdu vs. Persian, both Perso-Arabic). That's not a failure mode the teacher
 produces for our targets, but for a finer gate (or more target languages) swap in
 IndicLID/fastText behind the same ``QualityFilter`` interface.
+
+**Per-task exemption.** A whole-item script gate is wrong for *translation*: a
+translation item must embed the source sentence (e.g. an English phrase to render
+in Hindi), so its Latin letters legitimately drag the target-script fraction below
+the bar and reject a *correct* translation. Translation quality is the job of the
+back-translation / faithfulness filters, not a script gate — so the translation
+family is exempt here by default (``exempt_tasks``). See DESIGN.md (filter
+aggressiveness).
 """
 from __future__ import annotations
 
 import unicodedata
 from datetime import datetime, timezone
 
-from ..data_structures import QualityFilter, QualityFilterResult, SyntheticItem
+from ..data_structures import QualityFilter, QualityFilterResult, SyntheticItem, TaskFamily
 
 CONFIDENCE_THRESHOLD = 0.75
+
+# Families whose items legitimately contain source-language text, so a target-
+# script proportion gate does not apply. Translation is the canonical case.
+DEFAULT_EXEMPT_TASKS = frozenset({TaskFamily.TRANSLATION})
 
 # ISO code -> list of (inclusive) Unicode codepoint ranges for the target script.
 _SCRIPT_RANGES: dict[str, list[tuple[int, int]]] = {
@@ -66,8 +78,14 @@ def target_script_confidence(text: str, iso_code: str) -> float:
 class LanguageIDFilter(QualityFilter):
     name = "language_id"
 
-    def __init__(self, threshold: float = CONFIDENCE_THRESHOLD) -> None:
+    def __init__(
+        self,
+        threshold: float = CONFIDENCE_THRESHOLD,
+        *,
+        exempt_tasks: frozenset[TaskFamily] = DEFAULT_EXEMPT_TASKS,
+    ) -> None:
         self.threshold = threshold
+        self.exempt_tasks = frozenset(exempt_tasks)
 
     def evaluate(self, item: SyntheticItem) -> QualityFilterResult:
         # Judge the generated text the model produced: prompt plus any answer.
@@ -75,6 +93,21 @@ class LanguageIDFilter(QualityFilter):
         if item.expected:
             text = f"{text}\n{item.expected}"
         confidence = target_script_confidence(text, item.target_language)
+
+        # Exempt families that carry source-language text by design (translation):
+        # pass regardless of script proportion, but keep the real confidence in
+        # ``score`` and say why in ``reason`` so the verdict trail stays honest.
+        if item.task_family in self.exempt_tasks:
+            return QualityFilterResult(
+                item_id=item.id,
+                filter_name=self.name,
+                passed=True,
+                score=confidence,
+                reason=f"exempt ({item.task_family.value}): source-language text "
+                       f"expected; {confidence:.0%} in {item.target_language} script",
+                timestamp=datetime.now(timezone.utc),
+            )
+
         passed = confidence >= self.threshold
         reason = (
             None if passed

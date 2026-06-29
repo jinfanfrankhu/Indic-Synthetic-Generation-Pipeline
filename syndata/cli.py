@@ -1,16 +1,25 @@
 """
 Command-line interface.
 
-    syndata generate --language hi --task qa --n 50 \
-        --teacher qwen/qwen3-5-122b --judge meta/llama-3.3-70b-instruct
+    syndata generate --language hi --task qa --n 50 --teacher gemini:gemini-3.1-flash-lite
 
-Week 3 scope is generation only: load seeds, call the teacher, write valid
-``SyntheticItem`` records to JSONL. The ``--judge`` model is accepted and
-recorded for provenance but not yet invoked — quality filtering lands in Week 4.
+Subcommands fall into three groups:
+
+  - **generation**: ``generate``, ``generate-drip`` (resilient serial fill),
+    ``generate-batch`` (concurrent sweep), ``bootstrap-seeds`` (self-instruct seed
+    expansion).
+  - **quality**: ``filter`` (run the filter chain → per-item verdicts + retention
+    report), ``judge-compare`` / ``judge-score`` (LLM-judge ensemble), ``export-gold``
+    (assemble a blind human-rater bundle).
+  - **evidence**: ``compare`` (model bake-off → Markdown).
+
+Each ``cmd_*`` handler is thin: it parses args, wires modules from ``syndata.*``,
+and writes artifacts. The heavy lifting lives in those modules, not here.
 """
 from __future__ import annotations
 
 import argparse
+import json
 import sys
 from datetime import datetime
 from itertools import islice, cycle
@@ -24,6 +33,9 @@ from .templates import default_template_for
 
 DEFAULT_OUTPUT_DIR = Path("data") / "generated"
 GOLD_DIR = Path("data") / "gold"
+# Filter verdicts live OUTSIDE data/generated so a later `filter` run (which
+# recurses data/generated for *.jsonl) never re-ingests its own output as items.
+FILTER_DIR = Path("data") / "filtered"
 DOCS_DIR = Path("docs")
 
 
@@ -166,6 +178,10 @@ def _build_parser() -> argparse.ArgumentParser:
     )
     bs.add_argument("--per-call", type=int, default=8, help="Seeds requested per API call.")
     bs.add_argument(
+        "--calls-per-minute", type=float, default=None,
+        help="Pace teacher call starts (set for low-RPM providers like Gemini: 15 RPM).",
+    )
+    bs.add_argument(
         "--temperature", type=float, default=1.0,
         help="Higher than generation default — bootstrapping wants diversity.",
     )
@@ -305,6 +321,48 @@ def _build_parser() -> argparse.ArgumentParser:
     )
     dr.add_argument("--seeds", default=str(DEFAULT_SEED_PATH))
     dr.add_argument("--out-dir", default=str(DEFAULT_OUTPUT_DIR))
+
+    ft = sub.add_parser(
+        "filter",
+        help="Run the quality-filter chain over a generated pool; log per-language retention.",
+    )
+    ft.add_argument(
+        "--generated", default=str(DEFAULT_OUTPUT_DIR),
+        help="Dir (recursed for *.jsonl) or a single JSONL file of generated items.",
+    )
+    ft.add_argument("--seeds", default=str(DEFAULT_SEED_PATH))
+    ft.add_argument(
+        "--judges", default=None,
+        help="Comma-separated judge model ids to add the (score-only) LLM-judge pass. "
+             "Omit to run the deterministic filters only (no API, no key needed).",
+    )
+    ft.add_argument("--aggregate", default="mean", choices=["mean", "median"])
+    ft.add_argument(
+        "--back-translate", default=None, metavar="MODEL",
+        help="Add the back-translation filter using MODEL as translator + a local SBERT "
+             "embedder. Requires the 'backtranslation' extra (pip install -e .[backtranslation]).",
+    )
+    ft.add_argument(
+        "--sbert-model", default=None,
+        help="Override the SBERT checkpoint used by --back-translate.",
+    )
+    ft.add_argument(
+        "--lang-threshold", type=float, default=0.75,
+        help="Min target-script confidence for the language-ID gate (spec default 0.75).",
+    )
+    ft.add_argument(
+        "--calls-per-minute", type=float, default=None,
+        help="Pace judge call starts (set for low-RPM providers like Gemini).",
+    )
+    ft.add_argument("--max-tokens", type=int, default=1024)
+    ft.add_argument(
+        "--verdicts", default=None,
+        help="Per-item verdicts JSONL (default: data/filtered/verdicts_<ts>.jsonl).",
+    )
+    ft.add_argument(
+        "--report", default=None,
+        help="Retention Markdown report (default: docs/filter_retention_<ts>.md).",
+    )
     return parser
 
 
@@ -458,7 +516,11 @@ def cmd_bootstrap_seeds(args: argparse.Namespace) -> int:
 
     tasks = _resolve_tasks(args.tasks)
     all_seeds = load_seeds(args.seeds)
-    client = build_client(args.teacher)
+    client_kwargs = (
+        {"calls_per_minute": args.calls_per_minute}
+        if args.calls_per_minute is not None else {}
+    )
+    client = build_client(args.teacher, **client_kwargs)
 
     # Split the requested total roughly evenly across task families.
     per_task = max(1, args.n // len(tasks))
@@ -846,6 +908,121 @@ def cmd_export_gold(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_filter(args: argparse.Namespace) -> int:
+    from .filters import (
+        FilterChain, LanguageIDFilter, LLMJudgeFilter, StructuralFilter,
+        render_markdown, summarize,
+    )
+    from .gold import load_items
+    from .seeds import load_seeds
+
+    paths = _resolve_generated(args.generated)
+    if not paths:
+        print(f"No generated JSONL found at {args.generated}", file=sys.stderr)
+        return 1
+    items = load_items(paths)
+    seeds_by_id = {s.id: s for s in load_seeds(args.seeds)}
+
+    # Deterministic gates first (free, no API); judge last (score-only, opt-in).
+    filters = [StructuralFilter(), LanguageIDFilter(threshold=args.lang_threshold)]
+    judges = [m.strip() for m in (args.judges or "").split(",") if m.strip()]
+    if judges:
+        clients = None
+        if args.calls_per_minute is not None:
+            clients = {
+                j: build_client(j, calls_per_minute=args.calls_per_minute) for j in judges
+            }
+        filters.append(
+            LLMJudgeFilter(
+                judges, seeds_by_id, clients=clients,
+                aggregate=args.aggregate, max_tokens=args.max_tokens,
+            )
+        )
+    if args.back_translate:
+        from .filters.back_translation import (
+            DEFAULT_SBERT_MODEL, BackTranslationFilter, SbertEmbedder,
+        )
+
+        # SbertEmbedder raises an actionable ImportError if the extra is missing.
+        try:
+            embedder = SbertEmbedder(args.sbert_model or DEFAULT_SBERT_MODEL)
+        except ImportError as err:
+            print(err, file=sys.stderr)
+            return 1
+        bt_client = (
+            build_client(args.back_translate, calls_per_minute=args.calls_per_minute)
+            if args.calls_per_minute is not None else None
+        )
+        filters.append(
+            BackTranslationFilter(
+                args.back_translate, seeds_by_id, embedder,
+                client=bt_client, max_tokens=args.max_tokens,
+            )
+        )
+    chain = FilterChain(filters)
+
+    filter_label = ", ".join(f.name for f in filters)
+    print(
+        f"Filtering {len(items)} items from {len(paths)} file(s) "
+        f"through: {filter_label}", file=sys.stderr,
+    )
+
+    pairs = []
+    missing_seed = 0
+    for item in items:
+        if item.seed_id not in seeds_by_id and judges:
+            # The judge needs the seed; deterministic gates do not. Skip judge for
+            # orphans by recording it, but still run the free gates.
+            missing_seed += 1
+        verdict = chain.evaluate(item)
+        pairs.append((item, verdict))
+    if missing_seed:
+        print(f"  ({missing_seed} items had no matching seed; judge may be degraded for those)",
+              file=sys.stderr)
+
+    # Per-item verdicts JSONL (audit trail of every filter's call on every item).
+    verdicts_path = Path(args.verdicts) if args.verdicts else (
+        FILTER_DIR / f"verdicts_{datetime.now():%Y%m%dT%H%M%S}.jsonl"
+    )
+    verdicts_path.parent.mkdir(parents=True, exist_ok=True)
+    with verdicts_path.open("w", encoding="utf-8") as fh:
+        for item, verdict in pairs:
+            fh.write(json.dumps({
+                "item_id": item.id,
+                "language": item.target_language,
+                "task": item.task_family.value,
+                "would_pass": verdict.would_pass,
+                "failed": verdict.failed_filters(),
+                "results": [
+                    {"filter": r.filter_name, "passed": r.passed,
+                     "score": round(r.score, 4), "reason": r.reason}
+                    for r in verdict.results
+                ],
+            }, ensure_ascii=False) + "\n")
+
+    # Retention report (the Week 4 exit artifact).
+    report = summarize(pairs)
+    report_path = Path(args.report) if args.report else (
+        DOCS_DIR / f"filter_retention_{datetime.now():%Y%m%dT%H%M%S}.md"
+    )
+    report_path.parent.mkdir(parents=True, exist_ok=True)
+    report_path.write_text(render_markdown(report), encoding="utf-8")
+
+    # Console summary.
+    o = report.overall
+    print(f"\nChain retention: {o.chain.passed}/{o.chain.total} ({o.chain.rate:.0%}) survived all gates")
+    for name in report.filter_names:
+        st = o.per_filter[name]
+        print(f"  {name:<12} {st.rate:5.0%} pass ({st.passed}/{st.total})")
+    print("By language:")
+    for lang in sorted(report.by_language):
+        g = report.by_language[lang]
+        print(f"  {lang}: {g.chain.rate:.0%} chain ({g.chain.passed}/{g.chain.total})")
+    print(f"\nVerdicts -> {verdicts_path}")
+    print(f"Retention report -> {report_path}")
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     # Load NVIDIA_API_KEY (and friends) from a local .env if present.
     try:
@@ -872,6 +1049,8 @@ def main(argv: list[str] | None = None) -> int:
         return cmd_export_gold(args)
     if args.command == "generate-drip":
         return cmd_generate_drip(args)
+    if args.command == "filter":
+        return cmd_filter(args)
     return 1
 
 
