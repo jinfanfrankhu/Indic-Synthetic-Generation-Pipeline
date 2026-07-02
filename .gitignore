@@ -37,6 +37,7 @@ results/
 # Weekend automated-run artifacts (transient; the summary email + weekend_log.md carry the signal)
 tools/run_*.log
 tools/quota_ledger.json
+tools/judge_ledger.json
 
 # OS
 .DS_Store

@@ -1,19 +1,18 @@
-"""Resumable, budget-bounded back-translation scoring for the weekend runs.
+"""Back-translation consistency scoring with a local, independent MT (NLLB-200).
 
-Scores generated items with the back-translation consistency signal (Gemini
-back-translate -> multilingual-SBERT cosine vs. the English seed), but two ways
-that the plain `syndata filter --back-translate` can't:
+Back-translates every generated item to English with **NLLB-200** — a dedicated MT
+model, deliberately NOT the Gemini teacher (independence + literalness are what make
+back-translation a valid check; see docs/lit_review.md and DESIGN.md Q5) — and records
+the SBERT cosine vs. the English seed. Score-only: nothing is dropped.
 
-  * **Budget-bounded** — makes at most N Gemini calls per run and never exceeds a
-    daily cap, so it stays under the free-tier RPD while unattended.
-  * **Resumable** — records which items are scored (data/filtered/backtranslation_
-    scores.jsonl) and a per-day call ledger (tools/quota_ledger.json), so runs
-    across the weekend pick up exactly where the last one stopped.
-
-Score-only by design (DESIGN.md Q3/Q5): we record cosines, we do not drop anything.
+Local and unlimited, so it scores the whole corpus in one resumable pass (no API, no
+quota). Resumable: already-scored item ids in the output are skipped, so a crash or a
+second run (e.g. after Friday's translation regen) just fills the gap.
 
 Usage:
-  python tools/score_backtranslation.py --per-run-budget 210 --calls-per-minute 12
+  python tools/score_backtranslation.py            # score all unscored (skips translation)
+  python tools/score_backtranslation.py --limit 20 # smoke test
+  python tools/score_backtranslation.py --include-translation   # after the regen
 """
 from __future__ import annotations
 
@@ -22,17 +21,8 @@ import glob
 import json
 import os
 import statistics
-from datetime import datetime, timedelta
+import time
 
-from dotenv import load_dotenv
-
-from syndata.client import build_client
-from syndata.data_structures import SyntheticItem
-from syndata.filters.back_translation import BackTranslationFilter, SbertEmbedder
-from syndata.seeds import load_seeds
-
-# conda on Windows points SSL_CERT_FILE at a base-env cacert.pem that often doesn't
-# exist, which breaks httpx/HuggingFace TLS. Fall back to certifi's real bundle.
 _cf = os.environ.get("SSL_CERT_FILE")
 if _cf and not os.path.exists(_cf):
     import certifi
@@ -40,22 +30,16 @@ if _cf and not os.path.exists(_cf):
     os.environ["SSL_CERT_FILE"] = certifi.where()
     os.environ.setdefault("REQUESTS_CA_BUNDLE", certifi.where())
 
+import torch
+from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
+
+from syndata.data_structures import SyntheticItem
+from syndata.filters.back_translation import SbertEmbedder, cosine
+from syndata.seeds import load_seeds
+
 SCORES = "data/filtered/backtranslation_scores.jsonl"
-LEDGER = "tools/quota_ledger.json"
-MODEL = "gemini:gemini-3.1-flash-lite"
-
-
-def quota_day() -> str:
-    """Bucket calls by Gemini's reset boundary (midnight PT ~= 03:00 ET).
-
-    Subtracting 3h from local (Eastern) time puts everything before 3 AM into the
-    previous quota-day, matching Google's daily RPD reset without a tz dependency.
-    """
-    return (datetime.now() - timedelta(hours=3)).strftime("%Y-%m-%d")
-
-
-def _load_json(path: str, default):
-    return json.load(open(path, encoding="utf-8")) if os.path.exists(path) else default
+MODEL = "facebook/nllb-200-distilled-1.3B"
+NLLB_CODE = {"hi": "hin_Deva", "ur": "urd_Arab", "ta": "tam_Taml", "ml": "mal_Mlym"}
 
 
 def _scored_ids() -> set[str]:
@@ -69,77 +53,79 @@ def _scored_ids() -> set[str]:
 
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--per-run-budget", type=int, default=210, help="max Gemini calls this run")
-    ap.add_argument("--daily-cap", type=int, default=420, help="max Gemini calls per quota-day")
-    ap.add_argument("--calls-per-minute", type=int, default=12)
     ap.add_argument("--seeds", default="data/seeds/seed_pool_20260629.json")
+    ap.add_argument("--limit", type=int, default=0, help="0 = all unscored")
+    ap.add_argument("--include-translation", action="store_true",
+                    help="also score the translation family (skipped by default until regen)")
     args = ap.parse_args()
 
-    load_dotenv()  # resolve GEMINI_API_KEY from repo .env (standalone script, no cli.main)
-    day = quota_day()
-    ledger = _load_json(LEDGER, {})
-    used = int(ledger.get(day, 0))
-    budget = min(args.per_run_budget, args.daily_cap - used)
-    if budget <= 0:
-        print(f"[scorer] daily cap reached for {day} (used {used}/{args.daily_cap}); nothing to do.")
-        return 0
-
     done = _scored_ids()
-    unscored: list[SyntheticItem] = []
+    items: list[SyntheticItem] = []
     for f in sorted(glob.glob("data/generated/**/*.jsonl", recursive=True)):
+        if not args.include_translation and "/translation/" in f.replace("\\", "/"):
+            continue
         for line in open(f, encoding="utf-8"):
             if line.strip():
                 it = SyntheticItem.model_validate_json(line)
                 if it.id not in done:
-                    unscored.append(it)
-    if not unscored:
-        print(f"[scorer] all {len(done)} items already scored; nothing to do.")
+                    items.append(it)
+    if args.limit:
+        items = items[:args.limit]
+    if not items:
+        print(f"[bt] all applicable items already scored ({len(done)} on file); nothing to do.")
         return 0
 
-    seeds = load_seeds(args.seeds)
-    seed_lookup = {s.id: s for s in seeds}
-    client = build_client(MODEL, max_retries=1, calls_per_minute=args.calls_per_minute)
-    flt = BackTranslationFilter(
-        translator_model=MODEL, seed_lookup=seed_lookup, embedder=SbertEmbedder(), client=client
-    )
+    seeds = {s.id: s for s in load_seeds(args.seeds)}
+    print(f"[bt] loading NLLB-200 + SBERT (first run downloads the model)...", flush=True)
+    tok = AutoTokenizer.from_pretrained(MODEL)
+    model = AutoModelForSeq2SeqLM.from_pretrained(MODEL)
+    model.eval()
+    eng = tok.convert_tokens_to_ids("eng_Latn")
+    if eng is None or eng == tok.unk_token_id:
+        eng = getattr(tok, "lang_code_to_id", {}).get("eng_Latn")
+    emb = SbertEmbedder()
+
+    def back_translate(text: str, lang: str) -> str:
+        tok.src_lang = NLLB_CODE[lang]
+        inp = tok(text, return_tensors="pt", truncation=True, max_length=256)
+        with torch.no_grad():
+            gen = model.generate(**inp, forced_bos_token_id=eng, max_length=256, num_beams=4)
+        return tok.batch_decode(gen, skip_special_tokens=True)[0]
 
     os.makedirs(os.path.dirname(SCORES), exist_ok=True)
-    calls = 0
-    errors = 0
-    cosines: list[float] = []
+    cos_all: list[float] = []
+    t0 = time.time()
+    n = 0
     with open(SCORES, "a", encoding="utf-8") as out:
-        for it in unscored:
-            if calls >= budget:
-                break
+        for it in items:
             task = it.task_family.value if hasattr(it.task_family, "value") else str(it.task_family)
-            rec = {"id": it.id, "seed_id": it.seed_id, "lang": it.target_language, "task": task}
-            seed = seed_lookup.get(it.seed_id)
+            rec = {"id": it.id, "seed_id": it.seed_id, "lang": it.target_language,
+                   "task": task, "translator": "nllb-200-distilled-1.3B"}
+            seed = seeds.get(it.seed_id)
             if seed is None:
-                rec.update({"cos": None, "error": "no seed"})  # no API call; not counted
+                rec.update({"cos": None, "error": "no seed"})
             else:
                 try:
-                    cos, bt = flt.similarity(it, seed)
-                    rec.update({"cos": round(cos, 4), "back_translation": bt})
-                    cosines.append(cos)
+                    gen_text = (it.prompt or "") + (f"\n{it.expected}" if it.expected else "")
+                    back = back_translate(gen_text, it.target_language)
+                    seed_text = seed.prompt + (f"\n{seed.expected}" if seed.expected else "")
+                    sv, bv = emb.encode([seed_text, back])
+                    c = cosine(sv, bv)
+                    rec.update({"cos": round(c, 4), "back_translation": back})
+                    cos_all.append(c)
                 except Exception as err:  # noqa: BLE001 — record + keep going
                     rec.update({"cos": None, "error": str(err)[:200]})
-                    errors += 1
-                calls += 1
-                used += 1
-                ledger[day] = used
-                json.dump(ledger, open(LEDGER, "w"), indent=2)  # flush each call: crash-safe
             out.write(json.dumps(rec, ensure_ascii=False) + "\n")
             out.flush()
+            n += 1
+            if n % 50 == 0:
+                rate = n / (time.time() - t0)
+                print(f"[bt] {n}/{len(items)}  ({rate:.2f}/s)  "
+                      f"cos_mean={statistics.mean(cos_all):.3f}", flush=True)
 
-    dist = (
-        f"mean={statistics.mean(cosines):.3f} median={statistics.median(cosines):.3f} "
-        f"min={min(cosines):.3f} max={max(cosines):.3f}"
-        if cosines else "no successful scores"
-    )
-    print(f"[scorer] day={day}: {calls} calls ({len(cosines)} ok, {errors} errors); "
-          f"quota used today {used}/{args.daily_cap}")
-    print(f"[scorer] cosine {dist}")
-    print(f"[scorer] unscored remaining (approx): {max(0, len(unscored) - calls)}")
+    dist = (f"mean={statistics.mean(cos_all):.3f} median={statistics.median(cos_all):.3f} "
+            f"min={min(cos_all):.3f}" if cos_all else "no successful scores")
+    print(f"[bt] done: {n} scored in {time.time() - t0:.0f}s; cosine {dist}")
     return 0
 
 

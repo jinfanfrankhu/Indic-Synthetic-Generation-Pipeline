@@ -116,6 +116,18 @@ Reimers, N., & Gurevych, I. (2020). Making monolingual sentence embeddings multi
 
 ---
 
+## Back-Translation Model (independent MT for the consistency check)
+
+NLLB Team, Costa-jussà, M. R., Cross, J., Çelebi, O., Elbayad, M., Heafield, K., Heffernan, K., Kalbassi, E., Lam, J., Licht, D., Maillard, J., Sun, A., Wang, S., Wenzek, G., Youngblood, F., Akula, B., Barrault, L., Gonzalez, G. M., Hansanti, P., … Tran, C. (2022). No language left behind: Scaling human-centered machine translation. *arXiv preprint*. https://arxiv.org/abs/2207.04672
+
+> Source of `facebook/nllb-200-distilled-1.3B`, the dedicated MT used to back-translate generated items to English for the back-translation consistency filter. Chosen over reusing the Gemini teacher to keep the check *independent* of the generator (avoiding the same-model circularity SPEC.md forbids for judging) and *literal* (MT renders faithfully where an LLM paraphrases). Runs locally, covers all four study languages. License CC-BY-NC-4.0 — an internal QC signal, not redistributed.
+
+Gala, J., Chitale, P. A., Raghavan, A. K., Gumma, V., Doddapaneni, S., Kumar, A., Nawale, J., Sujatha, A., Puduppully, R., Raghavan, V., Kumar, P., Khapra, M. M., Dabre, R., & Kunchukuttan, A. (2023). IndicTrans2: Towards high-quality and accessible machine translation models for all 22 scheduled Indian languages. *Transactions on Machine Learning Research*. https://arxiv.org/abs/2305.16307
+
+> Considered as the back-translation model — SOTA for Indic, MIT-licensed — but the HuggingFace weights are gated and the IndicTransToolkit lagged transformers v5 at integration time. Documented as the preferred alternative to revisit against the gold set.
+
+---
+
 ## Resource Level Classification
 
 Joshi, P., Santy, S., Budhiraja, A., Bali, K., & Choudhury, M. (2020). The state and fate of linguistic diversity and inclusion in the NLP world. In *Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics* (pp. 6282–6293). https://arxiv.org/abs/2004.09095

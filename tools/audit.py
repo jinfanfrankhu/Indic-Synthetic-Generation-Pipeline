@@ -77,7 +77,35 @@ def main() -> int:
     errs = [r for r in recs if r.get("error")]
     if errs:
         print(f"  scoring errors: {len(errs)} (e.g. {str(errs[0].get('error'))[:100]})")
-    print(f"\n  unscored remaining: {total_items - len(recs)}")
+    print(f"  unscored remaining (back-translation): {total_items - len(recs)}")
+
+    # --- LLM-judge ensemble ---
+    jrecs = []
+    try:
+        for line in open("data/filtered/judge_scores.jsonl", encoding="utf-8"):
+            if line.strip():
+                jrecs.append(json.loads(line))
+    except FileNotFoundError:
+        pass
+    if jrecs:
+        print(f"\n== judge ensemble ({len(jrecs)} judge-scores) ==")
+        by_judge = collections.Counter(r["judge"].split("/")[-1] for r in jrecs)
+        print(f"  coverage by judge: {dict(by_judge)}")
+        for axis in ("fluency", "faithfulness", "bias", "overall"):
+            vals = [r[axis] for r in jrecs if r.get(axis) is not None]
+            if vals:
+                print(f"  {axis:12} mean={statistics.mean(vals):.3f} min={min(vals):.3f}")
+        by_item = collections.defaultdict(list)
+        for r in jrecs:
+            if r.get("overall") is not None:
+                by_item[r["item_id"]].append(r["overall"])
+        ens = [statistics.mean(v) for v in by_item.values()]
+        low = [iid for iid, v in by_item.items() if statistics.mean(v) < 0.6]
+        if ens:
+            print(f"  ensemble-mean overall: {statistics.mean(ens):.3f}; "
+                  f"items with ensemble<0.6: {len(low)} (review candidates)")
+            for iid in low[:8]:
+                print(f"    {iid}")
     return 0
 
 

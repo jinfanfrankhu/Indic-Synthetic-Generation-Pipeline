@@ -212,11 +212,15 @@ agreement* on a sample:
    the precondition that justifies an ensemble. Provisional panel: **GLM-5.1 + Mistral
    Small 4 + Nemotron-3 Super** (Sarvam-m demoted for non-monotonic scoring but kept as
    the only Indic specialist).
-4. **Back-translation consistency** — translate the generation back to English, cosine
-   similarity vs. the English seed via multilingual SBERT (Reimers & Gurevych 2019/2020).
-   Embedding cosine over spBLEU/ChrF because back-translation paraphrases heavily and
-   surface n-gram overlap punishes valid paraphrase; relative score, thresholded against
-   the gold set, not an absolute cutoff. *(Implementation: Week 5.)*
+4. **Back-translation consistency** — back-translate the generation to English with an
+   **independent MT (NLLB-200), deliberately *not* the teacher** (same-model back-translation
+   is circular and hides self-consistent errors; a dedicated MT is also more literal, so it
+   exposes drift rather than smoothing it — see `docs/lit_review.md`), then cosine vs. the
+   English seed via multilingual SBERT (Reimers & Gurevych 2019/2020). Embedding cosine over
+   spBLEU/ChrF because back-translation paraphrases heavily and surface n-gram overlap punishes
+   valid paraphrase; relative score, thresholded against the gold set, not an absolute cutoff.
+   A discrimination probe (matched 0.83 vs mismatched 0.06 cosine, 0/16 overlap) confirms the
+   signal separates faithful from mismatched generations. *(Implemented Week 5: `tools/score_backtranslation.py`.)*
 
 **The calibration that makes the surrogates defensible.** We collect a human gold set —
 **~80 items/language, ~20% double-rated, 60% normal + 40% judge-borderline**, blind to
