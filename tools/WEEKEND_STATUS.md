@@ -34,8 +34,16 @@ Only 2 respond reliably on the free tier (popular free models are provider-429
 throttled). The other 2 free reliable models were more NVIDIA Nemotron variants
 (same family → not decorrelated), so the free roster gives 2 distinct reliable
 families. Best-effort judges add coverage as congestion clears over the weekend.
-**To guarantee 3–4:** point llama/qwen at their PAID endpoints (drop `:free`) in
-`DEFAULT_JUDGES` — pennies from the $10 OpenRouter deposit.
+**To guarantee 3–4:** point llama/qwen at their PAID endpoints (drop `:free`) in `DEFAULT_JUDGES`.
+
+**Quota reality (checked Thu via /api/v1/auth/key):** account has $5 (is_free_tier:
+false) but (a) the **1,000/day free tier needs $10** — at $5 the free-model limit is
+~**50/day**, so judge coverage over the weekend is SPARSE; and (b) this **key is capped
+at $1** spend (`limit: 1`), so paid is limited to ~$1. Decision (Thu): leave judges
+free/2 for now; accept thin weekend judge coverage; back-translation (local, unlimited)
+is the primary weekend deliverable. To get real judge coverage later: raise the key's
+limit in the OpenRouter dashboard and switch to paid (~$0.70 for 2 judges over the
+corpus), OR top the account to $10 for 1,000/day free.
 
 ## Known state / caveats
 - Judges score good items ~0.98 (leniency expected; discrimination validated on
