@@ -25,9 +25,38 @@ def test_classification_missing_expected_fails(make_item):
 
 
 def test_instruction_without_expected_is_fine(make_item):
-    # Only QA/classification require an answer; instruction items legitimately omit it.
+    # Only QA/classification/translation require an answer; instruction items may omit it.
     item = make_item(task_family=TaskFamily.INSTRUCTION, expected=None,
                      prompt="एक छोटी कहानी लिखें।")
+    assert StructuralFilter().evaluate(item).passed
+
+
+def test_translation_missing_expected_fails(make_item):
+    # A translation with no translation is broken — the Week-5 empty-answer defect.
+    item = make_item(
+        task_family=TaskFamily.TRANSLATION, expected=None,
+        prompt="इस अंग्रेज़ी वाक्य का हिंदी में अनुवाद करें: 'Good morning.'",
+    )
+    result = StructuralFilter().evaluate(item)
+    assert not result.passed
+    assert "missing 'expected'" in result.reason
+
+
+def test_translation_echo_fails(make_item):
+    # expected == prompt means no translation happened (the no-op echo defect).
+    text = "कृपया स्टेशन पहुँचने पर मुझे कॉल करें।"
+    item = make_item(task_family=TaskFamily.TRANSLATION, prompt=text, expected=text)
+    result = StructuralFilter().evaluate(item)
+    assert not result.passed
+    assert "no-op" in result.reason
+
+
+def test_wellformed_translation_passes(make_item):
+    item = make_item(
+        task_family=TaskFamily.TRANSLATION,
+        prompt="इस अंग्रेज़ी वाक्य का हिंदी में अनुवाद करें: 'Good morning.'",
+        expected="सुप्रभात।",
+    )
     assert StructuralFilter().evaluate(item).passed
 
 

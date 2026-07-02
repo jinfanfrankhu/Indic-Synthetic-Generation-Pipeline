@@ -25,8 +25,10 @@ from ..data_structures import (
     TaskFamily,
 )
 
-# Tasks whose items must carry an answer.
-_ANSWER_REQUIRED = {TaskFamily.QA, TaskFamily.CLASSIFICATION}
+# Tasks whose items must carry an answer. Translation is included: a translation
+# item with no translation is definitionally broken (see the ~36% empty/echo defect
+# in the Week-5 drip, which slipped through because translation was omitted here).
+_ANSWER_REQUIRED = {TaskFamily.QA, TaskFamily.CLASSIFICATION, TaskFamily.TRANSLATION}
 
 MIN_PROMPT_CHARS = 5            # below this the "prompt" is not a usable task
 MAX_PROMPT_CHARS = 8000         # runaway / repetition guard
@@ -62,9 +64,16 @@ class StructuralFilter(QualityFilter):
             violations.append(f"prompt over {MAX_PROMPT_CHARS} chars")
 
         # Answer required for answer-bearing tasks.
+        expected = (item.expected or "").strip()
         if item.task_family in _ANSWER_REQUIRED:
-            if not (item.expected or "").strip():
+            if not expected:
                 violations.append(f"{item.task_family.value} item missing 'expected' answer")
+
+        # Echo / no-op: the answer merely restates the prompt (a "translation"
+        # identical to its source, or a model that parroted the task). Degenerate for
+        # any family — caught 33 of the Week-5 translation echoes.
+        if expected and expected == prompt:
+            violations.append("expected duplicates prompt (no-op generation)")
 
         # Parse-fallback / scaffolding leakage: parse_response dumped raw text when
         # it couldn't recover JSON, so the prompt still looks like JSON or a fence.

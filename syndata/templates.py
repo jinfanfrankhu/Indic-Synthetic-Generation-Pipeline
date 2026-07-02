@@ -22,6 +22,7 @@ mistranslation, localized labels only).
 """
 from __future__ import annotations
 
+import re
 from typing import Callable
 
 from .data_structures import SeedItem, TaskFamily
@@ -66,7 +67,7 @@ DEFAULT_TEMPLATE: dict[TaskFamily, str] = {
     TaskFamily.REASONING: "direct_translate",
     TaskFamily.QA: "direct_translate",
     TaskFamily.SUMMARIZATION: "direct_translate",
-    TaskFamily.TRANSLATION: "direct_translate",
+    TaskFamily.TRANSLATION: "translation_task",
     TaskFamily.INSTRUCTION: "adapt_and_localize",
     TaskFamily.CLASSIFICATION: "adapt_and_localize",
 }
@@ -114,6 +115,49 @@ def direct_translate(seed: SeedItem, lang: str) -> tuple[str, str]:
         parts.append(f"\nAllowed labels (translate these into {lang}): {seed.labels}")
     parts.append("\n" + _json_contract(has_answer).format(lang=lang))
     return system, "\n".join(parts)
+
+
+def _extract_source(seed_prompt: str) -> str:
+    """Pull the English sentence out of a translation seed prompt.
+
+    Translation seeds are shaped ``Translate to the target language: '<sentence>'``.
+    Return the quoted sentence; fall back to whatever follows a leading
+    ``Translate ...:`` instruction so a differently-worded seed still works.
+    """
+    m = re.search(r"['\"](.+)['\"]", seed_prompt, re.DOTALL)
+    if m and m.group(1).strip():
+        return m.group(1).strip()
+    return re.sub(r"^\s*translate\b[^:]*:\s*", "", seed_prompt, flags=re.I).strip().strip("'\"")
+
+
+@register("translation_task")
+def translation_task(seed: SeedItem, lang: str) -> tuple[str, str]:
+    """Build a genuine translation exercise from a translation seed.
+
+    ``direct_translate`` is wrong for the translation family: asked to "render the
+    English task in {lang}" when the task is *itself* "translate X into [target]",
+    the teacher either translated the whole sentence into the prompt and obeyed the
+    ``expected: ""`` contract (blank answer), or echoed it into both fields — ~36%
+    of Week-5 translation items. Here the English source is kept verbatim in the
+    prompt and the model must supply its {lang} translation as a non-empty answer.
+    """
+    source = _extract_source(seed.prompt)
+    system = (
+        "You are an expert English-to-{lang} translator creating instruction-tuning "
+        "data. You are given one English sentence. Return a single JSON object:\n"
+        '  {{"prompt": "<an instruction in {lang} telling the reader to translate the '
+        "sentence into {lang}, keeping the English sentence EXACTLY as given inside "
+        'single quotes>", "expected": "<your faithful, fluent {lang} translation>"}}\n'
+        "Hard rules:\n"
+        '- The English sentence must appear unchanged inside "prompt" (do not '
+        "translate it there).\n"
+        '- "expected" is the {lang} translation, written entirely in {lang}, and must '
+        "not be empty.\n"
+        '- "expected" must not equal "prompt".\n'
+        "- Output ONLY the JSON object — no markdown fences, no commentary."
+    ).format(lang=lang)
+    user = "English sentence to translate into {lang}: '{source}'".format(lang=lang, source=source)
+    return system, user
 
 
 @register("adapt_and_localize")
