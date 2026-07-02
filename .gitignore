@@ -49,3 +49,4 @@ Thumbs.db
 
 # Claude Code internals
 .claude/
+tools/latest_audit.txt
