@@ -135,3 +135,84 @@ Loading weights: 100%|##########| 199/199 [00:00<00:00, 5926.60it/s]
   overall      mean=0.955 min=0.667
   ensemble-mean overall: 0.955; items with ensemble<0.6: 0 (review candidates)
 ```
+
+## 2026-07-03_1500
+```n[bt] all applicable items already scored (903 on file); nothing to do.
+[judge] 25 attempts, 11 ok (14 fail); congested=['llama-3.3-70b-instruct:free', 'qwen3-next-80b-a3b-instruct:free']
+[judge] 50 attempts, 31 ok (19 fail); congested=['llama-3.3-70b-instruct:free', 'qwen3-next-80b-a3b-instruct:free']
+[judge] 75 attempts, 54 ok (21 fail); congested=['llama-3.3-70b-instruct:free', 'qwen3-next-80b-a3b-instruct:free']
+[judge] 100 attempts, 77 ok (23 fail); congested=['llama-3.3-70b-instruct:free', 'qwen3-next-80b-a3b-instruct:free']
+[judge] 125 attempts, 100 ok (25 fail); congested=['llama-3.3-70b-instruct:free', 'qwen3-next-80b-a3b-instruct:free']
+[judge] 150 attempts, 122 ok (28 fail); congested=['llama-3.3-70b-instruct:free', 'qwen3-next-80b-a3b-instruct:free']
+[judge] 175 attempts, 145 ok (30 fail); congested=['llama-3.3-70b-instruct:free', 'qwen3-next-80b-a3b-instruct:free']
+[judge] 200 attempts, 166 ok (34 fail); congested=['llama-3.3-70b-instruct:free', 'qwen3-next-80b-a3b-instruct:free']
+[judge] 225 attempts, 190 ok (35 fail); congested=['llama-3.3-70b-instruct:free', 'qwen3-next-80b-a3b-instruct:free']
+[judge] 250 attempts, 215 ok (35 fail); congested=['llama-3.3-70b-instruct:free', 'qwen3-next-80b-a3b-instruct:free']
+[judge] 275 attempts, 239 ok (36 fail); congested=['llama-3.3-70b-instruct:free', 'qwen3-next-80b-a3b-instruct:free']
+[judge] 300 attempts, 260 ok (40 fail); congested=['llama-3.3-70b-instruct:free', 'qwen3-next-80b-a3b-instruct:free']
+[judge] 325 attempts, 280 ok (45 fail); congested=['gpt-oss-20b:free', 'llama-3.3-70b-instruct:free', 'qwen3-next-80b-a3b-instruct:free']
+[judge] 350 attempts, 299 ok (51 fail); congested=['gpt-oss-20b:free', 'llama-3.3-70b-instruct:free', 'qwen3-next-80b-a3b-instruct:free']
+[judge] day=2026-07-03: 365 attempts, 305 scored in 3937s; quota used 815/900; overall mean=0.932 median=0.967
+[judge] congested this run (retry next): ['openrouter:meta-llama/llama-3.3-70b-instruct:free', 'openrouter:nvidia/nemotron-3-super-120b-a12b:free', 'openrouter:openai/gpt-oss-20b:free', 'openrouter:qwen/qwen3-next-80b-a3b-instruct:free']
+== structural (fail/total by task) ==
+  classification   1/160
+  instruction      0/160
+  qa               0/160
+  reasoning        0/160
+  summarization    0/160
+  translation      0/103
+  examples:
+    syn-ur-classification-bs-0007-011: possible truncation (no terminal punctuation)
+
+== back-translation (903 scored / 903 items, 903 with cosine) ==
+  overall: mean=0.868 median=0.902 min=0.059 p10=0.730 max=1.000
+  by lang/task (mean cosine, n):
+    hi/classification   0.865  (n=40)
+    hi/instruction      0.764  (n=40)
+    hi/qa               0.942  (n=40)
+    hi/reasoning        0.928  (n=40)
+    hi/summarization    0.933  (n=40)
+    hi/translation      0.897  (n=25)
+    ml/classification   0.822  (n=40)
+    ml/instruction      0.755  (n=40)
+    ml/qa               0.931  (n=40)
+    ml/reasoning        0.886  (n=40)
+    ml/summarization    0.895  (n=40)
+    ml/translation      0.886  (n=28)
+    ta/classification   0.779  (n=40)
+    ta/instruction      0.768  (n=40)
+    ta/qa               0.938  (n=40)
+    ta/reasoning        0.855  (n=40)
+    ta/summarization    0.891  (n=40)
+    ta/translation      0.897  (n=22)
+    ur/classification   0.829  (n=40)
+    ur/instruction      0.776  (n=40)
+    ur/qa               0.930  (n=40)
+    ur/reasoning        0.886  (n=40)
+    ur/summarization    0.923  (n=40)
+    ur/translation      0.903  (n=28)
+  LOW cosine (<0.5): 17 ù review candidates
+    syn-hi-instruction-005-004 cos=0.4097
+    syn-hi-instruction-bs-0007-011 cos=0.4366
+    syn-hi-instruction-bs-0019-023 cos=0.2092
+    syn-ml-classification-bs-0010-014 cos=0.4237
+    syn-ml-instruction-bs-0005-009 cos=0.2887
+    syn-ml-instruction-bs-0007-011 cos=0.414
+    syn-ml-instruction-bs-0009-013 cos=0.4438
+    syn-ml-summarization-bs-0009-028 cos=0.4983
+    syn-ta-classification-005-004 cos=0.3357
+    syn-ta-classification-bs-0015-019 cos=0.1439
+  unscored remaining (back-translation): 0
+
+== judge ensemble (723 judge-scores) ==
+  coverage by judge: {'nemotron-3-super-120b-a12b:free': 373, 'gpt-oss-20b:free': 350}
+  fluency      mean=0.914 min=0.000
+  faithfulness mean=0.944 min=0.000
+  bias         mean=0.978 min=0.400
+  overall      mean=0.945 min=0.233
+  ensemble-mean overall: 0.942; items with ensemble<0.6: 4 (review candidates)
+    syn-ml-instruction-bs-0010-014
+    syn-ml-instruction-bs-0026-030
+    syn-ml-qa-bs-0027-031
+    syn-ml-summarization-bs-0012-015
+```
