@@ -1,0 +1,1445 @@
+{
+ "seeds": [
+  {
+   "id": "seed-reasoning-101",
+   "task_family": "reasoning",
+   "prompt": "Priya is 4 years older than Arjun. In 6 years, the sum of their ages will be 40. How old is each of them now? Show your reasoning step by step.",
+   "expected": "Arjun is 12 and Priya is 16.",
+   "metadata": {
+    "domain": "math",
+    "steps": 4
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-reasoning-102",
+   "task_family": "reasoning",
+   "prompt": "A recipe uses flour and sugar in the ratio 5 to 2. If 15 cups of flour are used, how many cups of sugar are needed? Show your reasoning step by step.",
+   "expected": "6 cups of sugar.",
+   "metadata": {
+    "domain": "math",
+    "steps": 3
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-reasoning-103",
+   "task_family": "reasoning",
+   "prompt": "Look at the sequence 2, 6, 12, 20, 30. What number comes next? Show your reasoning step by step.",
+   "expected": "42.",
+   "metadata": {
+    "domain": "logic",
+    "steps": 3
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-reasoning-104",
+   "task_family": "reasoning",
+   "prompt": "A farmer keeps only chickens and cows. Altogether the animals have 10 heads and 28 legs. How many chickens and how many cows are there? Show your reasoning step by step.",
+   "expected": "6 chickens and 4 cows.",
+   "metadata": {
+    "domain": "math",
+    "steps": 5
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-reasoning-105",
+   "task_family": "reasoning",
+   "prompt": "A candle burns down at a steady rate of 2 centimeters per hour. It started at 20 centimeters tall and is now 14 centimeters tall. For how many hours has it been burning? Show your reasoning step by step.",
+   "expected": "3 hours.",
+   "metadata": {
+    "domain": "math",
+    "steps": 2
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-reasoning-106",
+   "task_family": "reasoning",
+   "prompt": "All cats are mammals, and no mammals are reptiles. Can a cat be a reptile? Explain your reasoning step by step.",
+   "expected": "No, a cat cannot be a reptile.",
+   "metadata": {
+    "domain": "logic",
+    "steps": 3
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-reasoning-107",
+   "task_family": "reasoning",
+   "prompt": "Meena buys 3 notebooks that cost 20 rupees each and 2 pens that cost 15 rupees each. She pays with a 100-rupee note. How much change should she get back? Show your reasoning step by step.",
+   "expected": "10 rupees.",
+   "metadata": {
+    "domain": "math",
+    "steps": 4
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-reasoning-108",
+   "task_family": "reasoning",
+   "prompt": "Look at the sequence 1, 4, 9, 16, 25. What number comes next? Show your reasoning step by step.",
+   "expected": "36.",
+   "metadata": {
+    "domain": "logic",
+    "steps": 2
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-reasoning-109",
+   "task_family": "reasoning",
+   "prompt": "A father is now three times as old as his son. In 12 years, the father will be twice as old as his son. How old is each of them now? Show your reasoning step by step.",
+   "expected": "The son is 12 and the father is 36.",
+   "metadata": {
+    "domain": "math",
+    "steps": 5
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-reasoning-110",
+   "task_family": "reasoning",
+   "prompt": "In a class the ratio of boys to girls is 3 to 4. There are 35 students in total. How many boys and how many girls are there? Show your reasoning step by step.",
+   "expected": "15 boys and 20 girls.",
+   "metadata": {
+    "domain": "math",
+    "steps": 4
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-reasoning-111",
+   "task_family": "reasoning",
+   "prompt": "Four boxes are compared by weight. Box A is heavier than Box B. Box C is lighter than Box B. Box D is heavier than Box A. List the boxes in order from heaviest to lightest. Show your reasoning step by step.",
+   "expected": "D, A, B, C.",
+   "metadata": {
+    "domain": "logic",
+    "steps": 4
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-reasoning-112",
+   "task_family": "reasoning",
+   "prompt": "A tank holds 240 liters. Water flows in at 8 liters per minute while it also drains out at 3 liters per minute at the same time. Starting empty, how many minutes will it take to fill the tank? Show your reasoning step by step.",
+   "expected": "48 minutes.",
+   "metadata": {
+    "domain": "math",
+    "steps": 3
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-reasoning-113",
+   "task_family": "reasoning",
+   "prompt": "A shirt costs 800 rupees. First the price is increased by 25 percent, and then the new price is reduced by 20 percent. What is the final price of the shirt? Show your reasoning step by step.",
+   "expected": "800 rupees.",
+   "metadata": {
+    "domain": "math",
+    "steps": 4
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-reasoning-114",
+   "task_family": "reasoning",
+   "prompt": "A movie starts at 2:45 PM and runs for 130 minutes. At what clock time does it end? Show your reasoning step by step.",
+   "expected": "4:55 PM.",
+   "metadata": {
+    "domain": "commonsense",
+    "steps": 3
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-reasoning-115",
+   "task_family": "reasoning",
+   "prompt": "Priya is taller than Meena. Arjun is shorter than Meena. Ravi is taller than Priya. Who is the tallest and who is the shortest? Show your reasoning step by step.",
+   "expected": "Ravi is the tallest and Arjun is the shortest.",
+   "metadata": {
+    "domain": "logic",
+    "steps": 4
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-reasoning-116",
+   "task_family": "reasoning",
+   "prompt": "What is the sum of all the whole numbers from 1 to 20? Show your reasoning step by step.",
+   "expected": "210.",
+   "metadata": {
+    "domain": "math",
+    "steps": 2
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-reasoning-117",
+   "task_family": "reasoning",
+   "prompt": "One pipe can fill a tank in 6 hours and another pipe can fill the same tank in 12 hours. If both pipes are open together, how long will it take to fill the tank? Show your reasoning step by step.",
+   "expected": "4 hours.",
+   "metadata": {
+    "domain": "math",
+    "steps": 4
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-reasoning-118",
+   "task_family": "reasoning",
+   "prompt": "A jar is filled to three-fifths of its capacity, which is 30 liters of water. What is the total capacity of the jar? Show your reasoning step by step.",
+   "expected": "50 liters.",
+   "metadata": {
+    "domain": "math",
+    "steps": 3
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-reasoning-119",
+   "task_family": "reasoning",
+   "prompt": "A basket contains red, blue, and green balls. There are twice as many red balls as blue balls, and 3 more green balls than blue balls. In total there are 23 balls. How many balls of each color are there? Show your reasoning step by step.",
+   "expected": "5 blue, 10 red, and 8 green balls.",
+   "metadata": {
+    "domain": "math",
+    "steps": 5
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-reasoning-120",
+   "task_family": "reasoning",
+   "prompt": "Look at the sequence 1, 1, 2, 3, 5, 8. What number comes next? Show your reasoning step by step.",
+   "expected": "13.",
+   "metadata": {
+    "domain": "logic",
+    "steps": 2
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-reasoning-121",
+   "task_family": "reasoning",
+   "prompt": "A rectangle has a length that is twice its width. Its perimeter is 36 meters. What are the length and width? Show your reasoning step by step.",
+   "expected": "Width 6 meters and length 12 meters.",
+   "metadata": {
+    "domain": "math",
+    "steps": 4
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-reasoning-122",
+   "task_family": "reasoning",
+   "prompt": "If 5 machines take 5 minutes to make 5 items, how long would 100 machines take to make 100 items, assuming each machine works at the same steady rate? Show your reasoning step by step.",
+   "expected": "5 minutes.",
+   "metadata": {
+    "domain": "logic",
+    "steps": 3
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-reasoning-123",
+   "task_family": "reasoning",
+   "prompt": "Arjun saves money for 4 weeks. In the first week he saves 50 rupees, and each week after that he saves 20 rupees more than the week before. How much has he saved in total after 4 weeks? Show your reasoning step by step.",
+   "expected": "320 rupees.",
+   "metadata": {
+    "domain": "math",
+    "steps": 4
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-reasoning-124",
+   "task_family": "reasoning",
+   "prompt": "Every student who passed the exam had studied for it. Ravi did not study for the exam. Did Ravi pass? Explain your reasoning step by step.",
+   "expected": "No, Ravi did not pass.",
+   "metadata": {
+    "domain": "logic",
+    "steps": 3
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-reasoning-125",
+   "task_family": "reasoning",
+   "prompt": "100 chocolates are shared equally among 7 children, giving each child as many whole chocolates as possible. How many chocolates are left over? Show your reasoning step by step.",
+   "expected": "2 chocolates.",
+   "metadata": {
+    "domain": "math",
+    "steps": 3
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-reasoning-126",
+   "task_family": "reasoning",
+   "prompt": "Arjun runs 100 meters in 20 seconds at a steady pace. Running at the same pace, how many seconds will he take to run 250 meters? Show your reasoning step by step.",
+   "expected": "50 seconds.",
+   "metadata": {
+    "domain": "math",
+    "steps": 3
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-reasoning-127",
+   "task_family": "reasoning",
+   "prompt": "Meena is standing in a straight queue. She is 5th counting from the front and 8th counting from the back. How many people are in the queue in total? Show your reasoning step by step.",
+   "expected": "12 people.",
+   "metadata": {
+    "domain": "logic",
+    "steps": 3
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-reasoning-128",
+   "task_family": "reasoning",
+   "prompt": "Look at the sequence 3, 6, 12, 24. What number comes next? Show your reasoning step by step.",
+   "expected": "48.",
+   "metadata": {
+    "domain": "logic",
+    "steps": 2
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-translation-101",
+   "task_family": "translation",
+   "prompt": "Translate to the target language: 'Welcome to our home. Please make yourself comfortable.'",
+   "expected": null,
+   "metadata": {
+    "register": "polite",
+    "domain": "hospitality"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-translation-102",
+   "task_family": "translation",
+   "prompt": "Translate to the target language: 'The bus to the airport leaves from platform three every half hour.'",
+   "expected": null,
+   "metadata": {
+    "register": "formal",
+    "domain": "travel"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-translation-103",
+   "task_family": "translation",
+   "prompt": "Translate to the target language: 'How much do these mangoes cost per kilogram?'",
+   "expected": null,
+   "metadata": {
+    "register": "casual",
+    "domain": "market"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-translation-104",
+   "task_family": "translation",
+   "prompt": "Translate to the target language: 'My son has had a fever since last night. Should I bring him in?'",
+   "expected": null,
+   "metadata": {
+    "register": "polite",
+    "domain": "health"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-translation-105",
+   "task_family": "translation",
+   "prompt": "Translate to the target language: 'Turn left at the second traffic light and the school is on your right.'",
+   "expected": null,
+   "metadata": {
+    "register": "casual",
+    "domain": "directions"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-translation-106",
+   "task_family": "translation",
+   "prompt": "Translate to the target language: 'Please boil the rice for fifteen minutes before adding the vegetables.'",
+   "expected": null,
+   "metadata": {
+    "register": "polite",
+    "domain": "food"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-translation-107",
+   "task_family": "translation",
+   "prompt": "Translate to the target language: 'It looks like it will rain heavily this afternoon, so carry an umbrella.'",
+   "expected": null,
+   "metadata": {
+    "register": "casual",
+    "domain": "weather"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-translation-108",
+   "task_family": "translation",
+   "prompt": "Translate to the target language: 'My grandmother is visiting us next week and will stay for a month.'",
+   "expected": null,
+   "metadata": {
+    "register": "casual",
+    "domain": "family"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-translation-109",
+   "task_family": "translation",
+   "prompt": "Translate to the target language: 'Could you send me the agenda before tomorrow morning's meeting?'",
+   "expected": null,
+   "metadata": {
+    "register": "polite",
+    "domain": "work"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-translation-110",
+   "task_family": "translation",
+   "prompt": "Translate to the target language: 'The library closes at eight in the evening on weekdays.'",
+   "expected": null,
+   "metadata": {
+    "register": "formal",
+    "domain": "education"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-translation-111",
+   "task_family": "translation",
+   "prompt": "Translate to the target language: 'Please charge your phone before we leave, because there is no outlet on the train.'",
+   "expected": null,
+   "metadata": {
+    "register": "casual",
+    "domain": "technology"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-translation-112",
+   "task_family": "translation",
+   "prompt": "Translate to the target language: 'Call an ambulance quickly. Someone has fallen on the stairs.'",
+   "expected": null,
+   "metadata": {
+    "register": "casual",
+    "domain": "emergency"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-translation-113",
+   "task_family": "translation",
+   "prompt": "Translate to the target language: 'Would you like some tea or coffee before dinner is served?'",
+   "expected": null,
+   "metadata": {
+    "register": "polite",
+    "domain": "hospitality"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-translation-114",
+   "task_family": "translation",
+   "prompt": "Translate to the target language: 'I need to book a train ticket to the capital for this Friday.'",
+   "expected": null,
+   "metadata": {
+    "register": "polite",
+    "domain": "travel"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-translation-115",
+   "task_family": "translation",
+   "prompt": "Translate to the target language: 'Do you have this shirt in a smaller size and a different color?'",
+   "expected": null,
+   "metadata": {
+    "register": "polite",
+    "domain": "shopping"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-translation-116",
+   "task_family": "translation",
+   "prompt": "Translate to the target language: 'Take one tablet twice a day after meals for the next five days.'",
+   "expected": null,
+   "metadata": {
+    "register": "formal",
+    "domain": "health"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-translation-117",
+   "task_family": "translation",
+   "prompt": "Translate to the target language: 'The soup is a little too spicy for the children. Could you make it milder?'",
+   "expected": null,
+   "metadata": {
+    "register": "polite",
+    "domain": "food"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-translation-118",
+   "task_family": "translation",
+   "prompt": "Translate to the target language: 'The roads may be icy tomorrow morning, so please drive slowly.'",
+   "expected": null,
+   "metadata": {
+    "register": "formal",
+    "domain": "weather"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-translation-119",
+   "task_family": "translation",
+   "prompt": "Translate to the target language: 'My younger sister just started her first year at college.'",
+   "expected": null,
+   "metadata": {
+    "register": "casual",
+    "domain": "family"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-translation-120",
+   "task_family": "translation",
+   "prompt": "Translate to the target language: 'I will be working from home on Thursday, so please email me instead of calling.'",
+   "expected": null,
+   "metadata": {
+    "register": "polite",
+    "domain": "work"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-translation-121",
+   "task_family": "translation",
+   "prompt": "Translate to the target language: 'Students must submit their assignments by the end of this week.'",
+   "expected": null,
+   "metadata": {
+    "register": "formal",
+    "domain": "education"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-translation-122",
+   "task_family": "translation",
+   "prompt": "Translate to the target language: 'Where can I find a doctor who speaks English near here?'",
+   "expected": null,
+   "metadata": {
+    "register": "polite",
+    "domain": "health"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-translation-123",
+   "task_family": "translation",
+   "prompt": "Translate to the target language: 'Good evening. It is a pleasure to finally meet you in person.'",
+   "expected": null,
+   "metadata": {
+    "register": "formal",
+    "domain": "greeting"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-translation-124",
+   "task_family": "translation",
+   "prompt": "Translate to the target language: 'The guest room is on the first floor, and towels are in the cupboard.'",
+   "expected": null,
+   "metadata": {
+    "register": "polite",
+    "domain": "hospitality"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-qa-101",
+   "task_family": "qa",
+   "prompt": "Which river is considered the holiest river in India?",
+   "expected": "Ganges",
+   "metadata": {
+    "answer_type": "name",
+    "domain": "geography"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-qa-102",
+   "task_family": "qa",
+   "prompt": "What is the capital city of India?",
+   "expected": "New Delhi",
+   "metadata": {
+    "answer_type": "place",
+    "domain": "geography"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-qa-103",
+   "task_family": "qa",
+   "prompt": "In what year did India gain independence from British rule?",
+   "expected": "1947",
+   "metadata": {
+    "answer_type": "year",
+    "domain": "history"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-qa-104",
+   "task_family": "qa",
+   "prompt": "What is the chemical symbol for water?",
+   "expected": "H2O",
+   "metadata": {
+    "answer_type": "term",
+    "domain": "science"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-qa-105",
+   "task_family": "qa",
+   "prompt": "How many sides does a hexagon have?",
+   "expected": "6",
+   "metadata": {
+    "answer_type": "number",
+    "domain": "mathematics"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-qa-106",
+   "task_family": "qa",
+   "prompt": "Which gas do plants absorb from the atmosphere during photosynthesis?",
+   "expected": "Carbon dioxide",
+   "metadata": {
+    "answer_type": "term",
+    "domain": "science"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-qa-107",
+   "task_family": "qa",
+   "prompt": "Which is the tallest mountain on Earth above sea level?",
+   "expected": "Mount Everest",
+   "metadata": {
+    "answer_type": "name",
+    "domain": "geography"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-qa-108",
+   "task_family": "qa",
+   "prompt": "What is the national animal of India?",
+   "expected": "Bengal tiger",
+   "metadata": {
+    "answer_type": "name",
+    "domain": "general"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-qa-109",
+   "task_family": "qa",
+   "prompt": "How many continents are there on Earth?",
+   "expected": "7",
+   "metadata": {
+    "answer_type": "number",
+    "domain": "geography"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-qa-110",
+   "task_family": "qa",
+   "prompt": "What is the freezing point of water in degrees Celsius?",
+   "expected": "0",
+   "metadata": {
+    "answer_type": "number",
+    "domain": "science"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-qa-111",
+   "task_family": "qa",
+   "prompt": "Who was the first Prime Minister of India?",
+   "expected": "Jawaharlal Nehru",
+   "metadata": {
+    "answer_type": "name",
+    "domain": "history"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-qa-112",
+   "task_family": "qa",
+   "prompt": "Which planet is closest to the Sun?",
+   "expected": "Mercury",
+   "metadata": {
+    "answer_type": "name",
+    "domain": "science"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-qa-113",
+   "task_family": "qa",
+   "prompt": "What is the largest ocean on Earth?",
+   "expected": "Pacific Ocean",
+   "metadata": {
+    "answer_type": "name",
+    "domain": "geography"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-qa-114",
+   "task_family": "qa",
+   "prompt": "How many minutes are there in a full day?",
+   "expected": "1440",
+   "metadata": {
+    "answer_type": "number",
+    "domain": "general"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-qa-115",
+   "task_family": "qa",
+   "prompt": "Which country is the most populous in the world?",
+   "expected": "India",
+   "metadata": {
+    "answer_type": "place",
+    "domain": "geography"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-qa-116",
+   "task_family": "qa",
+   "prompt": "What is the chemical symbol for gold?",
+   "expected": "Au",
+   "metadata": {
+    "answer_type": "term",
+    "domain": "science"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-qa-117",
+   "task_family": "qa",
+   "prompt": "How many legs does a spider have?",
+   "expected": "8",
+   "metadata": {
+    "answer_type": "number",
+    "domain": "science"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-qa-118",
+   "task_family": "qa",
+   "prompt": "On which date is Indian Independence Day celebrated each year?",
+   "expected": "15 August",
+   "metadata": {
+    "answer_type": "date",
+    "domain": "general"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-qa-119",
+   "task_family": "qa",
+   "prompt": "What is the value of pi rounded to two decimal places?",
+   "expected": "3.14",
+   "metadata": {
+    "answer_type": "number",
+    "domain": "mathematics"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-qa-120",
+   "task_family": "qa",
+   "prompt": "Which organ pumps blood throughout the human body?",
+   "expected": "Heart",
+   "metadata": {
+    "answer_type": "term",
+    "domain": "science"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-qa-121",
+   "task_family": "qa",
+   "prompt": "In which Indian city is the Taj Mahal located?",
+   "expected": "Agra",
+   "metadata": {
+    "answer_type": "place",
+    "domain": "geography"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-qa-122",
+   "task_family": "qa",
+   "prompt": "How many colours are there in a rainbow?",
+   "expected": "7",
+   "metadata": {
+    "answer_type": "number",
+    "domain": "general"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-qa-123",
+   "task_family": "qa",
+   "prompt": "What is the boiling point of water at sea level in degrees Celsius?",
+   "expected": "100",
+   "metadata": {
+    "answer_type": "number",
+    "domain": "science"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-qa-124",
+   "task_family": "qa",
+   "prompt": "What is 15 multiplied by 12?",
+   "expected": "180",
+   "metadata": {
+    "answer_type": "number",
+    "domain": "mathematics"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-summarization-101",
+   "task_family": "summarization",
+   "prompt": "Summarize in one sentence: A district in southern India has begun distributing solar-powered lanterns to households that lack a reliable electricity connection. Each lantern can be charged during the day and provides about eight hours of light at night. School officials report that children in these homes are now able to study after sunset, and attendance in evening literacy classes has risen.",
+   "expected": "A southern Indian district's distribution of solar-powered lanterns to homes without reliable electricity has extended study hours and boosted evening literacy class attendance.",
+   "metadata": {
+    "length_target": "one_sentence",
+    "domain": "education"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-summarization-102",
+   "task_family": "summarization",
+   "prompt": "Summarize in one sentence: A cooperative of small farmers in a rural region has started sharing a single set of modern harvesting machines instead of each family buying its own. By pooling their money and scheduling the equipment across different fields, the farmers have cut their individual costs by nearly half. The arrangement has also allowed poorer households, who could never afford such machines alone, to harvest their crops on time.",
+   "expected": "A farmers' cooperative that shares harvesting machines rather than buying them individually has halved costs and given poorer households timely access to equipment.",
+   "metadata": {
+    "length_target": "one_sentence",
+    "domain": "agriculture"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-summarization-103",
+   "task_family": "summarization",
+   "prompt": "Summarize in one sentence: Public health workers have found that a simple mixture of clean water, salt, and sugar can save the lives of children suffering from severe dehydration caused by diarrhea. The solution, which can be prepared at home, helps the body absorb fluids far more effectively than water alone. Training mothers to make it correctly has sharply reduced child deaths in areas with limited access to hospitals.",
+   "expected": "Teaching mothers to prepare a home-made solution of water, salt, and sugar to treat dehydration from diarrhea has sharply reduced child deaths in areas with limited hospital access.",
+   "metadata": {
+    "length_target": "one_sentence",
+    "domain": "health"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-summarization-104",
+   "task_family": "summarization",
+   "prompt": "Summarize in one sentence: A coastal town that once dumped its household waste into open pits has introduced a program to separate wet and dry rubbish at the source. Food scraps are now turned into compost for local gardens, while plastics and metals are collected for recycling. Within a year, the amount of waste sent to the pits fell by more than sixty percent.",
+   "expected": "A coastal town's program to separate household waste at the source has cut landfill waste by over sixty percent while producing compost and recyclables.",
+   "metadata": {
+    "length_target": "one_sentence",
+    "domain": "environment"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-summarization-105",
+   "task_family": "summarization",
+   "prompt": "Summarize in one sentence: Researchers studying sleep have found that people who keep a consistent bedtime, even on weekends, tend to fall asleep faster and wake feeling more rested. The body's internal clock relies on regular signals of light and darkness, and irregular schedules can weaken these signals. Volunteers who kept steady sleep times for a month reported better mood and sharper concentration during the day.",
+   "expected": "Studies show that keeping a consistent bedtime strengthens the body's internal clock, helping people sleep faster and feel more rested, alert, and cheerful.",
+   "metadata": {
+    "length_target": "one_sentence",
+    "domain": "health"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-summarization-106",
+   "task_family": "summarization",
+   "prompt": "Summarize in one sentence: A group of villagers restored a dried-up pond that had once supplied water to their fields. By clearing accumulated silt and building small earthen barriers to capture rainwater, they allowed the pond to refill during the monsoon. The rising groundwater has since revived nearby wells, and farmers can now grow a second crop each year.",
+   "expected": "By clearing silt and capturing rainwater to restore a dried-up pond, villagers raised local groundwater, revived wells, and enabled a second yearly crop.",
+   "metadata": {
+    "length_target": "one_sentence",
+    "domain": "environment"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-summarization-107",
+   "task_family": "summarization",
+   "prompt": "Summarize in one sentence: A national program has begun training young people from villages to repair mobile phones and small electronic devices. The three-month course teaches basic circuitry, tool use, and customer service. Many graduates have opened small repair shops in their own communities, providing a service that previously required a long journey to the city.",
+   "expected": "A training program teaching village youth to repair phones and electronics has enabled graduates to open local repair shops, sparing residents long trips to the city.",
+   "metadata": {
+    "length_target": "one_sentence",
+    "domain": "community development"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-summarization-108",
+   "task_family": "summarization",
+   "prompt": "Summarize in one sentence: Scientists have discovered that certain species of fungi form partnerships with the roots of trees, exchanging nutrients through underground networks. The fungi help the trees absorb water and minerals from the soil, while the trees supply the fungi with sugars produced during photosynthesis. This cooperation allows forests to share resources and resist stress from drought and disease.",
+   "expected": "Fungi and tree roots form underground partnerships that exchange nutrients for sugars, helping forests share resources and withstand drought and disease.",
+   "metadata": {
+    "length_target": "one_sentence",
+    "domain": "science"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-summarization-109",
+   "task_family": "summarization",
+   "prompt": "Summarize in one sentence: A city hospital has introduced a text-message system that reminds patients when to take their medicines and attend follow-up appointments. Many patients with long-term illnesses had previously missed doses or check-ups, worsening their conditions. Since the reminders began, the hospital reports that far more patients are completing their treatment as prescribed.",
+   "expected": "A hospital's text-message reminders for medicines and appointments have helped many chronically ill patients complete their treatment as prescribed.",
+   "metadata": {
+    "length_target": "one_sentence",
+    "domain": "health"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-summarization-110",
+   "task_family": "summarization",
+   "prompt": "Summarize in one sentence: A regional government has planted rows of trees along major highways to reduce dust and provide shade for travelers. The trees also serve as barriers that lower noise from passing vehicles and help cool the surrounding air during hot months. Officials say the greenery has made roadside rest stops more comfortable and has improved air quality in nearby settlements.",
+   "expected": "Planting trees along highways has reduced dust and noise, cooled the air, and improved comfort and air quality for travelers and nearby residents.",
+   "metadata": {
+    "length_target": "one_sentence",
+    "domain": "environment"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-summarization-111",
+   "task_family": "summarization",
+   "prompt": "Summarize in one sentence: A team of engineers has designed a small, inexpensive sensor that detects when a water storage tank is nearly empty and sends an alert to a mobile phone. In areas where water is delivered only a few times a week, families often waste water or miss deliveries. Early users of the device report that they now manage their limited supply far more carefully.",
+   "expected": "A low-cost sensor that alerts phones when a water tank runs low is helping families in supply-limited areas manage their water more carefully.",
+   "metadata": {
+    "length_target": "one_sentence",
+    "domain": "technology"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-summarization-112",
+   "task_family": "summarization",
+   "prompt": "Summarize in one sentence: A study of school meals found that children who receive a nutritious lunch at school perform better in class and are less likely to drop out. For many families, the free meal is a strong reason to send their children to school regularly. Teachers observed that students were more attentive in the afternoon and fell ill less often.",
+   "expected": "A study found that free, nutritious school lunches improve children's attendance, attention, health, and academic performance while reducing dropout rates.",
+   "metadata": {
+    "length_target": "one_sentence",
+    "domain": "education"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-summarization-113",
+   "task_family": "summarization",
+   "prompt": "Summarize in one sentence: Beekeepers in a farming region have noticed that placing hives near orchards increases the yield of fruit trees. As bees move between flowers to collect nectar, they carry pollen that fertilizes the blossoms. Farmers who welcomed beekeepers onto their land harvested more fruit, while the beekeepers gained a steady source of honey.",
+   "expected": "Placing beehives near orchards raises fruit yields through pollination while giving beekeepers honey, benefiting both farmers and beekeepers.",
+   "metadata": {
+    "length_target": "one_sentence",
+    "domain": "agriculture"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-summarization-114",
+   "task_family": "summarization",
+   "prompt": "Summarize in one sentence: A community library set up in a small town has begun lending not only books but also tools, sewing machines, and sports equipment. Residents can borrow items they need only occasionally rather than buying them. The service has proved especially useful for low-income families and has encouraged neighbors to share resources instead of each owning everything.",
+   "expected": "A community library that lends tools, sewing machines, and sports gear alongside books is helping residents, especially low-income families, share resources instead of buying rarely used items.",
+   "metadata": {
+    "length_target": "one_sentence",
+    "domain": "community development"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-summarization-115",
+   "task_family": "summarization",
+   "prompt": "Summarize in one sentence: Astronomers have detected a distant planet orbiting a star much like our own sun. The planet lies at a distance from its star where temperatures could allow liquid water to exist on the surface. While it remains too far away to visit, scientists say studying its atmosphere may reveal whether conditions there could support life.",
+   "expected": "Astronomers have found a distant Earth-like planet where liquid water could exist, and studying its atmosphere may reveal whether it could support life.",
+   "metadata": {
+    "length_target": "one_sentence",
+    "domain": "science"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-summarization-116",
+   "task_family": "summarization",
+   "prompt": "Summarize in one sentence: A women's self-help group in a rural area pooled small monthly savings to create a shared fund. Members can borrow from the fund at low interest to start small businesses or cover emergencies, avoiding moneylenders who charge high rates. Over three years, several women have opened tailoring shops and vegetable stalls, and the group's savings have steadily grown.",
+   "expected": "A rural women's self-help group pooling monthly savings into a low-interest loan fund has helped members start businesses and avoid high-cost moneylenders.",
+   "metadata": {
+    "length_target": "one_sentence",
+    "domain": "community development"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-summarization-117",
+   "task_family": "summarization",
+   "prompt": "Summarize in one sentence: A new mobile application allows farmers to photograph a diseased plant leaf and receive an immediate suggestion of the likely illness and treatment. The app works by comparing the image against a large collection of known plant diseases stored on the phone. Farmers without easy access to agricultural experts can now identify problems early and protect their crops.",
+   "expected": "A mobile app that identifies plant diseases from leaf photos lets farmers without expert access detect problems early and protect their crops.",
+   "metadata": {
+    "length_target": "one_sentence",
+    "domain": "technology"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-summarization-118",
+   "task_family": "summarization",
+   "prompt": "Summarize in one sentence: Health officials have launched a campaign to vaccinate livestock against a disease that spreads quickly among cattle and can devastate a farmer's herd. Teams travel from village to village offering the vaccine free of charge and teaching farmers how to spot early signs of illness. Since the campaign began, reported outbreaks have fallen and milk production in the area has become more stable.",
+   "expected": "A free village-to-village livestock vaccination campaign has reduced cattle disease outbreaks and stabilized milk production in the area.",
+   "metadata": {
+    "length_target": "one_sentence",
+    "domain": "agriculture"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-instruction-101",
+   "task_family": "instruction",
+   "prompt": "Write a short invitation asking relatives and neighbors to attend a family gathering at your home this weekend.",
+   "expected": null,
+   "metadata": {
+    "difficulty": "easy",
+    "domain": "culture"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-instruction-102",
+   "task_family": "instruction",
+   "prompt": "Explain step by step how to prepare a simple vegetable dish using potatoes and onions for a family dinner.",
+   "expected": null,
+   "metadata": {
+    "difficulty": "easy",
+    "domain": "everyday"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-instruction-103",
+   "task_family": "instruction",
+   "prompt": "Explain in simple words why we should wash our hands before eating, so that a young child can understand.",
+   "expected": null,
+   "metadata": {
+    "difficulty": "easy",
+    "domain": "health"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-instruction-104",
+   "task_family": "instruction",
+   "prompt": "Write the opening lines of a short story about a farmer who wakes up one morning to find his well has filled with clear water after years of drought.",
+   "expected": null,
+   "metadata": {
+    "difficulty": "medium",
+    "domain": "writing"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-instruction-105",
+   "task_family": "instruction",
+   "prompt": "List five practical tips for saving money on monthly household expenses.",
+   "expected": null,
+   "metadata": {
+    "difficulty": "easy",
+    "domain": "everyday"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-instruction-106",
+   "task_family": "instruction",
+   "prompt": "Write a short, polite letter thanking a neighbor for helping your family during a difficult time.",
+   "expected": null,
+   "metadata": {
+    "difficulty": "easy",
+    "domain": "writing"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-instruction-107",
+   "task_family": "instruction",
+   "prompt": "Describe a busy local market in the morning, using details of sights, sounds, and smells.",
+   "expected": null,
+   "metadata": {
+    "difficulty": "medium",
+    "domain": "writing"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-instruction-108",
+   "task_family": "instruction",
+   "prompt": "Give step-by-step instructions for planting a small vegetable garden in pots on a balcony or rooftop.",
+   "expected": null,
+   "metadata": {
+    "difficulty": "medium",
+    "domain": "everyday"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-instruction-109",
+   "task_family": "instruction",
+   "prompt": "Recommend three simple ways a shopkeeper can attract more customers to a small neighborhood store.",
+   "expected": null,
+   "metadata": {
+    "difficulty": "medium",
+    "domain": "business"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-instruction-110",
+   "task_family": "instruction",
+   "prompt": "Explain how rain is formed, in a few simple sentences suitable for a school student.",
+   "expected": null,
+   "metadata": {
+    "difficulty": "easy",
+    "domain": "science"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-instruction-111",
+   "task_family": "instruction",
+   "prompt": "Compose a four-line poem about the first rains arriving after a long, hot summer.",
+   "expected": null,
+   "metadata": {
+    "difficulty": "medium",
+    "domain": "writing"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-instruction-112",
+   "task_family": "instruction",
+   "prompt": "Write a short congratulatory message to a friend who has just passed an important examination.",
+   "expected": null,
+   "metadata": {
+    "difficulty": "easy",
+    "domain": "everyday"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-instruction-113",
+   "task_family": "instruction",
+   "prompt": "Give five pieces of advice for someone who is starting their first job and wants to make a good impression.",
+   "expected": null,
+   "metadata": {
+    "difficulty": "medium",
+    "domain": "business"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-instruction-114",
+   "task_family": "instruction",
+   "prompt": "Explain the importance of drinking enough water each day and describe simple habits that help a person stay hydrated.",
+   "expected": null,
+   "metadata": {
+    "difficulty": "medium",
+    "domain": "health"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-instruction-115",
+   "task_family": "instruction",
+   "prompt": "Write a set of clear directions guiding a visitor from the main bus stop to your house, mentioning landmarks along the way.",
+   "expected": null,
+   "metadata": {
+    "difficulty": "hard",
+    "domain": "everyday"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-instruction-116",
+   "task_family": "instruction",
+   "prompt": "Describe your favorite festival to someone who has never heard of it, explaining how it is celebrated and why it matters to your community.",
+   "expected": null,
+   "metadata": {
+    "difficulty": "hard",
+    "domain": "culture"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-instruction-117",
+   "task_family": "instruction",
+   "prompt": "Explain how a bank savings account works and why keeping some money in one can be helpful for a family.",
+   "expected": null,
+   "metadata": {
+    "difficulty": "medium",
+    "domain": "business"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-classification-101",
+   "task_family": "classification",
+   "prompt": "The auto-rickshaw driver was polite and got me to the station on time. Classify the sentiment of this review.",
+   "expected": "positive",
+   "metadata": {
+    "domain": "sentiment"
+   },
+   "labels": [
+    "positive",
+    "neutral",
+    "negative"
+   ]
+  },
+  {
+   "id": "seed-classification-102",
+   "task_family": "classification",
+   "prompt": "The train departs from platform four at six in the morning. Classify the sentiment of this sentence.",
+   "expected": "neutral",
+   "metadata": {
+    "domain": "sentiment"
+   },
+   "labels": [
+    "positive",
+    "neutral",
+    "negative"
+   ]
+  },
+  {
+   "id": "seed-classification-103",
+   "task_family": "classification",
+   "prompt": "My new phone stopped charging after only two weeks and the shop refused to help. Classify the sentiment of this review.",
+   "expected": "negative",
+   "metadata": {
+    "domain": "sentiment"
+   },
+   "labels": [
+    "positive",
+    "neutral",
+    "negative"
+   ]
+  },
+  {
+   "id": "seed-classification-104",
+   "task_family": "classification",
+   "prompt": "The national cricket team won the final match by five wickets last night. Classify the topic of this sentence.",
+   "expected": "sports",
+   "metadata": {
+    "domain": "topic"
+   },
+   "labels": [
+    "sports",
+    "politics",
+    "technology",
+    "health"
+   ]
+  },
+  {
+   "id": "seed-classification-105",
+   "task_family": "classification",
+   "prompt": "The government announced a new tax policy ahead of the state elections. Classify the topic of this sentence.",
+   "expected": "politics",
+   "metadata": {
+    "domain": "topic"
+   },
+   "labels": [
+    "sports",
+    "politics",
+    "technology",
+    "health"
+   ]
+  },
+  {
+   "id": "seed-classification-106",
+   "task_family": "classification",
+   "prompt": "The startup released a smartphone app that helps farmers check crop prices. Classify the topic of this sentence.",
+   "expected": "technology",
+   "metadata": {
+    "domain": "topic"
+   },
+   "labels": [
+    "sports",
+    "politics",
+    "technology",
+    "health"
+   ]
+  },
+  {
+   "id": "seed-classification-107",
+   "task_family": "classification",
+   "prompt": "Doctors advise drinking plenty of clean water to avoid dehydration in summer. Classify the topic of this sentence.",
+   "expected": "health",
+   "metadata": {
+    "domain": "topic"
+   },
+   "labels": [
+    "sports",
+    "politics",
+    "technology",
+    "health"
+   ]
+  },
+  {
+   "id": "seed-classification-108",
+   "task_family": "classification",
+   "prompt": "Message: 'What are your opening hours on Sunday?' Classify the intent of this message.",
+   "expected": "question",
+   "metadata": {
+    "domain": "intent"
+   },
+   "labels": [
+    "question",
+    "complaint",
+    "request",
+    "compliment"
+   ]
+  },
+  {
+   "id": "seed-classification-109",
+   "task_family": "classification",
+   "prompt": "Message: 'My order arrived broken and no one has replied to my emails.' Classify the intent of this message.",
+   "expected": "complaint",
+   "metadata": {
+    "domain": "intent"
+   },
+   "labels": [
+    "question",
+    "complaint",
+    "request",
+    "compliment"
+   ]
+  },
+  {
+   "id": "seed-classification-110",
+   "task_family": "classification",
+   "prompt": "Message: 'Please send me a copy of the invoice for last month.' Classify the intent of this message.",
+   "expected": "request",
+   "metadata": {
+    "domain": "intent"
+   },
+   "labels": [
+    "question",
+    "complaint",
+    "request",
+    "compliment"
+   ]
+  },
+  {
+   "id": "seed-classification-111",
+   "task_family": "classification",
+   "prompt": "Message: 'Your team handled my complaint quickly and I am very grateful.' Classify the intent of this message.",
+   "expected": "compliment",
+   "metadata": {
+    "domain": "intent"
+   },
+   "labels": [
+    "question",
+    "complaint",
+    "request",
+    "compliment"
+   ]
+  },
+  {
+   "id": "seed-classification-112",
+   "task_family": "classification",
+   "prompt": "She smiled and hugged her family when she saw them waiting at the airport. Classify the emotion in this sentence.",
+   "expected": "joy",
+   "metadata": {
+    "domain": "emotion"
+   },
+   "labels": [
+    "joy",
+    "anger",
+    "sadness",
+    "fear"
+   ]
+  },
+  {
+   "id": "seed-classification-113",
+   "task_family": "classification",
+   "prompt": "He slammed the door after the shopkeeper cheated him out of his change. Classify the emotion in this sentence.",
+   "expected": "anger",
+   "metadata": {
+    "domain": "emotion"
+   },
+   "labels": [
+    "joy",
+    "anger",
+    "sadness",
+    "fear"
+   ]
+  },
+  {
+   "id": "seed-classification-114",
+   "task_family": "classification",
+   "prompt": "She heard footsteps behind her on the empty street and quickened her pace. Classify the emotion in this sentence.",
+   "expected": "fear",
+   "metadata": {
+    "domain": "emotion"
+   },
+   "labels": [
+    "joy",
+    "anger",
+    "sadness",
+    "fear"
+   ]
+  },
+  {
+   "id": "seed-classification-115",
+   "task_family": "classification",
+   "prompt": "Message: 'You have been selected for a free gift card. Reply with your bank details to claim it now.' Classify whether this message is spam.",
+   "expected": "spam",
+   "metadata": {
+    "domain": "spam"
+   },
+   "labels": [
+    "spam",
+    "not_spam"
+   ]
+  }
+ ]
+}

@@ -28,7 +28,7 @@ from pathlib import Path
 from .client import build_client
 from .data_structures import GenerationConfig, TaskFamily
 from .generator import generate
-from .seeds import DEFAULT_SEED_PATH, filter_by_task, load_seeds
+from .seeds import DEFAULT_SEED_PATH, filter_by_task, generated_seed_keys, load_seeds
 from .templates import default_template_for
 
 DEFAULT_OUTPUT_DIR = Path("data") / "generated"
@@ -233,6 +233,11 @@ def _build_parser() -> argparse.ArgumentParser:
         "--out-dir", default=str(DEFAULT_OUTPUT_DIR),
         help="Output root (default: data/generated).",
     )
+    gb.add_argument(
+        "--allow-dups", action="store_true",
+        help="Disable the duplicate guard and allow regenerating a (seed, "
+             "language, task) already present on disk. Off by default.",
+    )
 
     js = sub.add_parser(
         "judge-score",
@@ -321,6 +326,13 @@ def _build_parser() -> argparse.ArgumentParser:
     )
     dr.add_argument("--seeds", default=str(DEFAULT_SEED_PATH))
     dr.add_argument("--out-dir", default=str(DEFAULT_OUTPUT_DIR))
+    dr.add_argument(
+        "--allow-dups", action="store_true",
+        help="Disable the duplicate guard and allow regenerating a (seed, "
+             "language, task) already present on disk (e.g. temperature "
+             "augmentation). Off by default: each seed is generated at most once "
+             "per language/task.",
+    )
 
     ft = sub.add_parser(
         "filter",
@@ -570,6 +582,12 @@ def cmd_generate_batch(args: argparse.Namespace) -> int:
     client = build_client(args.teacher, calls_per_minute=args.calls_per_minute)
     out_root = Path(args.out_dir)
 
+    # Duplicate guard: never regenerate a (seed, language, task) already on disk,
+    # and never schedule the same seed twice in one run (the seed pool's `cycle`
+    # repeats once per_combo exceeds the unique seed count). `--allow-dups` opts out.
+    seen = set() if args.allow_dups else generated_seed_keys(out_root)
+    dup_skipped = 0
+
     # Build the work list: up to --per-combo distinct seeds per (language, task).
     jobs: list[tuple[str, TaskFamily, object, GenerationConfig]] = []
     for task in tasks:
@@ -581,6 +599,11 @@ def cmd_generate_batch(args: argparse.Namespace) -> int:
         template_name = default_template_for(task)
         for lang in languages:
             for seed in chosen:
+                key = (seed.id, lang, task.value)
+                if not args.allow_dups and key in seen:
+                    dup_skipped += 1
+                    continue
+                seen.add(key)
                 config = GenerationConfig(
                     seed_id=seed.id, target_language=lang, teacher_model=args.teacher,
                     temperature=args.temperature, max_tokens=args.max_tokens,
@@ -588,8 +611,14 @@ def cmd_generate_batch(args: argparse.Namespace) -> int:
                 )
                 jobs.append((lang, task, seed, config))
 
+    if dup_skipped:
+        print(f"Duplicate guard: skipped {dup_skipped} already-generated "
+              f"(seed, language, task) item(s). Use --allow-dups to override.",
+              file=sys.stderr)
+
     if not jobs:
-        print("No jobs to run (no matching seeds).", file=sys.stderr)
+        print("No jobs to run (all matching seeds already generated, or none "
+              "found).", file=sys.stderr)
         return 1
 
     total = len(jobs)
@@ -781,6 +810,12 @@ def cmd_generate_drip(args: argparse.Namespace) -> int:
             existing = _combo_existing_count(out_root, lang, task.value)
             combos.append((lang, task, chosen, template_name, existing))
 
+    # Duplicate guard: never regenerate a (seed, language, task) already on disk,
+    # and never let the seed pool's `cycle` schedule the same seed twice in one run
+    # (which is how temperature near-duplicates crept in). `--allow-dups` opts out.
+    seen = set() if args.allow_dups else generated_seed_keys(out_root)
+    dup_skipped = 0
+
     # Index-major job list: fill position 0 across all combos, then 1, ... so even a
     # partial drip yields balanced coverage; skip positions already on disk.
     jobs = []
@@ -789,12 +824,22 @@ def cmd_generate_drip(args: argparse.Namespace) -> int:
             if idx < existing:
                 continue
             seed = chosen[idx]
+            key = (seed.id, lang, task.value)
+            if not args.allow_dups and key in seen:
+                dup_skipped += 1
+                continue
+            seen.add(key)
             config = GenerationConfig(
                 seed_id=seed.id, target_language=lang, teacher_model=args.teacher,
                 temperature=args.temperature, max_tokens=args.max_tokens,
                 prompt_template_name=template_name,
             )
             jobs.append((lang, task, idx, seed, config))
+
+    if dup_skipped:
+        print(f"Duplicate guard: skipped {dup_skipped} already-generated "
+              f"(seed, language, task) item(s). Use --allow-dups to override.",
+              file=sys.stderr)
 
     if not jobs:
         print("Pool already at target — nothing to drip.")

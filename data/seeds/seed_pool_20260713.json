@@ -1,0 +1,4188 @@
+{
+ "seeds": [
+  {
+   "id": "seed-instruction-001",
+   "task_family": "instruction",
+   "prompt": "Write a short paragraph (3-4 sentences) explaining what photosynthesis is, in a way a 10-year-old would understand.",
+   "expected": null,
+   "metadata": {
+    "difficulty": "easy",
+    "domain": "biology"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-instruction-002",
+   "task_family": "instruction",
+   "prompt": "Give three practical tips for someone learning a new language for the first time.",
+   "expected": null,
+   "metadata": {
+    "difficulty": "easy",
+    "domain": "general"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-qa-001",
+   "task_family": "qa",
+   "prompt": "What year did the first man walk on the moon?",
+   "expected": "1969",
+   "metadata": {
+    "answer_type": "year"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-qa-002",
+   "task_family": "qa",
+   "prompt": "What is the capital city of Brazil?",
+   "expected": "Brasilia",
+   "metadata": {
+    "answer_type": "place"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-qa-003",
+   "task_family": "qa",
+   "prompt": "If a train travels at 60 km/h for 2.5 hours, how far does it travel?",
+   "expected": "150 km",
+   "metadata": {
+    "answer_type": "numerical",
+    "domain": "math"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-classification-001",
+   "task_family": "classification",
+   "prompt": "The new restaurant in town has terrible service and the food was cold. Classify the sentiment of this review.",
+   "expected": "negative",
+   "metadata": {
+    "domain": "sentiment"
+   },
+   "labels": [
+    "positive",
+    "neutral",
+    "negative"
+   ]
+  },
+  {
+   "id": "seed-classification-002",
+   "task_family": "classification",
+   "prompt": "The package arrived three days early and the product is exactly as described. Classify the sentiment of this review.",
+   "expected": "positive",
+   "metadata": {
+    "domain": "sentiment"
+   },
+   "labels": [
+    "positive",
+    "neutral",
+    "negative"
+   ]
+  },
+  {
+   "id": "seed-classification-003",
+   "task_family": "classification",
+   "prompt": "Local school board approves new arts curriculum starting next semester. Classify the topic of this news headline.",
+   "expected": "education",
+   "metadata": {
+    "domain": "topic"
+   },
+   "labels": [
+    "politics",
+    "sports",
+    "education",
+    "health",
+    "business",
+    "entertainment"
+   ]
+  },
+  {
+   "id": "seed-summarization-001",
+   "task_family": "summarization",
+   "prompt": "Summarize in one sentence: A team of researchers in Kenya has developed a new low-cost water purification method using locally-sourced charcoal and sand. The system can produce 50 liters of clean water per day and costs less than $20 to build. Initial trials in three rural villages have shown a 95% reduction in waterborne illness among children.",
+   "expected": "Researchers in Kenya created an inexpensive water purification system that has reduced waterborne illness by 95% in tested villages.",
+   "metadata": {
+    "length_target": "one_sentence"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-summarization-002",
+   "task_family": "summarization",
+   "prompt": "Summarize the main argument in one sentence: Many language-learning apps claim users can become fluent in a few months of daily practice. However, linguists studying second-language acquisition consistently find that achieving conversational fluency in an unrelated language typically requires 600 to 750 hours of focused study, with significantly more required for full literacy. Marketing claims and reality diverge sharply.",
+   "expected": "Despite app marketing claims, real fluency in a new language typically requires hundreds of hours of focused study.",
+   "metadata": {
+    "length_target": "one_sentence"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-translation-001",
+   "task_family": "translation",
+   "prompt": "Translate to the target language: 'Good morning. How are you today?'",
+   "expected": null,
+   "metadata": {
+    "register": "polite",
+    "domain": "greeting"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-translation-002",
+   "task_family": "translation",
+   "prompt": "Translate to the target language: 'Where is the nearest market?'",
+   "expected": null,
+   "metadata": {
+    "register": "polite",
+    "domain": "navigation"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-reasoning-001",
+   "task_family": "reasoning",
+   "prompt": "Maria has three times as many apples as her brother. Together they have 24 apples. How many does each have? Show your reasoning step by step.",
+   "expected": "Maria has 18 apples; her brother has 6 apples.",
+   "metadata": {
+    "domain": "math",
+    "steps": 3
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-reasoning-002",
+   "task_family": "reasoning",
+   "prompt": "If today is Wednesday, what day of the week will it be 100 days from now? Explain your reasoning.",
+   "expected": "Friday (100 mod 7 = 2; Wednesday + 2 days = Friday).",
+   "metadata": {
+    "domain": "modular_arithmetic"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-instruction-003",
+   "task_family": "instruction",
+   "prompt": "Describe what makes a good leader, using two concrete examples.",
+   "expected": null,
+   "metadata": {
+    "difficulty": "medium",
+    "domain": "general"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-instruction-004",
+   "task_family": "instruction",
+   "prompt": "Explain the difference between weather and climate in three sentences.",
+   "expected": null,
+   "metadata": {
+    "difficulty": "medium",
+    "domain": "science"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-instruction-005",
+   "task_family": "instruction",
+   "prompt": "Write a short, polite email asking a teacher for a one-week extension on an assignment.",
+   "expected": null,
+   "metadata": {
+    "difficulty": "medium",
+    "domain": "everyday",
+    "register": "polite"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-qa-004",
+   "task_family": "qa",
+   "prompt": "What is the largest planet in our solar system?",
+   "expected": "Jupiter",
+   "metadata": {
+    "answer_type": "entity",
+    "domain": "science"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-qa-005",
+   "task_family": "qa",
+   "prompt": "How many days are there in a leap year?",
+   "expected": "366",
+   "metadata": {
+    "answer_type": "numerical",
+    "domain": "general"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-classification-004",
+   "task_family": "classification",
+   "prompt": "Message: 'Congratulations! You have won a free phone. Click this link now to claim your prize.' Classify whether this message is spam.",
+   "expected": "spam",
+   "metadata": {
+    "domain": "spam_detection"
+   },
+   "labels": [
+    "spam",
+    "not spam"
+   ]
+  },
+  {
+   "id": "seed-classification-005",
+   "task_family": "classification",
+   "prompt": "Classify the intent of this customer message: 'I would like to return the shoes I bought last week because they don't fit.'",
+   "expected": "return request",
+   "metadata": {
+    "domain": "intent"
+   },
+   "labels": [
+    "complaint",
+    "return request",
+    "general inquiry",
+    "compliment"
+   ]
+  },
+  {
+   "id": "seed-summarization-003",
+   "task_family": "summarization",
+   "prompt": "Summarize in one sentence: A city council voted to add 30 kilometers of protected bicycle lanes over the next two years, funded by a small increase in parking fees. Supporters argue the lanes will cut traffic and pollution, while some shop owners worry about losing customer parking.",
+   "expected": "A city council approved 30 km of new protected bike lanes funded by higher parking fees, despite some shop owners' concerns about lost parking.",
+   "metadata": {
+    "length_target": "one_sentence"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-summarization-004",
+   "task_family": "summarization",
+   "prompt": "Summarize the key finding in one sentence: A five-year study following 10,000 office workers found that those who took a short walk every hour reported less back pain and higher focus than those who sat continuously, even when both groups did the same amount of total daily exercise.",
+   "expected": "Taking short hourly walks reduced back pain and improved focus more than a single daily workout, according to a five-year study of office workers.",
+   "metadata": {
+    "length_target": "one_sentence"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-translation-003",
+   "task_family": "translation",
+   "prompt": "Translate to the target language: 'Thank you for your help. I really appreciate it.'",
+   "expected": null,
+   "metadata": {
+    "register": "polite",
+    "domain": "gratitude"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-translation-004",
+   "task_family": "translation",
+   "prompt": "Translate to the target language: 'Please call me when you arrive at the station.'",
+   "expected": null,
+   "metadata": {
+    "register": "polite",
+    "domain": "everyday"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-reasoning-003",
+   "task_family": "reasoning",
+   "prompt": "A shop sells pens at 3 for 2 dollars. How much do 12 pens cost? Show your reasoning step by step.",
+   "expected": "8 dollars (12 / 3 = 4 sets; 4 x 2 dollars = 8 dollars).",
+   "metadata": {
+    "domain": "math",
+    "steps": 2
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-reasoning-004",
+   "task_family": "reasoning",
+   "prompt": "All roses are flowers. Some flowers fade quickly. Can we conclude that some roses fade quickly? Explain your reasoning.",
+   "expected": "No. The premises do not guarantee it — the flowers that fade quickly need not include any roses.",
+   "metadata": {
+    "domain": "logic",
+    "type": "syllogism"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-reasoning-005",
+   "task_family": "reasoning",
+   "prompt": "A motorcycle travels 40 km on 1 liter of petrol. How far can it travel on 6 liters? Show your reasoning step by step.",
+   "expected": "240 km (40 km x 6 liters = 240 km).",
+   "metadata": {
+    "domain": "math",
+    "units": "metric",
+    "steps": 2
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-reasoning-006",
+   "task_family": "reasoning",
+   "prompt": "A car travels 12 miles using 0.5 gallons of gasoline. What is its fuel efficiency in miles per gallon? Show your reasoning step by step.",
+   "expected": "24 miles per gallon (12 miles / 0.5 gallons = 24).",
+   "metadata": {
+    "domain": "math",
+    "units": "imperial",
+    "steps": 2,
+    "localization_probe": true,
+    "note": "English-source imperial units (miles, gallons, 'gasoline'). A culturally appropriate rendering for South Asian languages would convert to km/liters and use 'petrol'; keeping imperial units signals English-source bias. Localizing changes the numeric answer, so back-translation faithfulness may read low even on good output — a deliberate faithfulness-vs-bias tension case."
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-instruction-bs-0001",
+   "task_family": "instruction",
+   "prompt": "Compose a set of instructions for building a DIY hydroponic system using household materials.",
+   "expected": null,
+   "metadata": {
+    "domain": "gardening",
+    "difficulty": "medium",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-instruction-bs-0002",
+   "task_family": "instruction",
+   "prompt": "Compare the socioeconomic impacts of the Industrial Revolution on urban vs. rural populations in 19th-century Britain.",
+   "expected": null,
+   "metadata": {
+    "domain": "history",
+    "difficulty": "hard",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-instruction-bs-0003",
+   "task_family": "instruction",
+   "prompt": "Explain the concept of quantum entanglement using an analogy involving a pair of dice.",
+   "expected": null,
+   "metadata": {
+    "domain": "physics",
+    "difficulty": "hard",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-instruction-bs-0004",
+   "task_family": "instruction",
+   "prompt": "Suggest five unique themes for a fantasy novel that do not involve traditional magic systems.",
+   "expected": null,
+   "metadata": {
+    "domain": "creative writing",
+    "difficulty": "medium",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-instruction-bs-0005",
+   "task_family": "instruction",
+   "prompt": "Outline a balanced meal plan for a professional athlete who follows a strict vegan diet.",
+   "expected": null,
+   "metadata": {
+    "domain": "nutrition",
+    "difficulty": "medium",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-instruction-bs-0006",
+   "task_family": "instruction",
+   "prompt": "Summarize the major ethical arguments for and against the use of autonomous weapons systems in modern warfare.",
+   "expected": null,
+   "metadata": {
+    "domain": "philosophy",
+    "difficulty": "hard",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-instruction-bs-0007",
+   "task_family": "instruction",
+   "prompt": "Draft a professional email to a potential client who hasn't responded to your initial pitch after two weeks.",
+   "expected": null,
+   "metadata": {
+    "domain": "business",
+    "difficulty": "easy",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-instruction-bs-0008",
+   "task_family": "instruction",
+   "prompt": "Identify three common challenges in software scalability and provide a brief technical solution for each.",
+   "expected": null,
+   "metadata": {
+    "domain": "computer science",
+    "difficulty": "hard",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-instruction-bs-0009",
+   "task_family": "instruction",
+   "prompt": "Compose a set of instructions for building a DIY backyard composting system using common household materials.",
+   "expected": null,
+   "metadata": {
+    "domain": "sustainability",
+    "difficulty": "medium",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-instruction-bs-0010",
+   "task_family": "instruction",
+   "prompt": "Explain the concept of quantum entanglement using a metaphor involving two decks of playing cards.",
+   "expected": null,
+   "metadata": {
+    "domain": "physics",
+    "difficulty": "hard",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-instruction-bs-0011",
+   "task_family": "instruction",
+   "prompt": "Draft a professional email to a client explaining that a project milestone will be delayed by one week due to unforeseen technical complications.",
+   "expected": null,
+   "metadata": {
+    "domain": "business",
+    "difficulty": "medium",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-instruction-bs-0012",
+   "task_family": "instruction",
+   "prompt": "Identify three major geopolitical consequences of the transition to renewable energy sources for oil-dependent nations.",
+   "expected": null,
+   "metadata": {
+    "domain": "geopolitics",
+    "difficulty": "hard",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-instruction-bs-0013",
+   "task_family": "instruction",
+   "prompt": "List five beginner-friendly exercises that can be performed in a small apartment without any specialized equipment.",
+   "expected": null,
+   "metadata": {
+    "domain": "fitness",
+    "difficulty": "easy",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-instruction-bs-0014",
+   "task_family": "instruction",
+   "prompt": "Analyze the role of unreliable narrators in 20th-century psychological thriller novels, referencing two specific examples.",
+   "expected": null,
+   "metadata": {
+    "domain": "literature",
+    "difficulty": "hard",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-instruction-bs-0015",
+   "task_family": "instruction",
+   "prompt": "Write a recipe for a vegan version of a traditional lasagna, providing substitutions for dairy and meat components.",
+   "expected": null,
+   "metadata": {
+    "domain": "culinary arts",
+    "difficulty": "medium",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-instruction-bs-0016",
+   "task_family": "instruction",
+   "prompt": "Create a daily schedule for a person who works from home and wants to incorporate a 30-minute workout, 1 hour of reading, and a healthy cooking routine.",
+   "expected": null,
+   "metadata": {
+    "domain": "productivity",
+    "difficulty": "easy",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-instruction-bs-0017",
+   "task_family": "instruction",
+   "prompt": "Analyze the impact of the widespread adoption of remote work on urban real estate prices and commercial zoning laws.",
+   "expected": null,
+   "metadata": {
+    "domain": "economics",
+    "difficulty": "hard",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-instruction-bs-0018",
+   "task_family": "instruction",
+   "prompt": "Create a weekly meal plan for a vegan athlete focusing on high protein intake, including a grocery list of essential items.",
+   "expected": null,
+   "metadata": {
+    "domain": "health",
+    "difficulty": "medium",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-instruction-bs-0019",
+   "task_family": "instruction",
+   "prompt": "Explain the concept of 'quantum entanglement' using an analogy that does not involve physics jargon.",
+   "expected": null,
+   "metadata": {
+    "domain": "science",
+    "difficulty": "medium",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-instruction-bs-0020",
+   "task_family": "instruction",
+   "prompt": "Draft a formal email to a project stakeholder explaining that a deadline will be missed due to unforeseen supply chain delays, while providing a clear recovery plan.",
+   "expected": null,
+   "metadata": {
+    "domain": "business",
+    "difficulty": "medium",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-instruction-bs-0021",
+   "task_family": "instruction",
+   "prompt": "Compare and contrast the political structures of the Roman Republic and the Athenian Democracy.",
+   "expected": null,
+   "metadata": {
+    "domain": "history",
+    "difficulty": "hard",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-instruction-bs-0022",
+   "task_family": "instruction",
+   "prompt": "Write a short story about a lighthouse keeper who discovers that the light they maintain isn't for ships, but for something else.",
+   "expected": null,
+   "metadata": {
+    "domain": "creative writing",
+    "difficulty": "medium",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-instruction-bs-0023",
+   "task_family": "instruction",
+   "prompt": "Provide a step-by-step guide on how to perform basic troubleshooting for a home Wi-Fi network that is intermittently dropping connection.",
+   "expected": null,
+   "metadata": {
+    "domain": "technology",
+    "difficulty": "easy",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-instruction-bs-0024",
+   "task_family": "instruction",
+   "prompt": "Outline the ethical arguments for and against the use of artificial intelligence in judicial sentencing processes.",
+   "expected": null,
+   "metadata": {
+    "domain": "ethics",
+    "difficulty": "hard",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-instruction-bs-0025",
+   "task_family": "instruction",
+   "prompt": "Analyze the impact of the introduction of the printing press on social stratification in 16th-century Europe.",
+   "expected": null,
+   "metadata": {
+    "domain": "history",
+    "difficulty": "hard",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-instruction-bs-0026",
+   "task_family": "instruction",
+   "prompt": "Create a 5-day meal plan for a professional athlete focusing on high-protein, plant-based nutrition.",
+   "expected": null,
+   "metadata": {
+    "domain": "health",
+    "difficulty": "medium",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-instruction-bs-0028",
+   "task_family": "instruction",
+   "prompt": "Write a formal letter of complaint to a city council regarding the lack of accessibility features at the local public library.",
+   "expected": null,
+   "metadata": {
+    "domain": "civics",
+    "difficulty": "medium",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-instruction-bs-0029",
+   "task_family": "instruction",
+   "prompt": "Draft a set of guidelines for a small startup team to maintain work-life balance while working remotely in different time zones.",
+   "expected": null,
+   "metadata": {
+    "domain": "business",
+    "difficulty": "medium",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-instruction-bs-0030",
+   "task_family": "instruction",
+   "prompt": "Identify three common rhetorical fallacies used in political advertisements and provide a hypothetical example for each.",
+   "expected": null,
+   "metadata": {
+    "domain": "philosophy",
+    "difficulty": "hard",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-instruction-bs-0031",
+   "task_family": "instruction",
+   "prompt": "Suggest five low-maintenance indoor plants suitable for a home office with limited natural sunlight.",
+   "expected": null,
+   "metadata": {
+    "domain": "hobbies",
+    "difficulty": "easy",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-instruction-bs-0032",
+   "task_family": "instruction",
+   "prompt": "Write a creative short story prompt about a society where memories can be traded as a form of currency.",
+   "expected": null,
+   "metadata": {
+    "domain": "creative writing",
+    "difficulty": "medium",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-qa-bs-0001",
+   "task_family": "qa",
+   "prompt": "Which chemical element has the atomic number 79?",
+   "expected": "Gold",
+   "metadata": {
+    "domain": "chemistry",
+    "difficulty": "medium",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-qa-bs-0002",
+   "task_family": "qa",
+   "prompt": "In what year was the Magna Carta first sealed?",
+   "expected": "1215",
+   "metadata": {
+    "domain": "history",
+    "difficulty": "medium",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-qa-bs-0003",
+   "task_family": "qa",
+   "prompt": "Who wrote the epic poem 'Paradise Lost'?",
+   "expected": "John Milton",
+   "metadata": {
+    "domain": "literature",
+    "difficulty": "medium",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-qa-bs-0004",
+   "task_family": "qa",
+   "prompt": "What is the largest organ in the human body?",
+   "expected": "Skin",
+   "metadata": {
+    "domain": "biology",
+    "difficulty": "easy",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-qa-bs-0005",
+   "task_family": "qa",
+   "prompt": "What is the square root of 144?",
+   "expected": "12",
+   "metadata": {
+    "domain": "math",
+    "difficulty": "easy",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-qa-bs-0006",
+   "task_family": "qa",
+   "prompt": "Which planet in our solar system has the most extensive ring system?",
+   "expected": "Saturn",
+   "metadata": {
+    "domain": "astronomy",
+    "difficulty": "easy",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-qa-bs-0007",
+   "task_family": "qa",
+   "prompt": "What is the official currency of Japan?",
+   "expected": "Japanese Yen",
+   "metadata": {
+    "domain": "economics",
+    "difficulty": "easy",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-qa-bs-0008",
+   "task_family": "qa",
+   "prompt": "Which architectural style is characterized by pointed arches, ribbed vaults, and flying buttresses?",
+   "expected": "Gothic",
+   "metadata": {
+    "domain": "art history",
+    "difficulty": "hard",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-qa-bs-0009",
+   "task_family": "qa",
+   "prompt": "Who wrote the epic poem 'The Odyssey'?",
+   "expected": "Homer",
+   "metadata": {
+    "domain": "literature",
+    "difficulty": "easy",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-qa-bs-0010",
+   "task_family": "qa",
+   "prompt": "In what year did the Berlin Wall fall?",
+   "expected": "1989",
+   "metadata": {
+    "domain": "history",
+    "difficulty": "medium",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-qa-bs-0011",
+   "task_family": "qa",
+   "prompt": "How many states are in the United States?",
+   "expected": "50",
+   "metadata": {
+    "domain": "geography",
+    "difficulty": "easy",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-qa-bs-0012",
+   "task_family": "qa",
+   "prompt": "Which planet is known as the Red Planet?",
+   "expected": "Mars",
+   "metadata": {
+    "domain": "astronomy",
+    "difficulty": "easy",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-qa-bs-0013",
+   "task_family": "qa",
+   "prompt": "Which language is spoken by the most people in the world by total number of speakers?",
+   "expected": "English",
+   "metadata": {
+    "domain": "linguistics",
+    "difficulty": "hard",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-qa-bs-0014",
+   "task_family": "qa",
+   "prompt": "What is the square root of 144 multiplied by 3?",
+   "expected": "36",
+   "metadata": {
+    "domain": "math",
+    "difficulty": "easy",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-qa-bs-0015",
+   "task_family": "qa",
+   "prompt": "What is the standard unit of electrical resistance?",
+   "expected": "Ohm",
+   "metadata": {
+    "domain": "physics",
+    "difficulty": "medium",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-qa-bs-0016",
+   "task_family": "qa",
+   "prompt": "Which architect designed the Guggenheim Museum in Bilbao?",
+   "expected": "Frank Gehry",
+   "metadata": {
+    "domain": "architecture",
+    "difficulty": "hard",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-qa-bs-0017",
+   "task_family": "qa",
+   "prompt": "Who painted the ceiling of the Sistine Chapel?",
+   "expected": "Michelangelo",
+   "metadata": {
+    "domain": "art history",
+    "difficulty": "easy",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-qa-bs-0018",
+   "task_family": "qa",
+   "prompt": "What is the term for a word that reads the same backward as forward?",
+   "expected": "Palindrome",
+   "metadata": {
+    "domain": "linguistics",
+    "difficulty": "easy",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-qa-bs-0019",
+   "task_family": "qa",
+   "prompt": "Calculate the area of a circle with a radius of 7 centimeters (use 3.14 for pi).",
+   "expected": "153.86 square centimeters",
+   "metadata": {
+    "domain": "mathematics",
+    "difficulty": "medium",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-qa-bs-0020",
+   "task_family": "qa",
+   "prompt": "Which planet in our solar system has the most moons?",
+   "expected": "Saturn",
+   "metadata": {
+    "domain": "astronomy",
+    "difficulty": "hard",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-qa-bs-0021",
+   "task_family": "qa",
+   "prompt": "What is the primary language spoken in Ethiopia?",
+   "expected": "Amharic",
+   "metadata": {
+    "domain": "geography",
+    "difficulty": "hard",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-qa-bs-0022",
+   "task_family": "qa",
+   "prompt": "In what year did the French Revolution begin?",
+   "expected": "1789",
+   "metadata": {
+    "domain": "history",
+    "difficulty": "medium",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-qa-bs-0023",
+   "task_family": "qa",
+   "prompt": "If a triangle has sides of length 3, 4, and 5 centimeters, is it a right-angled triangle?",
+   "expected": "Yes",
+   "metadata": {
+    "domain": "geometry",
+    "difficulty": "medium",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-qa-bs-0024",
+   "task_family": "qa",
+   "prompt": "Which planet in our solar system is known as the Red Planet?",
+   "expected": "Mars",
+   "metadata": {
+    "domain": "astronomy",
+    "difficulty": "easy",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-qa-bs-0025",
+   "task_family": "qa",
+   "prompt": "Who wrote the play 'A Midsummer Night's Dream'?",
+   "expected": "William Shakespeare",
+   "metadata": {
+    "domain": "literature",
+    "difficulty": "easy",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-qa-bs-0026",
+   "task_family": "qa",
+   "prompt": "What is the term for a word that is spelled the same forwards and backwards?",
+   "expected": "Palindrome",
+   "metadata": {
+    "domain": "linguistics",
+    "difficulty": "medium",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-qa-bs-0027",
+   "task_family": "qa",
+   "prompt": "Which country is the largest by land area?",
+   "expected": "Russia",
+   "metadata": {
+    "domain": "geography",
+    "difficulty": "easy",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-qa-bs-0028",
+   "task_family": "qa",
+   "prompt": "In what year did the Fall of the Berlin Wall occur?",
+   "expected": "1989",
+   "metadata": {
+    "domain": "history",
+    "difficulty": "medium",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-qa-bs-0030",
+   "task_family": "qa",
+   "prompt": "Which organ in the human body is responsible for producing insulin?",
+   "expected": "Pancreas",
+   "metadata": {
+    "domain": "biology",
+    "difficulty": "hard",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-qa-bs-0031",
+   "task_family": "qa",
+   "prompt": "What is the longest river in the world?",
+   "expected": "Nile",
+   "metadata": {
+    "domain": "geography",
+    "difficulty": "medium",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-qa-bs-0032",
+   "task_family": "qa",
+   "prompt": "Which computer programming language was created by Guido van Rossum and released in 1991?",
+   "expected": "Python",
+   "metadata": {
+    "domain": "computer science",
+    "difficulty": "medium",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-qa-bs-0033",
+   "task_family": "qa",
+   "prompt": "In computing, what does the acronym RAM stand for?",
+   "expected": "Random Access Memory",
+   "metadata": {
+    "domain": "technology",
+    "difficulty": "easy",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-classification-bs-0001",
+   "task_family": "classification",
+   "prompt": "The patient exhibits polyuria, polydipsia, and unexplained weight loss despite increased appetite. Identify the most likely metabolic condition.",
+   "expected": "Diabetes Mellitus",
+   "metadata": {
+    "domain": "medical",
+    "difficulty": "hard",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": [
+    "Hypertension",
+    "Diabetes Mellitus",
+    "Asthma",
+    "Anemia"
+   ]
+  },
+  {
+   "id": "seed-classification-bs-0002",
+   "task_family": "classification",
+   "prompt": "Determine the legal status of the following contract clause: 'The parties agree that all disputes arising from this agreement shall be settled through binding arbitration in the jurisdiction of Delaware.'",
+   "expected": "Arbitration Agreement",
+   "metadata": {
+    "domain": "law",
+    "difficulty": "medium",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": [
+    "Non-compete Clause",
+    "Indemnity Clause",
+    "Arbitration Agreement",
+    "Termination Clause"
+   ]
+  },
+  {
+   "id": "seed-classification-bs-0003",
+   "task_family": "classification",
+   "prompt": "The CPU usage spiked to 100% when the background service initiated a database index rebuild. Categorize this log entry.",
+   "expected": "Performance Issue",
+   "metadata": {
+    "domain": "information technology",
+    "difficulty": "medium",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": [
+    "Security Breach",
+    "Authentication Error",
+    "Performance Issue",
+    "Deprecation Warning"
+   ]
+  },
+  {
+   "id": "seed-classification-bs-0004",
+   "task_family": "classification",
+   "prompt": "The poem uses iambic pentameter and explores the fleeting nature of beauty and the inevitability of decay. Classify the literary era or movement.",
+   "expected": "Romanticism",
+   "metadata": {
+    "domain": "literature",
+    "difficulty": "hard",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": [
+    "Modernism",
+    "Romanticism",
+    "Realism",
+    "Postmodernism"
+   ]
+  },
+  {
+   "id": "seed-classification-bs-0005",
+   "task_family": "classification",
+   "prompt": "Classify the following investment risk profile: 'The investor seeks long-term capital growth, is willing to experience significant market volatility, and has a time horizon of over 20 years.'",
+   "expected": "Aggressive",
+   "metadata": {
+    "domain": "finance",
+    "difficulty": "medium",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": [
+    "Conservative",
+    "Moderate",
+    "Aggressive",
+    "Capital Preservation"
+   ]
+  },
+  {
+   "id": "seed-classification-bs-0006",
+   "task_family": "classification",
+   "prompt": "Identify the chemical classification of a substance that consists of a central carbon atom double-bonded to an oxygen atom and single-bonded to a hydroxyl group and an alkyl group.",
+   "expected": "Carboxylic Acid",
+   "metadata": {
+    "domain": "chemistry",
+    "difficulty": "hard",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": [
+    "Aldehyde",
+    "Ketone",
+    "Carboxylic Acid",
+    "Ether"
+   ]
+  },
+  {
+   "id": "seed-classification-bs-0007",
+   "task_family": "classification",
+   "prompt": "Which branch of philosophy is concerned with the nature of knowledge, belief, and justification?",
+   "expected": "Epistemology",
+   "metadata": {
+    "domain": "philosophy",
+    "difficulty": "medium",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": [
+    "Ethics",
+    "Metaphysics",
+    "Epistemology",
+    "Logic"
+   ]
+  },
+  {
+   "id": "seed-classification-bs-0008",
+   "task_family": "classification",
+   "prompt": "Classify the following cloud formation: 'A low-level, uniform, grayish cloud layer that often covers the entire sky and may produce light mist or drizzle.'",
+   "expected": "Stratus",
+   "metadata": {
+    "domain": "meteorology",
+    "difficulty": "medium",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": [
+    "Cumulus",
+    "Cirrus",
+    "Stratus",
+    "Cumulonimbus"
+   ]
+  },
+  {
+   "id": "seed-classification-bs-0009",
+   "task_family": "classification",
+   "prompt": "The user is asking: 'How do I reset my account password using a recovery email?' Classify the intent of this support request.",
+   "expected": "account_recovery",
+   "metadata": {
+    "domain": "customer_support",
+    "difficulty": "easy",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": [
+    "billing_issue",
+    "account_recovery",
+    "feature_request",
+    "bug_report"
+   ]
+  },
+  {
+   "id": "seed-classification-bs-0010",
+   "task_family": "classification",
+   "prompt": "Input text: 'The patient presents with acute onset of high fever, persistent dry cough, and shortness of breath.' Classify the medical triage priority.",
+   "expected": "urgent",
+   "metadata": {
+    "domain": "healthcare",
+    "difficulty": "medium",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": [
+    "routine",
+    "urgent",
+    "emergency",
+    "telehealth_only"
+   ]
+  },
+  {
+   "id": "seed-classification-bs-0012",
+   "task_family": "classification",
+   "prompt": "Text: 'Stocks dipped today as investors awaited the Federal Reserve's stance on interest rate adjustments.' Classify the news category.",
+   "expected": "finance",
+   "metadata": {
+    "domain": "news_classification",
+    "difficulty": "easy",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": [
+    "technology",
+    "finance",
+    "climate",
+    "fashion"
+   ]
+  },
+  {
+   "id": "seed-classification-bs-0013",
+   "task_family": "classification",
+   "prompt": "Document content: 'The landlord shall provide a 30-day written notice prior to termination of the lease agreement.' Classify this document type.",
+   "expected": "legal_contract",
+   "metadata": {
+    "domain": "document_analysis",
+    "difficulty": "medium",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": [
+    "creative_writing",
+    "legal_contract",
+    "technical_manual",
+    "academic_paper"
+   ]
+  },
+  {
+   "id": "seed-classification-bs-0014",
+   "task_family": "classification",
+   "prompt": "Email body: 'Click here to claim your $500 gift card immediately by providing your social security number!' Classify the security risk of this message.",
+   "expected": "phishing",
+   "metadata": {
+    "domain": "cybersecurity",
+    "difficulty": "medium",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": [
+    "marketing",
+    "transactional",
+    "phishing",
+    "internal_communication"
+   ]
+  },
+  {
+   "id": "seed-classification-bs-0015",
+   "task_family": "classification",
+   "prompt": "Statement: 'The gravitational pull of the moon is primarily responsible for the ocean tides on Earth.' Classify the veracity of this statement.",
+   "expected": "fact",
+   "metadata": {
+    "domain": "science",
+    "difficulty": "easy",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": [
+    "fact",
+    "opinion",
+    "speculation"
+   ]
+  },
+  {
+   "id": "seed-classification-bs-0016",
+   "task_family": "classification",
+   "prompt": "Description: 'A tall, metallic structure with blinking red lights stands in the middle of the dark, abandoned desert.' Classify the genre of this story fragment.",
+   "expected": "science_fiction",
+   "metadata": {
+    "domain": "literature",
+    "difficulty": "medium",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": [
+    "romance",
+    "science_fiction",
+    "historical_fiction",
+    "biography"
+   ]
+  },
+  {
+   "id": "seed-classification-bs-0017",
+   "task_family": "classification",
+   "prompt": "The latest quarterly report indicates a 15% increase in gross revenue following the successful expansion into international markets. Classify the business sector this text refers to.",
+   "expected": "finance",
+   "metadata": {
+    "domain": "business",
+    "difficulty": "medium",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": [
+    "healthcare",
+    "finance",
+    "agriculture",
+    "telecommunications"
+   ]
+  },
+  {
+   "id": "seed-classification-bs-0018",
+   "task_family": "classification",
+   "prompt": "Identify the primary programming language described in this snippet: 'The code uses indentation for block structure and emphasizes readability with a clear syntax, widely used in data science and web backend development.'",
+   "expected": "Python",
+   "metadata": {
+    "domain": "technology",
+    "difficulty": "easy",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": [
+    "Java",
+    "C++",
+    "Python",
+    "Rust"
+   ]
+  },
+  {
+   "id": "seed-classification-bs-0019",
+   "task_family": "classification",
+   "prompt": "The patient exhibits symptoms of persistent coughing, fever, and shortness of breath, which have been prevalent for over a week. Determine the urgency level of these symptoms.",
+   "expected": "high",
+   "metadata": {
+    "domain": "medical",
+    "difficulty": "medium",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": [
+    "low",
+    "medium",
+    "high"
+   ]
+  },
+  {
+   "id": "seed-classification-bs-0020",
+   "task_family": "classification",
+   "prompt": "Consider the following email: 'Subject: URGENT: Verify your bank credentials immediately via the link provided to avoid account suspension.' Classify the intent of this message.",
+   "expected": "phishing",
+   "metadata": {
+    "domain": "cybersecurity",
+    "difficulty": "easy",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": [
+    "legitimate",
+    "phishing",
+    "marketing",
+    "newsletter"
+   ]
+  },
+  {
+   "id": "seed-classification-bs-0021",
+   "task_family": "classification",
+   "prompt": "Determine the legal status of the following action: 'An individual uses copyrighted music in a non-commercial video without permission from the copyright owner.'",
+   "expected": "infringement",
+   "metadata": {
+    "domain": "law",
+    "difficulty": "hard",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": [
+    "fair use",
+    "infringement",
+    "public domain",
+    "authorized"
+   ]
+  },
+  {
+   "id": "seed-classification-bs-0022",
+   "task_family": "classification",
+   "prompt": "Classify the linguistic style of this sentence: 'Alas, the sun sets upon the weary traveler, casting long shadows across the desolate plains.'",
+   "expected": "literary",
+   "metadata": {
+    "domain": "linguistics",
+    "difficulty": "medium",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": [
+    "formal",
+    "technical",
+    "literary",
+    "colloquial"
+   ]
+  },
+  {
+   "id": "seed-classification-bs-0023",
+   "task_family": "classification",
+   "prompt": "Select the correct atmospheric layer where the majority of commercial airplanes fly to avoid turbulence: 'The aircraft maintained a cruising altitude within the ________.'",
+   "expected": "stratosphere",
+   "metadata": {
+    "domain": "science",
+    "difficulty": "hard",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": [
+    "troposphere",
+    "stratosphere",
+    "mesosphere",
+    "thermosphere"
+   ]
+  },
+  {
+   "id": "seed-classification-bs-0024",
+   "task_family": "classification",
+   "prompt": "Classify the sentiment of the following feedback regarding a software update: 'The interface is slightly confusing at first, but the new performance improvements have drastically reduced load times.'",
+   "expected": "mixed",
+   "metadata": {
+    "domain": "sentiment",
+    "difficulty": "medium",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": [
+    "positive",
+    "negative",
+    "mixed"
+   ]
+  },
+  {
+   "id": "seed-classification-bs-0025",
+   "task_family": "classification",
+   "prompt": "The CPU usage of the server spiked to 98% after the latest security patch was deployed. Classify the technical urgency of this incident log.",
+   "expected": "critical",
+   "metadata": {
+    "domain": "IT Operations",
+    "difficulty": "medium",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": [
+    "low",
+    "medium",
+    "high",
+    "critical"
+   ]
+  },
+  {
+   "id": "seed-classification-bs-0027",
+   "task_family": "classification",
+   "prompt": "Identify the genre of the following book description: A detective in 1920s London must solve a series of disappearances linked to a mysterious occult society.",
+   "expected": "mystery",
+   "metadata": {
+    "domain": "literature",
+    "difficulty": "easy",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": [
+    "romance",
+    "sci-fi",
+    "mystery",
+    "historical non-fiction"
+   ]
+  },
+  {
+   "id": "seed-classification-bs-0028",
+   "task_family": "classification",
+   "prompt": "Classify the legislative branch activity based on this snippet: 'The committee met to discuss potential amendments to the environmental protection bill before it goes to a floor vote.'",
+   "expected": "committee stage",
+   "metadata": {
+    "domain": "politics",
+    "difficulty": "hard",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": [
+    "floor debate",
+    "presidential veto",
+    "committee stage",
+    "judicial review"
+   ]
+  },
+  {
+   "id": "seed-classification-bs-0029",
+   "task_family": "classification",
+   "prompt": "The patient exhibits polyuria, polydipsia, and unexplained weight loss. Based on these symptoms, classify the most likely clinical concern.",
+   "expected": "diabetes mellitus",
+   "metadata": {
+    "domain": "medicine",
+    "difficulty": "hard",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": [
+    "hypertension",
+    "diabetes mellitus",
+    "influenza",
+    "anemia"
+   ]
+  },
+  {
+   "id": "seed-classification-bs-0030",
+   "task_family": "classification",
+   "prompt": "Analyze the following sentence and classify its grammatical structure: 'Because it was raining, we decided to stay indoors.'",
+   "expected": "complex sentence",
+   "metadata": {
+    "domain": "linguistics",
+    "difficulty": "medium",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": [
+    "simple sentence",
+    "compound sentence",
+    "complex sentence",
+    "fragment"
+   ]
+  },
+  {
+   "id": "seed-classification-bs-0031",
+   "task_family": "classification",
+   "prompt": "Classify the type of legal contract based on this clause: 'The Consultant agrees to hold all proprietary information disclosed by the Company in strict confidence.'",
+   "expected": "non-disclosure agreement",
+   "metadata": {
+    "domain": "legal",
+    "difficulty": "medium",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": [
+    "employment contract",
+    "non-disclosure agreement",
+    "lease agreement",
+    "purchase order"
+   ]
+  },
+  {
+   "id": "seed-classification-bs-0032",
+   "task_family": "classification",
+   "prompt": "Which art movement is represented by the following description: 'Emphasis on light, movement, and capturing the fleeting sensory effect of a scene rather than precise detail'?",
+   "expected": "impressionism",
+   "metadata": {
+    "domain": "art history",
+    "difficulty": "hard",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": [
+    "surrealism",
+    "cubism",
+    "impressionism",
+    "baroque"
+   ]
+  },
+  {
+   "id": "seed-translation-bs-0001",
+   "task_family": "translation",
+   "prompt": "Translate to the target language: 'Could you please provide me with the updated quarterly financial report?'",
+   "expected": null,
+   "metadata": {
+    "domain": "finance",
+    "difficulty": "hard",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": [
+    "business",
+    "formal"
+   ]
+  },
+  {
+   "id": "seed-translation-bs-0002",
+   "task_family": "translation",
+   "prompt": "Translate to the target language: 'I think the engine is overheating; we should pull over immediately.'",
+   "expected": null,
+   "metadata": {
+    "domain": "automotive",
+    "difficulty": "medium",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": [
+    "emergency",
+    "automotive"
+   ]
+  },
+  {
+   "id": "seed-translation-bs-0003",
+   "task_family": "translation",
+   "prompt": "Translate to the target language: 'The sunset over the horizon painted the sky in shades of violet and gold.'",
+   "expected": null,
+   "metadata": {
+    "domain": "literature",
+    "difficulty": "medium",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": [
+    "creative",
+    "descriptive"
+   ]
+  },
+  {
+   "id": "seed-translation-bs-0004",
+   "task_family": "translation",
+   "prompt": "Translate to the target language: 'Please enter your username and password to proceed to the secure dashboard.'",
+   "expected": null,
+   "metadata": {
+    "domain": "technology",
+    "difficulty": "easy",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": [
+    "technical",
+    "instructional"
+   ]
+  },
+  {
+   "id": "seed-translation-bs-0005",
+   "task_family": "translation",
+   "prompt": "Translate to the target language: 'I would like to order a gluten-free vegetarian meal for the upcoming flight.'",
+   "expected": null,
+   "metadata": {
+    "domain": "travel",
+    "difficulty": "medium",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": [
+    "travel",
+    "service"
+   ]
+  },
+  {
+   "id": "seed-translation-bs-0006",
+   "task_family": "translation",
+   "prompt": "Translate to the target language: 'The patient presents with mild respiratory distress and a persistent cough.'",
+   "expected": null,
+   "metadata": {
+    "domain": "healthcare",
+    "difficulty": "hard",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": [
+    "medical",
+    "clinical"
+   ]
+  },
+  {
+   "id": "seed-translation-bs-0007",
+   "task_family": "translation",
+   "prompt": "Translate to the target language: 'Hey, are you coming to the match tonight or are you staying in?'",
+   "expected": null,
+   "metadata": {
+    "domain": "social",
+    "difficulty": "easy",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": [
+    "casual",
+    "colloquial"
+   ]
+  },
+  {
+   "id": "seed-translation-bs-0008",
+   "task_family": "translation",
+   "prompt": "Translate to the target language: 'The terms and conditions stipulated in the contract are non-negotiable.'",
+   "expected": null,
+   "metadata": {
+    "domain": "law",
+    "difficulty": "hard",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": [
+    "legal",
+    "formal"
+   ]
+  },
+  {
+   "id": "seed-translation-bs-0009",
+   "task_family": "translation",
+   "prompt": "Translate to the target language: 'Could you please provide the status update for the quarterly project?'",
+   "expected": null,
+   "metadata": {
+    "domain": "business",
+    "difficulty": "intermediate",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-translation-bs-0010",
+   "task_family": "translation",
+   "prompt": "Translate to the target language: 'I have a severe headache and need to find a pharmacy immediately.'",
+   "expected": null,
+   "metadata": {
+    "domain": "medical",
+    "difficulty": "intermediate",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-translation-bs-0011",
+   "task_family": "translation",
+   "prompt": "Translate to the target language: 'The sunset at the beach tonight is absolutely breathtaking.'",
+   "expected": null,
+   "metadata": {
+    "domain": "travel",
+    "difficulty": "easy",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-translation-bs-0012",
+   "task_family": "translation",
+   "prompt": "Translate to the target language: 'Please enter your login credentials to access the secure portal.'",
+   "expected": null,
+   "metadata": {
+    "domain": "technology",
+    "difficulty": "intermediate",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-translation-bs-0013",
+   "task_family": "translation",
+   "prompt": "Translate to the target language: 'Excuse me, could you point me toward the international departures lounge?'",
+   "expected": null,
+   "metadata": {
+    "domain": "transportation",
+    "difficulty": "easy",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-translation-bs-0014",
+   "task_family": "translation",
+   "prompt": "Translate to the target language: 'The legal contract requires both parties to sign before the effective date.'",
+   "expected": null,
+   "metadata": {
+    "domain": "legal",
+    "difficulty": "advanced",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-translation-bs-0015",
+   "task_family": "translation",
+   "prompt": "Translate to the target language: 'I would like to return this shirt as the zipper is malfunctioning.'",
+   "expected": null,
+   "metadata": {
+    "domain": "retail",
+    "difficulty": "intermediate",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-translation-bs-0016",
+   "task_family": "translation",
+   "prompt": "Translate to the target language: 'In quantum physics, entanglement suggests a unique link between particles.'",
+   "expected": null,
+   "metadata": {
+    "domain": "science",
+    "difficulty": "advanced",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-translation-bs-0017",
+   "task_family": "translation",
+   "prompt": "Translate to the target language: 'Could you please provide me with the updated project specifications?'",
+   "expected": null,
+   "metadata": {
+    "domain": "professional communication",
+    "difficulty": "intermediate",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": [
+    "formal"
+   ]
+  },
+  {
+   "id": "seed-translation-bs-0018",
+   "task_family": "translation",
+   "prompt": "Translate to the target language: 'My laptop screen is flickering, and I suspect it might be a hardware issue.'",
+   "expected": null,
+   "metadata": {
+    "domain": "IT support",
+    "difficulty": "advanced",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": [
+    "technical"
+   ]
+  },
+  {
+   "id": "seed-translation-bs-0019",
+   "task_family": "translation",
+   "prompt": "Translate to the target language: 'Excuse me, is this seat taken?'",
+   "expected": null,
+   "metadata": {
+    "domain": "social interaction",
+    "difficulty": "beginner",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": [
+    "casual"
+   ]
+  },
+  {
+   "id": "seed-translation-bs-0021",
+   "task_family": "translation",
+   "prompt": "Translate to the target language: 'To assemble the shelf, first insert the metal dowels into the side panels.'",
+   "expected": null,
+   "metadata": {
+    "domain": "manuals",
+    "difficulty": "intermediate",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": [
+    "instructional"
+   ]
+  },
+  {
+   "id": "seed-translation-bs-0022",
+   "task_family": "translation",
+   "prompt": "Translate to the target language: 'I would like to return this item as it arrived damaged.'",
+   "expected": null,
+   "metadata": {
+    "domain": "customer service",
+    "difficulty": "beginner",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": [
+    "formal"
+   ]
+  },
+  {
+   "id": "seed-translation-bs-0023",
+   "task_family": "translation",
+   "prompt": "Translate to the target language: 'Given the volatile nature of the market, we recommend diversifying your portfolio.'",
+   "expected": null,
+   "metadata": {
+    "domain": "finance",
+    "difficulty": "advanced",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": [
+    "formal"
+   ]
+  },
+  {
+   "id": "seed-translation-bs-0024",
+   "task_family": "translation",
+   "prompt": "Translate to the target language: 'What is the local policy regarding recycling and waste management?'",
+   "expected": null,
+   "metadata": {
+    "domain": "civic information",
+    "difficulty": "intermediate",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": [
+    "informational"
+   ]
+  },
+  {
+   "id": "seed-translation-bs-0025",
+   "task_family": "translation",
+   "prompt": "Translate to the target language: 'Could you please provide me with the invoice for the services rendered?'",
+   "expected": null,
+   "metadata": {
+    "domain": "finance",
+    "difficulty": "intermediate",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": [
+    "business",
+    "formal"
+   ]
+  },
+  {
+   "id": "seed-translation-bs-0026",
+   "task_family": "translation",
+   "prompt": "Translate to the target language: 'Be careful, the floor is still wet and slippery.'",
+   "expected": null,
+   "metadata": {
+    "domain": "safety",
+    "difficulty": "easy",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": [
+    "caution",
+    "informal"
+   ]
+  },
+  {
+   "id": "seed-translation-bs-0027",
+   "task_family": "translation",
+   "prompt": "Translate to the target language: 'The experimental results confirm our hypothesis regarding quantum entanglement.'",
+   "expected": null,
+   "metadata": {
+    "domain": "physics",
+    "difficulty": "hard",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": [
+    "scientific",
+    "technical"
+   ]
+  },
+  {
+   "id": "seed-translation-bs-0028",
+   "task_family": "translation",
+   "prompt": "Translate to the target language: 'I am so excited to see you at the concert tonight!'",
+   "expected": null,
+   "metadata": {
+    "domain": "social",
+    "difficulty": "easy",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": [
+    "enthusiastic",
+    "casual"
+   ]
+  },
+  {
+   "id": "seed-translation-bs-0029",
+   "task_family": "translation",
+   "prompt": "Translate to the target language: 'To troubleshoot the connection issue, please restart your router and clear the cache.'",
+   "expected": null,
+   "metadata": {
+    "domain": "IT support",
+    "difficulty": "intermediate",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": [
+    "technical",
+    "instructional"
+   ]
+  },
+  {
+   "id": "seed-translation-bs-0030",
+   "task_family": "translation",
+   "prompt": "Translate to the target language: 'History is written by the victors of the conflict.'",
+   "expected": null,
+   "metadata": {
+    "domain": "history",
+    "difficulty": "hard",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": [
+    "philosophical",
+    "literary"
+   ]
+  },
+  {
+   "id": "seed-translation-bs-0031",
+   "task_family": "translation",
+   "prompt": "Translate to the target language: 'I would like to reserve a table for two at seven o'clock under the name Smith.'",
+   "expected": null,
+   "metadata": {
+    "domain": "hospitality",
+    "difficulty": "intermediate",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": [
+    "polite",
+    "service"
+   ]
+  },
+  {
+   "id": "seed-translation-bs-0032",
+   "task_family": "translation",
+   "prompt": "Translate to the target language: 'The storm warning is in effect until midnight for the coastal regions.'",
+   "expected": null,
+   "metadata": {
+    "domain": "meteorology",
+    "difficulty": "intermediate",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": [
+    "informative",
+    "formal"
+   ]
+  },
+  {
+   "id": "seed-translation-bs-0033",
+   "task_family": "translation",
+   "prompt": "Translate to the target language: 'Could you please forward the meeting minutes to the department head?'",
+   "expected": null,
+   "metadata": {
+    "domain": "professional communication",
+    "difficulty": "intermediate",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": [
+    "business",
+    "formal"
+   ]
+  },
+  {
+   "id": "seed-summarization-bs-0001",
+   "task_family": "summarization",
+   "prompt": "Summarize the core mechanism of the following text in one sentence: Quantum key distribution (QKD) utilizes the principles of quantum mechanics to enable secure communication. By encoding information in the quantum states of individual photons, any attempt by an unauthorized third party to intercept or observe the transmission inevitably alters the state of the photons. This physical disturbance alerts the legitimate users to the breach, ensuring that any compromised keys can be discarded before sensitive data is sent.",
+   "expected": "Quantum key distribution ensures communication security by utilizing photons that physically change state when intercepted, thereby alerting users to any eavesdropping attempts.",
+   "metadata": {
+    "domain": "Physics",
+    "difficulty": "Intermediate",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": [
+    "science",
+    "technology"
+   ]
+  },
+  {
+   "id": "seed-summarization-bs-0002",
+   "task_family": "summarization",
+   "prompt": "Summarize this historical development in one sentence: The introduction of the 'Three-Field System' in medieval Europe—where land was rotated between cereal crops, legumes, and fallow periods—significantly increased agricultural output. By enriching the soil with nitrogen-fixing legumes and reducing the risk of total crop failure, this innovation supported higher population densities and provided the caloric surplus necessary to sustain the growth of urban centers.",
+   "expected": "The medieval three-field crop rotation system boosted agricultural productivity and soil health, which facilitated population growth and the expansion of cities.",
+   "metadata": {
+    "domain": "History",
+    "difficulty": "Easy",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": [
+    "history",
+    "agriculture"
+   ]
+  },
+  {
+   "id": "seed-summarization-bs-0003",
+   "task_family": "summarization",
+   "prompt": "Summarize the economic implication in one sentence: As artificial intelligence continues to automate routine cognitive tasks, economists note a shift in labor demand toward 'human-centric' roles. While jobs involving data entry and basic administrative processing are shrinking, positions requiring high levels of emotional intelligence, creative problem-solving, and complex stakeholder negotiation are seeing wage premiums, as these remain difficult to replicate with current machine learning models.",
+   "expected": "The rise of AI is shifting labor market demand away from routine cognitive tasks toward roles that prioritize human-centric skills like emotional intelligence and creative strategy.",
+   "metadata": {
+    "domain": "Economics",
+    "difficulty": "Intermediate",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": [
+    "economics",
+    "labor"
+   ]
+  },
+  {
+   "id": "seed-summarization-bs-0004",
+   "task_family": "summarization",
+   "prompt": "Summarize the following report in one sentence: The integration of AI in agricultural monitoring systems has enabled farmers to predict crop diseases with 85% accuracy using satellite imagery and soil moisture sensors. This precision allows for targeted application of fertilizers and pesticides, which not only lowers production costs by 20% but also significantly reduces chemical runoff into nearby water sources.",
+   "expected": "AI-driven agricultural monitoring improves crop disease prediction and optimizes resource use, resulting in lower costs and reduced environmental impact.",
+   "metadata": {
+    "domain": "agriculture",
+    "difficulty": "medium",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": [
+    "science",
+    "technology",
+    "environment"
+   ]
+  },
+  {
+   "id": "seed-summarization-bs-0005",
+   "task_family": "summarization",
+   "prompt": "Summarize the following historical account in one sentence: The signing of the Treaty of Westphalia in 1648 is widely regarded as a turning point in international relations. By formalizing the concept of state sovereignty and the principle of non-interference in the internal affairs of other nations, it effectively dismantled the era of centralized religious control and established the foundation for the modern nation-state system.",
+   "expected": "The 1648 Treaty of Westphalia established modern state sovereignty and diminished religious influence, creating the framework for today's international political system.",
+   "metadata": {
+    "domain": "history",
+    "difficulty": "hard",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": [
+    "history",
+    "politics"
+   ]
+  },
+  {
+   "id": "seed-summarization-bs-0006",
+   "task_family": "summarization",
+   "prompt": "Summarize in one sentence: A recent study of urban biodiversity found that green roofs on city buildings can support up to 40% more pollinator species compared to traditional roof surfaces. The research suggests that by transforming underutilized urban rooftops into wildflower meadows, cities could help stabilize plummeting bee and butterfly populations in increasingly fragmented landscapes.",
+   "expected": "Urban green roofs provide essential habitats for pollinators, potentially helping to preserve diverse insect species within concrete environments.",
+   "metadata": {
+    "domain": "ecology",
+    "difficulty": "medium",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": [
+    "science",
+    "urban planning"
+   ]
+  },
+  {
+   "id": "seed-summarization-bs-0008",
+   "task_family": "summarization",
+   "prompt": "Summarize the primary impact on global logistics: The sudden closure of a major shipping lane caused by a localized geological event led to a cascade of port congestion worldwide. As vessels waited for rerouting, supply chain lead times increased by an average of 14 days, forcing manufacturers to shift from 'just-in-time' inventory management to 'just-in-case' stockpiling models to avoid future production stoppages.",
+   "expected": "A shipping lane blockage triggered global port congestion and extended delivery times, prompting companies to abandon lean inventory practices for increased stockpiling.",
+   "metadata": {
+    "domain": "Supply Chain Management",
+    "difficulty": "Intermediate",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": [
+    "economics",
+    "global trade"
+   ]
+  },
+  {
+   "id": "seed-summarization-bs-0009",
+   "task_family": "summarization",
+   "prompt": "Summarize the author's advice regarding houseplant maintenance: Overwatering is the most common cause of root rot, often mistakenly diagnosed by beginners as a sign of underwatering due to wilting leaves. To avoid this, always check the soil moisture at a depth of two inches with your finger; if the soil is damp, withhold water regardless of the plant's surface appearance or the scheduled watering day.",
+   "expected": "Avoid root rot by checking soil moisture two inches deep instead of relying on watering schedules, as wilting can misleadingly suggest a need for more water.",
+   "metadata": {
+    "domain": "Horticulture",
+    "difficulty": "Beginner",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": [
+    "gardening",
+    "lifestyle"
+   ]
+  },
+  {
+   "id": "seed-summarization-bs-0010",
+   "task_family": "summarization",
+   "prompt": "Summarize the following report in one sentence: The Arctic permafrost is thawing at an unprecedented rate due to rising global temperatures, causing the release of significant amounts of methane, a potent greenhouse gas. Scientists warn that this creates a feedback loop that could further accelerate climate change, making it increasingly difficult to meet global emissions targets.",
+   "expected": "Rapid Arctic permafrost thaw is releasing methane and creating a dangerous climate feedback loop that threatens global efforts to curb temperature increases.",
+   "metadata": {
+    "domain": "Environmental Science",
+    "difficulty": "Intermediate",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-summarization-bs-0011",
+   "task_family": "summarization",
+   "prompt": "Summarize the following passage in one sentence: Quantum computing utilizes the principles of superposition and entanglement to perform calculations that would take traditional binary computers thousands of years. While still in the experimental stage, major breakthroughs in error correction have recently pushed the technology closer to practical, real-world applications in cryptography and drug discovery.",
+   "expected": "Recent improvements in error correction are moving quantum computing closer to practical use in fields like drug discovery and cryptography by leveraging its unique computational capabilities.",
+   "metadata": {
+    "domain": "Technology",
+    "difficulty": "Advanced",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-summarization-bs-0012",
+   "task_family": "summarization",
+   "prompt": "Summarize the following anecdote in one sentence: After moving to a remote island to pursue a quieter life, Sarah spent her first year struggling with the lack of reliable electricity and high-speed internet. However, she eventually found that disconnecting from digital distractions allowed her to finish writing her novel, a project she had abandoned three times in the city.",
+   "expected": "Relocating to a remote island and facing initial hardships enabled Sarah to finally overcome her writer's block by distancing herself from urban digital distractions.",
+   "metadata": {
+    "domain": "Personal Narrative",
+    "difficulty": "Easy",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-summarization-bs-0014",
+   "task_family": "summarization",
+   "prompt": "Summarize the primary concern regarding remote work: While remote work has provided employees with unprecedented flexibility and reduced commuting stress, organizational psychologists are observing a subtle decline in 'weak tie' networking. These are the spontaneous, low-stakes interactions that occur in physical offices, which research suggests are crucial for cross-departmental innovation and long-term organizational cohesion.",
+   "expected": "Although remote work improves flexibility, it may hinder corporate innovation by eliminating the spontaneous 'weak tie' interactions that occur in physical offices.",
+   "metadata": {
+    "domain": "professional",
+    "difficulty": "medium",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": [
+    "business",
+    "psychology"
+   ]
+  },
+  {
+   "id": "seed-summarization-bs-0015",
+   "task_family": "summarization",
+   "prompt": "Summarize this historical event in one sentence: The Emu War of 1932 involved the Australian military being deployed to Western Australia to address public concerns over the number of emus, which were devastating local wheat crops. Armed with Lewis guns, soldiers attempted to cull the birds, but the emus' speed and tendency to scatter made the mission largely ineffective, eventually leading the military to withdraw after failing to achieve the desired population reduction.",
+   "expected": "In 1932, the Australian military failed in its attempt to cull crop-destroying emus because the birds proved too agile and elusive for the soldiers' tactics.",
+   "metadata": {
+    "domain": "history",
+    "difficulty": "easy",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": [
+    "history",
+    "nature"
+   ]
+  },
+  {
+   "id": "seed-reasoning-bs-0001",
+   "task_family": "reasoning",
+   "prompt": "A train leaves City A for City B at 60 mph. Two hours later, a second train leaves City A for City B at 90 mph. How long after the second train departs will it catch up to the first train? Show your work.",
+   "expected": "4 hours. The first train has a 120-mile head start (60 mph * 2 hours). The second train closes the gap at a relative speed of 30 mph (90 - 60). 120 miles / 30 mph = 4 hours.",
+   "metadata": {
+    "domain": "physics_kinematics",
+    "difficulty": "intermediate",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-reasoning-bs-0002",
+   "task_family": "reasoning",
+   "prompt": "If a stack of paper is 5 centimeters high and contains 500 sheets, how many sheets are in a stack that is 12 millimeters high? Show your conversion steps.",
+   "expected": "120 sheets. First, convert 5 cm to 50 mm. The ratio is 500 sheets / 50 mm = 10 sheets per mm. 12 mm * 10 sheets/mm = 120 sheets.",
+   "metadata": {
+    "domain": "unit_conversion",
+    "difficulty": "beginner",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-reasoning-bs-0003",
+   "task_family": "reasoning",
+   "prompt": "Five people (A, B, C, D, and E) are standing in a line. A is not at either end. B is behind A. C is in front of A. D is at the very end of the line. E is between A and D. Determine the order of the five people from first to last.",
+   "expected": "The order is C, A, B, E, D. C must be first because A is not at the end and B/E are behind A. Placing C-A-B-E-D satisfies all conditions: A is not at ends, B is behind A, C is before A, D is at the end, and E is between A and D.",
+   "metadata": {
+    "domain": "logic_puzzles",
+    "difficulty": "intermediate",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-reasoning-bs-0004",
+   "task_family": "reasoning",
+   "prompt": "An elevator starts at the ground floor (floor 0). It goes up 7 floors, down 3 floors, up 9 floors, and finally down 5 floors. What floor is the elevator on now? Show your calculation.",
+   "expected": "The elevator is on the 8th floor. Calculation: 0 + 7 = 7; 7 - 3 = 4; 4 + 9 = 13; 13 - 5 = 8.",
+   "metadata": {
+    "domain": "arithmetic",
+    "difficulty": "easy",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-reasoning-bs-0005",
+   "task_family": "reasoning",
+   "prompt": "Three friends (Alice, Bob, and Charlie) are standing in a line. Alice is not first. Charlie is standing directly behind Alice. Bob is not last. Determine the order of the three friends from first to last and explain your logic.",
+   "expected": "The order is Bob, Alice, Charlie. Reasoning: Since Charlie is behind Alice, they must be (Alice, Charlie). If Alice isn't first, the pair must be 2nd and 3rd. Thus, Bob must be 1st, Alice 2nd, and Charlie 3rd.",
+   "metadata": {
+    "domain": "logic",
+    "difficulty": "medium",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-reasoning-bs-0006",
+   "task_family": "reasoning",
+   "prompt": "A clock loses 3 minutes every hour. If the clock is set correctly at 8:00 AM, what time will it show when the actual time is 8:00 PM on the same day?",
+   "expected": "The clock will show 7:24 PM. Reasoning: From 8:00 AM to 8:00 PM is 12 hours. In 12 hours, the clock loses 12 * 3 = 36 minutes. 8:00 PM minus 36 minutes is 7:24 PM.",
+   "metadata": {
+    "domain": "time_calculation",
+    "difficulty": "medium",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-reasoning-bs-0008",
+   "task_family": "reasoning",
+   "prompt": "Three friends (Alice, Bob, and Charlie) are sitting in a row. Alice is not next to Bob. Charlie is sitting to the immediate right of Bob. What is the order of the friends from left to right?",
+   "expected": "The order is Alice, Bob, Charlie. Reasoning: Since Charlie is to the immediate right of Bob, they form a block (Bob, Charlie). Alice cannot be next to Bob, so Alice must be on the other side of the row, placed at the start.",
+   "metadata": {
+    "domain": "logic",
+    "difficulty": "medium",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-reasoning-bs-0009",
+   "task_family": "reasoning",
+   "prompt": "A project takes 4 people 6 days to complete. If you have only 3 people, how many days will the same project take, assuming they work at the same speed?",
+   "expected": "8 days. Reasoning: The total work is 4 people * 6 days = 24 man-days. With 3 people, 24 man-days / 3 people = 8 days.",
+   "metadata": {
+    "domain": "proportional_reasoning",
+    "difficulty": "medium",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-reasoning-bs-0011",
+   "task_family": "reasoning",
+   "prompt": "Five friends (A, B, C, D, and E) are sitting in a row. A is not next to B. C is sitting in the middle. E is at the far right. B is sitting at the far left. Who is sitting in the second position from the left? Explain your deduction.",
+   "expected": "A is in the second position. Logic: B is at index 1 (far left), C is at 3, E is at 5. This leaves indices 2 and 4 for A and D. Since A cannot be next to B (index 1), A must be at index 4 and D must be at index 2? No, wait: If B is at 1, then the person at 2 cannot be A. So D must be at 2, and A must be at 4. The person in the second position is D.",
+   "metadata": {
+    "domain": "logic",
+    "difficulty": "medium",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": [
+    "logic",
+    "spatial"
+   ]
+  },
+  {
+   "id": "seed-reasoning-bs-0012",
+   "task_family": "reasoning",
+   "prompt": "A company has a budget of $500 for office snacks. They spend 40% on fruit and 25% of the remainder on coffee. How much money is left after these two purchases? Show your calculations.",
+   "expected": "The remaining budget is $225. Step 1: 40% of 500 = $200 for fruit. Remaining: $300. Step 2: 25% of $300 = $75 for coffee. Final remainder: $300 - $75 = $225.",
+   "metadata": {
+    "domain": "finance",
+    "difficulty": "medium",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": [
+    "percentage",
+    "budgeting"
+   ]
+  },
+  {
+   "id": "seed-reasoning-bs-0013",
+   "task_family": "reasoning",
+   "prompt": "An elevator starts at the ground floor (floor 0). It goes up 7 floors, down 3 floors, up 5 floors, and then down 9 floors. If each floor is 3 meters high, how far above or below the ground floor is the elevator, and what is its total vertical displacement in meters? Show your reasoning.",
+   "expected": "The elevator is at floor 0 (ground level). Calculation: 0 + 7 - 3 + 5 - 9 = 0. The total distance traveled is 7+3+5+9 = 24 floors. 24 floors * 3 meters = 72 meters of vertical displacement.",
+   "metadata": {
+    "domain": "math",
+    "difficulty": "medium",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-reasoning-bs-0014",
+   "task_family": "reasoning",
+   "prompt": "In a race, Alice finished before Bob, but after Charlie. David finished after Bob. If there were no ties, determine the finishing order from first to last and explain your logic.",
+   "expected": "The order is: Charlie, Alice, Bob, David. Reasoning: Charlie > Alice (Alice after Charlie), Alice > Bob (Alice before Bob), Bob > David (David after Bob). Combining these: Charlie > Alice > Bob > David.",
+   "metadata": {
+    "domain": "logic",
+    "difficulty": "easy",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-reasoning-bs-0015",
+   "task_family": "reasoning",
+   "prompt": "A bakery is making cakes for a wedding. They need 4 eggs for every cake. They have 5 cartons of eggs, and each carton holds 12 eggs. They also have 3 broken eggs that cannot be used. How many complete cakes can they bake?",
+   "expected": "They can bake 14 complete cakes. Reasoning: 5 cartons * 12 eggs = 60 total eggs. Subtract 3 broken eggs = 57 usable eggs. 57 divided by 4 eggs per cake = 14.25, so 14 full cakes can be baked.",
+   "metadata": {
+    "domain": "arithmetic",
+    "difficulty": "medium",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-reasoning-bs-0016",
+   "task_family": "reasoning",
+   "prompt": "A train leaves City A for City B traveling at 60 mph. An hour later, a second train leaves City A on the same track traveling at 90 mph. How long will it take for the second train to catch up to the first, and what distance from City A will they be at that point? Show your work.",
+   "expected": "The second train catches up in 2 hours (at 3 hours total from the first train's departure). Distance: 180 miles (90 mph * 2 hours).",
+   "metadata": {
+    "domain": "physics/kinematics",
+    "difficulty": "medium",
+    "source": "bootstrap:gemini:gemini-3.1-flash-lite"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-instruction-001",
+   "task_family": "instruction",
+   "prompt": "Write a short paragraph (3-4 sentences) explaining what photosynthesis is, in a way a 10-year-old would understand.",
+   "expected": null,
+   "labels": null,
+   "metadata": {
+    "difficulty": "easy",
+    "domain": "biology"
+   }
+  },
+  {
+   "id": "seed-instruction-002",
+   "task_family": "instruction",
+   "prompt": "Give three practical tips for someone learning a new language for the first time.",
+   "expected": null,
+   "labels": null,
+   "metadata": {
+    "difficulty": "easy",
+    "domain": "general"
+   }
+  },
+  {
+   "id": "seed-qa-001",
+   "task_family": "qa",
+   "prompt": "What year did the first man walk on the moon?",
+   "expected": "1969",
+   "labels": null,
+   "metadata": {
+    "answer_type": "year"
+   }
+  },
+  {
+   "id": "seed-qa-002",
+   "task_family": "qa",
+   "prompt": "What is the capital city of Brazil?",
+   "expected": "Brasilia",
+   "labels": null,
+   "metadata": {
+    "answer_type": "place"
+   }
+  },
+  {
+   "id": "seed-qa-003",
+   "task_family": "qa",
+   "prompt": "If a train travels at 60 km/h for 2.5 hours, how far does it travel?",
+   "expected": "150 km",
+   "labels": null,
+   "metadata": {
+    "answer_type": "numerical",
+    "domain": "math"
+   }
+  },
+  {
+   "id": "seed-classification-001",
+   "task_family": "classification",
+   "prompt": "The new restaurant in town has terrible service and the food was cold. Classify the sentiment of this review.",
+   "expected": "negative",
+   "labels": [
+    "positive",
+    "neutral",
+    "negative"
+   ],
+   "metadata": {
+    "domain": "sentiment"
+   }
+  },
+  {
+   "id": "seed-classification-002",
+   "task_family": "classification",
+   "prompt": "The package arrived three days early and the product is exactly as described. Classify the sentiment of this review.",
+   "expected": "positive",
+   "labels": [
+    "positive",
+    "neutral",
+    "negative"
+   ],
+   "metadata": {
+    "domain": "sentiment"
+   }
+  },
+  {
+   "id": "seed-classification-003",
+   "task_family": "classification",
+   "prompt": "Local school board approves new arts curriculum starting next semester. Classify the topic of this news headline.",
+   "expected": "education",
+   "labels": [
+    "politics",
+    "sports",
+    "education",
+    "health",
+    "business",
+    "entertainment"
+   ],
+   "metadata": {
+    "domain": "topic"
+   }
+  },
+  {
+   "id": "seed-summarization-001",
+   "task_family": "summarization",
+   "prompt": "Summarize in one sentence: A team of researchers in Kenya has developed a new low-cost water purification method using locally-sourced charcoal and sand. The system can produce 50 liters of clean water per day and costs less than $20 to build. Initial trials in three rural villages have shown a 95% reduction in waterborne illness among children.",
+   "expected": "Researchers in Kenya created an inexpensive water purification system that has reduced waterborne illness by 95% in tested villages.",
+   "labels": null,
+   "metadata": {
+    "length_target": "one_sentence"
+   }
+  },
+  {
+   "id": "seed-summarization-002",
+   "task_family": "summarization",
+   "prompt": "Summarize the main argument in one sentence: Many language-learning apps claim users can become fluent in a few months of daily practice. However, linguists studying second-language acquisition consistently find that achieving conversational fluency in an unrelated language typically requires 600 to 750 hours of focused study, with significantly more required for full literacy. Marketing claims and reality diverge sharply.",
+   "expected": "Despite app marketing claims, real fluency in a new language typically requires hundreds of hours of focused study.",
+   "labels": null,
+   "metadata": {
+    "length_target": "one_sentence"
+   }
+  },
+  {
+   "id": "seed-translation-001",
+   "task_family": "translation",
+   "prompt": "Translate to the target language: 'Good morning. How are you today?'",
+   "expected": null,
+   "labels": null,
+   "metadata": {
+    "register": "polite",
+    "domain": "greeting"
+   }
+  },
+  {
+   "id": "seed-translation-002",
+   "task_family": "translation",
+   "prompt": "Translate to the target language: 'Where is the nearest market?'",
+   "expected": null,
+   "labels": null,
+   "metadata": {
+    "register": "polite",
+    "domain": "navigation"
+   }
+  },
+  {
+   "id": "seed-reasoning-001",
+   "task_family": "reasoning",
+   "prompt": "Maria has three times as many apples as her brother. Together they have 24 apples. How many does each have? Show your reasoning step by step.",
+   "expected": "Maria has 18 apples; her brother has 6 apples.",
+   "labels": null,
+   "metadata": {
+    "domain": "math",
+    "steps": 3
+   }
+  },
+  {
+   "id": "seed-reasoning-002",
+   "task_family": "reasoning",
+   "prompt": "If today is Wednesday, what day of the week will it be 100 days from now? Explain your reasoning.",
+   "expected": "Friday (100 mod 7 = 2; Wednesday + 2 days = Friday).",
+   "labels": null,
+   "metadata": {
+    "domain": "modular_arithmetic"
+   }
+  },
+  {
+   "id": "seed-instruction-003",
+   "task_family": "instruction",
+   "prompt": "Describe what makes a good leader, using two concrete examples.",
+   "expected": null,
+   "labels": null,
+   "metadata": {
+    "difficulty": "medium",
+    "domain": "general"
+   }
+  },
+  {
+   "id": "seed-instruction-004",
+   "task_family": "instruction",
+   "prompt": "Explain the difference between weather and climate in three sentences.",
+   "expected": null,
+   "labels": null,
+   "metadata": {
+    "difficulty": "medium",
+    "domain": "science"
+   }
+  },
+  {
+   "id": "seed-instruction-005",
+   "task_family": "instruction",
+   "prompt": "Write a short, polite email asking a teacher for a one-week extension on an assignment.",
+   "expected": null,
+   "labels": null,
+   "metadata": {
+    "difficulty": "medium",
+    "domain": "everyday",
+    "register": "polite"
+   }
+  },
+  {
+   "id": "seed-qa-004",
+   "task_family": "qa",
+   "prompt": "What is the largest planet in our solar system?",
+   "expected": "Jupiter",
+   "labels": null,
+   "metadata": {
+    "answer_type": "entity",
+    "domain": "science"
+   }
+  },
+  {
+   "id": "seed-qa-005",
+   "task_family": "qa",
+   "prompt": "How many days are there in a leap year?",
+   "expected": "366",
+   "labels": null,
+   "metadata": {
+    "answer_type": "numerical",
+    "domain": "general"
+   }
+  },
+  {
+   "id": "seed-classification-004",
+   "task_family": "classification",
+   "prompt": "Message: 'Congratulations! You have won a free phone. Click this link now to claim your prize.' Classify whether this message is spam.",
+   "expected": "spam",
+   "labels": [
+    "spam",
+    "not spam"
+   ],
+   "metadata": {
+    "domain": "spam_detection"
+   }
+  },
+  {
+   "id": "seed-classification-005",
+   "task_family": "classification",
+   "prompt": "Classify the intent of this customer message: 'I would like to return the shoes I bought last week because they don't fit.'",
+   "expected": "return request",
+   "labels": [
+    "complaint",
+    "return request",
+    "general inquiry",
+    "compliment"
+   ],
+   "metadata": {
+    "domain": "intent"
+   }
+  },
+  {
+   "id": "seed-summarization-003",
+   "task_family": "summarization",
+   "prompt": "Summarize in one sentence: A city council voted to add 30 kilometers of protected bicycle lanes over the next two years, funded by a small increase in parking fees. Supporters argue the lanes will cut traffic and pollution, while some shop owners worry about losing customer parking.",
+   "expected": "A city council approved 30 km of new protected bike lanes funded by higher parking fees, despite some shop owners' concerns about lost parking.",
+   "labels": null,
+   "metadata": {
+    "length_target": "one_sentence"
+   }
+  },
+  {
+   "id": "seed-summarization-004",
+   "task_family": "summarization",
+   "prompt": "Summarize the key finding in one sentence: A five-year study following 10,000 office workers found that those who took a short walk every hour reported less back pain and higher focus than those who sat continuously, even when both groups did the same amount of total daily exercise.",
+   "expected": "Taking short hourly walks reduced back pain and improved focus more than a single daily workout, according to a five-year study of office workers.",
+   "labels": null,
+   "metadata": {
+    "length_target": "one_sentence"
+   }
+  },
+  {
+   "id": "seed-translation-003",
+   "task_family": "translation",
+   "prompt": "Translate to the target language: 'Thank you for your help. I really appreciate it.'",
+   "expected": null,
+   "labels": null,
+   "metadata": {
+    "register": "polite",
+    "domain": "gratitude"
+   }
+  },
+  {
+   "id": "seed-translation-004",
+   "task_family": "translation",
+   "prompt": "Translate to the target language: 'Please call me when you arrive at the station.'",
+   "expected": null,
+   "labels": null,
+   "metadata": {
+    "register": "polite",
+    "domain": "everyday"
+   }
+  },
+  {
+   "id": "seed-reasoning-003",
+   "task_family": "reasoning",
+   "prompt": "A shop sells pens at 3 for 2 dollars. How much do 12 pens cost? Show your reasoning step by step.",
+   "expected": "8 dollars (12 / 3 = 4 sets; 4 x 2 dollars = 8 dollars).",
+   "labels": null,
+   "metadata": {
+    "domain": "math",
+    "steps": 2
+   }
+  },
+  {
+   "id": "seed-reasoning-004",
+   "task_family": "reasoning",
+   "prompt": "All roses are flowers. Some flowers fade quickly. Can we conclude that some roses fade quickly? Explain your reasoning.",
+   "expected": "No. The premises do not guarantee it — the flowers that fade quickly need not include any roses.",
+   "labels": null,
+   "metadata": {
+    "domain": "logic",
+    "type": "syllogism"
+   }
+  },
+  {
+   "id": "seed-reasoning-005",
+   "task_family": "reasoning",
+   "prompt": "A motorcycle travels 40 km on 1 liter of petrol. How far can it travel on 6 liters? Show your reasoning step by step.",
+   "expected": "240 km (40 km x 6 liters = 240 km).",
+   "labels": null,
+   "metadata": {
+    "domain": "math",
+    "units": "metric",
+    "steps": 2
+   }
+  },
+  {
+   "id": "seed-reasoning-006",
+   "task_family": "reasoning",
+   "prompt": "A car travels 12 miles using 0.5 gallons of gasoline. What is its fuel efficiency in miles per gallon? Show your reasoning step by step.",
+   "expected": "24 miles per gallon (12 miles / 0.5 gallons = 24).",
+   "labels": null,
+   "metadata": {
+    "domain": "math",
+    "units": "imperial",
+    "steps": 2,
+    "localization_probe": true,
+    "note": "English-source imperial units (miles, gallons, 'gasoline'). A culturally appropriate rendering for South Asian languages would convert to km/liters and use 'petrol'; keeping imperial units signals English-source bias. Localizing changes the numeric answer, so back-translation faithfulness may read low even on good output — a deliberate faithfulness-vs-bias tension case."
+   }
+  },
+  {
+   "id": "seed-reasoning-101",
+   "task_family": "reasoning",
+   "prompt": "Priya is 4 years older than Arjun. In 6 years, the sum of their ages will be 40. How old is each of them now? Show your reasoning step by step.",
+   "expected": "Arjun is 12 and Priya is 16.",
+   "metadata": {
+    "domain": "math",
+    "steps": 4
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-reasoning-102",
+   "task_family": "reasoning",
+   "prompt": "A recipe uses flour and sugar in the ratio 5 to 2. If 15 cups of flour are used, how many cups of sugar are needed? Show your reasoning step by step.",
+   "expected": "6 cups of sugar.",
+   "metadata": {
+    "domain": "math",
+    "steps": 3
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-reasoning-103",
+   "task_family": "reasoning",
+   "prompt": "Look at the sequence 2, 6, 12, 20, 30. What number comes next? Show your reasoning step by step.",
+   "expected": "42.",
+   "metadata": {
+    "domain": "logic",
+    "steps": 3
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-reasoning-104",
+   "task_family": "reasoning",
+   "prompt": "A farmer keeps only chickens and cows. Altogether the animals have 10 heads and 28 legs. How many chickens and how many cows are there? Show your reasoning step by step.",
+   "expected": "6 chickens and 4 cows.",
+   "metadata": {
+    "domain": "math",
+    "steps": 5
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-reasoning-105",
+   "task_family": "reasoning",
+   "prompt": "A candle burns down at a steady rate of 2 centimeters per hour. It started at 20 centimeters tall and is now 14 centimeters tall. For how many hours has it been burning? Show your reasoning step by step.",
+   "expected": "3 hours.",
+   "metadata": {
+    "domain": "math",
+    "steps": 2
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-reasoning-106",
+   "task_family": "reasoning",
+   "prompt": "All cats are mammals, and no mammals are reptiles. Can a cat be a reptile? Explain your reasoning step by step.",
+   "expected": "No, a cat cannot be a reptile.",
+   "metadata": {
+    "domain": "logic",
+    "steps": 3
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-reasoning-107",
+   "task_family": "reasoning",
+   "prompt": "Meena buys 3 notebooks that cost 20 rupees each and 2 pens that cost 15 rupees each. She pays with a 100-rupee note. How much change should she get back? Show your reasoning step by step.",
+   "expected": "10 rupees.",
+   "metadata": {
+    "domain": "math",
+    "steps": 4
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-reasoning-108",
+   "task_family": "reasoning",
+   "prompt": "Look at the sequence 1, 4, 9, 16, 25. What number comes next? Show your reasoning step by step.",
+   "expected": "36.",
+   "metadata": {
+    "domain": "logic",
+    "steps": 2
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-reasoning-109",
+   "task_family": "reasoning",
+   "prompt": "A father is now three times as old as his son. In 12 years, the father will be twice as old as his son. How old is each of them now? Show your reasoning step by step.",
+   "expected": "The son is 12 and the father is 36.",
+   "metadata": {
+    "domain": "math",
+    "steps": 5
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-reasoning-110",
+   "task_family": "reasoning",
+   "prompt": "In a class the ratio of boys to girls is 3 to 4. There are 35 students in total. How many boys and how many girls are there? Show your reasoning step by step.",
+   "expected": "15 boys and 20 girls.",
+   "metadata": {
+    "domain": "math",
+    "steps": 4
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-reasoning-111",
+   "task_family": "reasoning",
+   "prompt": "Four boxes are compared by weight. Box A is heavier than Box B. Box C is lighter than Box B. Box D is heavier than Box A. List the boxes in order from heaviest to lightest. Show your reasoning step by step.",
+   "expected": "D, A, B, C.",
+   "metadata": {
+    "domain": "logic",
+    "steps": 4
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-reasoning-112",
+   "task_family": "reasoning",
+   "prompt": "A tank holds 240 liters. Water flows in at 8 liters per minute while it also drains out at 3 liters per minute at the same time. Starting empty, how many minutes will it take to fill the tank? Show your reasoning step by step.",
+   "expected": "48 minutes.",
+   "metadata": {
+    "domain": "math",
+    "steps": 3
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-reasoning-113",
+   "task_family": "reasoning",
+   "prompt": "A shirt costs 800 rupees. First the price is increased by 25 percent, and then the new price is reduced by 20 percent. What is the final price of the shirt? Show your reasoning step by step.",
+   "expected": "800 rupees.",
+   "metadata": {
+    "domain": "math",
+    "steps": 4
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-reasoning-114",
+   "task_family": "reasoning",
+   "prompt": "A movie starts at 2:45 PM and runs for 130 minutes. At what clock time does it end? Show your reasoning step by step.",
+   "expected": "4:55 PM.",
+   "metadata": {
+    "domain": "commonsense",
+    "steps": 3
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-reasoning-115",
+   "task_family": "reasoning",
+   "prompt": "Priya is taller than Meena. Arjun is shorter than Meena. Ravi is taller than Priya. Who is the tallest and who is the shortest? Show your reasoning step by step.",
+   "expected": "Ravi is the tallest and Arjun is the shortest.",
+   "metadata": {
+    "domain": "logic",
+    "steps": 4
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-reasoning-116",
+   "task_family": "reasoning",
+   "prompt": "What is the sum of all the whole numbers from 1 to 20? Show your reasoning step by step.",
+   "expected": "210.",
+   "metadata": {
+    "domain": "math",
+    "steps": 2
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-reasoning-117",
+   "task_family": "reasoning",
+   "prompt": "One pipe can fill a tank in 6 hours and another pipe can fill the same tank in 12 hours. If both pipes are open together, how long will it take to fill the tank? Show your reasoning step by step.",
+   "expected": "4 hours.",
+   "metadata": {
+    "domain": "math",
+    "steps": 4
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-reasoning-118",
+   "task_family": "reasoning",
+   "prompt": "A jar is filled to three-fifths of its capacity, which is 30 liters of water. What is the total capacity of the jar? Show your reasoning step by step.",
+   "expected": "50 liters.",
+   "metadata": {
+    "domain": "math",
+    "steps": 3
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-reasoning-119",
+   "task_family": "reasoning",
+   "prompt": "A basket contains red, blue, and green balls. There are twice as many red balls as blue balls, and 3 more green balls than blue balls. In total there are 23 balls. How many balls of each color are there? Show your reasoning step by step.",
+   "expected": "5 blue, 10 red, and 8 green balls.",
+   "metadata": {
+    "domain": "math",
+    "steps": 5
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-reasoning-120",
+   "task_family": "reasoning",
+   "prompt": "Look at the sequence 1, 1, 2, 3, 5, 8. What number comes next? Show your reasoning step by step.",
+   "expected": "13.",
+   "metadata": {
+    "domain": "logic",
+    "steps": 2
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-reasoning-121",
+   "task_family": "reasoning",
+   "prompt": "A rectangle has a length that is twice its width. Its perimeter is 36 meters. What are the length and width? Show your reasoning step by step.",
+   "expected": "Width 6 meters and length 12 meters.",
+   "metadata": {
+    "domain": "math",
+    "steps": 4
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-reasoning-122",
+   "task_family": "reasoning",
+   "prompt": "If 5 machines take 5 minutes to make 5 items, how long would 100 machines take to make 100 items, assuming each machine works at the same steady rate? Show your reasoning step by step.",
+   "expected": "5 minutes.",
+   "metadata": {
+    "domain": "logic",
+    "steps": 3
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-reasoning-123",
+   "task_family": "reasoning",
+   "prompt": "Arjun saves money for 4 weeks. In the first week he saves 50 rupees, and each week after that he saves 20 rupees more than the week before. How much has he saved in total after 4 weeks? Show your reasoning step by step.",
+   "expected": "320 rupees.",
+   "metadata": {
+    "domain": "math",
+    "steps": 4
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-reasoning-124",
+   "task_family": "reasoning",
+   "prompt": "Every student who passed the exam had studied for it. Ravi did not study for the exam. Did Ravi pass? Explain your reasoning step by step.",
+   "expected": "No, Ravi did not pass.",
+   "metadata": {
+    "domain": "logic",
+    "steps": 3
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-reasoning-125",
+   "task_family": "reasoning",
+   "prompt": "100 chocolates are shared equally among 7 children, giving each child as many whole chocolates as possible. How many chocolates are left over? Show your reasoning step by step.",
+   "expected": "2 chocolates.",
+   "metadata": {
+    "domain": "math",
+    "steps": 3
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-reasoning-126",
+   "task_family": "reasoning",
+   "prompt": "Arjun runs 100 meters in 20 seconds at a steady pace. Running at the same pace, how many seconds will he take to run 250 meters? Show your reasoning step by step.",
+   "expected": "50 seconds.",
+   "metadata": {
+    "domain": "math",
+    "steps": 3
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-reasoning-127",
+   "task_family": "reasoning",
+   "prompt": "Meena is standing in a straight queue. She is 5th counting from the front and 8th counting from the back. How many people are in the queue in total? Show your reasoning step by step.",
+   "expected": "12 people.",
+   "metadata": {
+    "domain": "logic",
+    "steps": 3
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-reasoning-128",
+   "task_family": "reasoning",
+   "prompt": "Look at the sequence 3, 6, 12, 24. What number comes next? Show your reasoning step by step.",
+   "expected": "48.",
+   "metadata": {
+    "domain": "logic",
+    "steps": 2
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-translation-101",
+   "task_family": "translation",
+   "prompt": "Translate to the target language: 'Welcome to our home. Please make yourself comfortable.'",
+   "expected": null,
+   "metadata": {
+    "register": "polite",
+    "domain": "hospitality"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-translation-102",
+   "task_family": "translation",
+   "prompt": "Translate to the target language: 'The bus to the airport leaves from platform three every half hour.'",
+   "expected": null,
+   "metadata": {
+    "register": "formal",
+    "domain": "travel"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-translation-103",
+   "task_family": "translation",
+   "prompt": "Translate to the target language: 'How much do these mangoes cost per kilogram?'",
+   "expected": null,
+   "metadata": {
+    "register": "casual",
+    "domain": "market"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-translation-104",
+   "task_family": "translation",
+   "prompt": "Translate to the target language: 'My son has had a fever since last night. Should I bring him in?'",
+   "expected": null,
+   "metadata": {
+    "register": "polite",
+    "domain": "health"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-translation-105",
+   "task_family": "translation",
+   "prompt": "Translate to the target language: 'Turn left at the second traffic light and the school is on your right.'",
+   "expected": null,
+   "metadata": {
+    "register": "casual",
+    "domain": "directions"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-translation-106",
+   "task_family": "translation",
+   "prompt": "Translate to the target language: 'Please boil the rice for fifteen minutes before adding the vegetables.'",
+   "expected": null,
+   "metadata": {
+    "register": "polite",
+    "domain": "food"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-translation-107",
+   "task_family": "translation",
+   "prompt": "Translate to the target language: 'It looks like it will rain heavily this afternoon, so carry an umbrella.'",
+   "expected": null,
+   "metadata": {
+    "register": "casual",
+    "domain": "weather"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-translation-108",
+   "task_family": "translation",
+   "prompt": "Translate to the target language: 'My grandmother is visiting us next week and will stay for a month.'",
+   "expected": null,
+   "metadata": {
+    "register": "casual",
+    "domain": "family"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-translation-109",
+   "task_family": "translation",
+   "prompt": "Translate to the target language: 'Could you send me the agenda before tomorrow morning's meeting?'",
+   "expected": null,
+   "metadata": {
+    "register": "polite",
+    "domain": "work"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-translation-110",
+   "task_family": "translation",
+   "prompt": "Translate to the target language: 'The library closes at eight in the evening on weekdays.'",
+   "expected": null,
+   "metadata": {
+    "register": "formal",
+    "domain": "education"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-translation-111",
+   "task_family": "translation",
+   "prompt": "Translate to the target language: 'Please charge your phone before we leave, because there is no outlet on the train.'",
+   "expected": null,
+   "metadata": {
+    "register": "casual",
+    "domain": "technology"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-translation-112",
+   "task_family": "translation",
+   "prompt": "Translate to the target language: 'Call an ambulance quickly. Someone has fallen on the stairs.'",
+   "expected": null,
+   "metadata": {
+    "register": "casual",
+    "domain": "emergency"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-translation-113",
+   "task_family": "translation",
+   "prompt": "Translate to the target language: 'Would you like some tea or coffee before dinner is served?'",
+   "expected": null,
+   "metadata": {
+    "register": "polite",
+    "domain": "hospitality"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-translation-114",
+   "task_family": "translation",
+   "prompt": "Translate to the target language: 'I need to book a train ticket to the capital for this Friday.'",
+   "expected": null,
+   "metadata": {
+    "register": "polite",
+    "domain": "travel"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-translation-115",
+   "task_family": "translation",
+   "prompt": "Translate to the target language: 'Do you have this shirt in a smaller size and a different color?'",
+   "expected": null,
+   "metadata": {
+    "register": "polite",
+    "domain": "shopping"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-translation-116",
+   "task_family": "translation",
+   "prompt": "Translate to the target language: 'Take one tablet twice a day after meals for the next five days.'",
+   "expected": null,
+   "metadata": {
+    "register": "formal",
+    "domain": "health"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-translation-117",
+   "task_family": "translation",
+   "prompt": "Translate to the target language: 'The soup is a little too spicy for the children. Could you make it milder?'",
+   "expected": null,
+   "metadata": {
+    "register": "polite",
+    "domain": "food"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-translation-118",
+   "task_family": "translation",
+   "prompt": "Translate to the target language: 'The roads may be icy tomorrow morning, so please drive slowly.'",
+   "expected": null,
+   "metadata": {
+    "register": "formal",
+    "domain": "weather"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-translation-119",
+   "task_family": "translation",
+   "prompt": "Translate to the target language: 'My younger sister just started her first year at college.'",
+   "expected": null,
+   "metadata": {
+    "register": "casual",
+    "domain": "family"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-translation-120",
+   "task_family": "translation",
+   "prompt": "Translate to the target language: 'I will be working from home on Thursday, so please email me instead of calling.'",
+   "expected": null,
+   "metadata": {
+    "register": "polite",
+    "domain": "work"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-translation-121",
+   "task_family": "translation",
+   "prompt": "Translate to the target language: 'Students must submit their assignments by the end of this week.'",
+   "expected": null,
+   "metadata": {
+    "register": "formal",
+    "domain": "education"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-translation-122",
+   "task_family": "translation",
+   "prompt": "Translate to the target language: 'Where can I find a doctor who speaks English near here?'",
+   "expected": null,
+   "metadata": {
+    "register": "polite",
+    "domain": "health"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-translation-123",
+   "task_family": "translation",
+   "prompt": "Translate to the target language: 'Good evening. It is a pleasure to finally meet you in person.'",
+   "expected": null,
+   "metadata": {
+    "register": "formal",
+    "domain": "greeting"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-translation-124",
+   "task_family": "translation",
+   "prompt": "Translate to the target language: 'The guest room is on the first floor, and towels are in the cupboard.'",
+   "expected": null,
+   "metadata": {
+    "register": "polite",
+    "domain": "hospitality"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-qa-101",
+   "task_family": "qa",
+   "prompt": "Which river is considered the holiest river in India?",
+   "expected": "Ganges",
+   "metadata": {
+    "answer_type": "name",
+    "domain": "geography"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-qa-102",
+   "task_family": "qa",
+   "prompt": "What is the capital city of India?",
+   "expected": "New Delhi",
+   "metadata": {
+    "answer_type": "place",
+    "domain": "geography"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-qa-103",
+   "task_family": "qa",
+   "prompt": "In what year did India gain independence from British rule?",
+   "expected": "1947",
+   "metadata": {
+    "answer_type": "year",
+    "domain": "history"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-qa-104",
+   "task_family": "qa",
+   "prompt": "What is the chemical symbol for water?",
+   "expected": "H2O",
+   "metadata": {
+    "answer_type": "term",
+    "domain": "science"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-qa-105",
+   "task_family": "qa",
+   "prompt": "How many sides does a hexagon have?",
+   "expected": "6",
+   "metadata": {
+    "answer_type": "number",
+    "domain": "mathematics"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-qa-106",
+   "task_family": "qa",
+   "prompt": "Which gas do plants absorb from the atmosphere during photosynthesis?",
+   "expected": "Carbon dioxide",
+   "metadata": {
+    "answer_type": "term",
+    "domain": "science"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-qa-107",
+   "task_family": "qa",
+   "prompt": "Which is the tallest mountain on Earth above sea level?",
+   "expected": "Mount Everest",
+   "metadata": {
+    "answer_type": "name",
+    "domain": "geography"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-qa-108",
+   "task_family": "qa",
+   "prompt": "What is the national animal of India?",
+   "expected": "Bengal tiger",
+   "metadata": {
+    "answer_type": "name",
+    "domain": "general"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-qa-109",
+   "task_family": "qa",
+   "prompt": "How many continents are there on Earth?",
+   "expected": "7",
+   "metadata": {
+    "answer_type": "number",
+    "domain": "geography"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-qa-110",
+   "task_family": "qa",
+   "prompt": "What is the freezing point of water in degrees Celsius?",
+   "expected": "0",
+   "metadata": {
+    "answer_type": "number",
+    "domain": "science"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-qa-111",
+   "task_family": "qa",
+   "prompt": "Who was the first Prime Minister of India?",
+   "expected": "Jawaharlal Nehru",
+   "metadata": {
+    "answer_type": "name",
+    "domain": "history"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-qa-112",
+   "task_family": "qa",
+   "prompt": "Which planet is closest to the Sun?",
+   "expected": "Mercury",
+   "metadata": {
+    "answer_type": "name",
+    "domain": "science"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-qa-113",
+   "task_family": "qa",
+   "prompt": "What is the largest ocean on Earth?",
+   "expected": "Pacific Ocean",
+   "metadata": {
+    "answer_type": "name",
+    "domain": "geography"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-qa-114",
+   "task_family": "qa",
+   "prompt": "How many minutes are there in a full day?",
+   "expected": "1440",
+   "metadata": {
+    "answer_type": "number",
+    "domain": "general"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-qa-115",
+   "task_family": "qa",
+   "prompt": "Which country is the most populous in the world?",
+   "expected": "India",
+   "metadata": {
+    "answer_type": "place",
+    "domain": "geography"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-qa-116",
+   "task_family": "qa",
+   "prompt": "What is the chemical symbol for gold?",
+   "expected": "Au",
+   "metadata": {
+    "answer_type": "term",
+    "domain": "science"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-qa-117",
+   "task_family": "qa",
+   "prompt": "How many legs does a spider have?",
+   "expected": "8",
+   "metadata": {
+    "answer_type": "number",
+    "domain": "science"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-qa-118",
+   "task_family": "qa",
+   "prompt": "On which date is Indian Independence Day celebrated each year?",
+   "expected": "15 August",
+   "metadata": {
+    "answer_type": "date",
+    "domain": "general"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-qa-119",
+   "task_family": "qa",
+   "prompt": "What is the value of pi rounded to two decimal places?",
+   "expected": "3.14",
+   "metadata": {
+    "answer_type": "number",
+    "domain": "mathematics"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-qa-120",
+   "task_family": "qa",
+   "prompt": "Which organ pumps blood throughout the human body?",
+   "expected": "Heart",
+   "metadata": {
+    "answer_type": "term",
+    "domain": "science"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-qa-121",
+   "task_family": "qa",
+   "prompt": "In which Indian city is the Taj Mahal located?",
+   "expected": "Agra",
+   "metadata": {
+    "answer_type": "place",
+    "domain": "geography"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-qa-122",
+   "task_family": "qa",
+   "prompt": "How many colours are there in a rainbow?",
+   "expected": "7",
+   "metadata": {
+    "answer_type": "number",
+    "domain": "general"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-qa-123",
+   "task_family": "qa",
+   "prompt": "What is the boiling point of water at sea level in degrees Celsius?",
+   "expected": "100",
+   "metadata": {
+    "answer_type": "number",
+    "domain": "science"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-qa-124",
+   "task_family": "qa",
+   "prompt": "What is 15 multiplied by 12?",
+   "expected": "180",
+   "metadata": {
+    "answer_type": "number",
+    "domain": "mathematics"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-summarization-101",
+   "task_family": "summarization",
+   "prompt": "Summarize in one sentence: A district in southern India has begun distributing solar-powered lanterns to households that lack a reliable electricity connection. Each lantern can be charged during the day and provides about eight hours of light at night. School officials report that children in these homes are now able to study after sunset, and attendance in evening literacy classes has risen.",
+   "expected": "A southern Indian district's distribution of solar-powered lanterns to homes without reliable electricity has extended study hours and boosted evening literacy class attendance.",
+   "metadata": {
+    "length_target": "one_sentence",
+    "domain": "education"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-summarization-102",
+   "task_family": "summarization",
+   "prompt": "Summarize in one sentence: A cooperative of small farmers in a rural region has started sharing a single set of modern harvesting machines instead of each family buying its own. By pooling their money and scheduling the equipment across different fields, the farmers have cut their individual costs by nearly half. The arrangement has also allowed poorer households, who could never afford such machines alone, to harvest their crops on time.",
+   "expected": "A farmers' cooperative that shares harvesting machines rather than buying them individually has halved costs and given poorer households timely access to equipment.",
+   "metadata": {
+    "length_target": "one_sentence",
+    "domain": "agriculture"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-summarization-103",
+   "task_family": "summarization",
+   "prompt": "Summarize in one sentence: Public health workers have found that a simple mixture of clean water, salt, and sugar can save the lives of children suffering from severe dehydration caused by diarrhea. The solution, which can be prepared at home, helps the body absorb fluids far more effectively than water alone. Training mothers to make it correctly has sharply reduced child deaths in areas with limited access to hospitals.",
+   "expected": "Teaching mothers to prepare a home-made solution of water, salt, and sugar to treat dehydration from diarrhea has sharply reduced child deaths in areas with limited hospital access.",
+   "metadata": {
+    "length_target": "one_sentence",
+    "domain": "health"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-summarization-104",
+   "task_family": "summarization",
+   "prompt": "Summarize in one sentence: A coastal town that once dumped its household waste into open pits has introduced a program to separate wet and dry rubbish at the source. Food scraps are now turned into compost for local gardens, while plastics and metals are collected for recycling. Within a year, the amount of waste sent to the pits fell by more than sixty percent.",
+   "expected": "A coastal town's program to separate household waste at the source has cut landfill waste by over sixty percent while producing compost and recyclables.",
+   "metadata": {
+    "length_target": "one_sentence",
+    "domain": "environment"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-summarization-105",
+   "task_family": "summarization",
+   "prompt": "Summarize in one sentence: Researchers studying sleep have found that people who keep a consistent bedtime, even on weekends, tend to fall asleep faster and wake feeling more rested. The body's internal clock relies on regular signals of light and darkness, and irregular schedules can weaken these signals. Volunteers who kept steady sleep times for a month reported better mood and sharper concentration during the day.",
+   "expected": "Studies show that keeping a consistent bedtime strengthens the body's internal clock, helping people sleep faster and feel more rested, alert, and cheerful.",
+   "metadata": {
+    "length_target": "one_sentence",
+    "domain": "health"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-summarization-106",
+   "task_family": "summarization",
+   "prompt": "Summarize in one sentence: A group of villagers restored a dried-up pond that had once supplied water to their fields. By clearing accumulated silt and building small earthen barriers to capture rainwater, they allowed the pond to refill during the monsoon. The rising groundwater has since revived nearby wells, and farmers can now grow a second crop each year.",
+   "expected": "By clearing silt and capturing rainwater to restore a dried-up pond, villagers raised local groundwater, revived wells, and enabled a second yearly crop.",
+   "metadata": {
+    "length_target": "one_sentence",
+    "domain": "environment"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-summarization-107",
+   "task_family": "summarization",
+   "prompt": "Summarize in one sentence: A national program has begun training young people from villages to repair mobile phones and small electronic devices. The three-month course teaches basic circuitry, tool use, and customer service. Many graduates have opened small repair shops in their own communities, providing a service that previously required a long journey to the city.",
+   "expected": "A training program teaching village youth to repair phones and electronics has enabled graduates to open local repair shops, sparing residents long trips to the city.",
+   "metadata": {
+    "length_target": "one_sentence",
+    "domain": "community development"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-summarization-108",
+   "task_family": "summarization",
+   "prompt": "Summarize in one sentence: Scientists have discovered that certain species of fungi form partnerships with the roots of trees, exchanging nutrients through underground networks. The fungi help the trees absorb water and minerals from the soil, while the trees supply the fungi with sugars produced during photosynthesis. This cooperation allows forests to share resources and resist stress from drought and disease.",
+   "expected": "Fungi and tree roots form underground partnerships that exchange nutrients for sugars, helping forests share resources and withstand drought and disease.",
+   "metadata": {
+    "length_target": "one_sentence",
+    "domain": "science"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-summarization-109",
+   "task_family": "summarization",
+   "prompt": "Summarize in one sentence: A city hospital has introduced a text-message system that reminds patients when to take their medicines and attend follow-up appointments. Many patients with long-term illnesses had previously missed doses or check-ups, worsening their conditions. Since the reminders began, the hospital reports that far more patients are completing their treatment as prescribed.",
+   "expected": "A hospital's text-message reminders for medicines and appointments have helped many chronically ill patients complete their treatment as prescribed.",
+   "metadata": {
+    "length_target": "one_sentence",
+    "domain": "health"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-summarization-110",
+   "task_family": "summarization",
+   "prompt": "Summarize in one sentence: A regional government has planted rows of trees along major highways to reduce dust and provide shade for travelers. The trees also serve as barriers that lower noise from passing vehicles and help cool the surrounding air during hot months. Officials say the greenery has made roadside rest stops more comfortable and has improved air quality in nearby settlements.",
+   "expected": "Planting trees along highways has reduced dust and noise, cooled the air, and improved comfort and air quality for travelers and nearby residents.",
+   "metadata": {
+    "length_target": "one_sentence",
+    "domain": "environment"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-summarization-111",
+   "task_family": "summarization",
+   "prompt": "Summarize in one sentence: A team of engineers has designed a small, inexpensive sensor that detects when a water storage tank is nearly empty and sends an alert to a mobile phone. In areas where water is delivered only a few times a week, families often waste water or miss deliveries. Early users of the device report that they now manage their limited supply far more carefully.",
+   "expected": "A low-cost sensor that alerts phones when a water tank runs low is helping families in supply-limited areas manage their water more carefully.",
+   "metadata": {
+    "length_target": "one_sentence",
+    "domain": "technology"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-summarization-112",
+   "task_family": "summarization",
+   "prompt": "Summarize in one sentence: A study of school meals found that children who receive a nutritious lunch at school perform better in class and are less likely to drop out. For many families, the free meal is a strong reason to send their children to school regularly. Teachers observed that students were more attentive in the afternoon and fell ill less often.",
+   "expected": "A study found that free, nutritious school lunches improve children's attendance, attention, health, and academic performance while reducing dropout rates.",
+   "metadata": {
+    "length_target": "one_sentence",
+    "domain": "education"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-summarization-113",
+   "task_family": "summarization",
+   "prompt": "Summarize in one sentence: Beekeepers in a farming region have noticed that placing hives near orchards increases the yield of fruit trees. As bees move between flowers to collect nectar, they carry pollen that fertilizes the blossoms. Farmers who welcomed beekeepers onto their land harvested more fruit, while the beekeepers gained a steady source of honey.",
+   "expected": "Placing beehives near orchards raises fruit yields through pollination while giving beekeepers honey, benefiting both farmers and beekeepers.",
+   "metadata": {
+    "length_target": "one_sentence",
+    "domain": "agriculture"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-summarization-114",
+   "task_family": "summarization",
+   "prompt": "Summarize in one sentence: A community library set up in a small town has begun lending not only books but also tools, sewing machines, and sports equipment. Residents can borrow items they need only occasionally rather than buying them. The service has proved especially useful for low-income families and has encouraged neighbors to share resources instead of each owning everything.",
+   "expected": "A community library that lends tools, sewing machines, and sports gear alongside books is helping residents, especially low-income families, share resources instead of buying rarely used items.",
+   "metadata": {
+    "length_target": "one_sentence",
+    "domain": "community development"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-summarization-115",
+   "task_family": "summarization",
+   "prompt": "Summarize in one sentence: Astronomers have detected a distant planet orbiting a star much like our own sun. The planet lies at a distance from its star where temperatures could allow liquid water to exist on the surface. While it remains too far away to visit, scientists say studying its atmosphere may reveal whether conditions there could support life.",
+   "expected": "Astronomers have found a distant Earth-like planet where liquid water could exist, and studying its atmosphere may reveal whether it could support life.",
+   "metadata": {
+    "length_target": "one_sentence",
+    "domain": "science"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-summarization-116",
+   "task_family": "summarization",
+   "prompt": "Summarize in one sentence: A women's self-help group in a rural area pooled small monthly savings to create a shared fund. Members can borrow from the fund at low interest to start small businesses or cover emergencies, avoiding moneylenders who charge high rates. Over three years, several women have opened tailoring shops and vegetable stalls, and the group's savings have steadily grown.",
+   "expected": "A rural women's self-help group pooling monthly savings into a low-interest loan fund has helped members start businesses and avoid high-cost moneylenders.",
+   "metadata": {
+    "length_target": "one_sentence",
+    "domain": "community development"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-summarization-117",
+   "task_family": "summarization",
+   "prompt": "Summarize in one sentence: A new mobile application allows farmers to photograph a diseased plant leaf and receive an immediate suggestion of the likely illness and treatment. The app works by comparing the image against a large collection of known plant diseases stored on the phone. Farmers without easy access to agricultural experts can now identify problems early and protect their crops.",
+   "expected": "A mobile app that identifies plant diseases from leaf photos lets farmers without expert access detect problems early and protect their crops.",
+   "metadata": {
+    "length_target": "one_sentence",
+    "domain": "technology"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-summarization-118",
+   "task_family": "summarization",
+   "prompt": "Summarize in one sentence: Health officials have launched a campaign to vaccinate livestock against a disease that spreads quickly among cattle and can devastate a farmer's herd. Teams travel from village to village offering the vaccine free of charge and teaching farmers how to spot early signs of illness. Since the campaign began, reported outbreaks have fallen and milk production in the area has become more stable.",
+   "expected": "A free village-to-village livestock vaccination campaign has reduced cattle disease outbreaks and stabilized milk production in the area.",
+   "metadata": {
+    "length_target": "one_sentence",
+    "domain": "agriculture"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-instruction-101",
+   "task_family": "instruction",
+   "prompt": "Write a short invitation asking relatives and neighbors to attend a family gathering at your home this weekend.",
+   "expected": null,
+   "metadata": {
+    "difficulty": "easy",
+    "domain": "culture"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-instruction-102",
+   "task_family": "instruction",
+   "prompt": "Explain step by step how to prepare a simple vegetable dish using potatoes and onions for a family dinner.",
+   "expected": null,
+   "metadata": {
+    "difficulty": "easy",
+    "domain": "everyday"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-instruction-103",
+   "task_family": "instruction",
+   "prompt": "Explain in simple words why we should wash our hands before eating, so that a young child can understand.",
+   "expected": null,
+   "metadata": {
+    "difficulty": "easy",
+    "domain": "health"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-instruction-104",
+   "task_family": "instruction",
+   "prompt": "Write the opening lines of a short story about a farmer who wakes up one morning to find his well has filled with clear water after years of drought.",
+   "expected": null,
+   "metadata": {
+    "difficulty": "medium",
+    "domain": "writing"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-instruction-105",
+   "task_family": "instruction",
+   "prompt": "List five practical tips for saving money on monthly household expenses.",
+   "expected": null,
+   "metadata": {
+    "difficulty": "easy",
+    "domain": "everyday"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-instruction-106",
+   "task_family": "instruction",
+   "prompt": "Write a short, polite letter thanking a neighbor for helping your family during a difficult time.",
+   "expected": null,
+   "metadata": {
+    "difficulty": "easy",
+    "domain": "writing"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-instruction-107",
+   "task_family": "instruction",
+   "prompt": "Describe a busy local market in the morning, using details of sights, sounds, and smells.",
+   "expected": null,
+   "metadata": {
+    "difficulty": "medium",
+    "domain": "writing"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-instruction-108",
+   "task_family": "instruction",
+   "prompt": "Give step-by-step instructions for planting a small vegetable garden in pots on a balcony or rooftop.",
+   "expected": null,
+   "metadata": {
+    "difficulty": "medium",
+    "domain": "everyday"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-instruction-109",
+   "task_family": "instruction",
+   "prompt": "Recommend three simple ways a shopkeeper can attract more customers to a small neighborhood store.",
+   "expected": null,
+   "metadata": {
+    "difficulty": "medium",
+    "domain": "business"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-instruction-110",
+   "task_family": "instruction",
+   "prompt": "Explain how rain is formed, in a few simple sentences suitable for a school student.",
+   "expected": null,
+   "metadata": {
+    "difficulty": "easy",
+    "domain": "science"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-instruction-111",
+   "task_family": "instruction",
+   "prompt": "Compose a four-line poem about the first rains arriving after a long, hot summer.",
+   "expected": null,
+   "metadata": {
+    "difficulty": "medium",
+    "domain": "writing"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-instruction-112",
+   "task_family": "instruction",
+   "prompt": "Write a short congratulatory message to a friend who has just passed an important examination.",
+   "expected": null,
+   "metadata": {
+    "difficulty": "easy",
+    "domain": "everyday"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-instruction-113",
+   "task_family": "instruction",
+   "prompt": "Give five pieces of advice for someone who is starting their first job and wants to make a good impression.",
+   "expected": null,
+   "metadata": {
+    "difficulty": "medium",
+    "domain": "business"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-instruction-114",
+   "task_family": "instruction",
+   "prompt": "Explain the importance of drinking enough water each day and describe simple habits that help a person stay hydrated.",
+   "expected": null,
+   "metadata": {
+    "difficulty": "medium",
+    "domain": "health"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-instruction-115",
+   "task_family": "instruction",
+   "prompt": "Write a set of clear directions guiding a visitor from the main bus stop to your house, mentioning landmarks along the way.",
+   "expected": null,
+   "metadata": {
+    "difficulty": "hard",
+    "domain": "everyday"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-instruction-116",
+   "task_family": "instruction",
+   "prompt": "Describe your favorite festival to someone who has never heard of it, explaining how it is celebrated and why it matters to your community.",
+   "expected": null,
+   "metadata": {
+    "difficulty": "hard",
+    "domain": "culture"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-instruction-117",
+   "task_family": "instruction",
+   "prompt": "Explain how a bank savings account works and why keeping some money in one can be helpful for a family.",
+   "expected": null,
+   "metadata": {
+    "difficulty": "medium",
+    "domain": "business"
+   },
+   "labels": null
+  },
+  {
+   "id": "seed-classification-101",
+   "task_family": "classification",
+   "prompt": "The auto-rickshaw driver was polite and got me to the station on time. Classify the sentiment of this review.",
+   "expected": "positive",
+   "metadata": {
+    "domain": "sentiment"
+   },
+   "labels": [
+    "positive",
+    "neutral",
+    "negative"
+   ]
+  },
+  {
+   "id": "seed-classification-102",
+   "task_family": "classification",
+   "prompt": "The train departs from platform four at six in the morning. Classify the sentiment of this sentence.",
+   "expected": "neutral",
+   "metadata": {
+    "domain": "sentiment"
+   },
+   "labels": [
+    "positive",
+    "neutral",
+    "negative"
+   ]
+  },
+  {
+   "id": "seed-classification-103",
+   "task_family": "classification",
+   "prompt": "My new phone stopped charging after only two weeks and the shop refused to help. Classify the sentiment of this review.",
+   "expected": "negative",
+   "metadata": {
+    "domain": "sentiment"
+   },
+   "labels": [
+    "positive",
+    "neutral",
+    "negative"
+   ]
+  },
+  {
+   "id": "seed-classification-104",
+   "task_family": "classification",
+   "prompt": "The national cricket team won the final match by five wickets last night. Classify the topic of this sentence.",
+   "expected": "sports",
+   "metadata": {
+    "domain": "topic"
+   },
+   "labels": [
+    "sports",
+    "politics",
+    "technology",
+    "health"
+   ]
+  },
+  {
+   "id": "seed-classification-105",
+   "task_family": "classification",
+   "prompt": "The government announced a new tax policy ahead of the state elections. Classify the topic of this sentence.",
+   "expected": "politics",
+   "metadata": {
+    "domain": "topic"
+   },
+   "labels": [
+    "sports",
+    "politics",
+    "technology",
+    "health"
+   ]
+  },
+  {
+   "id": "seed-classification-106",
+   "task_family": "classification",
+   "prompt": "The startup released a smartphone app that helps farmers check crop prices. Classify the topic of this sentence.",
+   "expected": "technology",
+   "metadata": {
+    "domain": "topic"
+   },
+   "labels": [
+    "sports",
+    "politics",
+    "technology",
+    "health"
+   ]
+  },
+  {
+   "id": "seed-classification-107",
+   "task_family": "classification",
+   "prompt": "Doctors advise drinking plenty of clean water to avoid dehydration in summer. Classify the topic of this sentence.",
+   "expected": "health",
+   "metadata": {
+    "domain": "topic"
+   },
+   "labels": [
+    "sports",
+    "politics",
+    "technology",
+    "health"
+   ]
+  },
+  {
+   "id": "seed-classification-108",
+   "task_family": "classification",
+   "prompt": "Message: 'What are your opening hours on Sunday?' Classify the intent of this message.",
+   "expected": "question",
+   "metadata": {
+    "domain": "intent"
+   },
+   "labels": [
+    "question",
+    "complaint",
+    "request",
+    "compliment"
+   ]
+  },
+  {
+   "id": "seed-classification-109",
+   "task_family": "classification",
+   "prompt": "Message: 'My order arrived broken and no one has replied to my emails.' Classify the intent of this message.",
+   "expected": "complaint",
+   "metadata": {
+    "domain": "intent"
+   },
+   "labels": [
+    "question",
+    "complaint",
+    "request",
+    "compliment"
+   ]
+  },
+  {
+   "id": "seed-classification-110",
+   "task_family": "classification",
+   "prompt": "Message: 'Please send me a copy of the invoice for last month.' Classify the intent of this message.",
+   "expected": "request",
+   "metadata": {
+    "domain": "intent"
+   },
+   "labels": [
+    "question",
+    "complaint",
+    "request",
+    "compliment"
+   ]
+  },
+  {
+   "id": "seed-classification-111",
+   "task_family": "classification",
+   "prompt": "Message: 'Your team handled my complaint quickly and I am very grateful.' Classify the intent of this message.",
+   "expected": "compliment",
+   "metadata": {
+    "domain": "intent"
+   },
+   "labels": [
+    "question",
+    "complaint",
+    "request",
+    "compliment"
+   ]
+  },
+  {
+   "id": "seed-classification-112",
+   "task_family": "classification",
+   "prompt": "She smiled and hugged her family when she saw them waiting at the airport. Classify the emotion in this sentence.",
+   "expected": "joy",
+   "metadata": {
+    "domain": "emotion"
+   },
+   "labels": [
+    "joy",
+    "anger",
+    "sadness",
+    "fear"
+   ]
+  },
+  {
+   "id": "seed-classification-113",
+   "task_family": "classification",
+   "prompt": "He slammed the door after the shopkeeper cheated him out of his change. Classify the emotion in this sentence.",
+   "expected": "anger",
+   "metadata": {
+    "domain": "emotion"
+   },
+   "labels": [
+    "joy",
+    "anger",
+    "sadness",
+    "fear"
+   ]
+  },
+  {
+   "id": "seed-classification-114",
+   "task_family": "classification",
+   "prompt": "She heard footsteps behind her on the empty street and quickened her pace. Classify the emotion in this sentence.",
+   "expected": "fear",
+   "metadata": {
+    "domain": "emotion"
+   },
+   "labels": [
+    "joy",
+    "anger",
+    "sadness",
+    "fear"
+   ]
+  },
+  {
+   "id": "seed-classification-115",
+   "task_family": "classification",
+   "prompt": "Message: 'You have been selected for a free gift card. Reply with your bank details to claim it now.' Classify whether this message is spam.",
+   "expected": "spam",
+   "metadata": {
+    "domain": "spam"
+   },
+   "labels": [
+    "spam",
+    "not_spam"
+   ]
+  }
+ ]
+}

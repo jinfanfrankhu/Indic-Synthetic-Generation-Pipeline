@@ -39,6 +39,37 @@ def filter_by_task(seeds: list[SeedItem], task: TaskFamily) -> list[SeedItem]:
     return [s for s in seeds if s.task_family == task]
 
 
+def generated_seed_keys(out_root: str | Path) -> set[tuple[str, str, str]]:
+    """Scan a generated-output tree for the ``(seed_id, language, task)`` triples
+    already produced.
+
+    Used as a de-duplication guard by the sweep commands (``generate-batch``,
+    ``generate-drip``): a triple already present here has an item on disk, so
+    regenerating it would only mint a near-duplicate (same seed, same target,
+    differing only by teacher temperature). Returns an empty set if the tree is
+    absent. Malformed or partial lines are skipped — a guard must never crash a
+    generation run.
+    """
+    out_root = Path(out_root)
+    keys: set[tuple[str, str, str]] = set()
+    if not out_root.exists():
+        return keys
+    for f in out_root.glob("*/*/*.jsonl"):
+        with f.open(encoding="utf-8") as fh:
+            for line in fh:
+                line = line.strip()
+                if not line:
+                    continue
+                try:
+                    rec = json.loads(line)
+                    keys.add(
+                        (rec["seed_id"], rec["target_language"], rec["task_family"])
+                    )
+                except (json.JSONDecodeError, KeyError):
+                    pass
+    return keys
+
+
 def write_seeds(seeds: list[SeedItem], path: str | Path) -> Path:
     """Write ``seeds`` to ``path`` as a ``{"seeds": [...]}`` JSON file.
 
