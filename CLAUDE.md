@@ -83,6 +83,34 @@ syndata filter --generated data/generated
 
 `compare` logs per-call progress (`[n/total]`, elapsed, preview) to stderr by default.
 
+## TODO — next session (from Week 6 full-corpus review, 2026-07-13)
+
+Full LLM-surrogate review of all 1335 items → `docs/error_taxonomy.md` +
+`data/filtered/review_flags.jsonl`. 48 defects already dropped (corpus 1287).
+Root causes to fix **at the seed level** tomorrow (cap reset), then regenerate the
+affected combos with `generate-drip` (dup guard makes re-runs safe):
+
+- **Bad seed answers propagate to all 4 languages.** `seed-reasoning-bs-0008`
+  (Alice/Bob/Charlie seating puzzle) has a logically wrong `expected` inherited
+  from the English seed — correct order is Bob, Charlie, Alice. Fix the seed's
+  `expected`, then regenerate reasoning.
+- **Bootstrapped classification seeds omit the option list** from the prompt
+  (labels live only in metadata), so the model has nothing to choose from
+  (biggest format-failure bucket). Fix: inject `labels` into the classification
+  prompt template (`syndata/templates.py`) OR repair the `-bs-` classification
+  seed prompts; then regenerate classification.
+- **Translation-drift** (source sentence dropped; prompt+expected become two
+  paraphrases): `seed-translation-002`, `-bs-0005`, `-bs-0016`, `-bs-0025` and
+  others. Likely a translate-template issue — audit the translation template so
+  the English source is always embedded; regenerate translation.
+- Bootstrapped (`-bs-`) seeds have a 5.2% defect rate vs 0.8% for hand-curated
+  and 3.1% for the 2026-07-13 hand-authored batch — prefer hand-authored/curated
+  seeds; re-review any future bootstrapped batch before generating against it.
+
+Also queued for tomorrow: top up ~17 `classification` items (drip hit the 500/day
+Gemini cap at 487), judge/back-translation-score the 487 new items, and close the
+Urdu judge-ensemble gap (0 items with ≥2 judges).
+
 ## What still needs to be written
 
 - `METHODOLOGY.md` — 2,500–3,500 word paper-style writeup
