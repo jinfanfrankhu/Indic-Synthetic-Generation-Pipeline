@@ -68,6 +68,13 @@ syndata compare --language hi --task qa --n 2 \
 # (hand-review the output before generating against it)
 syndata bootstrap-seeds --tasks all --n 200 --teacher deepseek-ai/deepseek-v4-flash
 
+# Preferred wrapper: author N seeds + validate + print a review report, then STOP
+# (does NOT generate; prints the drip command for you to run after reviewing).
+# Pre-filters enforce: expected in labels, option list present in classification
+# prompts, expected required for qa/reasoning, English-only, dedup + id allocation
+# against the existing pool.
+N=125 TEACHER=openrouter:<claude-model> scripts/new_seeds.sh
+
 # Batch sweep across all languages x tasks from a seed file -> data/generated/<lang>/<task>/...
 syndata generate-batch --seeds data/seeds/bootstrapped_<ts>.json \
   --teacher deepseek-ai/deepseek-v4-flash --per-combo 8 --workers 4

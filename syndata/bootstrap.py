@@ -101,13 +101,47 @@ def _build_messages(
     task: TaskFamily, examples: list[SeedItem], per_call: int
 ) -> tuple[str, str]:
     """(system, user) asking for ``per_call`` new English seeds for ``task``."""
+    # Per-family requirements. These are deliberately explicit: the 2026-07-13
+    # full-corpus review traced most defects back to seed quality (bootstrapped
+    # seeds 5.2% defect vs. 0.8% for hand-curated), and a bad seed propagates into
+    # all four target languages. See docs/error_taxonomy.md.
     schema_hint = {
-        TaskFamily.QA: 'each needs a factual question in "prompt" and its short answer in "expected".',
-        TaskFamily.REASONING: 'each needs a multi-step problem in "prompt" and the final answer (with brief reasoning) in "expected".',
-        TaskFamily.CLASSIFICATION: 'each needs the text to classify in "prompt", a "labels" array of >=2 candidate labels, and the correct one in "expected".',
-        TaskFamily.SUMMARIZATION: 'each needs a passage to summarize in "prompt" and a reference summary in "expected".',
-        TaskFamily.TRANSLATION: 'each needs a short English sentence to translate in "prompt"; leave "expected" as null.',
-        TaskFamily.INSTRUCTION: 'each needs an open-ended instruction in "prompt"; leave "expected" as null.',
+        TaskFamily.QA: (
+            'each needs a factual question in "prompt" and its short, unambiguous '
+            'answer in "expected". VERIFY every answer is correct before writing it. '
+            'Prefer stable facts (science, geography, well-established history) over '
+            'anything time-varying or disputed. Keep answers short (a word, name, '
+            'number, or year) - not sentences.'
+        ),
+        TaskFamily.REASONING: (
+            'each needs a multi-step problem in "prompt" (ending with an instruction '
+            'to show the reasoning step by step) and the correct final answer in '
+            '"expected". SOLVE each problem yourself and double-check the answer - a '
+            'wrong "expected" corrupts every language it is translated into.'
+        ),
+        TaskFamily.CLASSIFICATION: (
+            'each needs the text to classify in "prompt", a "labels" array of >=2 '
+            'candidate labels, and the correct one in "expected". TWO HARD RULES: '
+            '(1) "expected" MUST be exactly one of the strings in "labels"; '
+            '(2) the "prompt" MUST list the candidate labels inline so the model can '
+            'see its choices (e.g. "... Classify the sentiment. Options: positive, '
+            'neutral, negative."). A prompt without a visible option list is invalid. '
+            'Avoid sarcasm/irony - it makes the label ambiguous after translation.'
+        ),
+        TaskFamily.SUMMARIZATION: (
+            'each needs a self-contained factual passage of 3-5 sentences to summarize '
+            'in "prompt" and a faithful ONE-sentence reference summary in "expected" '
+            'that introduces no new facts.'
+        ),
+        TaskFamily.TRANSLATION: (
+            'each needs a short, natural English sentence to translate in "prompt"; '
+            'leave "expected" as null. Vary register and everyday domain (greeting, '
+            'travel, health, market, work, directions).'
+        ),
+        TaskFamily.INSTRUCTION: (
+            'each needs a self-contained, open-ended instruction in "prompt"; leave '
+            '"expected" as null. Vary the type (explain, write, list, how-to).'
+        ),
     }.get(task, 'fill "prompt" and "expected" as appropriate.')
 
     system = (
@@ -115,6 +149,10 @@ def _build_messages(
         "diverse English tasks — vary the topic, domain, and difficulty; do not "
         "repeat or lightly reword the examples. Write everything in ENGLISH only.\n"
         f"For the '{task.value}' task family, {schema_hint}\n"
+        "TRANSLATABILITY (these seeds are translated into Hindi, Urdu, Tamil, and "
+        "Malayalam): avoid idioms, puns, wordplay, and English-culture trivia that "
+        "will not survive translation. Prefer universal content, and include some "
+        "India/South-Asia-relevant material where it fits naturally.\n"
         "Output ONLY a JSON array of objects, no markdown fences, no commentary. "
         'Each object: {"prompt": str, "expected": str|null, "labels": [str]|null, '
         '"metadata": {"domain": str, "difficulty": str}}.'
@@ -162,6 +200,19 @@ def _accept(record: dict, task: TaskFamily, result: BootstrapResult) -> SeedItem
         if not expected:
             result._bump("missing_expected")
             return None
+        # The answer must actually be one of the offered classes. Without this a
+        # seed can carry an "expected" no classifier could ever produce.
+        if expected not in {str(x) for x in labels}:
+            result._bump("expected_not_in_labels")
+            return None
+        # The prompt must show the model its choices. Bootstrapped classification
+        # seeds that hid the options in metadata were the single biggest
+        # format-failure bucket in the 2026-07-13 review: the model had nothing to
+        # choose from. Require at least two labels to appear in the prompt text.
+        low = prompt.lower()
+        if sum(1 for x in labels if str(x).lower() in low) < 2:
+            result._bump("options_not_in_prompt")
+            return None
 
     metadata = record.get("metadata") if isinstance(record.get("metadata"), dict) else {}
     try:
@@ -192,16 +243,23 @@ def bootstrap_seeds(
     max_tokens: int = 1024,
     max_attempts: int | None = None,
     verbose: bool = True,
+    taken_ids: set[str] | None = None,
 ) -> BootstrapResult:
     """Generate ``n`` new, de-duplicated English seeds for ``task``.
 
     Loops teacher calls (``per_call`` seeds each) until ``n`` survive the
     pre-filters or the attempt budget runs out. Dedup is against both the
     ``examples`` and seeds already accepted in this run.
+
+    ``taken_ids`` are seed ids already in use (e.g. from a previous bootstrap
+    run). Ids are allocated past them, so re-running never reuses an id — a
+    collision would otherwise propagate into generated item ids, which embed the
+    seed id.
     """
     result = BootstrapResult(task=task, seeds=[], requested=n)
     system, user = _build_messages(task, examples, per_call)
     seen = {_normalize(s.prompt) for s in examples}
+    taken = set(taken_ids or ()) | {s.id for s in examples}
     # Generous attempt budget: enough calls to reach n even if many are dropped.
     if max_attempts is None:
         max_attempts = max(4, (n // per_call) * 3 + 4)
@@ -233,7 +291,11 @@ def bootstrap_seeds(
                 result._bump("duplicate")
                 continue
             seen.add(key)
-            seed.id = f"seed-{task.value}-bs-{len(result.seeds) + 1:04d}"
+            counter = len(result.seeds) + 1
+            while f"seed-{task.value}-bs-{counter:04d}" in taken:
+                counter += 1
+            seed.id = f"seed-{task.value}-bs-{counter:04d}"
+            taken.add(seed.id)
             seed.metadata = {**seed.metadata, "source": f"bootstrap:{model}"}
             result.seeds.append(seed)
 

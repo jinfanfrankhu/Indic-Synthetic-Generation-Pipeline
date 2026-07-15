@@ -541,6 +541,10 @@ def cmd_bootstrap_seeds(args: argparse.Namespace) -> int:
         f"{args.teacher}...", file=sys.stderr,
     )
 
+    # Ids already in use across the whole pool, so a re-run allocates past them
+    # rather than restarting at bs-0001 and colliding.
+    taken_ids = {s.id for s in all_seeds}
+
     collected: list = []
     summaries: list[str] = []
     for task in tasks:
@@ -548,8 +552,9 @@ def cmd_bootstrap_seeds(args: argparse.Namespace) -> int:
         result = bootstrap_seeds(
             task, per_task, client, args.teacher, examples,
             per_call=args.per_call, temperature=args.temperature,
-            max_tokens=args.max_tokens,
+            max_tokens=args.max_tokens, taken_ids=taken_ids,
         )
+        taken_ids |= {s.id for s in result.seeds}
         collected.extend(result.seeds)
         drops = ", ".join(f"{k}={v}" for k, v in sorted(result.drops.items())) or "none"
         summaries.append(
