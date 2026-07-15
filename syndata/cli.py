@@ -826,7 +826,12 @@ def cmd_generate_drip(args: argparse.Namespace) -> int:
     jobs = []
     for idx in range(args.per_combo):
         for (lang, task, chosen, template_name, existing) in combos:
-            if idx < existing:
+            # Count-based resume is only a proxy for "already done", and it cannot
+            # fill a hole in the middle: dropping a bad item leaves the count high,
+            # so its position stays skipped forever. When the dup guard is on it
+            # resumes precisely (by seed identity), so the count-skip is redundant —
+            # keep it only for --allow-dups, where there is no guard to resume from.
+            if args.allow_dups and idx < existing:
                 continue
             seed = chosen[idx]
             key = (seed.id, lang, task.value)

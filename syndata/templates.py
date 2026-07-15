@@ -97,6 +97,27 @@ def _json_contract(include_expected: bool) -> str:
     return 'Return JSON: {{"prompt": "<the task, in {lang}>", "expected": ""}}'
 
 
+def _classification_label_rule(labels: list[str], lang: str) -> str:
+    """Instruction forcing the localized option list *into the generated prompt*.
+
+    A classification item whose prompt doesn't show its options is unanswerable:
+    the label set lives only in metadata, so the model has nothing to choose from.
+    That was the biggest format-failure bucket in the 2026-07-13 review
+    (docs/error_taxonomy.md). Passing the labels to the teacher isn't enough — it
+    inlined them only ~95% of the time — so make it an explicit hard rule.
+    """
+    return (
+        f"\nLabel set: {labels}\n"
+        f"Classification rules (all mandatory):\n"
+        f"- Localize each label into {lang}.\n"
+        f'- The "prompt" MUST end with the localized options listed inline, e.g. '
+        f'"(...: <label1>, <label2>, ...)" — a reader seeing only "prompt" must know '
+        f"every choice available.\n"
+        f'- "expected" MUST be exactly one of those localized labels, copied '
+        f"character-for-character as it appears in the list."
+    )
+
+
 @register("direct_translate")
 def direct_translate(seed: SeedItem, lang: str) -> tuple[str, str]:
     """Top-down faithful translation of the seed into the target language."""
@@ -112,7 +133,7 @@ def direct_translate(seed: SeedItem, lang: str) -> tuple[str, str]:
     if has_answer:
         parts.append(f"\nReference answer (English): {seed.expected}")
     if seed.task_family == TaskFamily.CLASSIFICATION and seed.labels:
-        parts.append(f"\nAllowed labels (translate these into {lang}): {seed.labels}")
+        parts.append(_classification_label_rule(seed.labels, lang))
     parts.append("\n" + _json_contract(has_answer).format(lang=lang))
     return system, "\n".join(parts)
 
@@ -175,9 +196,6 @@ def adapt_and_localize(seed: SeedItem, lang: str) -> tuple[str, str]:
     if has_answer:
         parts.append(f"\nReference answer (English): {seed.expected}")
     if seed.task_family == TaskFamily.CLASSIFICATION and seed.labels:
-        parts.append(
-            f"\nLabel set — provide the localized {lang} equivalents and put the "
-            f"correct one in 'expected': {seed.labels}"
-        )
+        parts.append(_classification_label_rule(seed.labels, lang))
     parts.append("\n" + _json_contract(has_answer).format(lang=lang))
     return system, "\n".join(parts)

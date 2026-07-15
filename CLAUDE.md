@@ -97,33 +97,38 @@ syndata filter --generated data/generated
 
 `compare` logs per-call progress (`[n/total]`, elapsed, preview) to stderr by default.
 
-## TODO — next session (from Week 6 full-corpus review, 2026-07-13)
+## Week 6 review + root-cause fixes — DONE (2026-07-13 review, fixed 2026-07-15)
 
 Full LLM-surrogate review of all 1335 items → `docs/error_taxonomy.md` +
-`data/filtered/review_flags.jsonl`. 48 defects already dropped (corpus 1287).
-Root causes to fix **at the seed level** tomorrow (cap reset), then regenerate the
-affected combos with `generate-drip` (dup guard makes re-runs safe):
+`data/filtered/review_flags.jsonl`. 48 defects dropped. Root causes then fixed and
+the affected combos regenerated; **corpus now 1446, retention 99%**.
 
-- **Bad seed answers propagate to all 4 languages.** `seed-reasoning-bs-0008`
-  (Alice/Bob/Charlie seating puzzle) has a logically wrong `expected` inherited
-  from the English seed — correct order is Bob, Charlie, Alice. Fix the seed's
-  `expected`, then regenerate reasoning.
-- **Bootstrapped classification seeds omit the option list** from the prompt
-  (labels live only in metadata), so the model has nothing to choose from
-  (biggest format-failure bucket). Fix: inject `labels` into the classification
-  prompt template (`syndata/templates.py`) OR repair the `-bs-` classification
-  seed prompts; then regenerate classification.
-- **Translation-drift** (source sentence dropped; prompt+expected become two
-  paraphrases): `seed-translation-002`, `-bs-0005`, `-bs-0016`, `-bs-0025` and
-  others. Likely a translate-template issue — audit the translation template so
-  the English source is always embedded; regenerate translation.
-- Bootstrapped (`-bs-`) seeds have a 5.2% defect rate vs 0.8% for hand-curated
-  and 3.1% for the 2026-07-13 hand-authored batch — prefer hand-authored/curated
-  seeds; re-review any future bootstrapped batch before generating against it.
+- ✅ **Bad seed answers propagate to all 4 languages.** `seed-reasoning-bs-0008`
+  (Alice/Bob/Charlie) had a wrong `expected`; correct order is Bob, Charlie,
+  Alice. Fixed in both pools + pinned by a test; regenerated in all 4 languages.
+- ✅ **Classification prompts omitted the option list** (biggest format-failure
+  bucket). The template passed `labels` to the teacher but never required them
+  *in the generated prompt* — so it inlined them only ~95% of the time. Now a
+  hard rule (`_classification_label_rule`). **Options inline: 95% → 100%
+  (226/226).**
+- ✅ **Translation-drift was already fixed** — `translation_task` (which keeps the
+  English source verbatim) is the registered default; the 17 drifted items were
+  legacy `direct_translate` output and were dropped. All 165 surviving translation
+  items embed the English source (100%). No template change was needed.
+- ✅ **Drip could not fill holes.** Count-based resume (`idx < existing`) skips the
+  first N positions, so a dropped item's slot stayed skipped forever — regenerating
+  defects would have silently done nothing. The dup guard resumes precisely by seed
+  identity, so the count-skip now applies only under `--allow-dups`.
+- ⚠️ Bootstrapped (`-bs-`) seeds defect at 5.2% vs 0.8% hand-curated and 3.1% for
+  the 2026-07-13 hand-authored batch — prefer hand-authored/curated seeds and
+  re-review any bootstrapped batch before generating against it. The
+  `scripts/new_seeds.sh` review gate exists for this reason; don't skip it.
 
-Also queued for tomorrow: top up ~17 `classification` items (drip hit the 500/day
-Gemini cap at 487), judge/back-translation-score the 487 new items, and close the
-Urdu judge-ensemble gap (0 items with ≥2 judges).
+**Still outstanding:** judge/back-translation-score the items generated since the
+last scoring pass (scores currently cover only the original 903 — see
+`docs/quality_metrics_latest.md`), and close the Urdu judge-ensemble gap (0 items
+with ≥2 judges). Neither touches the Gemini budget (judges = OpenRouter,
+back-translation = local NLLB).
 
 ## What still needs to be written
 

@@ -2310,7 +2310,7 @@
    "id": "seed-reasoning-bs-0008",
    "task_family": "reasoning",
    "prompt": "Three friends (Alice, Bob, and Charlie) are sitting in a row. Alice is not next to Bob. Charlie is sitting to the immediate right of Bob. What is the order of the friends from left to right?",
-   "expected": "The order is Alice, Bob, Charlie. Reasoning: Since Charlie is to the immediate right of Bob, they form a block (Bob, Charlie). Alice cannot be next to Bob, so Alice must be on the other side of the row, placed at the start.",
+   "expected": "The order is Bob, Charlie, Alice. Reasoning: Charlie sits immediately to Bob's right, so they form the block (Bob, Charlie). If that block sits in positions 1-2, Alice takes position 3 and is not next to Bob - this satisfies every constraint. If the block sat in positions 2-3, Alice would take position 1, directly next to Bob, which the puzzle forbids. So the only valid order is Bob, Charlie, Alice.",
    "metadata": {
     "domain": "logic",
     "difficulty": "medium",
