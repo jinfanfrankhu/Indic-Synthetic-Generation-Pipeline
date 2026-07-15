@@ -7,23 +7,28 @@
 # hand-curated ones, and a single bad seed propagates into all four target
 # languages. The review gate is the cheap part; regenerating four languages is not.
 #
+# Authoring runs through the local Claude Code CLI (`claude -p`) via the
+# `claude-cli` teacher, so it needs no API key or provider account - just your
+# existing Claude Code login.
+#
 # Usage:
-#   scripts/new_seeds.sh                  # 125 seeds, default teacher
-#   N=60 scripts/new_seeds.sh             # fewer
-#   TEACHER=openrouter:<model> scripts/new_seeds.sh
+#   scripts/new_seeds.sh                    # 125 seeds via claude-cli:sonnet
+#   N=60 scripts/new_seeds.sh               # fewer
+#   TEACHER=claude-cli:opus scripts/new_seeds.sh   # stronger authoring model
+#   TEACHER=gemini:gemini-3.1-flash-lite scripts/new_seeds.sh  # or any provider
 #
 # Env:
 #   N        total seeds, split across the 6 task families (default 125)
-#   TEACHER  seed-authoring model (needs that provider's key in .env)
+#   TEACHER  seed-authoring model: claude-cli[:sonnet|:opus], or provider:model
 #   POOL     existing pool used for few-shot examples + dedup + id allocation
 #
 set -euo pipefail
 cd "$(dirname "$0")/.."
 
 N="${N:-125}"
-# NOTE: confirm this slug is one your OpenRouter account can serve; override with
-# TEACHER=... if not. Authoring quality drives corpus quality, so prefer a strong model.
-TEACHER="${TEACHER:-openrouter:anthropic/claude-sonnet-4.5}"
+# Authoring quality drives corpus quality (a bad seed corrupts all 4 languages),
+# so this is worth a strong model. claude-cli:opus if you want more headroom.
+TEACHER="${TEACHER:-claude-cli:sonnet}"
 POOL="${POOL:-data/seeds/seed_pool_20260713.json}"
 TS="$(date +%Y%m%dT%H%M%S)"
 OUT="data/seeds/bootstrapped_${TS}.json"

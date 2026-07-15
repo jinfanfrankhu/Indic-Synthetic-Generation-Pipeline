@@ -45,6 +45,12 @@ DESIGN.md          # (to be written in Week 2) — answers the 5 methodology que
 - Teacher LLM: **Gemini 3.1 Flash Lite** (`gemini:gemini-3.1-flash-lite`) — migrated from DeepSeek V4 Flash in Week 4 after NVIDIA's batch lockouts; chosen from the hi bake-off (clean JSON, ~1s/item, fluent localized Hindi, 500/day). DeepSeek is the documented fallback. See `docs/model_selection.md`.
 - Judge LLM: ensemble TBD. Candidates that respond + discriminate (English-control check): `sarvamai/sarvam-m`, `mistralai/mistral-small-4-119b-2603`, `z-ai/glm-5.1`, `nvidia/nemotron-3-super-120b-a12b`. Qwen times out; Gemma endpoint down. **Note:** runs so far are only liveness/format/trivial-discrimination screens — judge *quality* needs a human gold set (no ground truth yet).
 - Target languages: `hi` (Hindi), `ur` (Urdu), `ta` (Tamil), `ml` (Malayalam)
+- `--teacher claude-cli[:sonnet|:opus]` (`ClaudeCliClient`) shells out to the local
+  Claude Code CLI (`claude -p`) and uses the machine's existing Claude Code login —
+  **no API key, no provider account**. Tools are disabled on the subprocess (pure text
+  completion, so it can't touch the repo or block on a permission prompt);
+  `temperature`/`max_tokens` aren't exposed by the CLI and are ignored. Used for seed
+  authoring (`scripts/new_seeds.sh`).
 - Use `--teacher mock` (offline `MockClient`) to exercise the full pipeline without a key or network.
 
 ## Key decisions already made
@@ -73,7 +79,8 @@ syndata bootstrap-seeds --tasks all --n 200 --teacher deepseek-ai/deepseek-v4-fl
 # Pre-filters enforce: expected in labels, option list present in classification
 # prompts, expected required for qa/reasoning, English-only, dedup + id allocation
 # against the existing pool.
-N=125 TEACHER=openrouter:<claude-model> scripts/new_seeds.sh
+N=125 scripts/new_seeds.sh                     # default teacher: claude-cli:sonnet
+TEACHER=claude-cli:opus scripts/new_seeds.sh   # stronger authoring model
 
 # Batch sweep across all languages x tasks from a seed file -> data/generated/<lang>/<task>/...
 syndata generate-batch --seeds data/seeds/bootstrapped_<ts>.json \

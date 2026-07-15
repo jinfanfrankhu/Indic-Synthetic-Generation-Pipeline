@@ -206,15 +206,86 @@ class MockClient:
         )
 
 
+class ClaudeCliClient:
+    """ChatClient backed by the local ``claude`` CLI in headless (``-p``) mode.
+
+    Uses the machine's existing Claude Code login rather than an API key, so it
+    needs no entry in :data:`PROVIDERS` and no ``*_API_KEY`` in ``.env`` — useful
+    for seed authoring when there's no Anthropic API/OpenRouter account.
+
+    Tools are disabled: this is a pure text-completion path, so the subprocess
+    can't touch the repo and can't trigger a permission prompt (which would hang
+    a non-interactive run). ``temperature``/``max_tokens`` aren't exposed by the
+    CLI; they're accepted and ignored so the ChatClient contract still holds.
+    """
+
+    # Text generation only — no repo access, no permission prompts.
+    _NO_TOOLS = "Bash Edit Write Read Glob Grep WebFetch WebSearch NotebookEdit Task"
+
+    def __init__(
+        self,
+        model_alias: str = "sonnet",
+        *,
+        executable: str = "claude",
+        timeout: float = 300.0,
+        **_ignored,  # absorb calls_per_minute/max_retries from shared call sites
+    ) -> None:
+        self._model_alias = model_alias
+        self._executable = executable
+        self._timeout = timeout
+
+    def complete(
+        self,
+        *,
+        model: str,
+        system: str,
+        user: str,
+        temperature: float,
+        max_tokens: int,
+    ) -> str:
+        import subprocess
+
+        cmd = [
+            self._executable, "-p", user,
+            "--model", self._model_alias,
+            "--output-format", "text",
+            "--append-system-prompt", system,
+            "--disallowed-tools", self._NO_TOOLS,
+        ]
+        try:
+            proc = subprocess.run(
+                cmd, capture_output=True, text=True, timeout=self._timeout,
+                encoding="utf-8", errors="replace",
+            )
+        except FileNotFoundError as err:
+            raise RuntimeError(
+                f"`{self._executable}` not found on PATH — the claude-cli teacher "
+                "needs the Claude Code CLI installed."
+            ) from err
+        except subprocess.TimeoutExpired as err:
+            raise RuntimeError(f"claude CLI timed out after {self._timeout}s") from err
+
+        if proc.returncode != 0:
+            tail = (proc.stderr or "").strip()[-300:]
+            raise RuntimeError(f"claude CLI failed (exit {proc.returncode}): {tail}")
+        return (proc.stdout or "").strip()
+
+
 def build_client(name: str, **kwargs) -> ChatClient:
     """Factory: ``"mock"`` -> :class:`MockClient`; otherwise resolve the provider.
 
     ``name`` is a model id, optionally ``provider:`` prefixed. The prefix (or the
     default ``nvidia``) selects the base URL and API key; the model itself is sent
     per request. ``api_key`` / ``base_url`` may be overridden via kwargs.
+
+    ``claude-cli`` / ``claude-cli:<alias>`` (e.g. ``claude-cli:opus``) is special:
+    it shells out to the local Claude Code CLI and needs no API key.
     """
     if name == "mock":
         return MockClient()
+    if name == "claude-cli" or name.startswith("claude-cli:"):
+        alias = name.split(":", 1)[1] if ":" in name else "sonnet"
+        return ClaudeCliClient(alias, **kwargs)
     provider, _ = parse_model(name)
     if provider not in PROVIDERS:
         provider = DEFAULT_PROVIDER
