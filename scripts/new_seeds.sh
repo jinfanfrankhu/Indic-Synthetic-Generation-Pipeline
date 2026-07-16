@@ -33,6 +33,11 @@ POOL="${POOL:-data/seeds/seed_pool_20260713.json}"
 TS="$(date +%Y%m%dT%H%M%S)"
 OUT="data/seeds/bootstrapped_${TS}.json"
 
+# Windows consoles default to cp1252, which cannot print seed content containing
+# typographic characters (em dashes, minus signs) — the report would crash after
+# authoring succeeded. Force UTF-8 for every python in this script.
+export PYTHONIOENCODING=utf-8
+
 # This box's SSL_CERT_FILE points at a miniconda bundle that does not exist,
 # which breaks httpx TLS. Point it at certifi's.
 if [ -n "${SSL_CERT_FILE:-}" ] && [ ! -f "${SSL_CERT_FILE}" ]; then
