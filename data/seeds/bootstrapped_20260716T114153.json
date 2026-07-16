@@ -413,18 +413,6 @@
       "labels": null
     },
     {
-      "id": "seed-qa-bs-0048",
-      "task_family": "qa",
-      "prompt": "What gas do plants absorb from the atmosphere during photosynthesis?",
-      "expected": "carbon dioxide",
-      "metadata": {
-        "domain": "biology",
-        "difficulty": "easy",
-        "source": "bootstrap:claude-cli:sonnet"
-      },
-      "labels": null
-    },
-    {
       "id": "seed-qa-bs-0050",
       "task_family": "qa",
       "prompt": "How many planets are in the solar system?",
