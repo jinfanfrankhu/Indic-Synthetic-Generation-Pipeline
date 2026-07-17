@@ -29,7 +29,6 @@ N="${N:-125}"
 # Authoring quality drives corpus quality (a bad seed corrupts all 4 languages),
 # so this is worth a strong model. claude-cli:opus if you want more headroom.
 TEACHER="${TEACHER:-claude-cli:sonnet}"
-POOL="${POOL:-data/seeds/seed_pool_20260713.json}"
 TS="$(date +%Y%m%dT%H%M%S)"
 OUT="data/seeds/bootstrapped_${TS}.json"
 
@@ -37,6 +36,34 @@ OUT="data/seeds/bootstrapped_${TS}.json"
 # typographic characters (em dashes, minus signs) — the report would crash after
 # authoring succeeded. Force UTF-8 for every python in this script.
 export PYTHONIOENCODING=utf-8
+
+# The pool used for few-shot examples + dedup + id allocation must be EVERY seed
+# that already exists, not one file — otherwise batch N+1 restarts bs- numbering
+# and collides with batch N (whose ids embed into generated item ids, so the dup
+# guard would then skip the whole new batch). Build a combined pool from all seed
+# files unless POOL is set explicitly. Mock/junk seeds are filtered out.
+if [ -z "${POOL:-}" ]; then
+  POOL="$(python - "$OUT" <<'PY'
+import glob, json, os, sys, tempfile
+out_basename = os.path.basename(sys.argv[1])
+seen, merged = set(), []
+for f in sorted(glob.glob("data/seeds/*.json")):
+    if os.path.basename(f) == out_basename:
+        continue
+    d = json.load(open(f, encoding="utf-8"))
+    for s in (d["seeds"] if isinstance(d, dict) else d):
+        if "[mock" in (s.get("prompt") or ""):   # skip MockClient junk
+            continue
+        if s["id"] in seen:
+            continue
+        seen.add(s["id"]); merged.append(s)
+fd, path = tempfile.mkstemp(suffix="_combined_pool.json")
+with os.fdopen(fd, "w", encoding="utf-8") as fh:
+    json.dump({"seeds": merged}, fh, ensure_ascii=False)
+print(path)
+PY
+)"
+fi
 
 # This box's SSL_CERT_FILE points at a miniconda bundle that does not exist,
 # which breaks httpx TLS. Point it at certifi's.
