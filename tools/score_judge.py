@@ -18,12 +18,14 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import collections
 import glob
 import json
 import os
 import statistics
 import time
 from datetime import datetime, timezone
+from itertools import zip_longest
 
 from dotenv import load_dotenv
 
@@ -93,6 +95,22 @@ def main() -> int:
         for line in open(f, encoding="utf-8"):
             if line.strip():
                 items.append(SyntheticItem.model_validate_json(line))
+
+    # Fair, ensemble-first ordering. In glob order (hi, ml, ta, ur) the daily cap
+    # was always spent before reaching Urdu, so Urdu never accrued a 2nd judge.
+    # Instead: within each language put items that ALREADY have a judge first (one
+    # more call completes their ensemble), then round-robin across languages so no
+    # language is starved.
+    def _judges_done(it) -> int:
+        return sum(1 for j in judges if (it.id, j) in done)
+
+    by_lang: dict[str, list] = collections.defaultdict(list)
+    for it in items:
+        by_lang[it.target_language].append(it)
+    for lg in by_lang:
+        by_lang[lg].sort(key=_judges_done, reverse=True)  # 1-judge before 0-judge
+    items = [it for row in zip_longest(*by_lang.values()) for it in row if it is not None]
+
     if args.limit:
         items = items[:args.limit]
 
