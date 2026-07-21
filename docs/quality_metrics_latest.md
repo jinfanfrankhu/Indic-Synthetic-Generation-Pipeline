@@ -1,6 +1,6 @@
 # Per-Language Quality Metrics
 
-_Snapshot over the current 2347-item corpus. **Back-translation is complete** (100% of non-translation items; the translation family is covered by the dedicated translation check, per DESIGN Q5). **Judge scoring is still accruing** (OpenRouter free tier, ~900 attempts/day), so its coverage columns are below 100% and will keep rising. Judge scores are the ensemble mean per item across the judges that scored it._
+_Snapshot over the current 2783-item corpus. **Back-translation is complete** (100% of non-translation items; the translation family is covered by the dedicated translation check, per DESIGN Q5). **Judge scoring is still accruing** (OpenRouter free tier, ~900 attempts/day), so its coverage columns are below 100% and will keep rising. Judge scores are the ensemble mean per item across the judges that scored it._
 
 **Judge ensemble:** openrouter:nvidia/nemotron-3-super-120b-a12b:free, openrouter:openai/gpt-oss-20b:free. Scores 0-1, higher = better.
 
@@ -8,28 +8,28 @@ _Snapshot over the current 2347-item corpus. **Back-translation is complete** (1
 
 | Language | items | judged (>=1) | ensemble (>=2 judges) | back-translated |
 | --- | --- | --- | --- | --- |
-| Hindi (hi) | 578 | 499 | 492 | 500/481 |
-| Urdu (ur) | 591 | 253 | 151 | 516/493 |
-| Tamil (ta) | 586 | 322 | 199 | 506/488 |
-| Malayalam (ml) | 592 | 516 | 446 | 517/492 |
+| Hindi (hi) | 687 | 499 | 492 | 500/570 |
+| Urdu (ur) | 700 | 393 | 361 | 516/582 |
+| Tamil (ta) | 695 | 388 | 354 | 506/577 |
+| Malayalam (ml) | 701 | 516 | 446 | 517/581 |
 
 ## Judge — overall score distribution (over scored items)
 
 | Language | N scored | mean | median | p10 | p90 |
 | --- | --- | --- | --- | --- | --- |
 | Hindi (hi) | 499 | 0.961 | 0.967 | 0.922 | 1.000 |
-| Urdu (ur) | 253 | 0.932 | 0.950 | 0.867 | 0.992 |
-| Tamil (ta) | 322 | 0.938 | 0.950 | 0.883 | 0.983 |
+| Urdu (ur) | 393 | 0.928 | 0.948 | 0.850 | 0.992 |
+| Tamil (ta) | 388 | 0.939 | 0.951 | 0.875 | 0.992 |
 | Malayalam (ml) | 516 | 0.936 | 0.955 | 0.867 | 1.000 |
-| **all** | 1590 | 0.944 | 0.958 | 0.883 | 1.000 |
+| **all** | 1796 | 0.942 | 0.958 | 0.875 | 1.000 |
 
 ## Judge — per-dimension mean (item-level)
 
 | Language | fluency | faithfulness | bias | overall |
 | --- | --- | --- | --- | --- |
 | Hindi (hi) | 0.933 | 0.963 | 0.986 | 0.961 |
-| Urdu (ur) | 0.886 | 0.944 | 0.967 | 0.932 |
-| Tamil (ta) | 0.900 | 0.941 | 0.974 | 0.938 |
+| Urdu (ur) | 0.882 | 0.942 | 0.960 | 0.928 |
+| Tamil (ta) | 0.893 | 0.947 | 0.977 | 0.939 |
 | Malayalam (ml) | 0.895 | 0.934 | 0.979 | 0.936 |
 
 ## Back-translation — cosine similarity distribution
@@ -44,5 +44,5 @@ _Snapshot over the current 2347-item corpus. **Back-translation is complete** (1
 
 ## Known gaps
 
-- **Urdu ensemble:** 151 Urdu items have >=2 judges. The 2nd core judge (`gpt-oss-20b:free`) is frequently congested on the OpenRouter free tier, so the majority-vote design is under-realized for Urdu. A more reliable 2nd/3rd judge would close this.
-- Judge scoring is OpenRouter-free-tier / daily-capped (~900 attempts/day) and back-translation is CPU-only NLLB, so full coverage accrues over several days.
+- **Urdu ensemble gap — resolved.** Urdu now has 361 items with >=2 judges, balanced with the other languages. It had been stuck at 0: judge scoring processed items in glob order (hi, ml, ta, ur), so the daily cap was always spent before reaching Urdu. Fixed by fair, ensemble-first item ordering (round-robin across languages).
+- Judge scoring is OpenRouter-free-tier / daily-capped (~900 attempts/day), and the two free judges frequently congest, so full ensemble coverage accrues over several days. Back-translation (CPU-only NLLB) is complete.
