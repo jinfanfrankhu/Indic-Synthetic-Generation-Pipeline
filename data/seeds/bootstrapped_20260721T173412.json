@@ -1,0 +1,1491 @@
+{
+  "seeds": [
+    {
+      "id": "seed-instruction-bs-0092",
+      "task_family": "instruction",
+      "prompt": "Explain what photosynthesis is and describe the two main things a plant needs from its environment to carry it out.",
+      "expected": null,
+      "metadata": {
+        "domain": "biology",
+        "difficulty": "easy",
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": [
+        "instruction"
+      ]
+    },
+    {
+      "id": "seed-instruction-bs-0093",
+      "task_family": "instruction",
+      "prompt": "List five habits that science says help people sleep better at night, and briefly explain why each one works.",
+      "expected": null,
+      "metadata": {
+        "domain": "health",
+        "difficulty": "easy",
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": [
+        "instruction"
+      ]
+    },
+    {
+      "id": "seed-instruction-bs-0094",
+      "task_family": "instruction",
+      "prompt": "Explain what the Green Revolution was, which crops it focused on, and how it changed food production in South Asia during the 1960s and 1970s.",
+      "expected": null,
+      "metadata": {
+        "domain": "history",
+        "difficulty": "medium",
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": [
+        "instruction"
+      ]
+    },
+    {
+      "id": "seed-instruction-bs-0095",
+      "task_family": "instruction",
+      "prompt": "Write a short paragraph explaining how a hydroelectric dam converts the movement of water into electricity that can be used in homes.",
+      "expected": null,
+      "metadata": {
+        "domain": "physics",
+        "difficulty": "medium",
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": [
+        "instruction"
+      ]
+    },
+    {
+      "id": "seed-instruction-bs-0096",
+      "task_family": "instruction",
+      "prompt": "Describe the steps a person should take to give basic first aid to someone who has fainted, from the moment they fall until medical help arrives.",
+      "expected": null,
+      "metadata": {
+        "domain": "health",
+        "difficulty": "medium",
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": [
+        "instruction"
+      ]
+    },
+    {
+      "id": "seed-instruction-bs-0097",
+      "task_family": "instruction",
+      "prompt": "Explain what the panchayati raj system is, what levels it has, and what role it plays in local self-governance in rural India.",
+      "expected": null,
+      "metadata": {
+        "domain": "civics",
+        "difficulty": "medium",
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": [
+        "instruction"
+      ]
+    },
+    {
+      "id": "seed-instruction-bs-0098",
+      "task_family": "instruction",
+      "prompt": "List four practical measures that a smallholder farmer in a rain-dependent region can take to protect crops and conserve soil moisture during an unexpected dry period.",
+      "expected": null,
+      "metadata": {
+        "domain": "agriculture",
+        "difficulty": "medium",
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": [
+        "instruction"
+      ]
+    },
+    {
+      "id": "seed-instruction-bs-0099",
+      "task_family": "instruction",
+      "prompt": "Explain what inflation is, what typically causes it to rise, and how it affects the ability of ordinary households to afford everyday goods.",
+      "expected": null,
+      "metadata": {
+        "domain": "economics",
+        "difficulty": "medium",
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": [
+        "instruction"
+      ]
+    },
+    {
+      "id": "seed-instruction-bs-0100",
+      "task_family": "instruction",
+      "prompt": "Explain how the water cycle works and why it is important for life on Earth.",
+      "expected": null,
+      "metadata": {
+        "domain": "earth_science",
+        "difficulty": "easy",
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-instruction-bs-0101",
+      "task_family": "instruction",
+      "prompt": "List five ways a small-scale farmer in a region with irregular rainfall can conserve soil moisture and protect crops during a dry spell.",
+      "expected": null,
+      "metadata": {
+        "domain": "agriculture",
+        "difficulty": "medium",
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-instruction-bs-0102",
+      "task_family": "instruction",
+      "prompt": "Write a short paragraph explaining the difference between a virus and a bacterium, and why that difference matters when a doctor chooses a treatment.",
+      "expected": null,
+      "metadata": {
+        "domain": "biology",
+        "difficulty": "medium",
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-instruction-bs-0103",
+      "task_family": "instruction",
+      "prompt": "Explain what a prime number is and describe a simple step-by-step method that anyone can use to check whether a given number is prime.",
+      "expected": null,
+      "metadata": {
+        "domain": "mathematics",
+        "difficulty": "easy",
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-instruction-bs-0104",
+      "task_family": "instruction",
+      "prompt": "Describe the main responsibilities of a local government body in a city or town, and explain how its decisions affect the daily lives of ordinary residents.",
+      "expected": null,
+      "metadata": {
+        "domain": "civics",
+        "difficulty": "medium",
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-instruction-bs-0105",
+      "task_family": "instruction",
+      "prompt": "How does the process of photosynthesis work, and what raw materials does a plant need to carry it out?",
+      "expected": null,
+      "metadata": {
+        "domain": "biology",
+        "difficulty": "easy",
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-instruction-bs-0106",
+      "task_family": "instruction",
+      "prompt": "Write a short explanation of what inflation is, what commonly causes it to rise, and how it affects the purchasing power of an ordinary family.",
+      "expected": null,
+      "metadata": {
+        "domain": "economics",
+        "difficulty": "medium",
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-instruction-bs-0107",
+      "task_family": "instruction",
+      "prompt": "Explain what a census is, why governments conduct it regularly, and give two examples of decisions that are made using census data.",
+      "expected": null,
+      "metadata": {
+        "domain": "civics",
+        "difficulty": "medium",
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-instruction-bs-0108",
+      "task_family": "instruction",
+      "prompt": "Explain how the kidneys filter waste from the blood and why drinking enough water each day supports this process.",
+      "expected": null,
+      "metadata": {
+        "domain": "biology",
+        "difficulty": "medium",
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-instruction-bs-0109",
+      "task_family": "instruction",
+      "prompt": "Describe how the Panchayati Raj system works in India, including what a gram panchayat is and what kinds of decisions it can make for a village.",
+      "expected": null,
+      "metadata": {
+        "domain": "civics",
+        "difficulty": "medium",
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-instruction-bs-0110",
+      "task_family": "instruction",
+      "prompt": "List five warning signs that a mobile application may be misusing a user's personal data, and briefly explain why each sign is concerning.",
+      "expected": null,
+      "metadata": {
+        "domain": "technology",
+        "difficulty": "medium",
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-instruction-bs-0111",
+      "task_family": "instruction",
+      "prompt": "Explain what photosynthesis is, naming the main inputs and outputs of the process and stating where in the plant it takes place.",
+      "expected": null,
+      "metadata": {
+        "domain": "biology",
+        "difficulty": "easy",
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-qa-bs-0048",
+      "task_family": "qa",
+      "prompt": "In which organ of the human body is insulin produced?",
+      "expected": "pancreas",
+      "metadata": {
+        "domain": "biology",
+        "difficulty": "medium",
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-qa-bs-0072",
+      "task_family": "qa",
+      "prompt": "How many planets are in our solar system?",
+      "expected": "8",
+      "metadata": {
+        "domain": "astronomy",
+        "difficulty": "easy",
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-qa-bs-0075",
+      "task_family": "qa",
+      "prompt": "What is the smallest prime number?",
+      "expected": "2",
+      "metadata": {
+        "domain": "mathematics",
+        "difficulty": "easy",
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-qa-bs-0077",
+      "task_family": "qa",
+      "prompt": "How many degrees are in a right angle?",
+      "expected": "90",
+      "metadata": {
+        "domain": "mathematics",
+        "difficulty": "easy",
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-qa-bs-0078",
+      "task_family": "qa",
+      "prompt": "What is the SI unit of electrical resistance?",
+      "expected": "ohm",
+      "metadata": {
+        "domain": "physics",
+        "difficulty": "medium",
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-qa-bs-0080",
+      "task_family": "qa",
+      "prompt": "How many pairs of chromosomes do humans have?",
+      "expected": "23",
+      "metadata": {
+        "domain": "biology",
+        "difficulty": "medium",
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-qa-bs-0082",
+      "task_family": "qa",
+      "prompt": "At what temperature in degrees Celsius does pure water boil at sea level?",
+      "expected": "100",
+      "metadata": {
+        "domain": "physics",
+        "difficulty": "easy",
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-qa-bs-0083",
+      "task_family": "qa",
+      "prompt": "Which river is generally considered the longest in India?",
+      "expected": "Ganga",
+      "metadata": {
+        "domain": "geography",
+        "difficulty": "medium",
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-qa-bs-0087",
+      "task_family": "qa",
+      "prompt": "In which city is the Taj Mahal located?",
+      "expected": "Agra",
+      "metadata": {
+        "domain": "history",
+        "difficulty": "easy",
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-qa-bs-0088",
+      "task_family": "qa",
+      "prompt": "How many chromosomes does a typical human cell contain?",
+      "expected": "46",
+      "metadata": {
+        "domain": "biology",
+        "difficulty": "medium",
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-qa-bs-0089",
+      "task_family": "qa",
+      "prompt": "What is the capital city of Japan?",
+      "expected": "Tokyo",
+      "metadata": {
+        "domain": "geography",
+        "difficulty": "easy",
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-qa-bs-0093",
+      "task_family": "qa",
+      "prompt": "What is the chemical symbol for iron?",
+      "expected": "Fe",
+      "metadata": {
+        "domain": "chemistry",
+        "difficulty": "medium",
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-qa-bs-0094",
+      "task_family": "qa",
+      "prompt": "How many teeth does a healthy adult human have, including wisdom teeth?",
+      "expected": "32",
+      "metadata": {
+        "domain": "biology",
+        "difficulty": "medium",
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-classification-bs-0091",
+      "task_family": "classification",
+      "prompt": "Heavy rainfall over three consecutive days has caused severe flooding in several districts of Assam. Roads are submerged and more than ten thousand residents have been moved to government relief camps. Classify the topic of this news report. Options: politics, sports, natural disaster, technology, business.",
+      "expected": "natural disaster",
+      "metadata": {
+        "domain": "topic",
+        "difficulty": "easy",
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": [
+        "politics",
+        "sports",
+        "natural disaster",
+        "technology",
+        "business"
+      ]
+    },
+    {
+      "id": "seed-classification-bs-0092",
+      "task_family": "classification",
+      "prompt": "The biryani was aromatic and generously spiced, and the portion sizes were large. However, we waited nearly an hour before anyone took our order and the tables were not clean when we arrived. Classify the overall sentiment of this restaurant review. Options: positive, neutral, negative.",
+      "expected": "neutral",
+      "metadata": {
+        "domain": "sentiment",
+        "difficulty": "medium",
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": [
+        "positive",
+        "neutral",
+        "negative"
+      ]
+    },
+    {
+      "id": "seed-classification-bs-0093",
+      "task_family": "classification",
+      "prompt": "When the final score was announced and our team had lost the championship match by a single point, I walked off the field without saying a word to anyone. Classify the primary emotion expressed in this statement. Options: anger, sadness, fear, joy, surprise.",
+      "expected": "sadness",
+      "metadata": {
+        "domain": "emotion",
+        "difficulty": "medium",
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": [
+        "anger",
+        "sadness",
+        "fear",
+        "joy",
+        "surprise"
+      ]
+    },
+    {
+      "id": "seed-classification-bs-0094",
+      "task_family": "classification",
+      "prompt": "Please be informed that your application has been received and is currently under review by the admissions committee. You will be contacted within fifteen business days regarding the outcome. Classify the register of this text. Options: formal, informal, neutral.",
+      "expected": "formal",
+      "metadata": {
+        "domain": "register",
+        "difficulty": "easy",
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": [
+        "formal",
+        "informal",
+        "neutral"
+      ]
+    },
+    {
+      "id": "seed-classification-bs-0095",
+      "task_family": "classification",
+      "prompt": "I placed an order for a pressure cooker two weeks ago and it still has not arrived. The tracking page has shown no updates since the day the order was placed. I want to know where my package is. Classify the intent of this customer support message. Options: complaint, product inquiry, cancellation request, compliment.",
+      "expected": "complaint",
+      "metadata": {
+        "domain": "intent",
+        "difficulty": "medium",
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": [
+        "complaint",
+        "product inquiry",
+        "cancellation request",
+        "compliment"
+      ]
+    },
+    {
+      "id": "seed-classification-bs-0096",
+      "task_family": "classification",
+      "prompt": "Install SolarBright panels on your rooftop and reduce your electricity bill by up to fifty percent. Each panel carries a ten-year performance warranty and installation is completely free this month. Classify the type of this text. Options: news article, scientific report, advertisement, personal diary entry.",
+      "expected": "advertisement",
+      "metadata": {
+        "domain": "text_type",
+        "difficulty": "easy",
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": [
+        "news article",
+        "scientific report",
+        "advertisement",
+        "personal diary entry"
+      ]
+    },
+    {
+      "id": "seed-classification-bs-0097",
+      "task_family": "classification",
+      "prompt": "For centuries, weavers in Varanasi have worked on handlooms using fine silk threads to create Banarasi sarees featuring intricate floral and geometric patterns. These sarees are widely worn at weddings and festivals across India and are considered a symbol of skilled craftsmanship. Classify the topic of this passage. Options: agriculture, textiles and craft, sports, medicine, transportation.",
+      "expected": "textiles and craft",
+      "metadata": {
+        "domain": "topic",
+        "difficulty": "easy",
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": [
+        "agriculture",
+        "textiles and craft",
+        "sports",
+        "medicine",
+        "transportation"
+      ]
+    },
+    {
+      "id": "seed-classification-bs-0098",
+      "task_family": "classification",
+      "prompt": "All organisms that photosynthesise produce oxygen. Neem trees photosynthesise. Therefore, neem trees produce oxygen. Classify the type of reasoning used in this argument. Options: deductive, inductive, abductive, analogical.",
+      "expected": "deductive",
+      "metadata": {
+        "domain": "reasoning",
+        "difficulty": "hard",
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": [
+        "deductive",
+        "inductive",
+        "abductive",
+        "analogical"
+      ]
+    },
+    {
+      "id": "seed-classification-bs-0099",
+      "task_family": "classification",
+      "prompt": "The kurta I ordered arrived with uneven stitching along the collar, and after the first wash the color faded to a dull grey. I would not recommend this to anyone. Classify the sentiment of this product review. Options: positive, neutral, negative.",
+      "expected": "negative",
+      "metadata": {
+        "domain": "sentiment",
+        "difficulty": "easy",
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": [
+        "positive",
+        "neutral",
+        "negative"
+      ]
+    },
+    {
+      "id": "seed-classification-bs-0100",
+      "task_family": "classification",
+      "prompt": "The state government has announced a new scheme to provide subsidized seeds and fertilizers to small farmers before the monsoon sowing season begins. Classify the topic of this news report. Options: agriculture, finance, sports, education, defense.",
+      "expected": "agriculture",
+      "metadata": {
+        "domain": "topic",
+        "difficulty": "easy",
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": [
+        "agriculture",
+        "finance",
+        "sports",
+        "education",
+        "defense"
+      ]
+    },
+    {
+      "id": "seed-classification-bs-0101",
+      "task_family": "classification",
+      "prompt": "All the lights in the building went out at midnight and I heard footsteps outside my door. I did not move from my bed until morning. Classify the primary emotion expressed in this passage. Options: joy, anger, fear, sadness, disgust.",
+      "expected": "fear",
+      "metadata": {
+        "domain": "emotion",
+        "difficulty": "easy",
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": [
+        "joy",
+        "anger",
+        "fear",
+        "sadness",
+        "disgust"
+      ]
+    },
+    {
+      "id": "seed-classification-bs-0102",
+      "task_family": "classification",
+      "prompt": "I placed an order for a pressure cooker eight days ago and it has still not arrived. Can you tell me the current status of my delivery? Classify the intent of this customer service message. Options: complaint, inquiry, cancellation, compliment, return-request.",
+      "expected": "inquiry",
+      "metadata": {
+        "domain": "intent",
+        "difficulty": "medium",
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": [
+        "complaint",
+        "inquiry",
+        "cancellation",
+        "compliment",
+        "return-request"
+      ]
+    },
+    {
+      "id": "seed-classification-bs-0103",
+      "task_family": "classification",
+      "prompt": "Dear Hiring Committee, I am writing to express my interest in the data analyst position listed on your careers page. I have three years of experience in statistical modeling and enclose my resume for your review. Classify the type of this document. Options: job-application, legal-notice, news-article, recipe, invoice.",
+      "expected": "job-application",
+      "metadata": {
+        "domain": "document-type",
+        "difficulty": "easy",
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": [
+        "job-application",
+        "legal-notice",
+        "news-article",
+        "recipe",
+        "invoice"
+      ]
+    },
+    {
+      "id": "seed-classification-bs-0104",
+      "task_family": "classification",
+      "prompt": "Idli is prepared from a fermented batter of rice and split black lentils that is poured into small round molds and cooked by steaming. It is widely eaten in the morning across South India, typically served with sambar and coconut chutney. Classify the meal category of the food described. Options: snack, main-course, dessert, breakfast-item, beverage.",
+      "expected": "breakfast-item",
+      "metadata": {
+        "domain": "food-category",
+        "difficulty": "easy",
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": [
+        "snack",
+        "main-course",
+        "dessert",
+        "breakfast-item",
+        "beverage"
+      ]
+    },
+    {
+      "id": "seed-classification-bs-0105",
+      "task_family": "classification",
+      "prompt": "A patient comes to the clinic reporting a mild headache rated 2 out of 10 in intensity, which began this morning. There is no fever, no vomiting, and no changes in vision or speech. Classify the urgency level of this clinical situation. Options: life-threatening, urgent, routine, non-medical.",
+      "expected": "routine",
+      "metadata": {
+        "domain": "medical-triage",
+        "difficulty": "medium",
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": [
+        "life-threatening",
+        "urgent",
+        "routine",
+        "non-medical"
+      ]
+    },
+    {
+      "id": "seed-classification-bs-0106",
+      "task_family": "classification",
+      "prompt": "The experiment was conducted under controlled temperature conditions of 25 degrees Celsius. Samples were centrifuged at 3000 rpm for 10 minutes and the supernatant was collected for analysis. Classify the language register of this text. Options: formal-technical, informal-conversational, literary, legal.",
+      "expected": "formal-technical",
+      "metadata": {
+        "domain": "register",
+        "difficulty": "medium",
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": [
+        "formal-technical",
+        "informal-conversational",
+        "literary",
+        "legal"
+      ]
+    },
+    {
+      "id": "seed-classification-bs-0107",
+      "task_family": "classification",
+      "prompt": "Farmers in the Deccan plateau are reporting a 30 percent decline in groundnut yield this season due to irregular rainfall during the kharif cropping period. Classify the topic of this report. Options: agriculture, transport, finance, public health, education.",
+      "expected": "agriculture",
+      "metadata": {
+        "domain": "topic",
+        "difficulty": "easy",
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": [
+        "agriculture",
+        "transport",
+        "finance",
+        "public health",
+        "education"
+      ]
+    },
+    {
+      "id": "seed-classification-bs-0108",
+      "task_family": "classification",
+      "prompt": "The mixer grinder stopped working after three uses. The blade broke during normal operation and the company refused to honor the warranty. Classify the sentiment of this product review. Options: positive, neutral, negative.",
+      "expected": "negative",
+      "metadata": {
+        "domain": "sentiment",
+        "difficulty": "easy",
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": [
+        "positive",
+        "neutral",
+        "negative"
+      ]
+    },
+    {
+      "id": "seed-classification-bs-0109",
+      "task_family": "classification",
+      "prompt": "I checked my board examination results this morning and found that I passed with distinction. My parents were in tears and kept embracing me. Classify the primary emotion expressed in this message. Options: sadness, anger, joy, fear, disgust.",
+      "expected": "joy",
+      "metadata": {
+        "domain": "emotion",
+        "difficulty": "easy",
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": [
+        "sadness",
+        "anger",
+        "joy",
+        "fear",
+        "disgust"
+      ]
+    },
+    {
+      "id": "seed-classification-bs-0110",
+      "task_family": "classification",
+      "prompt": "I am looking for a laptop with at least eight hours of battery life that can handle video editing work. What models would you suggest? Classify the intent of this customer message. Options: complaint, product inquiry, order tracking, return request, billing dispute.",
+      "expected": "product inquiry",
+      "metadata": {
+        "domain": "intent",
+        "difficulty": "medium",
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": [
+        "complaint",
+        "product inquiry",
+        "order tracking",
+        "return request",
+        "billing dispute"
+      ]
+    },
+    {
+      "id": "seed-summarization-bs-0074",
+      "task_family": "summarization",
+      "prompt": "Summarize in one sentence: Several major Indian cities have begun metering household water connections to reduce waste and fund infrastructure upgrades. Before metering, flat-rate billing gave households no incentive to fix leaks or limit consumption. Pilot programs in three cities showed that metered billing reduced average household water use by 22% within one year. City officials plan to extend the system to smaller towns as water scarcity worsens during summer months.",
+      "expected": "Indian cities that introduced household water meters reduced average consumption by 22% within a year, with officials planning to extend the system to smaller towns as seasonal water scarcity intensifies.",
+      "metadata": {
+        "domain": "urban infrastructure",
+        "difficulty": "easy",
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-summarization-bs-0075",
+      "task_family": "summarization",
+      "prompt": "Summarize in one sentence: Bangladesh's government introduced a stipend program that paid cash transfers to families who kept their daughters enrolled in secondary school. Within ten years, the female secondary enrollment rate rose from 33% to over 70%. Researchers found that girls who completed secondary school married later and had fewer children on average. The program is now cited as a model for improving female education in low-income countries.",
+      "expected": "Bangladesh's cash stipend for families keeping daughters in secondary school raised female enrollment from 33% to over 70% in a decade and is now regarded as a model for other low-income countries.",
+      "metadata": {
+        "domain": "education",
+        "difficulty": "easy",
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-summarization-bs-0076",
+      "task_family": "summarization",
+      "prompt": "Summarize in one sentence: Antibiotic resistance is estimated to cause 1.3 million deaths per year worldwide, making it one of the most serious threats to global public health. Overuse of antibiotics in both human medicine and livestock farming has accelerated the development of resistant bacterial strains. Researchers warn that without new drugs and stricter prescribing rules, common surgical procedures could become life-threatening due to untreatable infections. International health agencies are calling for coordinated global action to monitor antibiotic use and fund new treatments.",
+      "expected": "Overuse of antibiotics in medicine and farming has driven resistance to the point where drug-resistant infections kill an estimated 1.3 million people annually, prompting international calls for tighter prescribing rules and new drug development.",
+      "metadata": {
+        "domain": "public health",
+        "difficulty": "medium",
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-summarization-bs-0077",
+      "task_family": "summarization",
+      "prompt": "Summarize in one sentence: Mangrove forests along India's coastline have declined by nearly 40% over the past five decades due to land conversion for shrimp farming and urban development. Several state governments have launched replanting programs that have restored mangroves along hundreds of kilometers of shoreline. Mangroves act as natural barriers that absorb wave energy, protecting coastal villages from storm surges and cyclones. Analysis of the 2004 Indian Ocean tsunami showed that villages behind intact mangrove belts suffered significantly less damage than those where mangroves had been removed.",
+      "expected": "India's mangrove forests have shrunk by about 40% over fifty years, but state replanting programs are restoring coastal belts that demonstrably reduced damage in mangrove-sheltered villages during the 2004 tsunami.",
+      "metadata": {
+        "domain": "environment",
+        "difficulty": "medium",
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-summarization-bs-0078",
+      "task_family": "summarization",
+      "prompt": "Summarize in one sentence: India made it mandatory in 2024 for rice distributed through the public food distribution system to be fortified with iron, folic acid, and vitamin B12. Iron-deficiency anemia affects roughly half of all women and children in the country, reducing energy levels, cognitive function, and work capacity. Fortification adds a small cost per kilogram of rice but delivers essential nutrients to the hundreds of millions of people who receive government rations. Nutrition experts consider food fortification one of the most cost-effective methods for reducing hidden hunger at a large scale.",
+      "expected": "India mandated fortification of publicly distributed rice with iron, folic acid, and vitamin B12 to combat iron-deficiency anemia affecting roughly half of the country's women and children, with experts rating it among the most cost-effective tools against hidden hunger.",
+      "metadata": {
+        "domain": "nutrition",
+        "difficulty": "easy",
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-summarization-bs-0079",
+      "task_family": "summarization",
+      "prompt": "Summarize in one sentence: Agricultural agencies in South Asian countries are using satellite imagery to monitor crop health across millions of hectares without requiring field inspectors to visit every farm. Multispectral sensors measure light reflected by plant leaves, allowing analysts to detect drought stress, pest damage, and nutrient deficiencies weeks before they become visible to observers on the ground. Governments have used this data to pre-position emergency supplies such as fertilizers and pesticides before losses escalate. Early warning systems built on satellite data have reduced preventable crop losses by an estimated 15 to 25% in participating districts.",
+      "expected": "South Asian governments are using multispectral satellite imagery to detect crop stress weeks in advance and pre-position emergency inputs, reducing preventable crop losses by an estimated 15 to 25% in participating districts.",
+      "metadata": {
+        "domain": "agriculture",
+        "difficulty": "hard",
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-summarization-bs-0080",
+      "task_family": "summarization",
+      "prompt": "Summarize in one sentence: Groundwater levels across the Indo-Gangetic Plain, spanning parts of India, Pakistan, and Bangladesh, are declining at an accelerating rate because of intensive irrigation for rice and wheat cultivation. Data from NASA's GRACE gravity satellites estimate that the region is losing groundwater at more than 50 cubic kilometers per year. At current extraction rates, accessible aquifers in parts of Punjab and Haryana could be depleted within three decades, threatening the food security of hundreds of millions of people. Water conservation measures such as delayed rice transplanting and drip irrigation are being promoted but have not yet been adopted at the scale needed to slow the decline.",
+      "expected": "The Indo-Gangetic Plain is losing groundwater at over 50 cubic kilometers per year from intensive irrigation, and at current rates some aquifers in Punjab and Haryana could be exhausted within thirty years, placing the food security of hundreds of millions at risk.",
+      "metadata": {
+        "domain": "environment",
+        "difficulty": "hard",
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-summarization-bs-0081",
+      "task_family": "summarization",
+      "prompt": "Summarize in one sentence: A ten-year study tracking 15,000 adults in five countries found that people who walked at least 7,000 steps per day had a 50 to 70% lower risk of dying from cardiovascular disease compared to those who walked fewer than 3,000 steps. The benefit was consistent across age groups and was observed regardless of whether the walking was done in a single session or spread across the day. Researchers noted that the association held even after controlling for body weight and pre-existing health conditions. Public health officials say the findings support low-cost messaging campaigns that encourage daily walking rather than structured gym exercise.",
+      "expected": "A large ten-year study found that adults who walked at least 7,000 steps per day had a 50 to 70% lower risk of cardiovascular death than those who walked fewer than 3,000, regardless of how the steps were distributed throughout the day.",
+      "metadata": {
+        "domain": "public health",
+        "difficulty": "medium",
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-summarization-bs-0082",
+      "task_family": "summarization",
+      "prompt": "Summarize in one sentence: Iron-deficiency anemia affects approximately 40% of children under five in South Asia, making it one of the most prevalent nutritional disorders in the region. The condition slows cognitive development and reduces a child's ability to concentrate in school. Governments in India, Bangladesh, and Nepal have introduced iron-fortified flour and school meal programs to address the gap. Early data from these programs suggest that daily iron supplementation can restore hemoglobin levels to healthy ranges within three months.",
+      "expected": "Iron-deficiency anemia affects roughly 40% of South Asian children under five, and government-led fortification and supplementation programs in India, Bangladesh, and Nepal have shown the ability to restore healthy hemoglobin levels within three months.",
+      "metadata": {
+        "domain": "public health",
+        "difficulty": "easy",
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-summarization-bs-0083",
+      "task_family": "summarization",
+      "prompt": "Summarize in one sentence: Mangrove forests along India's coastline protect approximately 40 million people from storm surges and coastal flooding. These ecosystems also serve as nurseries for fish and crustaceans, supporting the livelihoods of hundreds of thousands of fishing communities. Over the past three decades, nearly a quarter of India's mangrove cover was lost to land reclamation and aquaculture expansion. Government-led replanting programs in Gujarat and Odisha have restored roughly 20,000 hectares since 2015.",
+      "expected": "India's mangrove forests protect 40 million coastal residents and support fishing livelihoods, but a quarter of the cover was lost over three decades, prompting replanting programs that have restored 20,000 hectares since 2015.",
+      "metadata": {
+        "domain": "environment",
+        "difficulty": "medium",
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-summarization-bs-0084",
+      "task_family": "summarization",
+      "prompt": "Summarize in one sentence: Post-harvest spoilage is estimated to destroy 15 to 20% of India's total food production each year. Lack of refrigerated storage and poor road connectivity in rural areas means that perishable crops often rot before reaching urban markets. Cold-chain infrastructure projects funded by the central government have built over 7,000 cold storage facilities across the country in the past decade. Studies show that farmers with access to cold storage receive prices up to 30% higher for their produce than those forced to sell immediately after harvest.",
+      "expected": "Post-harvest spoilage destroys up to 20% of India's annual food output, and a government-funded drive to build more than 7,000 cold storage facilities has helped farmers earn up to 30% more for their produce.",
+      "metadata": {
+        "domain": "agriculture",
+        "difficulty": "easy",
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-summarization-bs-0085",
+      "task_family": "summarization",
+      "prompt": "Summarize in one sentence: India surpassed 100 gigawatts of installed solar power capacity in 2024, making it one of the fastest nations to reach that milestone. The growth was driven by falling panel prices, government subsidies for rooftop installations, and large utility-scale solar parks in Rajasthan and Gujarat. Solar power now meets roughly 15% of India's total electricity demand during peak daylight hours. Analysts project that the country could reach 300 gigawatts of solar capacity by 2030 if current investment trends continue.",
+      "expected": "India crossed 100 gigawatts of solar capacity in 2024, powered by falling costs and large-scale parks, with analysts projecting the country could reach 300 gigawatts by 2030 at current investment rates.",
+      "metadata": {
+        "domain": "energy",
+        "difficulty": "medium",
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-summarization-bs-0086",
+      "task_family": "summarization",
+      "prompt": "Summarize in one sentence: The global population of snow leopards is estimated at fewer than 7,000 individuals, with a significant portion living across the high-altitude Himalayan ranges shared by India, Nepal, and Bhutan. Camera trap surveys conducted between 2020 and 2025 recorded a 5% increase in documented individuals across monitored zones in northern India, attributed to stricter anti-poaching patrols and community ranger programs. Conservationists warn, however, that climate change is altering snow leopard habitat at a rate that anti-poaching measures alone cannot offset. The species also faces continued pressure from poaching and declining prey populations as pastoralists expand into alpine zones.",
+      "expected": "Snow leopard numbers across the Himalayas showed a 5% increase in recent surveys due to stronger anti-poaching efforts, but conservationists warn that climate-driven habitat loss poses a threat that enforcement alone cannot address.",
+      "metadata": {
+        "domain": "wildlife conservation",
+        "difficulty": "hard",
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-summarization-bs-0087",
+      "task_family": "summarization",
+      "prompt": "Summarize in one sentence: Access to safely managed drinking water remains limited for an estimated 163 million people in India, most of them in rural areas. Contaminated water is a leading cause of diarrheal diseases, which kill tens of thousands of children under five in the country each year. The government's Jal Jeevan Mission, launched in 2019, aims to deliver piped tap water to every rural household. By mid-2023, the program had connected approximately 60% of rural homes to a piped water supply, up from just 17% at the start of the initiative.",
+      "expected": "India's Jal Jeevan Mission raised rural piped-water coverage from 17% in 2019 to 60% by mid-2023, working to end a contaminated-water crisis that kills tens of thousands of children each year.",
+      "metadata": {
+        "domain": "public health",
+        "difficulty": "easy",
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-summarization-bs-0088",
+      "task_family": "summarization",
+      "prompt": "Summarize in one sentence: Rapid expansion of metro rail networks in Indian cities has shifted millions of daily commuters away from private vehicles. Delhi's metro system currently carries more than six million passengers on weekdays and is credited with removing an estimated 390,000 tonnes of carbon dioxide from the city's atmosphere each year. Comparable expansions are underway in Bengaluru, Hyderabad, and Pune. Urban planners cite reduced road congestion and improved air quality as the primary benefits of sustained metro investment.",
+      "expected": "India's expanding metro rail networks, led by Delhi's system carrying six million daily riders and cutting 390,000 tonnes of annual emissions, are easing urban congestion and air pollution while similar projects advance in several other major cities.",
+      "metadata": {
+        "domain": "urban infrastructure",
+        "difficulty": "medium",
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-summarization-bs-0089",
+      "task_family": "summarization",
+      "prompt": "Summarize in one sentence: Antibiotic resistance is now recognized as one of the most serious threats to global public health, causing an estimated 1.3 million deaths directly attributable to resistant infections each year. Overuse of antibiotics in both human medicine and livestock farming accelerates the development of resistant bacterial strains. The World Health Organization has urged countries to restrict over-the-counter antibiotic sales and reduce prophylactic antibiotic use in agriculture. Several nations in South and Southeast Asia have introduced national action plans to monitor antibiotic consumption and strengthen laboratory surveillance of resistant pathogens.",
+      "expected": "Antibiotic resistance kills an estimated 1.3 million people annually, driven largely by overuse in medicine and farming, prompting the WHO and several Asian nations to introduce restrictions on antibiotic sales and agriculture-sector use.",
+      "metadata": {
+        "domain": "public health",
+        "difficulty": "medium",
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-summarization-bs-0090",
+      "task_family": "summarization",
+      "prompt": "Summarize in one sentence: Delhi recorded some of its worst air quality during winter 2023, with fine particulate matter levels exceeding safe limits by more than ten times on several consecutive days. Government authorities attributed the pollution primarily to crop residue burning in neighboring states, vehicle emissions, and construction dust. Schools in the capital were closed for several days as a precaution, and hospitals reported a sharp rise in patients with respiratory complaints. Emergency measures including restrictions on certain vehicle categories and temporary halts on construction activity were imposed to reduce emissions.",
+      "expected": "Delhi suffered severe air pollution in winter 2023, driven by crop burning, vehicle emissions, and construction dust, prompting school closures, a surge in hospital cases, and emergency restrictions on vehicles and construction.",
+      "metadata": {
+        "domain": "environment",
+        "difficulty": "medium",
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-summarization-bs-0091",
+      "task_family": "summarization",
+      "prompt": "Summarize in one sentence: Bangladesh raised its primary school enrollment rate from roughly 60% in 2000 to over 98% by 2022, making it one of the fastest expansions of basic education access among low-income countries. The government introduced stipends for girls attending school, which helped close the gender gap in primary enrollment. Free textbook distribution, reaching more than 40 million students annually, removed a major financial barrier for low-income families. International development organizations now cite Bangladesh as a reference model for expanding access to basic education.",
+      "expected": "Bangladesh achieved near-universal primary school enrollment by 2022, rising from 60% in 2000, through girl attendance stipends and annual free textbook distribution to over 40 million students.",
+      "metadata": {
+        "domain": "education",
+        "difficulty": "easy",
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-summarization-bs-0092",
+      "task_family": "summarization",
+      "prompt": "Summarize in one sentence: A five-year survey of coral reefs across the Indian Ocean found that approximately 35% of surveyed reefs had experienced significant bleaching events caused by rising sea surface temperatures. Bleaching occurs when elevated water temperatures cause corals to expel the symbiotic algae that provide them nutrients and pigmentation, leaving them weakened and vulnerable to disease. Researchers noted that reefs near coastlines with heavy agricultural runoff recovered more slowly than offshore reefs following bleaching events. The study recommends combining global greenhouse gas emission reductions with local controls on nutrient runoff to improve reef survival prospects.",
+      "expected": "A five-year Indian Ocean survey found that 35% of reefs had bleached due to rising temperatures, with agricultural runoff slowing coastal reef recovery, prompting researchers to recommend both emission cuts and local pollution controls.",
+      "metadata": {
+        "domain": "marine biology",
+        "difficulty": "medium",
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-summarization-bs-0093",
+      "task_family": "summarization",
+      "prompt": "Summarize in one sentence: Indian Railways completed the electrification of its entire broad-gauge network by 2023, covering more than 60,000 kilometers of track and eliminating diesel traction on the main lines that carry the majority of passenger and freight traffic. The project required approximately eight years of work and investment exceeding one trillion rupees. Electric traction reduces fuel costs, enables higher train speeds, and produces significantly lower carbon emissions per kilometer traveled compared to diesel locomotives. The transition is projected to reduce the railway system's annual carbon dioxide emissions by roughly 45 million tonnes.",
+      "expected": "Indian Railways electrified its entire broad-gauge network of over 60,000 km by 2023, a project expected to cut annual CO₂ emissions by roughly 45 million tonnes while lowering fuel costs and enabling higher speeds.",
+      "metadata": {
+        "domain": "infrastructure",
+        "difficulty": "easy",
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-translation-bs-0090",
+      "task_family": "translation",
+      "prompt": "Translate to the target language: 'Good morning. My name is Priya. I am glad to meet you.'",
+      "expected": null,
+      "metadata": {
+        "register": "neutral",
+        "domain": "greeting",
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-translation-bs-0091",
+      "task_family": "translation",
+      "prompt": "Translate to the target language: 'The train to Mumbai departs from platform four at six in the morning.'",
+      "expected": null,
+      "metadata": {
+        "register": "neutral",
+        "domain": "travel",
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-translation-bs-0092",
+      "task_family": "translation",
+      "prompt": "Translate to the target language: 'Please take this medicine twice a day, once after breakfast and once after dinner.'",
+      "expected": null,
+      "metadata": {
+        "register": "neutral",
+        "domain": "health",
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-translation-bs-0093",
+      "task_family": "translation",
+      "prompt": "Translate to the target language: 'All employees are required to attend the training session on Monday morning.'",
+      "expected": null,
+      "metadata": {
+        "register": "formal",
+        "domain": "work",
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-translation-bs-0094",
+      "task_family": "translation",
+      "prompt": "Translate to the target language: 'The government hospital is at the end of this road, near the old bus stand.'",
+      "expected": null,
+      "metadata": {
+        "register": "neutral",
+        "domain": "directions",
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-translation-bs-0095",
+      "task_family": "translation",
+      "prompt": "Translate to the target language: 'We are celebrating my grandmother's eightieth birthday next Sunday.'",
+      "expected": null,
+      "metadata": {
+        "register": "informal",
+        "domain": "family",
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-translation-bs-0096",
+      "task_family": "translation",
+      "prompt": "Translate to the target language: 'Students must return all library books before the end of the school term.'",
+      "expected": null,
+      "metadata": {
+        "register": "formal",
+        "domain": "education",
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-translation-bs-0097",
+      "task_family": "translation",
+      "prompt": "Translate to the target language: 'The train to Chennai departs from platform number four at six in the morning.'",
+      "expected": null,
+      "metadata": {
+        "register": "neutral",
+        "domain": "travel",
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-translation-bs-0098",
+      "task_family": "translation",
+      "prompt": "Translate to the target language: 'You should drink at least eight glasses of water every day.'",
+      "expected": null,
+      "metadata": {
+        "register": "neutral",
+        "domain": "health",
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-translation-bs-0099",
+      "task_family": "translation",
+      "prompt": "Translate to the target language: 'Please submit your report before the end of the working day.'",
+      "expected": null,
+      "metadata": {
+        "register": "formal",
+        "domain": "work",
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-translation-bs-0100",
+      "task_family": "translation",
+      "prompt": "Translate to the target language: 'The hospital is behind the post office, about two kilometers from here.'",
+      "expected": null,
+      "metadata": {
+        "register": "neutral",
+        "domain": "directions",
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-translation-bs-0102",
+      "task_family": "translation",
+      "prompt": "Translate to the target language: 'Could you please bring a glass of water and the menu?'",
+      "expected": null,
+      "metadata": {
+        "register": "polite",
+        "domain": "restaurant",
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-translation-bs-0103",
+      "task_family": "translation",
+      "prompt": "Translate to the target language: 'Good morning! Are all the family members at home doing well?'",
+      "expected": null,
+      "metadata": {
+        "register": "informal",
+        "domain": "greeting",
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-translation-bs-0104",
+      "task_family": "translation",
+      "prompt": "Translate to the target language: 'How much does one kilogram of onions cost today?'",
+      "expected": null,
+      "metadata": {
+        "register": "neutral",
+        "domain": "market",
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-translation-bs-0105",
+      "task_family": "translation",
+      "prompt": "Translate to the target language: 'The doctor has advised complete bed rest for at least three days.'",
+      "expected": null,
+      "metadata": {
+        "register": "formal",
+        "domain": "health",
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-translation-bs-0106",
+      "task_family": "translation",
+      "prompt": "Translate to the target language: 'Please submit your application form before Friday afternoon.'",
+      "expected": null,
+      "metadata": {
+        "register": "formal",
+        "domain": "work",
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-translation-bs-0107",
+      "task_family": "translation",
+      "prompt": "Translate to the target language: 'The post office is next to the government school, on the main road.'",
+      "expected": null,
+      "metadata": {
+        "register": "neutral",
+        "domain": "directions",
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-translation-bs-0108",
+      "task_family": "translation",
+      "prompt": "Translate to the target language: 'My child has not eaten anything since this morning. I am very worried.'",
+      "expected": null,
+      "metadata": {
+        "register": "informal",
+        "domain": "health",
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-translation-bs-0109",
+      "task_family": "translation",
+      "prompt": "Translate to the target language: 'We will arrive at the station by six o'clock in the evening. Please come to receive us.'",
+      "expected": null,
+      "metadata": {
+        "register": "informal",
+        "domain": "travel",
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-reasoning-bs-0072",
+      "task_family": "reasoning",
+      "prompt": "Preethi deposits ₹8,000 in a bank that offers simple interest at 6% per annum. How much total interest will she earn after 4 years, and what will be the total amount in her account at the end of 4 years? Show your reasoning step by step.",
+      "expected": "Total interest = ₹1,920; total amount = ₹9,920 (SI = P × R × T ÷ 100 = 8000 × 6 × 4 ÷ 100 = 1,920; total amount = 8,000 + 1,920 = 9,920).",
+      "metadata": {
+        "domain": "finance",
+        "difficulty": "easy",
+        "steps": 2,
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-reasoning-bs-0073",
+      "task_family": "reasoning",
+      "prompt": "Pipe A can fill a water tank in 8 hours. Pipe B can fill the same tank in 12 hours. If both pipes are opened at the same time, how many hours and minutes will it take to fill the tank completely? Show your reasoning step by step.",
+      "expected": "4 hours 48 minutes (Pipe A's rate = 1/8 tank per hour; Pipe B's rate = 1/12 tank per hour; combined rate = 1/8 + 1/12 = 3/24 + 2/24 = 5/24 tank per hour; time = 1 ÷ (5/24) = 24/5 = 4.8 hours = 4 hours 48 minutes).",
+      "metadata": {
+        "domain": "math",
+        "difficulty": "medium",
+        "steps": 3,
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-reasoning-bs-0074",
+      "task_family": "reasoning",
+      "prompt": "Find the smallest positive integer that leaves a remainder of 3 when divided by 5, and a remainder of 5 when divided by 7. Show your reasoning step by step.",
+      "expected": "33 (numbers satisfying n ≡ 3 mod 5: 3, 8, 13, 18, 23, 28, 33, …; numbers satisfying n ≡ 5 mod 7: 5, 12, 19, 26, 33, …; the smallest common value is 33; verify: 33 ÷ 5 = 6 remainder 3 ✓, 33 ÷ 7 = 4 remainder 5 ✓).",
+      "metadata": {
+        "domain": "number_theory",
+        "difficulty": "medium",
+        "steps": 3,
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-reasoning-bs-0075",
+      "task_family": "reasoning",
+      "prompt": "A shopkeeper buys 60 mangoes for ₹300 and sells them at ₹25 for every 4 mangoes. What is the profit percentage? Show your reasoning step by step.",
+      "expected": "25% profit (cost price per mango = 300 ÷ 60 = ₹5; selling price per mango = 25 ÷ 4 = ₹6.25; profit per mango = 6.25 − 5 = ₹1.25; profit percentage = (1.25 ÷ 5) × 100 = 25%).",
+      "metadata": {
+        "domain": "commerce",
+        "difficulty": "easy",
+        "steps": 3,
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-reasoning-bs-0076",
+      "task_family": "reasoning",
+      "prompt": "A rectangular park is 30 meters long and 20 meters wide. A uniform path 2 meters wide runs along the inside of the entire boundary of the park. What is the area of the path in square meters? Show your reasoning step by step.",
+      "expected": "184 square meters (outer area = 30 × 20 = 600 sq m; removing 2 m on each side gives inner dimensions (30 − 4) × (20 − 4) = 26 × 16 = 416 sq m; path area = 600 − 416 = 184 sq m).",
+      "metadata": {
+        "domain": "geometry",
+        "difficulty": "medium",
+        "steps": 3,
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-reasoning-bs-0077",
+      "task_family": "reasoning",
+      "prompt": "A box contains 5 red marbles, 4 blue marbles, and 3 green marbles. Two marbles are drawn at random without replacement. What is the probability that both marbles are the same color? Show your reasoning step by step.",
+      "expected": "19/66 (total ways to choose 2 from 12 = C(12,2) = 66; same-color pairs: both red = C(5,2) = 10, both blue = C(4,2) = 6, both green = C(3,2) = 3; total favorable outcomes = 10 + 6 + 3 = 19; probability = 19/66).",
+      "metadata": {
+        "domain": "probability",
+        "difficulty": "medium",
+        "steps": 4,
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-reasoning-bs-0078",
+      "task_family": "reasoning",
+      "prompt": "Suresh invests ₹5,000 at an annual compound interest rate of 20%, compounded yearly. What is the total amount at the end of 2 years? Show your reasoning step by step.",
+      "expected": "₹7,200 (amount = P × (1 + r/100)^n = 5,000 × (1.20)^2 = 5,000 × 1.44 = ₹7,200; interest earned = 7,200 − 5,000 = ₹2,200).",
+      "metadata": {
+        "domain": "finance",
+        "difficulty": "medium",
+        "steps": 2,
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-reasoning-bs-0079",
+      "task_family": "reasoning",
+      "prompt": "A teacher mixes 30 mL of a 40% salt solution with 20 mL of a 70% salt solution. What is the percentage concentration of salt in the resulting mixture? Show your reasoning step by step.",
+      "expected": "52% (salt from first solution = 30 × 0.40 = 12 mL; salt from second solution = 20 × 0.70 = 14 mL; total salt = 12 + 14 = 26 mL; total volume = 30 + 20 = 50 mL; concentration = 26 ÷ 50 = 0.52 = 52%).",
+      "metadata": {
+        "domain": "science",
+        "difficulty": "medium",
+        "steps": 4,
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-reasoning-bs-0080",
+      "task_family": "reasoning",
+      "prompt": "A shopkeeper wants to mix two varieties of rice: one costs ₹40 per kg and the other costs ₹70 per kg. He wants to prepare a 60 kg mixture that costs ₹50 per kg. How many kilograms of each variety should he use? Show your reasoning step by step.",
+      "expected": "40 kg of the ₹40/kg variety and 20 kg of the ₹70/kg variety (let x = kg of the cheaper rice; cost equation: 40x + 70(60 − x) = 50 × 60; 40x + 4200 − 70x = 3000; −30x = −1200; x = 40; costlier variety = 60 − 40 = 20 kg).",
+      "metadata": {
+        "domain": "math",
+        "difficulty": "medium",
+        "steps": 4,
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-reasoning-bs-0081",
+      "task_family": "reasoning",
+      "prompt": "The perimeter of a rectangle is 56 cm. The length is 4 cm more than the width. What is the area of the rectangle in square centimetres? Show your reasoning step by step.",
+      "expected": "192 sq cm (let width = w cm; then length = (w + 4) cm; perimeter equation: 2(w + w + 4) = 56 → 4w + 8 = 56 → 4w = 48 → w = 12 cm; length = 16 cm; area = 12 × 16 = 192 sq cm).",
+      "metadata": {
+        "domain": "geometry",
+        "difficulty": "easy",
+        "steps": 3,
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-reasoning-bs-0082",
+      "task_family": "reasoning",
+      "prompt": "Pipe A can fill a water tank in 4 hours. Pipe B can empty the same full tank in 6 hours. If the tank is initially empty and both pipes are opened at the same time, how many hours will it take to fill the tank completely? Show your reasoning step by step.",
+      "expected": "12 hours (Pipe A fills at rate 1/4 tank per hour; Pipe B empties at rate 1/6 tank per hour; net fill rate = 1/4 − 1/6 = 3/12 − 2/12 = 1/12 tank per hour; time to fill = 1 ÷ (1/12) = 12 hours).",
+      "metadata": {
+        "domain": "math",
+        "difficulty": "medium",
+        "steps": 3,
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-reasoning-bs-0083",
+      "task_family": "reasoning",
+      "prompt": "In a school of 200 students, 120 study Hindi, 90 study Tamil, and 40 study both Hindi and Tamil. How many students study neither Hindi nor Tamil? Show your reasoning step by step.",
+      "expected": "30 students (by the inclusion-exclusion principle, students studying at least one language = 120 + 90 − 40 = 170; students studying neither = 200 − 170 = 30).",
+      "metadata": {
+        "domain": "logic",
+        "difficulty": "easy",
+        "steps": 2,
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-reasoning-bs-0084",
+      "task_family": "reasoning",
+      "prompt": "Two buses depart simultaneously from two cities 360 km apart and travel toward each other. Bus A travels at 80 km/h and Bus B travels at 100 km/h. After how many hours do they meet, and how far is the meeting point from the city where Bus A started? Show your reasoning step by step.",
+      "expected": "They meet after 2 hours, 160 km from Bus A's starting city (combined closing speed = 80 + 100 = 180 km/h; time to meet = 360 ÷ 180 = 2 hours; distance covered by Bus A = 80 × 2 = 160 km; verification: Bus B covers 100 × 2 = 200 km; 160 + 200 = 360 km ✓).",
+      "metadata": {
+        "domain": "math",
+        "difficulty": "medium",
+        "steps": 3,
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-reasoning-bs-0085",
+      "task_family": "reasoning",
+      "prompt": "Kavya invests ₹25,000 in a bank account that offers 8% per annum compound interest, compounded annually. What is the total amount in her account after 2 years? Show your reasoning step by step.",
+      "expected": "₹29,160 (after Year 1: 25,000 × 1.08 = 27,000; after Year 2: 27,000 × 1.08 = 29,160; equivalently, A = 25,000 × (1.08)² = 25,000 × 1.1664 = 29,160).",
+      "metadata": {
+        "domain": "finance",
+        "difficulty": "medium",
+        "steps": 2,
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-reasoning-bs-0086",
+      "task_family": "reasoning",
+      "prompt": "Five athletes — Pavan, Qasim, Radha, Sunita, and Tariq — finished a race in five distinct positions (1st through 5th). Use the following clues to find the finishing order:\n• Sunita finished last.\n• Qasim finished 4th.\n• Radha finished ahead of Qasim.\n• Pavan finished in the position immediately after Tariq.\n• Pavan did not finish 3rd.\nList all five athletes from 1st to 5th and show your reasoning step by step.",
+      "expected": "1st Tariq, 2nd Pavan, 3rd Radha, 4th Qasim, 5th Sunita (Sunita = 5th and Qasim = 4th from direct clues; remaining positions {1, 2, 3} go to Pavan, Radha, and Tariq; Pavan is immediately after Tariq, so (Tariq, Pavan) must be a consecutive pair — the only consecutive pairs possible from {1, 2, 3} are (1, 2) and (2, 3); if (2, 3) then Pavan = 3rd, which violates the fifth clue; therefore Tariq = 1st and Pavan = 2nd, leaving Radha = 3rd; verification: Radha (3rd) is ahead of Qasim (4th) ✓).",
+      "metadata": {
+        "domain": "logic",
+        "difficulty": "medium",
+        "steps": 4,
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-reasoning-bs-0087",
+      "task_family": "reasoning",
+      "prompt": "In a town, 60% of the residents are women and 40% are men. 20% of the women and 15% of the men own a car. If 2,700 residents own a car in total, what is the total population of the town? Show your reasoning step by step.",
+      "expected": "15,000 residents (let total population = P; women = 0.6P, men = 0.4P; total car owners = 0.20 × 0.6P + 0.15 × 0.4P = 0.12P + 0.06P = 0.18P; setting 0.18P = 2,700 gives P = 2,700 ÷ 0.18 = 15,000; verification: 9,000 women × 20% + 6,000 men × 15% = 1,800 + 900 = 2,700 ✓).",
+      "metadata": {
+        "domain": "math",
+        "difficulty": "medium",
+        "steps": 4,
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-reasoning-bs-0088",
+      "task_family": "reasoning",
+      "prompt": "Priya can fill a water tank in 3 hours. Deepak can fill the same tank in 6 hours. A leak in the tank can empty the full tank in 12 hours. If both Priya and Deepak work together with the leak open, how many hours will it take to fill the tank? Show your reasoning step by step.",
+      "expected": "2 hours 24 minutes (Priya's rate = 1/3 tank per hour; Deepak's rate = 1/6 tank per hour; leak rate = −1/12 tank per hour; net filling rate = 1/3 + 1/6 − 1/12 = 4/12 + 2/12 − 1/12 = 5/12 tank per hour; time = 1 ÷ (5/12) = 12/5 = 2.4 hours = 2 hours 24 minutes).",
+      "metadata": {
+        "domain": "math",
+        "difficulty": "medium",
+        "steps": 4,
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-reasoning-bs-0089",
+      "task_family": "reasoning",
+      "prompt": "A shopkeeper buys a bicycle for ₹3,500 and spends ₹500 on repairs before selling it. He then sells the bicycle for ₹5,000. What is his profit percentage? Show your reasoning step by step.",
+      "expected": "25% (total cost price = ₹3,500 + ₹500 = ₹4,000; profit = ₹5,000 − ₹4,000 = ₹1,000; profit percentage = (1,000 ÷ 4,000) × 100 = 25%).",
+      "metadata": {
+        "domain": "commerce",
+        "difficulty": "easy",
+        "steps": 2,
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-reasoning-bs-0090",
+      "task_family": "reasoning",
+      "prompt": "Five runners — Amar, Bina, Chetan, Divya, and Esha — completed a race. Amar finished before Chetan. Chetan finished before Divya. Bina finished after Divya. Esha finished last. What was the finishing order from first to last? Show your reasoning step by step.",
+      "expected": "1st: Amar, 2nd: Chetan, 3rd: Divya, 4th: Bina, 5th: Esha (the clues form a chain: Amar before Chetan, Chetan before Divya, Divya before Bina; placing them in that sequence gives positions 1–4; Esha is 5th as she finished last).",
+      "metadata": {
+        "domain": "logic",
+        "difficulty": "medium",
+        "steps": 3,
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-reasoning-bs-0091",
+      "task_family": "reasoning",
+      "prompt": "Two trains depart at the same time from two stations that are 1,200 km apart and travel toward each other. Train A travels at 80 km/h and Train B travels at 70 km/h. After how many hours will they meet, and how far from Train A's starting station will the meeting point be? Show your reasoning step by step.",
+      "expected": "They meet after 8 hours, 640 km from Train A's starting station (combined closing speed = 80 + 70 = 150 km/h; time to meet = 1,200 ÷ 150 = 8 hours; distance covered by Train A = 80 × 8 = 640 km).",
+      "metadata": {
+        "domain": "physics",
+        "difficulty": "medium",
+        "steps": 3,
+        "source": "bootstrap:claude-cli:sonnet"
+      },
+      "labels": null
+    }
+  ]
+}
