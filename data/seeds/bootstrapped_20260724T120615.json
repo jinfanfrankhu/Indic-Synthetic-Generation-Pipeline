@@ -1,0 +1,2016 @@
+{
+  "seeds": [
+    {
+      "id": "seed-qa-bs-0071",
+      "task_family": "qa",
+      "prompt": "In which Indian state did the classical dance form Bharatanatyam originate?",
+      "expected": "Tamil Nadu",
+      "metadata": {
+        "domain": "indian_classical_arts",
+        "difficulty": "easy",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "Indian classical arts, music, dance forms, and their regional origins"
+      },
+      "labels": [
+        "india",
+        "classical_dance",
+        "geography"
+      ]
+    },
+    {
+      "id": "seed-qa-bs-0091",
+      "task_family": "qa",
+      "prompt": "How many beats does the Hindustani classical music tala known as Teentaal contain?",
+      "expected": "16",
+      "metadata": {
+        "domain": "indian_classical_arts",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "Indian classical arts, music, dance forms, and their regional origins"
+      },
+      "labels": [
+        "india",
+        "classical_music",
+        "rhythm"
+      ]
+    },
+    {
+      "id": "seed-qa-bs-0095",
+      "task_family": "qa",
+      "prompt": "Who is the attributed author of the Natyashastra, the ancient Sanskrit treatise on Indian performing arts?",
+      "expected": "Bharata Muni",
+      "metadata": {
+        "domain": "indian_classical_arts",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "Indian classical arts, music, dance forms, and their regional origins"
+      },
+      "labels": [
+        "india",
+        "classical_arts",
+        "ancient_texts"
+      ]
+    },
+    {
+      "id": "seed-qa-bs-0097",
+      "task_family": "qa",
+      "prompt": "Which Indian classical dance form is traditionally performed exclusively by women and originates from Kerala?",
+      "expected": "Mohiniyattam",
+      "metadata": {
+        "domain": "indian_classical_arts",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "Indian classical arts, music, dance forms, and their regional origins"
+      },
+      "labels": [
+        "india",
+        "classical_dance",
+        "kerala"
+      ]
+    },
+    {
+      "id": "seed-qa-bs-0098",
+      "task_family": "qa",
+      "prompt": "The classical dance form Sattriya was introduced by the saint-scholar Srimanta Shankardev in which Indian state?",
+      "expected": "Assam",
+      "metadata": {
+        "domain": "indian_classical_arts",
+        "difficulty": "hard",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "Indian classical arts, music, dance forms, and their regional origins"
+      },
+      "labels": [
+        "india",
+        "classical_dance",
+        "geography"
+      ]
+    },
+    {
+      "id": "seed-qa-bs-0099",
+      "task_family": "qa",
+      "prompt": "The ten-day harvest festival of Onam is the official state festival of which Indian state?",
+      "expected": "Kerala",
+      "metadata": {
+        "domain": "culture",
+        "difficulty": "easy",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "Indian festivals, cuisine, and their states/regions of origin"
+      },
+      "labels": [
+        "india",
+        "festivals",
+        "harvest",
+        "south-india"
+      ]
+    },
+    {
+      "id": "seed-qa-bs-0103",
+      "task_family": "qa",
+      "prompt": "Dhokla, a steamed snack made from fermented chickpea flour batter, is a traditional dish from which Indian state?",
+      "expected": "Gujarat",
+      "metadata": {
+        "domain": "culture",
+        "difficulty": "easy",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "Indian festivals, cuisine, and their states/regions of origin"
+      },
+      "labels": [
+        "india",
+        "cuisine",
+        "snacks",
+        "west-india"
+      ]
+    },
+    {
+      "id": "seed-qa-bs-0108",
+      "task_family": "qa",
+      "prompt": "The harvest festival of Pongal, during which a sweet rice dish of the same name is prepared, is most closely associated with which Indian state?",
+      "expected": "Tamil Nadu",
+      "metadata": {
+        "domain": "culture",
+        "difficulty": "easy",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "Indian festivals, cuisine, and their states/regions of origin"
+      },
+      "labels": [
+        "india",
+        "festivals",
+        "harvest",
+        "south-india"
+      ]
+    },
+    {
+      "id": "seed-qa-bs-0109",
+      "task_family": "qa",
+      "prompt": "Bihu, celebrated three times a year and marking the Assamese New Year, is the principal festival of which Indian state?",
+      "expected": "Assam",
+      "metadata": {
+        "domain": "culture",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "Indian festivals, cuisine, and their states/regions of origin"
+      },
+      "labels": [
+        "india",
+        "festivals",
+        "northeast-india"
+      ]
+    },
+    {
+      "id": "seed-qa-bs-0110",
+      "task_family": "qa",
+      "prompt": "Modak, a steamed dumpling filled with coconut and jaggery regarded as the favorite sweet of Lord Ganesha, is a traditional confection from which Indian state?",
+      "expected": "Maharashtra",
+      "metadata": {
+        "domain": "culture",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "Indian festivals, cuisine, and their states/regions of origin"
+      },
+      "labels": [
+        "india",
+        "cuisine",
+        "sweets",
+        "west-india"
+      ]
+    },
+    {
+      "id": "seed-qa-bs-0111",
+      "task_family": "qa",
+      "prompt": "What is the name of the Brahmaputra River as it flows through Tibet before entering India?",
+      "expected": "Yarlung Tsangpo",
+      "metadata": {
+        "domain": "geography",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "world and Indian geography beyond capitals — rivers, mountain ranges, deserts, biodiversity hotspots"
+      },
+      "labels": [
+        "geography",
+        "rivers",
+        "India",
+        "Tibet"
+      ]
+    },
+    {
+      "id": "seed-qa-bs-0112",
+      "task_family": "qa",
+      "prompt": "By what traditional name are the Western Ghats mountains of India also known?",
+      "expected": "Sahyadri",
+      "metadata": {
+        "domain": "geography",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "world and Indian geography beyond capitals — rivers, mountain ranges, deserts, biodiversity hotspots"
+      },
+      "labels": [
+        "geography",
+        "mountain ranges",
+        "India",
+        "Western Ghats"
+      ]
+    },
+    {
+      "id": "seed-qa-bs-0113",
+      "task_family": "qa",
+      "prompt": "The Gobi Desert is located in Mongolia and which other country?",
+      "expected": "China",
+      "metadata": {
+        "domain": "geography",
+        "difficulty": "easy",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "world and Indian geography beyond capitals — rivers, mountain ranges, deserts, biodiversity hotspots"
+      },
+      "labels": [
+        "geography",
+        "deserts",
+        "Asia",
+        "Gobi"
+      ]
+    },
+    {
+      "id": "seed-qa-bs-0114",
+      "task_family": "qa",
+      "prompt": "The Western Ghats biodiversity hotspot is shared between India and which other country?",
+      "expected": "Sri Lanka",
+      "metadata": {
+        "domain": "geography",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "world and Indian geography beyond capitals — rivers, mountain ranges, deserts, biodiversity hotspots"
+      },
+      "labels": [
+        "geography",
+        "biodiversity",
+        "India",
+        "conservation"
+      ]
+    },
+    {
+      "id": "seed-qa-bs-0115",
+      "task_family": "qa",
+      "prompt": "What is the name of the world's largest mangrove forest, located in the delta of the Ganges and Brahmaputra rivers?",
+      "expected": "Sundarbans",
+      "metadata": {
+        "domain": "geography",
+        "difficulty": "easy",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "world and Indian geography beyond capitals — rivers, mountain ranges, deserts, biodiversity hotspots"
+      },
+      "labels": [
+        "geography",
+        "rivers",
+        "India",
+        "Bangladesh",
+        "biodiversity",
+        "mangroves"
+      ]
+    },
+    {
+      "id": "seed-qa-bs-0116",
+      "task_family": "qa",
+      "prompt": "What iron-containing protein in red blood cells gives blood its red color?",
+      "expected": "hemoglobin",
+      "metadata": {
+        "domain": "biology",
+        "difficulty": "easy",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "science concepts and natural phenomena (how/why questions with a short factual answer)"
+      },
+      "labels": [
+        "hemoglobin",
+        "biology",
+        "blood"
+      ]
+    },
+    {
+      "id": "seed-qa-bs-0117",
+      "task_family": "qa",
+      "prompt": "What optical phenomenon causes the sky to appear blue by scattering shorter wavelengths of sunlight more than longer ones?",
+      "expected": "Rayleigh scattering",
+      "metadata": {
+        "domain": "physics",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "science concepts and natural phenomena (how/why questions with a short factual answer)"
+      },
+      "labels": [
+        "Rayleigh scattering",
+        "physics",
+        "optics"
+      ]
+    },
+    {
+      "id": "seed-qa-bs-0118",
+      "task_family": "qa",
+      "prompt": "What type of intermolecular bonds between water molecules cause ice to be less dense than liquid water, allowing it to float?",
+      "expected": "hydrogen bonds",
+      "metadata": {
+        "domain": "chemistry",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "science concepts and natural phenomena (how/why questions with a short factual answer)"
+      },
+      "labels": [
+        "hydrogen bonds",
+        "chemistry",
+        "water"
+      ]
+    },
+    {
+      "id": "seed-qa-bs-0119",
+      "task_family": "qa",
+      "prompt": "What term describes the separation of white light into its spectrum of colors when it passes through a transparent medium such as a raindrop?",
+      "expected": "dispersion",
+      "metadata": {
+        "domain": "physics",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "science concepts and natural phenomena (how/why questions with a short factual answer)"
+      },
+      "labels": [
+        "dispersion",
+        "physics",
+        "optics",
+        "light"
+      ]
+    },
+    {
+      "id": "seed-qa-bs-0120",
+      "task_family": "qa",
+      "prompt": "At what type of tectonic plate boundary do the world's most powerful earthquakes typically occur?",
+      "expected": "subduction zone",
+      "metadata": {
+        "domain": "earth science",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "science concepts and natural phenomena (how/why questions with a short factual answer)"
+      },
+      "labels": [
+        "subduction zone",
+        "geology",
+        "earthquakes",
+        "plate tectonics"
+      ]
+    },
+    {
+      "id": "seed-reasoning-bs-0097",
+      "task_family": "reasoning",
+      "prompt": "A student council has 8 men and 6 women. A committee of 5 members is to be selected from this group. How many different committees contain at least 2 women? Show your reasoning step by step.",
+      "expected": "1526",
+      "metadata": {
+        "domain": "mathematics",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "combinatorics and probability with varied real setups (committees, arrangements, cards, dice)"
+      },
+      "labels": [
+        "combinatorics",
+        "combinations",
+        "counting"
+      ]
+    },
+    {
+      "id": "seed-reasoning-bs-0112",
+      "task_family": "reasoning",
+      "prompt": "The 6 letters of the word GARDEN are arranged in a row, with all arrangements equally likely. How many arrangements have the two vowels A and E never placed next to each other? Show your reasoning step by step.",
+      "expected": "480",
+      "metadata": {
+        "domain": "mathematics",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "combinatorics and probability with varied real setups (committees, arrangements, cards, dice)"
+      },
+      "labels": [
+        "combinatorics",
+        "permutations",
+        "counting"
+      ]
+    },
+    {
+      "id": "seed-reasoning-bs-0113",
+      "task_family": "reasoning",
+      "prompt": "Two cards are drawn one after the other without replacement from a standard deck of 52 playing cards. What is the probability that both cards are face cards (Jacks, Queens, and Kings)? Show your reasoning step by step.",
+      "expected": "11/221",
+      "metadata": {
+        "domain": "mathematics",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "combinatorics and probability with varied real setups (committees, arrangements, cards, dice)"
+      },
+      "labels": [
+        "probability",
+        "combinatorics",
+        "cards"
+      ]
+    },
+    {
+      "id": "seed-reasoning-bs-0114",
+      "task_family": "reasoning",
+      "prompt": "Two fair six-sided dice are rolled. Given that the sum of the two dice is at least 9, what is the probability that at least one die shows a 6? Show your reasoning step by step.",
+      "expected": "7/10",
+      "metadata": {
+        "domain": "mathematics",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "combinatorics and probability with varied real setups (committees, arrangements, cards, dice)"
+      },
+      "labels": [
+        "probability",
+        "conditional probability",
+        "dice"
+      ]
+    },
+    {
+      "id": "seed-reasoning-bs-0115",
+      "task_family": "reasoning",
+      "prompt": "A 4-digit PIN is formed by selecting 4 different digits from 1 to 9 (digit 0 is excluded) and arranging them in a row. Every such PIN is equally likely. What is the probability that the PIN contains exactly 2 odd digits and exactly 2 even digits? Show your reasoning step by step.",
+      "expected": "10/21",
+      "metadata": {
+        "domain": "mathematics",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "combinatorics and probability with varied real setups (committees, arrangements, cards, dice)"
+      },
+      "labels": [
+        "probability",
+        "combinatorics",
+        "permutations"
+      ]
+    },
+    {
+      "id": "seed-reasoning-bs-0116",
+      "task_family": "reasoning",
+      "prompt": "A circular playground has a radius of 14 m. A concrete path of uniform width 3.5 m is constructed around the outside of the playground. (i) Find the area of the concrete path. (ii) If the concrete costs ₹80 per square metre, find the total cost of laying the path. Use π = 22/7. Show your reasoning step by step.",
+      "expected": "Outer radius = 14 + 3.5 = 17.5 m. Area of outer circle = (22/7) × 17.5² = (22/7) × 306.25 = 962.5 m². Area of inner circle (playground) = (22/7) × 14² = (22/7) × 196 = 616 m². Area of path = 962.5 − 616 = 346.5 m². Total cost = 346.5 × 80 = ₹27,720.",
+      "metadata": {
+        "domain": "geometry",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "geometry and mensuration in real scenarios (fields, tiles, tanks — areas, perimeters, angles)"
+      },
+      "labels": [
+        "geometry",
+        "mensuration",
+        "circles",
+        "area"
+      ]
+    },
+    {
+      "id": "seed-reasoning-bs-0117",
+      "task_family": "reasoning",
+      "prompt": "A farmer owns an L-shaped plot of land. The plot fits inside a bounding rectangle of 80 m × 60 m, but a rectangular section of 30 m × 20 m has been cut away from one corner. (i) Find the area of the L-shaped plot. (ii) Find the total length of fencing needed to enclose the entire plot. Show your reasoning step by step.",
+      "expected": "Area of bounding rectangle = 80 × 60 = 4800 m². Area of cut-away corner = 30 × 20 = 600 m². Area of L-shaped plot = 4800 − 600 = 4200 m². The L-shaped boundary has six sides. Cutting the corner reduces one pair of sides: the 60 m side becomes 40 m and the 80 m side becomes 50 m, while the cutaway introduces two new interior edges of 20 m and 30 m. Perimeter = 80 + 40 + 30 + 20 + 50 + 60 = 280 m.",
+      "metadata": {
+        "domain": "geometry",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "geometry and mensuration in real scenarios (fields, tiles, tanks — areas, perimeters, angles)"
+      },
+      "labels": [
+        "geometry",
+        "mensuration",
+        "composite shapes",
+        "perimeter",
+        "area"
+      ]
+    },
+    {
+      "id": "seed-reasoning-bs-0118",
+      "task_family": "reasoning",
+      "prompt": "A closed rectangular water storage tank is 5 m long, 3 m wide, and 2 m tall. The entire outer surface of the tank — all six faces including the base and lid — is to be painted. The painter charges ₹35 per square metre. What is the total cost of painting? Show your reasoning step by step.",
+      "expected": "Total surface area of a closed rectangular box = 2(lb + bh + lh), where l = 5 m, b = 3 m, h = 2 m. Surface area = 2(5×3 + 3×2 + 5×2) = 2(15 + 6 + 10) = 2 × 31 = 62 m². Total cost = 62 × 35 = ₹2,170.",
+      "metadata": {
+        "domain": "geometry",
+        "difficulty": "easy",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "geometry and mensuration in real scenarios (fields, tiles, tanks — areas, perimeters, angles)"
+      },
+      "labels": [
+        "geometry",
+        "mensuration",
+        "surface area",
+        "cuboid"
+      ]
+    },
+    {
+      "id": "seed-reasoning-bs-0119",
+      "task_family": "reasoning",
+      "prompt": "A plot of land is shaped as a quadrilateral PQRS. A surveyor draws the diagonal PR and measures it to be 60 m. The perpendicular distance from vertex Q to line PR is 25 m, and the perpendicular distance from vertex S to line PR is 15 m. Vertices Q and S lie on opposite sides of PR. Find the total area of plot PQRS. Show your reasoning step by step.",
+      "expected": "Diagonal PR divides quadrilateral PQRS into two triangles: △PQR and △PSR. Area of △PQR = ½ × base × height = ½ × 60 × 25 = 750 m². Area of △PSR = ½ × 60 × 15 = 450 m². Total area of PQRS = 750 + 450 = 1200 m².",
+      "metadata": {
+        "domain": "geometry",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "geometry and mensuration in real scenarios (fields, tiles, tanks — areas, perimeters, angles)"
+      },
+      "labels": [
+        "geometry",
+        "mensuration",
+        "quadrilateral",
+        "area",
+        "triangles"
+      ]
+    },
+    {
+      "id": "seed-reasoning-bs-0120",
+      "task_family": "reasoning",
+      "prompt": "A rectangular courtyard is 10 m long and 8 m wide. It is to be tiled completely with square tiles each of side 0.5 m. The outermost ring of tiles (the border) will be red, and all remaining interior tiles will be white. (i) Find the total number of tiles needed. (ii) How many tiles will be red? (iii) How many tiles will be white? Show your reasoning step by step.",
+      "expected": "Tiles along length = 10 ÷ 0.5 = 20. Tiles along width = 8 ÷ 0.5 = 16. (i) Total tiles = 20 × 16 = 320. (ii) Removing the border on all four sides leaves an interior grid of (20 − 2) × (16 − 2) = 18 × 14 = 252 white tiles. (iii) Red border tiles = 320 − 252 = 68. Verification: top row = 20, bottom row = 20, left column excluding corners = 14, right column excluding corners = 14; border total = 20 + 20 + 14 + 14 = 68. ✓",
+      "metadata": {
+        "domain": "geometry",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "geometry and mensuration in real scenarios (fields, tiles, tanks — areas, perimeters, angles)"
+      },
+      "labels": [
+        "geometry",
+        "mensuration",
+        "tiling",
+        "area",
+        "counting"
+      ]
+    },
+    {
+      "id": "seed-reasoning-bs-0121",
+      "task_family": "reasoning",
+      "prompt": "The digital root of a positive integer is found by summing its digits repeatedly until a single digit remains. For example, the digital root of 59 is 5+9=14, then 1+4=5. List all integers from 1 to 100 whose digital root equals 9, then find their total sum. Show your reasoning step by step.",
+      "expected": "594",
+      "metadata": {
+        "domain": "number_theory",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "number theory and integer sequences with non-obvious patterns"
+      },
+      "labels": [
+        "number_theory",
+        "digital_roots",
+        "arithmetic_series"
+      ]
+    },
+    {
+      "id": "seed-reasoning-bs-0122",
+      "task_family": "reasoning",
+      "prompt": "A positive integer is called perfect if it equals the sum of all its proper divisors (every positive divisor except itself). The first two perfect numbers are 6 (since 1+2+3=6) and 28 (since 1+2+4+7+14=28). The third perfect number is 496. Without listing all individual divisors of 496, determine the sum of ALL its divisors including 496 itself. Show your reasoning step by step.",
+      "expected": "992",
+      "metadata": {
+        "domain": "number_theory",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "number theory and integer sequences with non-obvious patterns"
+      },
+      "labels": [
+        "number_theory",
+        "perfect_numbers",
+        "divisors"
+      ]
+    },
+    {
+      "id": "seed-reasoning-bs-0123",
+      "task_family": "reasoning",
+      "prompt": "Find the units digit (the ones digit) of the sum S = 1^1 + 2^2 + 3^3 + 4^4 + 5^5 + 6^6 + 7^7 + 8^8 + 9^9 + 10^10. Show your reasoning step by step.",
+      "expected": "7",
+      "metadata": {
+        "domain": "number_theory",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "number theory and integer sequences with non-obvious patterns"
+      },
+      "labels": [
+        "number_theory",
+        "modular_arithmetic",
+        "units_digit",
+        "cyclic_patterns"
+      ]
+    },
+    {
+      "id": "seed-reasoning-bs-0124",
+      "task_family": "reasoning",
+      "prompt": "For any positive integer n, define f(n) = n^5 − n. Compute f(n) for n = 1, 2, 3, 4, and 5. Then determine the single largest integer that divides f(n) for every positive integer n without exception — that is, the greatest common divisor of f(n) over all positive integers n. Justify rigorously why no larger integer has this property. Show your reasoning step by step.",
+      "expected": "30",
+      "metadata": {
+        "domain": "number_theory",
+        "difficulty": "hard",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "number theory and integer sequences with non-obvious patterns"
+      },
+      "labels": [
+        "number_theory",
+        "gcd",
+        "polynomial_divisibility",
+        "modular_arithmetic"
+      ]
+    },
+    {
+      "id": "seed-reasoning-bs-0125",
+      "task_family": "reasoning",
+      "prompt": "A six-digit number is a palindrome if it reads the same forwards and backwards (for example, 123321 or 104401). Find the smallest six-digit palindrome that is exactly divisible by 7. Show your reasoning step by step.",
+      "expected": "101101",
+      "metadata": {
+        "domain": "number_theory",
+        "difficulty": "hard",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "number theory and integer sequences with non-obvious patterns"
+      },
+      "labels": [
+        "number_theory",
+        "palindromes",
+        "divisibility",
+        "modular_arithmetic"
+      ]
+    },
+    {
+      "id": "seed-reasoning-bs-0126",
+      "task_family": "reasoning",
+      "prompt": "January 1, 2024 is a Monday, and 2024 is a leap year. What day of the week is March 15, 2024? Show your reasoning step by step.",
+      "expected": "March 15, 2024 is a Friday. From January 1 to March 15 is 30 (remaining Jan days) + 29 (Feb, leap year) + 15 (Mar 1–15) = 74 days after January 1. 74 ÷ 7 = 10 weeks remainder 4. Monday + 4 days = Friday.",
+      "metadata": {
+        "domain": "temporal-reasoning",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "calendar, clock, and time-zone reasoning"
+      },
+      "labels": [
+        "temporal-reasoning",
+        "calendar-arithmetic",
+        "day-of-week"
+      ]
+    },
+    {
+      "id": "seed-reasoning-bs-0127",
+      "task_family": "reasoning",
+      "prompt": "A team meeting is set for 9:00 PM IST (India Standard Time, UTC+5:30) on a Tuesday. One colleague is in Tokyo (JST, UTC+9) and another is in San Francisco (PDT, UTC−7). For each colleague, what is their local time and local calendar day when the meeting starts? Show your reasoning step by step.",
+      "expected": "Convert 9:00 PM IST to UTC: 21:00 − 5:30 = 15:30 UTC (Tuesday). Tokyo (UTC+9): 15:30 + 9:00 = 24:30 → 12:30 AM JST on Wednesday (the next calendar day). San Francisco (UTC−7): 15:30 − 7:00 = 8:30 AM PDT on Tuesday (the same calendar day). The Tokyo colleague joins on Wednesday; the San Francisco colleague joins on Tuesday.",
+      "metadata": {
+        "domain": "temporal-reasoning",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "calendar, clock, and time-zone reasoning"
+      },
+      "labels": [
+        "temporal-reasoning",
+        "time-zone-conversion",
+        "multi-party-scheduling"
+      ]
+    },
+    {
+      "id": "seed-reasoning-bs-0128",
+      "task_family": "reasoning",
+      "prompt": "A child is born on February 29, 2000. By December 31, 2024, how many times has February 29 appeared on a calendar after the child's birth year — that is, how many leap-day anniversaries has the child had? List the years. Show your reasoning step by step.",
+      "expected": "A year has February 29 only if it is a leap year (divisible by 4, with century-year exceptions). The leap years after 2000 up to and including 2024 are: 2004, 2008, 2012, 2016, 2020, and 2024. That is 6 leap-day anniversaries.",
+      "metadata": {
+        "domain": "temporal-reasoning",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "calendar, clock, and time-zone reasoning"
+      },
+      "labels": [
+        "temporal-reasoning",
+        "leap-year",
+        "counting",
+        "calendar"
+      ]
+    },
+    {
+      "id": "seed-reasoning-bs-0129",
+      "task_family": "reasoning",
+      "prompt": "January 1, 2025 is a Wednesday. 2025 is not a leap year, so February 2025 has 28 days. How many Fridays are there in total across January and February 2025 combined? List the dates. Show your reasoning step by step.",
+      "expected": "January 1 is Wednesday, so the first Friday is January 3. Fridays in January: 3, 10, 17, 24, 31 — that is 5 Fridays. January 31 is Friday, so February 1 is Saturday. The first Friday in February is February 7. Fridays in February: 7, 14, 21, 28 — that is 4 Fridays. Total: 5 + 4 = 9 Fridays across the two months.",
+      "metadata": {
+        "domain": "temporal-reasoning",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "calendar, clock, and time-zone reasoning"
+      },
+      "labels": [
+        "temporal-reasoning",
+        "calendar-arithmetic",
+        "day-of-week",
+        "counting"
+      ]
+    },
+    {
+      "id": "seed-reasoning-bs-0130",
+      "task_family": "reasoning",
+      "prompt": "A flight departs Mumbai (IST, UTC+5:30) at 11:45 PM on March 14. The flight duration is 3 hours and 20 minutes. The destination is Dubai, which observes Gulf Standard Time (GST, UTC+4). What is the local arrival time and date in Dubai? Show your reasoning step by step.",
+      "expected": "Departure in UTC: 23:45 IST − 5h 30m = 18:15 UTC on March 14. Add flight duration: 18:15 + 3h 20m = 21:35 UTC on March 14. Convert to GST (UTC+4): 21:35 + 4h 00m = 25:35, which is 01:35 AM on March 15. The flight arrives at 1:35 AM GST on March 15.",
+      "metadata": {
+        "domain": "temporal-reasoning",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "calendar, clock, and time-zone reasoning"
+      },
+      "labels": [
+        "temporal-reasoning",
+        "time-zone-conversion",
+        "elapsed-time",
+        "date-boundary"
+      ]
+    },
+    {
+      "id": "seed-translation-bs-0110",
+      "task_family": "translation",
+      "prompt": "My phone battery drains completely before the workday is even half over.",
+      "expected": null,
+      "metadata": {
+        "domain": "technology",
+        "difficulty": "easy",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "technology, science, and the internet in everyday life"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-translation-bs-0111",
+      "task_family": "translation",
+      "prompt": "Have you ever noticed how much slower your internet feels when everyone in the building streams video at the same time?",
+      "expected": null,
+      "metadata": {
+        "domain": "technology",
+        "difficulty": "easy",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "technology, science, and the internet in everyday life"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-translation-bs-0115",
+      "task_family": "translation",
+      "prompt": "If you enable two-factor authentication on your accounts, it becomes much harder for someone else to log in even if they know your password.",
+      "expected": null,
+      "metadata": {
+        "domain": "technology",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "technology, science, and the internet in everyday life"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-translation-bs-0116",
+      "task_family": "translation",
+      "prompt": "The spread of affordable smartphones has connected millions of people in rural areas to banking, government services, and markets they could not reach before.",
+      "expected": null,
+      "metadata": {
+        "domain": "technology/society",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "technology, science, and the internet in everyday life"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-translation-bs-0117",
+      "task_family": "translation",
+      "prompt": "It is strange to think that the computing power in a modern wristwatch exceeds that of the machines used to send the first spacecraft to the moon.",
+      "expected": null,
+      "metadata": {
+        "domain": "science",
+        "difficulty": "hard",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "technology, science, and the internet in everyday life"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-translation-bs-0122",
+      "task_family": "translation",
+      "prompt": "Farmers in the region have begun harvesting the rabi crop earlier than usual because of the unusually warm February.",
+      "expected": null,
+      "metadata": {
+        "domain": "agriculture",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "agriculture, weather, and the environment"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-translation-bs-0125",
+      "task_family": "translation",
+      "prompt": "If the monsoon arrives two weeks late again this year, the groundwater table will fall to critical levels in several districts.",
+      "expected": null,
+      "metadata": {
+        "domain": "weather",
+        "difficulty": "hard",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "agriculture, weather, and the environment"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-translation-bs-0129",
+      "task_family": "translation",
+      "prompt": "The forest cover in those hills has thinned so much that the streams which once flowed year-round now run dry by March.",
+      "expected": null,
+      "metadata": {
+        "domain": "environment",
+        "difficulty": "hard",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "agriculture, weather, and the environment"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-translation-bs-0130",
+      "task_family": "translation",
+      "prompt": "How many times a year can saffron be harvested, and does it require a specific altitude to grow well?",
+      "expected": null,
+      "metadata": {
+        "domain": "agriculture",
+        "difficulty": "easy",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "agriculture, weather, and the environment"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-translation-bs-0131",
+      "task_family": "translation",
+      "prompt": "Yesterday's hailstorm destroyed nearly half the standing wheat crop before anyone could bring out the covers.",
+      "expected": null,
+      "metadata": {
+        "domain": "weather",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "agriculture, weather, and the environment"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-translation-bs-0132",
+      "task_family": "translation",
+      "prompt": "She was the first person in her village to earn a postgraduate degree.",
+      "expected": null,
+      "metadata": {
+        "domain": "education",
+        "difficulty": "easy",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "education, careers, and personal goals"
+      },
+      "labels": [
+        "education",
+        "milestone"
+      ]
+    },
+    {
+      "id": "seed-translation-bs-0133",
+      "task_family": "translation",
+      "prompt": "Have you decided which field you want to specialize in after finishing your undergraduate studies?",
+      "expected": null,
+      "metadata": {
+        "domain": "education",
+        "difficulty": "easy",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "education, careers, and personal goals"
+      },
+      "labels": [
+        "education",
+        "career"
+      ]
+    },
+    {
+      "id": "seed-translation-bs-0134",
+      "task_family": "translation",
+      "prompt": "After three years of rejection letters, he finally received the job offer he had worked so hard to earn.",
+      "expected": null,
+      "metadata": {
+        "domain": "career",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "education, careers, and personal goals"
+      },
+      "labels": [
+        "career",
+        "perseverance"
+      ]
+    },
+    {
+      "id": "seed-translation-bs-0135",
+      "task_family": "translation",
+      "prompt": "If you complete this certification before the application deadline, your profile will stand out to recruiters.",
+      "expected": null,
+      "metadata": {
+        "domain": "career",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "education, careers, and personal goals"
+      },
+      "labels": [
+        "career",
+        "education"
+      ]
+    },
+    {
+      "id": "seed-translation-bs-0136",
+      "task_family": "translation",
+      "prompt": "She wrote her goals in a notebook each morning so she would never forget why she had started.",
+      "expected": null,
+      "metadata": {
+        "domain": "personal_goals",
+        "difficulty": "easy",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "education, careers, and personal goals"
+      },
+      "labels": [
+        "personal_goals",
+        "motivation"
+      ]
+    },
+    {
+      "id": "seed-translation-bs-0137",
+      "task_family": "translation",
+      "prompt": "On the first morning of the harvest festival, freshly cooked rice is lifted from the clay pot and offered to the sun before anyone in the household takes a single bite.",
+      "expected": null,
+      "metadata": {
+        "domain": "culture/festivals",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "culture, festivals, and food (described, not just named)"
+      },
+      "labels": [
+        "translation"
+      ]
+    },
+    {
+      "id": "seed-translation-bs-0138",
+      "task_family": "translation",
+      "prompt": "Have you ever watched someone press a thin layer of fermented batter across a hot iron griddle, then fold the crisp, lacy crepe around a filling of spiced mashed potatoes?",
+      "expected": null,
+      "metadata": {
+        "domain": "food",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "culture, festivals, and food (described, not just named)"
+      },
+      "labels": [
+        "translation"
+      ]
+    },
+    {
+      "id": "seed-translation-bs-0139",
+      "task_family": "translation",
+      "prompt": "During the nine-day fast, the household avoids all grains and cooks only with certain root vegetables, unrefined rock salt, and a handful of permitted spices.",
+      "expected": null,
+      "metadata": {
+        "domain": "culture/food",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "culture, festivals, and food (described, not just named)"
+      },
+      "labels": [
+        "translation"
+      ]
+    },
+    {
+      "id": "seed-translation-bs-0140",
+      "task_family": "translation",
+      "prompt": "The whole street smelled of clarified butter and caramelised sugar as neighbours passed trays of sesame sweets from door to door in the January cold.",
+      "expected": null,
+      "metadata": {
+        "domain": "culture/festivals",
+        "difficulty": "hard",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "culture, festivals, and food (described, not just named)"
+      },
+      "labels": [
+        "translation"
+      ]
+    },
+    {
+      "id": "seed-translation-bs-0141",
+      "task_family": "translation",
+      "prompt": "Once the colours had been rinsed off and everyone had changed into dry clothes, someone brought out a pitcher of chilled milk blended with ground almonds, cardamom, and a few dried rose petals.",
+      "expected": null,
+      "metadata": {
+        "domain": "culture/festivals/food",
+        "difficulty": "hard",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "culture, festivals, and food (described, not just named)"
+      },
+      "labels": [
+        "translation"
+      ]
+    },
+    {
+      "id": "seed-classification-bs-0131",
+      "task_family": "classification",
+      "prompt": "Meena received a letter confirming that her scholarship application was approved. She read it three times, called her mother immediately, and spent the rest of the afternoon telling every person she met. Which emotion best describes her state? Options: joy, anger, fear, sadness, surprise.",
+      "expected": "joy",
+      "metadata": {
+        "domain": "emotion_classification",
+        "difficulty": "easy",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "emotion classification (joy, anger, fear, sadness, surprise)"
+      },
+      "labels": [
+        "joy",
+        "anger",
+        "fear",
+        "sadness",
+        "surprise"
+      ]
+    },
+    {
+      "id": "seed-classification-bs-0132",
+      "task_family": "classification",
+      "prompt": "A farmer hears that a neighboring village's crops were destroyed by a pest outbreak spreading in the region. He checks his own fields twice a day, avoids sleeping soundly at night, and keeps asking other farmers whether the pest has moved closer. Which emotion is driving his behavior? Options: joy, anger, sadness, fear, surprise.",
+      "expected": "fear",
+      "metadata": {
+        "domain": "emotion_classification",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "emotion classification (joy, anger, fear, sadness, surprise)"
+      },
+      "labels": [
+        "joy",
+        "anger",
+        "sadness",
+        "fear",
+        "surprise"
+      ]
+    },
+    {
+      "id": "seed-classification-bs-0133",
+      "task_family": "classification",
+      "prompt": "A municipal office worker submitted the same repair request for the broken water pipe in her neighborhood four times over six weeks. Each time she was told it was 'under review.' When she arrived at the office again, her voice was raised, she demanded to speak to a senior officer, and she refused to leave until someone provided a written commitment. What emotion is most clearly expressed? Options: sadness, surprise, fear, anger, joy.",
+      "expected": "anger",
+      "metadata": {
+        "domain": "emotion_classification",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "emotion classification (joy, anger, fear, sadness, surprise)"
+      },
+      "labels": [
+        "sadness",
+        "surprise",
+        "fear",
+        "anger",
+        "joy"
+      ]
+    },
+    {
+      "id": "seed-classification-bs-0134",
+      "task_family": "classification",
+      "prompt": "After the wedding ceremony ended, the youngest sister stood at the gate watching the car carry the bride away. She returned inside, sat at the empty table where the family had eaten together that morning, and did not speak for a long time. A family member offered her food; she shook her head. Classify the dominant emotion she is experiencing. Options: anger, fear, joy, surprise, sadness.",
+      "expected": "sadness",
+      "metadata": {
+        "domain": "emotion_classification",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "emotion classification (joy, anger, fear, sadness, surprise)"
+      },
+      "labels": [
+        "anger",
+        "fear",
+        "joy",
+        "surprise",
+        "sadness"
+      ]
+    },
+    {
+      "id": "seed-classification-bs-0135",
+      "task_family": "classification",
+      "prompt": "The research team had been told their funding proposal was rejected. Three weeks later, the project lead opened an email stating that the proposal had been re-evaluated and fully approved with an increased budget. She read the email aloud to her colleagues; the room went completely silent for several seconds before anyone reacted. Which emotion does this scene most clearly show? Options: sadness, anger, joy, fear, surprise.",
+      "expected": "surprise",
+      "metadata": {
+        "domain": "emotion_classification",
+        "difficulty": "hard",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "emotion classification (joy, anger, fear, sadness, surprise)"
+      },
+      "labels": [
+        "sadness",
+        "anger",
+        "joy",
+        "fear",
+        "surprise"
+      ]
+    },
+    {
+      "id": "seed-classification-bs-0136",
+      "task_family": "classification",
+      "prompt": "A customer sends this message to an e-commerce support team: 'My order was supposed to arrive three days ago and it still has not reached me. The tracking page has not updated in two days. This is very frustrating.' Classify the intent of this message. Options: question, request, complaint, compliment, suggestion.",
+      "expected": "complaint",
+      "metadata": {
+        "domain": "customer_service",
+        "difficulty": "easy",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "intent classification (question, request, complaint, compliment, suggestion)"
+      },
+      "labels": [
+        "question",
+        "request",
+        "complaint",
+        "compliment",
+        "suggestion"
+      ]
+    },
+    {
+      "id": "seed-classification-bs-0137",
+      "task_family": "classification",
+      "prompt": "A patient sends this note to a hospital helpdesk: 'Could you please send me a copy of my discharge summary from my stay last month? I need it for my insurance claim.' Classify the intent of this message. Options: question, request, complaint, compliment, suggestion.",
+      "expected": "request",
+      "metadata": {
+        "domain": "healthcare",
+        "difficulty": "easy",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "intent classification (question, request, complaint, compliment, suggestion)"
+      },
+      "labels": [
+        "question",
+        "request",
+        "complaint",
+        "compliment",
+        "suggestion"
+      ]
+    },
+    {
+      "id": "seed-classification-bs-0138",
+      "task_family": "classification",
+      "prompt": "A parent writes to a school administration: 'My child has been attending your school for three years now. The teachers here are very dedicated and always take time to explain things clearly. We are very happy with the education being provided.' Classify the intent of this message. Options: question, request, complaint, compliment, suggestion.",
+      "expected": "compliment",
+      "metadata": {
+        "domain": "education",
+        "difficulty": "easy",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "intent classification (question, request, complaint, compliment, suggestion)"
+      },
+      "labels": [
+        "question",
+        "request",
+        "complaint",
+        "compliment",
+        "suggestion"
+      ]
+    },
+    {
+      "id": "seed-classification-bs-0139",
+      "task_family": "classification",
+      "prompt": "A commuter writes to a city transport authority: 'Is the metro line between Central Station and the Airport running on a reduced schedule during the public holiday next week, or will it operate at the usual frequency?' Classify the intent of this message. Options: question, request, complaint, compliment, suggestion.",
+      "expected": "question",
+      "metadata": {
+        "domain": "public_transport",
+        "difficulty": "easy",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "intent classification (question, request, complaint, compliment, suggestion)"
+      },
+      "labels": [
+        "question",
+        "request",
+        "complaint",
+        "compliment",
+        "suggestion"
+      ]
+    },
+    {
+      "id": "seed-classification-bs-0140",
+      "task_family": "classification",
+      "prompt": "A resident writes to the municipal office: 'It would be very helpful if the water supply timings were published on the local notice board every Sunday so that households can plan ahead for the coming week.' Classify the intent of this message. Options: question, request, complaint, compliment, suggestion.",
+      "expected": "suggestion",
+      "metadata": {
+        "domain": "civic_services",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "intent classification (question, request, complaint, compliment, suggestion)"
+      },
+      "labels": [
+        "question",
+        "request",
+        "complaint",
+        "compliment",
+        "suggestion"
+      ]
+    },
+    {
+      "id": "seed-classification-bs-0141",
+      "task_family": "classification",
+      "prompt": "A notice posted on an apartment building board reads: 'Residents are hereby informed that the lift will be under maintenance on 27 July from 9 AM to 5 PM. Inconvenience caused is deeply regretted.' Classify the register of this notice. Options: formal, informal, conversational.",
+      "expected": "formal",
+      "metadata": {
+        "domain": "administrative/residential",
+        "difficulty": "easy",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "formality/register classification (formal vs informal)"
+      },
+      "labels": [
+        "formal",
+        "informal",
+        "conversational"
+      ]
+    },
+    {
+      "id": "seed-classification-bs-0142",
+      "task_family": "classification",
+      "prompt": "A university student sends this message to a classmate: 'I did so badly in the exam today. I studied for hours but forgot everything inside the exam hall. I am really frustrated.' Classify the register of this message. Options: formal, semi-formal, informal.",
+      "expected": "informal",
+      "metadata": {
+        "domain": "student life",
+        "difficulty": "easy",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "formality/register classification (formal vs informal)"
+      },
+      "labels": [
+        "formal",
+        "semi-formal",
+        "informal"
+      ]
+    },
+    {
+      "id": "seed-classification-bs-0143",
+      "task_family": "classification",
+      "prompt": "An HR manager sends this email to new employees: 'Welcome to the team! Please complete your onboarding documents by the end of this week. Contact us if you have any questions.' Identify the register of this communication. Options: highly formal, semi-formal, casual, technical.",
+      "expected": "semi-formal",
+      "metadata": {
+        "domain": "workplace/HR",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "formality/register classification (formal vs informal)"
+      },
+      "labels": [
+        "highly formal",
+        "semi-formal",
+        "casual",
+        "technical"
+      ]
+    },
+    {
+      "id": "seed-classification-bs-0144",
+      "task_family": "classification",
+      "prompt": "A Chief Minister addresses the state legislature: 'Honourable Speaker and distinguished members, I rise today to present the annual budget with a firm commitment to the welfare of every citizen of this great state.' What register does this speech use? Options: informal, semi-formal, highly formal/ceremonial, conversational.",
+      "expected": "highly formal/ceremonial",
+      "metadata": {
+        "domain": "political/legislative",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "formality/register classification (formal vs informal)"
+      },
+      "labels": [
+        "informal",
+        "semi-formal",
+        "highly formal/ceremonial",
+        "conversational"
+      ]
+    },
+    {
+      "id": "seed-classification-bs-0145",
+      "task_family": "classification",
+      "prompt": "A newspaper report states: 'A fire broke out in a three-storey building in Pune on Wednesday morning, injuring four people. Fire brigade personnel arrived at the scene within ten minutes and brought the blaze under control by noon.' Identify the register of this passage. Options: formal/official, neutral/journalistic, informal, emotional/subjective.",
+      "expected": "neutral/journalistic",
+      "metadata": {
+        "domain": "journalism/news",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "formality/register classification (formal vs informal)"
+      },
+      "labels": [
+        "formal/official",
+        "neutral/journalistic",
+        "informal",
+        "emotional/subjective"
+      ]
+    },
+    {
+      "id": "seed-classification-bs-0146",
+      "task_family": "classification",
+      "prompt": "A patient sends this message to a hospital helpline: 'I have had a mild headache for two days. It gets worse when I read. No fever, no vomiting, no vision changes.' Classify the urgency of this message. Options: Urgent, Routine.",
+      "expected": "Routine",
+      "metadata": {
+        "domain": "medical_triage",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "urgency classification (urgent vs routine) of short messages"
+      },
+      "labels": [
+        "Urgent",
+        "Routine"
+      ]
+    },
+    {
+      "id": "seed-classification-bs-0147",
+      "task_family": "classification",
+      "prompt": "A server monitoring system generates this alert: 'CPU usage on prod-web-01 averaged 68% over the last 30 minutes. No service interruption detected. All health checks passing.' Classify the priority of this alert. Options: Critical, Informational.",
+      "expected": "Informational",
+      "metadata": {
+        "domain": "IT_operations",
+        "difficulty": "easy",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "urgency classification (urgent vs routine) of short messages"
+      },
+      "labels": [
+        "Critical",
+        "Informational"
+      ]
+    },
+    {
+      "id": "seed-classification-bs-0148",
+      "task_family": "classification",
+      "prompt": "A factory floor supervisor sends this message to the maintenance team: 'Assembly line B has stopped completely. The conveyor belt motor has seized. No output since 09:15. Forty workers are standing idle.' Classify this message. Options: Emergency shutdown, Scheduled maintenance, Routine status update.",
+      "expected": "Emergency shutdown",
+      "metadata": {
+        "domain": "manufacturing",
+        "difficulty": "easy",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "urgency classification (urgent vs routine) of short messages"
+      },
+      "labels": [
+        "Emergency shutdown",
+        "Scheduled maintenance",
+        "Routine status update"
+      ]
+    },
+    {
+      "id": "seed-classification-bs-0149",
+      "task_family": "classification",
+      "prompt": "A customer submits this support ticket: 'My prepaid mobile recharge of ₹199 was deducted from my account three days ago but the talk-time balance has not been credited to my number yet.' Classify the handling priority for this ticket. Options: Escalate immediately, Handle in standard queue.",
+      "expected": "Escalate immediately",
+      "metadata": {
+        "domain": "customer_support",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "urgency classification (urgent vs routine) of short messages"
+      },
+      "labels": [
+        "Escalate immediately",
+        "Handle in standard queue"
+      ]
+    },
+    {
+      "id": "seed-classification-bs-0150",
+      "task_family": "classification",
+      "prompt": "A bank fraud system sends this notification: 'Account holder completed a domestic ATM withdrawal of ₹3,000 at 14:47 from their home district, consistent with their recorded withdrawal pattern for the past six months.' Classify this notification. Options: Flag for investigation, Log as normal activity.",
+      "expected": "Log as normal activity",
+      "metadata": {
+        "domain": "financial_fraud_detection",
+        "difficulty": "easy",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "urgency classification (urgent vs routine) of short messages"
+      },
+      "labels": [
+        "Flag for investigation",
+        "Log as normal activity"
+      ]
+    },
+    {
+      "id": "seed-summarization-bs-0114",
+      "task_family": "summarization",
+      "prompt": "Many migratory birds, such as the European robin, navigate thousands of kilometers each year with remarkable precision. Scientists have found that these birds possess specialized proteins called cryptochromes located in their eyes, which are sensitive to the Earth's magnetic field. When light strikes these proteins, a chemical reaction produces pairs of electrons whose spin states are influenced by geomagnetic field lines, allowing the bird to perceive magnetic north as a kind of visual signal. This biological compass remains functional even on overcast nights when stars are not visible. Laboratory experiments that block this magnetic sense have confirmed that affected birds lose their directional accuracy.",
+      "expected": "Migratory birds navigate using light-sensitive proteins in their eyes that detect the Earth's magnetic field and function as an internal biological compass.",
+      "metadata": {
+        "domain": "biology",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "a science discovery or natural phenomenon"
+      },
+      "labels": [
+        "summarization",
+        "biology",
+        "animal-behavior"
+      ]
+    },
+    {
+      "id": "seed-summarization-bs-0115",
+      "task_family": "summarization",
+      "prompt": "In 1977, oceanographers using a deep-sea submersible discovered thriving communities of organisms clustered around hydrothermal vents on the floor of the Pacific Ocean, nearly 2,500 meters below the surface. Unlike almost all other known ecosystems, these communities do not depend on sunlight for energy. Instead, chemosynthetic bacteria convert hydrogen sulfide released by the vents into organic matter, forming the base of a food web that supports tube worms, clams, and shrimp. The discovery expanded scientific understanding of where life can exist and has direct implications for the search for life on other planets with subsurface oceans. These vent communities have remained largely stable for decades despite the extreme heat and pressure of their surroundings.",
+      "expected": "Hydrothermal vent ecosystems, discovered in 1977, are powered by chemosynthesis rather than sunlight, demonstrating that life can sustain itself in extreme, lightless environments.",
+      "metadata": {
+        "domain": "marine biology",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "a science discovery or natural phenomenon"
+      },
+      "labels": [
+        "summarization",
+        "marine-biology",
+        "astrobiology"
+      ]
+    },
+    {
+      "id": "seed-summarization-bs-0116",
+      "task_family": "summarization",
+      "prompt": "All elements heavier than hydrogen and helium — including carbon, oxygen, iron, and gold — were produced inside stars through a process called stellar nucleosynthesis, in which nuclear fusion reactions combine lighter atomic nuclei into heavier ones. When massive stars exhaust their fuel, they explode as supernovae, ejecting these newly formed elements into surrounding space. Over billions of years, this material is incorporated into gas clouds that condense into new stars and planetary systems. The calcium in bones and the iron in blood were created inside stars that exploded long before the solar system formed roughly 4.6 billion years ago. This process is now a foundational result of nuclear astrophysics, supported by both theoretical models and the observed composition of stars across the universe.",
+      "expected": "All elements heavier than hydrogen and helium, including those essential to living organisms, were forged inside stars through nuclear fusion and dispersed into space when those stars exploded as supernovae.",
+      "metadata": {
+        "domain": "astrophysics",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "a science discovery or natural phenomenon"
+      },
+      "labels": [
+        "summarization",
+        "astrophysics",
+        "cosmology"
+      ]
+    },
+    {
+      "id": "seed-summarization-bs-0117",
+      "task_family": "summarization",
+      "prompt": "Beneath the soil of most forests lies a vast network of fungal threads called mycorrhizae, which form associations with the roots of roughly 90 percent of land plant species. These fungi extend the effective root surface area of host plants enormously, helping trees absorb water and nutrients such as phosphorus that roots alone cannot easily reach. In return, the plants supply the fungi with sugars produced through photosynthesis. Research has shown that mature trees can transfer carbon and nitrogen to younger seedlings through this shared network, supporting forest regeneration after disturbance. The system connects individual trees across large areas and is thought to play a role in the long-term resilience of forest ecosystems.",
+      "expected": "Mycorrhizal fungal networks connect the roots of most land plants, enabling the exchange of nutrients and carbon between trees and contributing to forest regeneration and resilience.",
+      "metadata": {
+        "domain": "ecology",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "a science discovery or natural phenomenon"
+      },
+      "labels": [
+        "summarization",
+        "ecology",
+        "botany"
+      ]
+    },
+    {
+      "id": "seed-summarization-bs-0118",
+      "task_family": "summarization",
+      "prompt": "Bioluminescence — the production of visible light by living organisms — occurs across a wide range of species, including certain bacteria, fungi, jellyfish, and deep-sea fish. The light is generated through a chemical reaction in which a molecule called luciferin is oxidized in the presence of an enzyme called luciferase, releasing energy as light with very little accompanying heat. In the deep ocean, where sunlight does not penetrate, an estimated three-quarters of animal species are bioluminescent, using light to attract prey, locate mates, or deter predators. Bioluminescence is estimated to have evolved independently at least 94 separate times across different branches of the tree of life, making it one of the most widespread examples of convergent evolution. Researchers have also adapted the luciferase gene as a tool in biomedical research to track cellular processes.",
+      "expected": "Bioluminescence, produced by a chemical reaction between luciferin and luciferase, has evolved independently dozens of times and is especially prevalent in the deep ocean, where it serves functions such as predation, communication, and defense.",
+      "metadata": {
+        "domain": "biology",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "a science discovery or natural phenomenon"
+      },
+      "labels": [
+        "summarization",
+        "biology",
+        "evolution"
+      ]
+    },
+    {
+      "id": "seed-summarization-bs-0119",
+      "task_family": "summarization",
+      "prompt": "Krishnadevaraya ruled the Vijayanagara Empire in southern India from 1509 to 1529 and is considered one of the greatest monarchs of the medieval Deccan. Under his reign, the empire reached its greatest territorial extent, controlling large parts of present-day Karnataka, Andhra Pradesh, and Tamil Nadu. He was also a celebrated poet in the Telugu language, composing the literary work Amuktamalyada. His court attracted scholars, poets, and artists from across the subcontinent, making the capital Hampi a center of learning and architecture. He also maintained diplomatic and trade relations with Portuguese merchants who had recently arrived on the western coast of India.",
+      "expected": "Krishnadevaraya, who ruled the Vijayanagara Empire from 1509 to 1529, was both a powerful military king who brought the empire to its greatest extent and a celebrated Telugu poet whose court became a major center of art and scholarship.",
+      "metadata": {
+        "domain": "Indian history / biography",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "a historical event or figure (Indian or world)"
+      },
+      "labels": [
+        "summarization"
+      ]
+    },
+    {
+      "id": "seed-summarization-bs-0120",
+      "task_family": "summarization",
+      "prompt": "The Great Fire of London began in September 1666 in a bakery on Pudding Lane and spread rapidly through the city's closely packed wooden buildings over four days. It destroyed approximately 13,200 houses, 87 churches, and many civic buildings across an area of about 1.6 square kilometers. Despite the enormous scale of destruction, the recorded death toll was surprisingly low, with only a small number of confirmed fatalities. The disaster prompted a large rebuilding effort, and the architect Christopher Wren designed the new St. Paul's Cathedral along with dozens of other churches to replace those lost. The fire also ended the last major outbreak of bubonic plague in the city.",
+      "expected": "The Great Fire of London in 1666 burned for four days, destroying thousands of houses and dozens of churches, and led to a major rebuilding of the city including Christopher Wren's new St. Paul's Cathedral.",
+      "metadata": {
+        "domain": "world history",
+        "difficulty": "easy",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "a historical event or figure (Indian or world)"
+      },
+      "labels": [
+        "summarization"
+      ]
+    },
+    {
+      "id": "seed-summarization-bs-0121",
+      "task_family": "summarization",
+      "prompt": "In 1905, the British colonial administration under Viceroy Lord Curzon divided the Bengal Presidency into two separate provinces — East Bengal with Assam, and West Bengal. The stated reason was administrative convenience, as Bengal was the most populous province in British India, but many Indians believed the partition was designed to weaken Bengali nationalism by splitting the region along religious lines, with Muslims in the majority in the east and Hindus in the west. The division triggered the Swadeshi movement, in which Indians boycotted British manufactured goods and promoted Indian-produced alternatives. Public meetings, street protests, and the burning of foreign cloth became widespread across Bengal. The partition was reversed in 1911 under pressure from the nationalist movement.",
+      "expected": "The 1905 partition of Bengal by the British administration under Lord Curzon, widely seen as an attempt to divide nationalist sentiment along religious lines, provoked the Swadeshi movement — a mass boycott of British goods that became a landmark episode in India's independence struggle.",
+      "metadata": {
+        "domain": "Indian political history",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "a historical event or figure (Indian or world)"
+      },
+      "labels": [
+        "summarization"
+      ]
+    },
+    {
+      "id": "seed-summarization-bs-0122",
+      "task_family": "summarization",
+      "prompt": "Hypatia was a philosopher and mathematician who lived in Alexandria in the late fourth and early fifth centuries CE. She was a prominent teacher of Neoplatonic philosophy and made contributions to mathematics and astronomy by writing commentaries on works by Ptolemy and Diophantus. As a woman who held a leading public intellectual position in an era dominated by men, she attracted both admiration and hostility. In 415 CE she was killed by a mob in Alexandria during a period of violent conflict between civic and religious factions in the city. Her death is frequently cited by historians as a marker of the decline of classical learning in the ancient Mediterranean world.",
+      "expected": "Hypatia, a fifth-century Alexandrian philosopher and mathematician and one of the most prominent female scholars of antiquity, was killed by a mob in 415 CE during a period of civic unrest, an event historians often associate with the broader decline of classical learning.",
+      "metadata": {
+        "domain": "ancient history / biography",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "a historical event or figure (Indian or world)"
+      },
+      "labels": [
+        "summarization"
+      ]
+    },
+    {
+      "id": "seed-summarization-bs-0123",
+      "task_family": "summarization",
+      "prompt": "The Panama Canal, connecting the Atlantic and Pacific Oceans through the Isthmus of Panama, was built by the United States and opened to shipping in August 1914 after roughly ten years of construction. The project required removing approximately 170 million cubic meters of earth and presented enormous engineering challenges. An earlier French attempt in the 1880s had failed in part because of severe outbreaks of malaria and yellow fever that killed tens of thousands of workers. American physician William Gorgas led the sanitation campaign that brought these diseases under control and made the American effort viable. The canal shortened the sea voyage between the two oceans by approximately 12,800 kilometers compared with sailing around the southern tip of South America.",
+      "expected": "The Panama Canal, opened in 1914 after about ten years of construction led by the United States, connected the Atlantic and Pacific Oceans and succeeded where an earlier French attempt had failed, largely because of an effective public health campaign against malaria and yellow fever.",
+      "metadata": {
+        "domain": "world history / engineering",
+        "difficulty": "easy",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "a historical event or figure (Indian or world)"
+      },
+      "labels": [
+        "summarization"
+      ]
+    },
+    {
+      "id": "seed-summarization-bs-0124",
+      "task_family": "summarization",
+      "prompt": "The Indian monsoon is driven by the temperature difference between the land and the surrounding ocean. During summer, the Indian subcontinent heats faster than the Indian Ocean, causing air over land to rise and forming a low-pressure zone. Moisture-carrying winds from the ocean move inland to replace that rising air. As these winds climb over the Western Ghats and Himalayan foothills, they cool rapidly and the moisture condenses into rain. This seasonal wind reversal delivers roughly 80 percent of India's annual rainfall between June and September.",
+      "expected": "The Indian monsoon forms when the summer land-sea temperature difference draws moist ocean winds inland, where they rise, cool, and release heavy seasonal rainfall.",
+      "metadata": {
+        "domain": "earth-science",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "a how-something-works / process explainer"
+      },
+      "labels": [
+        "summarization",
+        "process",
+        "earth-science"
+      ]
+    },
+    {
+      "id": "seed-summarization-bs-0125",
+      "task_family": "summarization",
+      "prompt": "A vaccine works by presenting the immune system with a harmless version of a pathogen, such as an inactivated form, a protein fragment, or a genetic blueprint for producing one. The immune system responds by generating antibodies and, critically, storing memory cells that recognize that pathogen. If the vaccinated person later encounters the actual pathogen, these memory cells enable a rapid, targeted immune response before serious illness can develop. Some vaccines require multiple doses spaced weeks apart to build durable immunity. This mechanism has allowed diseases such as smallpox and polio to be greatly reduced or eliminated.",
+      "expected": "Vaccines protect against disease by training the immune system to recognize a pathogen through memory cells and antibodies, enabling a fast response if the real pathogen is encountered later.",
+      "metadata": {
+        "domain": "medicine",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "a how-something-works / process explainer"
+      },
+      "labels": [
+        "summarization",
+        "process",
+        "medicine"
+      ]
+    },
+    {
+      "id": "seed-summarization-bs-0126",
+      "task_family": "summarization",
+      "prompt": "Ordinary glass is made by heating a mixture of silica sand, soda ash, and limestone to temperatures above 1,500 degrees Celsius until the materials fuse into a molten liquid. The molten glass can then be shaped by blowing, pressing, or pouring it into molds depending on the product being made. As it cools, the molecules do not arrange into a regular crystal lattice but solidify into a disordered, amorphous structure. Controlled slow cooling, a step called annealing, removes internal stresses that would otherwise cause the glass to crack. The result is a transparent, hard solid that can be formed into sheets, containers, or lenses.",
+      "expected": "Glass is produced by melting silica sand with soda ash and limestone, shaping the molten material, and slowly cooling it through annealing to form a strong, stress-free amorphous solid.",
+      "metadata": {
+        "domain": "materials-science",
+        "difficulty": "easy",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "a how-something-works / process explainer"
+      },
+      "labels": [
+        "summarization",
+        "process",
+        "manufacturing"
+      ]
+    },
+    {
+      "id": "seed-summarization-bs-0127",
+      "task_family": "summarization",
+      "prompt": "When a customer initiates a payment through a mobile application such as UPI, the app generates an encrypted request containing the payer's account details and the transaction amount. This request travels to a payment network, which routes it to the payer's bank for authentication and authorization. The bank verifies the account credentials and confirms that sufficient funds are available, then sends an approval signal back through the network. The payee's bank receives this confirmation and credits the agreed amount to the merchant's account. The full sequence typically completes within a few seconds.",
+      "expected": "A mobile payment works by routing an encrypted authorization request from the payer's bank through a payment network to the payee's bank, which credits the merchant after the payer's credentials and balance are verified.",
+      "metadata": {
+        "domain": "technology",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "a how-something-works / process explainer"
+      },
+      "labels": [
+        "summarization",
+        "process",
+        "technology"
+      ]
+    },
+    {
+      "id": "seed-summarization-bs-0128",
+      "task_family": "summarization",
+      "prompt": "A municipal water treatment plant purifies raw water from rivers or reservoirs through a series of stages before it enters household pipes. First, chemicals such as alum are added to make fine suspended particles bind together into heavier clumps called flocs, a process called coagulation. The water then moves into settling tanks where the flocs sink to the bottom through sedimentation. The clarified water passes through layers of sand and gravel that trap any remaining fine particles and microorganisms. Finally, a controlled dose of chlorine or another disinfectant is added to kill pathogens before the treated water enters the distribution network.",
+      "expected": "Municipal water treatment purifies raw water by applying coagulation, sedimentation, filtration, and disinfection in sequence to remove particles and kill pathogens before the water reaches homes.",
+      "metadata": {
+        "domain": "civil-engineering",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "a how-something-works / process explainer"
+      },
+      "labels": [
+        "summarization",
+        "process",
+        "infrastructure"
+      ]
+    },
+    {
+      "id": "seed-summarization-bs-0129",
+      "task_family": "summarization",
+      "prompt": "Microfinance institutions in South Asia extend small loans, typically between five hundred and five thousand dollars, to low-income borrowers who lack access to formal banking. In India, self-help groups channel these loans primarily to rural women, who use the capital to start or expand small businesses such as tailoring, livestock rearing, and food processing. Studies tracking borrowers over five years show that households with microfinance access report higher income and lower dependence on informal moneylenders charging interest rates above 50 percent annually. Critics argue, however, that some microfinance programs have led borrowers into debt cycles when repayment schedules do not align with seasonal income patterns common in agriculture.",
+      "expected": "Microfinance institutions in South Asia provide small loans to low-income borrowers, especially rural women, with documented income benefits but also risks of debt cycles from misaligned repayment schedules.",
+      "metadata": {
+        "domain": "economics",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "an economic, social, or public-policy phenomenon"
+      },
+      "labels": [
+        "summarization"
+      ]
+    },
+    {
+      "id": "seed-summarization-bs-0130",
+      "task_family": "summarization",
+      "prompt": "India's Goods and Services Tax, introduced in July 2017, replaced more than a dozen central and state indirect taxes with a single tiered structure. The reform aimed to eliminate the cascading effect of taxes levied at multiple production stages, which had added an estimated two to four percent to the cost of manufactured goods. In the first two years after implementation, tax registrations among small businesses increased by roughly fifty percent as previously informal traders entered the formal economy to access input-tax credits. However, compliance costs rose sharply for small and medium enterprises that lacked the accounting systems needed to file monthly returns under the new digital portal.",
+      "expected": "India's 2017 GST reform unified indirect taxes and expanded formal-sector registration, but also raised compliance costs for small businesses without adequate accounting infrastructure.",
+      "metadata": {
+        "domain": "public_policy",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "an economic, social, or public-policy phenomenon"
+      },
+      "labels": [
+        "summarization"
+      ]
+    },
+    {
+      "id": "seed-summarization-bs-0131",
+      "task_family": "summarization",
+      "prompt": "Labor remittances — money sent home by workers employed abroad — represent the largest source of external financial inflows for several South Asian economies. In 2023, India received approximately 125 billion dollars in remittances, making it the top recipient country in the world by absolute volume. A significant share of these funds is directed toward household consumption, school fees, and medical expenses rather than productive investment, which limits their long-term multiplier effect on local economies. Economists note that remittance flows tend to remain stable or increase during periods of domestic economic stress, giving them a counter-cyclical role that distinguishes them from foreign direct investment.",
+      "expected": "Remittances from overseas workers are South Asia's largest external financial inflow, providing a counter-cyclical income buffer for households, though most funds go to consumption rather than productive investment.",
+      "metadata": {
+        "domain": "economics",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "an economic, social, or public-policy phenomenon"
+      },
+      "labels": [
+        "summarization"
+      ]
+    },
+    {
+      "id": "seed-summarization-bs-0132",
+      "task_family": "summarization",
+      "prompt": "India's Mahatma Gandhi National Rural Employment Guarantee Act, enacted in 2005, gives every rural household a legal entitlement to one hundred days of wage employment per year on public works projects. The program is demand-driven: any adult who presents themselves at a government works site must be given employment within fifteen days or paid an unemployment allowance. Independent evaluations have found that the scheme reduced rural poverty rates in participating districts and narrowed the wage gap between men and women by setting a uniform minimum daily wage. Critics have identified persistent problems with delayed wage payments, ghost beneficiaries, and the concentration of works on road construction rather than durable community assets.",
+      "expected": "India's MGNREGA guarantees rural households one hundred days of paid public work annually and has reduced poverty and gender wage gaps, but faces implementation problems including payment delays and suboptimal asset creation.",
+      "metadata": {
+        "domain": "public_policy",
+        "difficulty": "hard",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "an economic, social, or public-policy phenomenon"
+      },
+      "labels": [
+        "summarization"
+      ]
+    },
+    {
+      "id": "seed-summarization-bs-0133",
+      "task_family": "summarization",
+      "prompt": "South Asian cities are growing faster than their infrastructure can expand, a pattern referred to as unplanned or informal urbanization. In cities such as Mumbai, Dhaka, and Karachi, between thirty and sixty percent of the urban population lives in informal settlements with insecure land tenure, inadequate sanitation, and unreliable electricity. Municipal governments collect insufficient property tax revenue to finance the roads, water systems, and transit networks that formal urban expansion requires, creating a feedback loop in which poor infrastructure discourages formal development. Research on comparable urbanization episodes in East Asia suggests that cities which invested early in public transit and land-use planning grew more equitably and avoided the deepest infrastructure deficits.",
+      "expected": "Rapid and unplanned urbanization across South Asian cities has produced large informal settlements and a tax-revenue shortfall that prevents the infrastructure investment needed to support equitable urban growth.",
+      "metadata": {
+        "domain": "social_policy",
+        "difficulty": "hard",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "an economic, social, or public-policy phenomenon"
+      },
+      "labels": [
+        "summarization"
+      ]
+    },
+    {
+      "id": "seed-instruction-bs-0132",
+      "task_family": "instruction",
+      "prompt": "Explain what inflation is to someone who has never studied economics. Use only everyday examples involving things like food, rent, or transportation. Do not use technical terms without immediately defining them.",
+      "expected": null,
+      "metadata": {
+        "domain": "economics",
+        "difficulty": "easy",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "explain a concept simply to a beginner"
+      },
+      "labels": [
+        "explanation",
+        "beginner",
+        "economics"
+      ]
+    },
+    {
+      "id": "seed-instruction-bs-0133",
+      "task_family": "instruction",
+      "prompt": "Explain how a vaccine trains the body's immune system, as if you were speaking to a curious 12-year-old with no background in biology. Avoid jargon. Use a simple analogy to make the core idea clear.",
+      "expected": null,
+      "metadata": {
+        "domain": "health",
+        "difficulty": "easy",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "explain a concept simply to a beginner"
+      },
+      "labels": [
+        "explanation",
+        "beginner",
+        "health-science"
+      ]
+    },
+    {
+      "id": "seed-instruction-bs-0134",
+      "task_family": "instruction",
+      "prompt": "A new voter asks you: 'What is the difference between a state government and the central government?' Give a clear, simple explanation suited to someone participating in an election for the first time.",
+      "expected": null,
+      "metadata": {
+        "domain": "civics",
+        "difficulty": "easy",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "explain a concept simply to a beginner"
+      },
+      "labels": [
+        "explanation",
+        "beginner",
+        "civics"
+      ]
+    },
+    {
+      "id": "seed-instruction-bs-0135",
+      "task_family": "instruction",
+      "prompt": "Explain the concept of electrical resistance to a beginner who only knows that wires carry electricity. Walk through the idea step by step, using water flowing through pipes as a comparison if it helps.",
+      "expected": null,
+      "metadata": {
+        "domain": "physics",
+        "difficulty": "easy",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "explain a concept simply to a beginner"
+      },
+      "labels": [
+        "explanation",
+        "beginner",
+        "physics"
+      ]
+    },
+    {
+      "id": "seed-instruction-bs-0136",
+      "task_family": "instruction",
+      "prompt": "Describe what soil erosion is and why it matters, for a student who has only ever lived in a city and has never thought about farmland or rivers. Use concrete, visual language.",
+      "expected": null,
+      "metadata": {
+        "domain": "environment",
+        "difficulty": "easy",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "explain a concept simply to a beginner"
+      },
+      "labels": [
+        "explanation",
+        "beginner",
+        "environment"
+      ]
+    },
+    {
+      "id": "seed-instruction-bs-0137",
+      "task_family": "instruction",
+      "prompt": "Write a short note (4–6 sentences) that a grandmother leaves on the kitchen table for her grandchildren explaining why she has decided to give away her old sewing machine to a neighbor who needs it more.",
+      "expected": null,
+      "metadata": {
+        "domain": "family-relationships",
+        "difficulty": "easy",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "write a short creative piece (a note, a description, a short dialogue)"
+      },
+      "labels": [
+        "creative-writing",
+        "note-writing",
+        "family"
+      ]
+    },
+    {
+      "id": "seed-instruction-bs-0138",
+      "task_family": "instruction",
+      "prompt": "Write a vivid description (5–8 sentences) of the interior of a small roadside tea stall in the late afternoon — focus on the sights, sounds, and smells a customer notices when they first step inside.",
+      "expected": null,
+      "metadata": {
+        "domain": "everyday-life",
+        "difficulty": "easy",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "write a short creative piece (a note, a description, a short dialogue)"
+      },
+      "labels": [
+        "creative-writing",
+        "descriptive-writing",
+        "sensory-detail"
+      ]
+    },
+    {
+      "id": "seed-instruction-bs-0139",
+      "task_family": "instruction",
+      "prompt": "Write a short dialogue (8–12 lines of exchange) between two strangers waiting on a platform for a train that is two hours late. They gradually discover they grew up in the same town but have never met.",
+      "expected": null,
+      "metadata": {
+        "domain": "travel-and-community",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "write a short creative piece (a note, a description, a short dialogue)"
+      },
+      "labels": [
+        "creative-writing",
+        "dialogue",
+        "social-interaction"
+      ]
+    },
+    {
+      "id": "seed-instruction-bs-0140",
+      "task_family": "instruction",
+      "prompt": "Write a short descriptive passage (5–7 sentences) capturing what a person sees, hears, and feels in the first thirty seconds after opening the front door of the house they grew up in — a house they have not visited in ten years.",
+      "expected": null,
+      "metadata": {
+        "domain": "personal-experience",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "write a short creative piece (a note, a description, a short dialogue)"
+      },
+      "labels": [
+        "creative-writing",
+        "descriptive-writing",
+        "memory",
+        "introspection"
+      ]
+    },
+    {
+      "id": "seed-instruction-bs-0141",
+      "task_family": "instruction",
+      "prompt": "Write a brief encouraging note (3–5 sentences) that a secondary-school teacher writes by hand on a student's returned mathematics test. The student scored poorly but showed clear effort in their working. The tone should be warm and specific, not generic.",
+      "expected": null,
+      "metadata": {
+        "domain": "education",
+        "difficulty": "easy",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "write a short creative piece (a note, a description, a short dialogue)"
+      },
+      "labels": [
+        "creative-writing",
+        "note-writing",
+        "education"
+      ]
+    },
+    {
+      "id": "seed-instruction-bs-0142",
+      "task_family": "instruction",
+      "prompt": "Compare drip irrigation and flood irrigation for growing wheat in a semi-arid region. Discuss the trade-offs in water consumption, setup cost, crop yield, and suitability for small versus large farms.",
+      "expected": null,
+      "metadata": {
+        "domain": "agriculture",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "compare two things and lay out the trade-offs"
+      },
+      "labels": [
+        "comparison",
+        "trade-offs",
+        "agriculture"
+      ]
+    },
+    {
+      "id": "seed-instruction-bs-0143",
+      "task_family": "instruction",
+      "prompt": "A rural village is choosing between installing rooftop solar panels and staying connected to the regional electrical grid. Compare the two options across upfront cost, long-term savings, reliability during outages, and maintenance burden.",
+      "expected": null,
+      "metadata": {
+        "domain": "energy",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "compare two things and lay out the trade-offs"
+      },
+      "labels": [
+        "comparison",
+        "trade-offs",
+        "energy"
+      ]
+    },
+    {
+      "id": "seed-instruction-bs-0144",
+      "task_family": "instruction",
+      "prompt": "Compare working in a government position and working at a private-sector company. Lay out the differences in job security, salary growth over time, working hours, and opportunities for advancement.",
+      "expected": null,
+      "metadata": {
+        "domain": "career",
+        "difficulty": "easy",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "compare two things and lay out the trade-offs"
+      },
+      "labels": [
+        "comparison",
+        "trade-offs",
+        "career"
+      ]
+    },
+    {
+      "id": "seed-instruction-bs-0145",
+      "task_family": "instruction",
+      "prompt": "Freight must be moved 800 kilometers between two cities. Compare rail transport and road trucking on the dimensions of cost per ton, transit time, reliability, and which categories of cargo each mode handles best.",
+      "expected": null,
+      "metadata": {
+        "domain": "logistics",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "compare two things and lay out the trade-offs"
+      },
+      "labels": [
+        "comparison",
+        "trade-offs",
+        "logistics"
+      ]
+    },
+    {
+      "id": "seed-instruction-bs-0146",
+      "task_family": "instruction",
+      "prompt": "A student has been admitted to a university in their home city and to a university in a distant large city. Compare the two options considering tuition and living costs, quality of academic programs, professional networking, and the effect on family responsibilities.",
+      "expected": null,
+      "metadata": {
+        "domain": "education",
+        "difficulty": "easy",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "compare two things and lay out the trade-offs"
+      },
+      "labels": [
+        "comparison",
+        "trade-offs",
+        "education"
+      ]
+    },
+    {
+      "id": "seed-instruction-bs-0147",
+      "task_family": "instruction",
+      "prompt": "Explain step by step how to purify drinking water at home when you do not have access to bottled water or a filter. Include at least three different methods and state when each method is most appropriate.",
+      "expected": null,
+      "metadata": {
+        "domain": "health",
+        "difficulty": "easy",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "give a clear step-by-step how-to"
+      },
+      "labels": [
+        "how-to",
+        "health",
+        "safety"
+      ]
+    },
+    {
+      "id": "seed-instruction-bs-0148",
+      "task_family": "instruction",
+      "prompt": "Describe the steps a person should follow to create and maintain a monthly household budget. Start from recording income sources and end with reviewing the budget at the end of the month.",
+      "expected": null,
+      "metadata": {
+        "domain": "finance",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "give a clear step-by-step how-to"
+      },
+      "labels": [
+        "how-to",
+        "finance",
+        "planning"
+      ]
+    },
+    {
+      "id": "seed-instruction-bs-0149",
+      "task_family": "instruction",
+      "prompt": "Provide a step-by-step guide for writing a formal complaint letter to a government office. Include what information to put in the opening, body, and closing sections, and how to keep records of the submission.",
+      "expected": null,
+      "metadata": {
+        "domain": "writing",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "give a clear step-by-step how-to"
+      },
+      "labels": [
+        "how-to",
+        "writing",
+        "civic"
+      ]
+    },
+    {
+      "id": "seed-instruction-bs-0150",
+      "task_family": "instruction",
+      "prompt": "Walk through the steps for safely storing rice or wheat at home for several months so that it does not get damaged by moisture, insects, or heat. Mention what containers to use and what to avoid.",
+      "expected": null,
+      "metadata": {
+        "domain": "household",
+        "difficulty": "easy",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "give a clear step-by-step how-to"
+      },
+      "labels": [
+        "how-to",
+        "household",
+        "food"
+      ]
+    },
+    {
+      "id": "seed-instruction-bs-0151",
+      "task_family": "instruction",
+      "prompt": "Give step-by-step instructions for how to give basic first aid to a person who has fainted. Include what to check first, what position to place the person in, when to call for medical help, and what not to do.",
+      "expected": null,
+      "metadata": {
+        "domain": "health",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "give a clear step-by-step how-to"
+      },
+      "labels": [
+        "how-to",
+        "first-aid",
+        "health"
+      ]
+    }
+  ]
+}
