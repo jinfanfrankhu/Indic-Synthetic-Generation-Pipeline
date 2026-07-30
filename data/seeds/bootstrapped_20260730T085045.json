@@ -1,0 +1,1986 @@
+{
+  "seeds": [
+    {
+      "id": "seed-qa-bs-0121",
+      "task_family": "qa",
+      "prompt": "What is the title of the Sanskrit astronomical treatise composed by Aryabhata in 499 CE, which contains his approximation of pi and a model of planetary motion?",
+      "expected": "Aryabhatiya",
+      "metadata": {
+        "domain": "science_history",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "Indian scientific and mathematical heritage — figures, concepts, and ancient contributions (Aryabhata, Ramanujan, zero, Sushruta)"
+      },
+      "labels": [
+        "science_history",
+        "astronomy",
+        "india"
+      ]
+    },
+    {
+      "id": "seed-qa-bs-0122",
+      "task_family": "qa",
+      "prompt": "Which 7th-century Indian mathematician first stated formal rules for arithmetic operations involving zero, in his 628 CE treatise Brahmasphutasiddhanta?",
+      "expected": "Brahmagupta",
+      "metadata": {
+        "domain": "mathematics_history",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "Indian scientific and mathematical heritage — figures, concepts, and ancient contributions (Aryabhata, Ramanujan, zero, Sushruta)"
+      },
+      "labels": [
+        "mathematics_history",
+        "india"
+      ]
+    },
+    {
+      "id": "seed-qa-bs-0123",
+      "task_family": "qa",
+      "prompt": "What name is given to the integer 1729, which Ramanujan recognized as the smallest positive integer expressible as the sum of two positive cubes in two distinct ways?",
+      "expected": "Hardy-Ramanujan number",
+      "metadata": {
+        "domain": "mathematics",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "Indian scientific and mathematical heritage — figures, concepts, and ancient contributions (Aryabhata, Ramanujan, zero, Sushruta)"
+      },
+      "labels": [
+        "mathematics",
+        "number_theory",
+        "india"
+      ]
+    },
+    {
+      "id": "seed-qa-bs-0124",
+      "task_family": "qa",
+      "prompt": "What type of reconstructive surgery did the ancient Indian physician Sushruta pioneer, describing the procedure using skin flaps in the Sushruta Samhita?",
+      "expected": "rhinoplasty",
+      "metadata": {
+        "domain": "medicine_history",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "Indian scientific and mathematical heritage — figures, concepts, and ancient contributions (Aryabhata, Ramanujan, zero, Sushruta)"
+      },
+      "labels": [
+        "science_history",
+        "medicine",
+        "india"
+      ]
+    },
+    {
+      "id": "seed-qa-bs-0125",
+      "task_family": "qa",
+      "prompt": "Which 14th-century mathematician of the Kerala school first derived the infinite series expansion for pi that was independently rediscovered in Europe more than two centuries later by Leibniz and Gregory?",
+      "expected": "Madhava of Sangamagrama",
+      "metadata": {
+        "domain": "mathematics_history",
+        "difficulty": "hard",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "Indian scientific and mathematical heritage — figures, concepts, and ancient contributions (Aryabhata, Ramanujan, zero, Sushruta)"
+      },
+      "labels": [
+        "mathematics_history",
+        "india",
+        "kerala_school"
+      ]
+    },
+    {
+      "id": "seed-qa-bs-0126",
+      "task_family": "qa",
+      "prompt": "How many bones does an adult human skeleton contain?",
+      "expected": "206",
+      "metadata": {
+        "domain": "anatomy",
+        "difficulty": "easy",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "the human body, nutrition, and medicine (factual, stable)"
+      },
+      "labels": [
+        "anatomy",
+        "human body"
+      ]
+    },
+    {
+      "id": "seed-qa-bs-0127",
+      "task_family": "qa",
+      "prompt": "What vitamin deficiency causes the disease scurvy?",
+      "expected": "Vitamin C",
+      "metadata": {
+        "domain": "nutrition",
+        "difficulty": "easy",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "the human body, nutrition, and medicine (factual, stable)"
+      },
+      "labels": [
+        "nutrition",
+        "deficiency disease"
+      ]
+    },
+    {
+      "id": "seed-qa-bs-0128",
+      "task_family": "qa",
+      "prompt": "Which internal organ of the human body is uniquely capable of regenerating itself after partial surgical removal?",
+      "expected": "liver",
+      "metadata": {
+        "domain": "anatomy",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "the human body, nutrition, and medicine (factual, stable)"
+      },
+      "labels": [
+        "anatomy",
+        "medicine"
+      ]
+    },
+    {
+      "id": "seed-qa-bs-0129",
+      "task_family": "qa",
+      "prompt": "What is the name of the primary bioactive compound in turmeric responsible for its anti-inflammatory properties?",
+      "expected": "curcumin",
+      "metadata": {
+        "domain": "nutrition",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "the human body, nutrition, and medicine (factual, stable)"
+      },
+      "labels": [
+        "nutrition",
+        "pharmacology"
+      ]
+    },
+    {
+      "id": "seed-qa-bs-0130",
+      "task_family": "qa",
+      "prompt": "In what year did Alexander Fleming discover penicillin?",
+      "expected": "1928",
+      "metadata": {
+        "domain": "medicine",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "the human body, nutrition, and medicine (factual, stable)"
+      },
+      "labels": [
+        "medicine",
+        "history of science"
+      ]
+    },
+    {
+      "id": "seed-qa-bs-0131",
+      "task_family": "qa",
+      "prompt": "Which article of the Indian Constitution did B.R. Ambedkar describe as its 'heart and soul'?",
+      "expected": "Article 32",
+      "metadata": {
+        "domain": "civics",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "Indian civics — the Constitution, national symbols, government institutions and their roles"
+      },
+      "labels": [
+        "civics",
+        "constitution",
+        "fundamental_rights"
+      ]
+    },
+    {
+      "id": "seed-qa-bs-0132",
+      "task_family": "qa",
+      "prompt": "Which amendment to the Indian Constitution inserted the words 'Socialist' and 'Secular' into the Preamble?",
+      "expected": "42nd",
+      "metadata": {
+        "domain": "civics",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "Indian civics — the Constitution, national symbols, government institutions and their roles"
+      },
+      "labels": [
+        "civics",
+        "constitution",
+        "preamble"
+      ]
+    },
+    {
+      "id": "seed-qa-bs-0133",
+      "task_family": "qa",
+      "prompt": "How many members does the President of India nominate to the Rajya Sabha?",
+      "expected": "12",
+      "metadata": {
+        "domain": "civics",
+        "difficulty": "easy",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "Indian civics — the Constitution, national symbols, government institutions and their roles"
+      },
+      "labels": [
+        "civics",
+        "parliament",
+        "rajya_sabha"
+      ]
+    },
+    {
+      "id": "seed-qa-bs-0134",
+      "task_family": "qa",
+      "prompt": "In which year did the Supreme Court of India establish the Basic Structure doctrine?",
+      "expected": "1973",
+      "metadata": {
+        "domain": "civics",
+        "difficulty": "hard",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "Indian civics — the Constitution, national symbols, government institutions and their roles"
+      },
+      "labels": [
+        "civics",
+        "judiciary",
+        "constitutional_law"
+      ]
+    },
+    {
+      "id": "seed-qa-bs-0135",
+      "task_family": "qa",
+      "prompt": "What is the national aquatic animal of India?",
+      "expected": "Gangetic river dolphin",
+      "metadata": {
+        "domain": "civics",
+        "difficulty": "easy",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "Indian civics — the Constitution, national symbols, government institutions and their roles"
+      },
+      "labels": [
+        "civics",
+        "national_symbols"
+      ]
+    },
+    {
+      "id": "seed-qa-bs-0136",
+      "task_family": "qa",
+      "prompt": "In what year was the Organization of the Petroleum Exporting Countries (OPEC) founded?",
+      "expected": "1960",
+      "metadata": {
+        "domain": "economics",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "economics, currencies, trade, and well-established organizations"
+      },
+      "labels": [
+        "economics",
+        "organizations",
+        "energy"
+      ]
+    },
+    {
+      "id": "seed-qa-bs-0137",
+      "task_family": "qa",
+      "prompt": "In what year was the World Trade Organization (WTO) established?",
+      "expected": "1995",
+      "metadata": {
+        "domain": "trade",
+        "difficulty": "easy",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "economics, currencies, trade, and well-established organizations"
+      },
+      "labels": [
+        "trade",
+        "organizations",
+        "international"
+      ]
+    },
+    {
+      "id": "seed-qa-bs-0138",
+      "task_family": "qa",
+      "prompt": "What is the name of the free trade agreement that replaced NAFTA between the United States, Mexico, and Canada?",
+      "expected": "USMCA",
+      "metadata": {
+        "domain": "trade",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "economics, currencies, trade, and well-established organizations"
+      },
+      "labels": [
+        "trade",
+        "economics",
+        "North America"
+      ]
+    },
+    {
+      "id": "seed-qa-bs-0139",
+      "task_family": "qa",
+      "prompt": "In what year was the Reserve Bank of India established?",
+      "expected": "1935",
+      "metadata": {
+        "domain": "economics",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "economics, currencies, trade, and well-established organizations"
+      },
+      "labels": [
+        "economics",
+        "India",
+        "central banking"
+      ]
+    },
+    {
+      "id": "seed-qa-bs-0140",
+      "task_family": "qa",
+      "prompt": "In what year were Euro banknotes and coins first introduced into circulation?",
+      "expected": "2002",
+      "metadata": {
+        "domain": "currencies",
+        "difficulty": "easy",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "economics, currencies, trade, and well-established organizations"
+      },
+      "labels": [
+        "currencies",
+        "Europe",
+        "monetary union"
+      ]
+    },
+    {
+      "id": "seed-reasoning-bs-0131",
+      "task_family": "reasoning",
+      "prompt": "A jeweler has two gold alloys: Alloy P contains 80% pure gold by mass, and Alloy Q contains 50% pure gold by mass. She needs to produce 450 grams of a new alloy that is exactly 60% pure gold. How many grams of Alloy P and how many grams of Alloy Q should she mix together? Show your reasoning step by step.",
+      "expected": "Using alligation on gold content: ratio of Alloy P to Alloy Q = (60 − 50) : (80 − 60) = 10 : 20 = 1 : 2. Total parts = 3, representing 450 g, so each part = 450 ÷ 3 = 150 g. Alloy P = 1 × 150 = 150 g; Alloy Q = 2 × 150 = 300 g. Verification: 0.80 × 150 + 0.50 × 300 = 120 + 150 = 270 g of gold in 450 g total = 60%. Answer: 150 g of Alloy P and 300 g of Alloy Q.",
+      "metadata": {
+        "domain": "metallurgy",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "ratio, proportion, and alligation in non-liquid contexts (metal alloys, ingredient blends, budget splits)"
+      },
+      "labels": [
+        "math",
+        "alligation",
+        "ratio",
+        "proportion"
+      ]
+    },
+    {
+      "id": "seed-reasoning-bs-0132",
+      "task_family": "reasoning",
+      "prompt": "A spice merchant blends coriander, cumin, and black pepper in the ratio 5 : 3 : 2 by weight. Coriander costs ₹90 per kilogram, cumin costs ₹150 per kilogram, and black pepper costs ₹600 per kilogram. What is the cost per kilogram of the finished spice blend? Show your reasoning step by step.",
+      "expected": "The ratio 5 : 3 : 2 sums to 10 parts, so every 10 kg of blend contains 5 kg coriander, 3 kg cumin, and 2 kg black pepper. Cost for 10 kg: coriander = 5 × 90 = ₹450; cumin = 3 × 150 = ₹450; black pepper = 2 × 600 = ₹1,200. Total cost = 450 + 450 + 1,200 = ₹2,100 for 10 kg. Cost per kilogram = 2,100 ÷ 10 = ₹210. Answer: ₹210 per kilogram.",
+      "metadata": {
+        "domain": "food_commerce",
+        "difficulty": "easy",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "ratio, proportion, and alligation in non-liquid contexts (metal alloys, ingredient blends, budget splits)"
+      },
+      "labels": [
+        "math",
+        "ratio",
+        "weighted_average",
+        "cost"
+      ]
+    },
+    {
+      "id": "seed-reasoning-bs-0133",
+      "task_family": "reasoning",
+      "prompt": "A municipal corporation's annual budget of ₹200 crore is allocated among education, healthcare, and infrastructure in the ratio 4 : 3 : 3. After a public consultation, ₹10 crore is transferred from the infrastructure budget to the education budget; healthcare remains unchanged. Express the revised allocation as a simplified ratio. Show your reasoning step by step.",
+      "expected": "Total parts = 4 + 3 + 3 = 10. Value of each part = ₹200 crore ÷ 10 = ₹20 crore. Original allocations: Education = 4 × 20 = ₹80 cr; Healthcare = 3 × 20 = ₹60 cr; Infrastructure = 3 × 20 = ₹60 cr. After transfer of ₹10 cr from infrastructure to education: Education = 80 + 10 = ₹90 cr; Healthcare = ₹60 cr; Infrastructure = 60 − 10 = ₹50 cr. New ratio = 90 : 60 : 50. GCD(90, 60, 50) = 10, so simplified ratio = 9 : 6 : 5. Answer: 9 : 6 : 5.",
+      "metadata": {
+        "domain": "public_finance",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "ratio, proportion, and alligation in non-liquid contexts (metal alloys, ingredient blends, budget splits)"
+      },
+      "labels": [
+        "math",
+        "ratio",
+        "proportion",
+        "budget"
+      ]
+    },
+    {
+      "id": "seed-reasoning-bs-0134",
+      "task_family": "reasoning",
+      "prompt": "Farmer Gopal mixes two fertilizer blends in a 3 : 1 ratio by weight. Blend A contains 15% nitrogen and 5% phosphorus by mass. Blend B contains 5% nitrogen and 9% phosphorus by mass. (a) What are the nitrogen and phosphorus percentages in the resulting mixture? (b) A soil assessment recommends at least 12% nitrogen and at least 6% phosphorus. Does the mixture meet both thresholds? Show your reasoning step by step.",
+      "expected": "(a) Ratio 3 : 1 means 4 total parts. Nitrogen in mixture = (3 × 15 + 1 × 5) ÷ 4 = (45 + 5) ÷ 4 = 50 ÷ 4 = 12.5%. Phosphorus in mixture = (3 × 5 + 1 × 9) ÷ 4 = (15 + 9) ÷ 4 = 24 ÷ 4 = 6%. (b) Nitrogen: 12.5% ≥ 12% — threshold met. Phosphorus: 6% ≥ 6% — threshold met exactly. Answer: The mixture contains 12.5% nitrogen and 6% phosphorus; both soil recommendations are satisfied.",
+      "metadata": {
+        "domain": "agriculture",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "ratio, proportion, and alligation in non-liquid contexts (metal alloys, ingredient blends, budget splits)"
+      },
+      "labels": [
+        "math",
+        "alligation",
+        "weighted_average",
+        "proportion"
+      ]
+    },
+    {
+      "id": "seed-reasoning-bs-0135",
+      "task_family": "reasoning",
+      "prompt": "A construction crew mixes concrete using cement, sand, and coarse aggregate in the volume ratio 1 : 2 : 4. They need 3,500 liters of concrete to fill a foundation. Cement is sold in 50-liter bags and coarse aggregate in 100-liter bags. How many bags of cement and how many bags of coarse aggregate must the crew purchase? Show your reasoning step by step.",
+      "expected": "Total ratio parts = 1 + 2 + 4 = 7. Volume per part = 3,500 ÷ 7 = 500 liters. Cement required = 1 × 500 = 500 liters; bags of cement = 500 ÷ 50 = 10 bags. Sand required = 2 × 500 = 1,000 liters (no bags specified). Coarse aggregate required = 4 × 500 = 2,000 liters; bags of aggregate = 2,000 ÷ 100 = 20 bags. Answer: 10 bags of cement and 20 bags of coarse aggregate.",
+      "metadata": {
+        "domain": "construction",
+        "difficulty": "easy",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "ratio, proportion, and alligation in non-liquid contexts (metal alloys, ingredient blends, budget splits)"
+      },
+      "labels": [
+        "math",
+        "ratio",
+        "proportion"
+      ]
+    },
+    {
+      "id": "seed-reasoning-bs-0136",
+      "task_family": "reasoning",
+      "prompt": "In a city council election, three candidates contested. Candidate Priya received 48% of the 75,000 votes cast, Candidate Rajan received 32%, and the remainder went to Candidate Meena. After the count, election officials declared 15% of Priya's votes invalid due to a stamping error. How many valid votes does Priya have? Show your reasoning step by step.",
+      "expected": "Priya's total votes: 48% of 75,000 = 0.48 × 75,000 = 36,000.\nInvalid votes: 15% of 36,000 = 0.15 × 36,000 = 5,400.\nValid votes for Priya: 36,000 − 5,400 = 30,600.",
+      "metadata": {
+        "domain": "civics/mathematics",
+        "difficulty": "easy",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "percentages in real settings (elections, exam results, population change, successive discounts)"
+      },
+      "labels": [
+        "reasoning",
+        "percentage",
+        "elections"
+      ]
+    },
+    {
+      "id": "seed-reasoning-bs-0137",
+      "task_family": "reasoning",
+      "prompt": "A university final examination was taken by 2,400 students. 65% of the students passed. Among those who passed, 55% were women and the rest were men. Among those who failed, 70% were men and the rest were women. How many women failed the examination? Show your reasoning step by step.",
+      "expected": "Students who passed: 65% of 2,400 = 0.65 × 2,400 = 1,560.\nStudents who failed: 2,400 − 1,560 = 840.\nAmong those who failed, 30% were women (since 70% were men).\nWomen who failed: 30% of 840 = 0.30 × 840 = 252.",
+      "metadata": {
+        "domain": "education/mathematics",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "percentages in real settings (elections, exam results, population change, successive discounts)"
+      },
+      "labels": [
+        "reasoning",
+        "percentage",
+        "exam-results"
+      ]
+    },
+    {
+      "id": "seed-reasoning-bs-0138",
+      "task_family": "reasoning",
+      "prompt": "A town had a population of 1,20,000 at the start of 2023. During 2023, the population grew by 10% as a new industrial project attracted workers. During 2024, a prolonged drought caused the population to fall by 8% as residents moved to other areas. What is the town's population at the end of 2024? Show your reasoning step by step.",
+      "expected": "Population at end of 2023: 1,20,000 × 1.10 = 1,32,000.\nPopulation at end of 2024: 1,32,000 × 0.92 = 1,21,440.\nThe town's population at the end of 2024 is 1,21,440.",
+      "metadata": {
+        "domain": "demographics/mathematics",
+        "difficulty": "easy",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "percentages in real settings (elections, exam results, population change, successive discounts)"
+      },
+      "labels": [
+        "reasoning",
+        "percentage",
+        "population-change"
+      ]
+    },
+    {
+      "id": "seed-reasoning-bs-0139",
+      "task_family": "reasoning",
+      "prompt": "A clothing store offers two successive discounts of 30% and then 20% on a kurta originally priced at ₹5,000. A neighbouring store offers a single flat discount of 45% on the identical kurta at the same original price. Which store offers the lower final price, and by how much? Show your reasoning step by step.",
+      "expected": "Store 1 — successive discounts:\nAfter 30% discount: 5,000 × 0.70 = ₹3,500.\nAfter 20% discount on that: 3,500 × 0.80 = ₹2,800.\n\nStore 2 — flat 45% discount:\n5,000 × 0.55 = ₹2,750.\n\nStore 2 gives the lower price. Difference: 2,800 − 2,750 = ₹50.\nStore 2 is cheaper by ₹50.",
+      "metadata": {
+        "domain": "consumer-math/mathematics",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "percentages in real settings (elections, exam results, population change, successive discounts)"
+      },
+      "labels": [
+        "reasoning",
+        "percentage",
+        "successive-discounts"
+      ]
+    },
+    {
+      "id": "seed-reasoning-bs-0140",
+      "task_family": "reasoning",
+      "prompt": "In a parliamentary constituency election, the winning candidate secured 42% of the total votes polled, the runner-up secured 35%, and the remaining votes were distributed among three other candidates. The winning margin — the difference between the winner's vote count and the runner-up's vote count — was 24,500 votes. What was the total number of votes polled in the constituency? Show your reasoning step by step.",
+      "expected": "The gap in percentage points between the winner and runner-up: 42% − 35% = 7%.\nThis 7% of total votes equals 24,500.\nLet total votes = T.\n0.07 × T = 24,500\nT = 24,500 ÷ 0.07 = 3,50,000.\nThe total number of votes polled was 3,50,000.",
+      "metadata": {
+        "domain": "civics/mathematics",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "percentages in real settings (elections, exam results, population change, successive discounts)"
+      },
+      "labels": [
+        "reasoning",
+        "percentage",
+        "elections"
+      ]
+    },
+    {
+      "id": "seed-reasoning-bs-0141",
+      "task_family": "reasoning",
+      "prompt": "Meera is currently twice as old as her daughter Priya. Eight years ago, Meera was three times as old as Priya was at that time. How old are Meera and Priya today? Show your reasoning step by step.",
+      "expected": "Priya is 16 years old and Meera is 32 years old.",
+      "metadata": {
+        "domain": "arithmetic",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "age and family-relationship word problems"
+      },
+      "labels": [
+        "reasoning",
+        "math",
+        "age"
+      ]
+    },
+    {
+      "id": "seed-reasoning-bs-0142",
+      "task_family": "reasoning",
+      "prompt": "Rajan is 5 years older than his sister Kavya. Their mother is three times as old as Kavya. The sum of the ages of all three people is 70. How old is each person? Show your reasoning step by step.",
+      "expected": "Kavya is 13 years old, Rajan is 18 years old, and their mother is 39 years old.",
+      "metadata": {
+        "domain": "arithmetic",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "age and family-relationship word problems"
+      },
+      "labels": [
+        "reasoning",
+        "math",
+        "age"
+      ]
+    },
+    {
+      "id": "seed-reasoning-bs-0143",
+      "task_family": "reasoning",
+      "prompt": "The average age of a family of 5 members is 26 years. The youngest member is 6 years old. What was the average age of the other four family members at the time the youngest was born? Show your reasoning step by step.",
+      "expected": "The average age of the other four family members when the youngest was born was 25 years.",
+      "metadata": {
+        "domain": "arithmetic",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "age and family-relationship word problems"
+      },
+      "labels": [
+        "reasoning",
+        "math",
+        "age",
+        "averages"
+      ]
+    },
+    {
+      "id": "seed-reasoning-bs-0144",
+      "task_family": "reasoning",
+      "prompt": "Arnav is 4 years older than his brother Dhruv. Five years from now, the ratio of Arnav's age to Dhruv's age will be 7 : 6. What are their current ages? Show your reasoning step by step.",
+      "expected": "Dhruv is currently 19 years old and Arnav is currently 23 years old.",
+      "metadata": {
+        "domain": "arithmetic",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "age and family-relationship word problems"
+      },
+      "labels": [
+        "reasoning",
+        "math",
+        "age",
+        "ratios"
+      ]
+    },
+    {
+      "id": "seed-reasoning-bs-0145",
+      "task_family": "reasoning",
+      "prompt": "In a joint family, a grandmother's age is 3 years less than twice the age of her daughter-in-law. The granddaughter's age is exactly one-third the age of her mother, the daughter-in-law. The sum of the ages of all three women is 87. Find the age of each woman. Show your reasoning step by step.",
+      "expected": "The daughter-in-law is 27 years old, the grandmother is 51 years old, and the granddaughter is 9 years old.",
+      "metadata": {
+        "domain": "arithmetic",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "age and family-relationship word problems"
+      },
+      "labels": [
+        "reasoning",
+        "math",
+        "age",
+        "family"
+      ]
+    },
+    {
+      "id": "seed-reasoning-bs-0146",
+      "task_family": "reasoning",
+      "prompt": "Ananya cycles from her home to her college, a distance of 24 km, at a speed of 16 km/h. She returns home by a different route that is 30 km long (mostly downhill), riding at 20 km/h. What is Ananya's average speed for the entire cycling journey — going and returning combined? Show your reasoning step by step.",
+      "expected": "18 km/h. Time to college: 24 ÷ 16 = 1.5 hours. Time returning: 30 ÷ 20 = 1.5 hours. Total distance: 24 + 30 = 54 km. Total time: 3 hours. Average speed = 54 ÷ 3 = 18 km/h.",
+      "metadata": {
+        "domain": "kinematics",
+        "difficulty": "easy",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "average speed / relative motion with stops or return trips (not two vehicles meeting head-on)"
+      },
+      "labels": [
+        "reasoning",
+        "math",
+        "kinematics",
+        "average-speed",
+        "round-trip"
+      ]
+    },
+    {
+      "id": "seed-reasoning-bs-0147",
+      "task_family": "reasoning",
+      "prompt": "A delivery van leaves Chennai and drives 120 km to Vellore at 60 km/h. It waits 45 minutes to unload, then drives 80 km from Vellore to Tirupati at 80 km/h. It waits another 30 minutes, then returns directly to Chennai — a distance of 160 km — at 80 km/h. What is the van's average speed for the entire trip, including both waiting periods? Show your reasoning step by step.",
+      "expected": "57.6 km/h. Driving times: 120÷60 = 2 h, 80÷80 = 1 h, 160÷80 = 2 h. Waiting: 0.75 h + 0.5 h = 1.25 h. Total time: 2 + 1 + 2 + 1.25 = 6.25 hours. Total distance: 120 + 80 + 160 = 360 km. Average speed = 360 ÷ 6.25 = 57.6 km/h.",
+      "metadata": {
+        "domain": "logistics / kinematics",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "average speed / relative motion with stops or return trips (not two vehicles meeting head-on)"
+      },
+      "labels": [
+        "reasoning",
+        "math",
+        "kinematics",
+        "average-speed",
+        "multi-leg",
+        "stops"
+      ]
+    },
+    {
+      "id": "seed-reasoning-bs-0148",
+      "task_family": "reasoning",
+      "prompt": "A tourist bus leaves Jaipur at 7:00 AM heading toward Ajmer at 60 km/h. At 8:30 AM, a courier on a motorcycle leaves Jaipur on the same road at 90 km/h to deliver a document the group left behind. At what time does the motorcycle catch up with the bus, and how many kilometres from Jaipur does this happen? Show your reasoning step by step.",
+      "expected": "11:30 AM, 270 km from Jaipur. By 8:30 AM the bus has a head start of 1.5 × 60 = 90 km. The motorcycle closes the gap at a relative speed of 90 − 60 = 30 km/h. Time to close 90 km: 90 ÷ 30 = 3 hours after 8:30 AM → catch-up at 11:30 AM. Distance from Jaipur: 3 × 90 = 270 km (check: bus has traveled 4.5 × 60 = 270 km ✓).",
+      "metadata": {
+        "domain": "kinematics",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "average speed / relative motion with stops or return trips (not two vehicles meeting head-on)"
+      },
+      "labels": [
+        "reasoning",
+        "math",
+        "kinematics",
+        "relative-motion",
+        "catch-up"
+      ]
+    },
+    {
+      "id": "seed-reasoning-bs-0149",
+      "task_family": "reasoning",
+      "prompt": "Train A covers the first half of its 360 km route (by distance) at 60 km/h and the second half at 90 km/h. Train B covers the first half of its total travel time at 60 km/h and the second half of its total travel time at 90 km/h, also traveling 360 km. Which train arrives first? How long does each take, and what is the average speed of each? Show your reasoning step by step.",
+      "expected": "Train B arrives first. Train A: each distance half = 180 km. Time = 180÷60 + 180÷90 = 3 + 2 = 5 hours; average speed = 360÷5 = 72 km/h. Train B: let total time = T. Distance = 60·(T/2) + 90·(T/2) = 75T = 360, so T = 4.8 hours; average speed = 360÷4.8 = 75 km/h. Train B takes 4.8 h vs Train A's 5 h, so Train B arrives first.",
+      "metadata": {
+        "domain": "kinematics / conceptual",
+        "difficulty": "hard",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "average speed / relative motion with stops or return trips (not two vehicles meeting head-on)"
+      },
+      "labels": [
+        "reasoning",
+        "math",
+        "kinematics",
+        "average-speed",
+        "comparison",
+        "equal-time-vs-equal-distance"
+      ]
+    },
+    {
+      "id": "seed-reasoning-bs-0150",
+      "task_family": "reasoning",
+      "prompt": "Vikram completes a 10 km fun run in three stages: he runs the first 8 km at 16 km/h, takes a 10-minute rest, then runs the final 2 km at 12 km/h. What is Vikram's average speed over the full 10 km including the rest period? Show your reasoning step by step.",
+      "expected": "12 km/h. Time for first 8 km: 8÷16 = 0.5 h = 30 minutes. Rest: 10 minutes. Time for last 2 km: 2÷12 = 1/6 h = 10 minutes. Total time: 30 + 10 + 10 = 50 minutes = 5/6 hours. Average speed = 10 ÷ (5/6) = 10 × 6/5 = 12 km/h.",
+      "metadata": {
+        "domain": "kinematics / sports",
+        "difficulty": "easy",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "average speed / relative motion with stops or return trips (not two vehicles meeting head-on)"
+      },
+      "labels": [
+        "reasoning",
+        "math",
+        "kinematics",
+        "average-speed",
+        "stops",
+        "multi-segment"
+      ]
+    },
+    {
+      "id": "seed-translation-bs-0142",
+      "task_family": "translation",
+      "prompt": "Please review the attached report and share your comments by end of day Friday.",
+      "expected": null,
+      "metadata": {
+        "domain": "workplace_communication",
+        "difficulty": "easy",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "workplace and professional communication (a request, an update, a short email line)"
+      },
+      "labels": [
+        "translation"
+      ]
+    },
+    {
+      "id": "seed-translation-bs-0143",
+      "task_family": "translation",
+      "prompt": "The client has moved up the deadline, so we need the final draft by tomorrow morning.",
+      "expected": null,
+      "metadata": {
+        "domain": "workplace_communication",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "workplace and professional communication (a request, an update, a short email line)"
+      },
+      "labels": [
+        "translation"
+      ]
+    },
+    {
+      "id": "seed-translation-bs-0144",
+      "task_family": "translation",
+      "prompt": "Could you clarify which version of the requirements document we should be working from?",
+      "expected": null,
+      "metadata": {
+        "domain": "workplace_communication",
+        "difficulty": "easy",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "workplace and professional communication (a request, an update, a short email line)"
+      },
+      "labels": [
+        "translation"
+      ]
+    },
+    {
+      "id": "seed-translation-bs-0145",
+      "task_family": "translation",
+      "prompt": "I wanted to flag that the budget for this quarter has been revised downward by fifteen percent.",
+      "expected": null,
+      "metadata": {
+        "domain": "workplace_finance",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "workplace and professional communication (a request, an update, a short email line)"
+      },
+      "labels": [
+        "translation"
+      ]
+    },
+    {
+      "id": "seed-translation-bs-0146",
+      "task_family": "translation",
+      "prompt": "Once the manager signs off on the proposal, the team can begin the implementation phase.",
+      "expected": null,
+      "metadata": {
+        "domain": "workplace_communication",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "workplace and professional communication (a request, an update, a short email line)"
+      },
+      "labels": [
+        "translation"
+      ]
+    },
+    {
+      "id": "seed-translation-bs-0147",
+      "task_family": "translation",
+      "prompt": "The merchant agreed to accept payment in two installments, with the remaining balance due within thirty days.",
+      "expected": null,
+      "metadata": {
+        "domain": "commerce",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "shopping, commerce, and handling money"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-translation-bs-0148",
+      "task_family": "translation",
+      "prompt": "Do you think the shopkeeper will lower the price if we buy three of them together?",
+      "expected": null,
+      "metadata": {
+        "domain": "shopping",
+        "difficulty": "easy",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "shopping, commerce, and handling money"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-translation-bs-0149",
+      "task_family": "translation",
+      "prompt": "Always count your change before walking away from the counter.",
+      "expected": null,
+      "metadata": {
+        "domain": "shopping",
+        "difficulty": "easy",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "shopping, commerce, and handling money"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-translation-bs-0150",
+      "task_family": "translation",
+      "prompt": "She could not believe the saree had been marked down to less than half its original price!",
+      "expected": null,
+      "metadata": {
+        "domain": "shopping",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "shopping, commerce, and handling money"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-translation-bs-0151",
+      "task_family": "translation",
+      "prompt": "If you set aside a fixed amount each week, you will have enough saved for the festival purchases by the end of the month.",
+      "expected": null,
+      "metadata": {
+        "domain": "personal_finance",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "shopping, commerce, and handling money"
+      },
+      "labels": null
+    },
+    {
+      "id": "seed-translation-bs-0152",
+      "task_family": "translation",
+      "prompt": "Heat oil in the pan until it shimmers, then add the mustard seeds and wait for them to pop before adding the onions.",
+      "expected": null,
+      "metadata": {
+        "domain": "cooking_instructions",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "step-by-step cooking or household instructions"
+      },
+      "labels": [
+        "translation"
+      ]
+    },
+    {
+      "id": "seed-translation-bs-0153",
+      "task_family": "translation",
+      "prompt": "Rinse the lentils at least twice under cold running water before putting them in the pot.",
+      "expected": null,
+      "metadata": {
+        "domain": "cooking_instructions",
+        "difficulty": "easy",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "step-by-step cooking or household instructions"
+      },
+      "labels": [
+        "translation"
+      ]
+    },
+    {
+      "id": "seed-translation-bs-0154",
+      "task_family": "translation",
+      "prompt": "If the dough sticks to your hands, dust a little more flour on the surface and knead for another two minutes.",
+      "expected": null,
+      "metadata": {
+        "domain": "cooking_instructions",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "step-by-step cooking or household instructions"
+      },
+      "labels": [
+        "translation"
+      ]
+    },
+    {
+      "id": "seed-translation-bs-0155",
+      "task_family": "translation",
+      "prompt": "Wring the wet cloth out completely before wiping down the kitchen shelves, otherwise you will leave streaks.",
+      "expected": null,
+      "metadata": {
+        "domain": "household_instructions",
+        "difficulty": "easy",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "step-by-step cooking or household instructions"
+      },
+      "labels": [
+        "translation"
+      ]
+    },
+    {
+      "id": "seed-translation-bs-0156",
+      "task_family": "translation",
+      "prompt": "Once the pressure cooker has released all its steam naturally, open the lid and check whether the rice has absorbed all the water.",
+      "expected": null,
+      "metadata": {
+        "domain": "cooking_instructions",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "step-by-step cooking or household instructions"
+      },
+      "labels": [
+        "translation"
+      ]
+    },
+    {
+      "id": "seed-translation-bs-0157",
+      "task_family": "translation",
+      "prompt": "He drives the ball through the covers and it races to the boundary for four runs.",
+      "expected": null,
+      "metadata": {
+        "domain": "sports_commentary",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "sports and live-event commentary"
+      },
+      "labels": [
+        "translation"
+      ]
+    },
+    {
+      "id": "seed-translation-bs-0158",
+      "task_family": "translation",
+      "prompt": "The raider tagged two defenders and crossed back safely — the home team now leads by three points.",
+      "expected": null,
+      "metadata": {
+        "domain": "sports_commentary",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "sports and live-event commentary"
+      },
+      "labels": [
+        "translation"
+      ]
+    },
+    {
+      "id": "seed-translation-bs-0159",
+      "task_family": "translation",
+      "prompt": "If she had not fouled the jump, that would have been a new national record.",
+      "expected": null,
+      "metadata": {
+        "domain": "sports_commentary",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "sports and live-event commentary"
+      },
+      "labels": [
+        "translation"
+      ]
+    },
+    {
+      "id": "seed-translation-bs-0160",
+      "task_family": "translation",
+      "prompt": "The entire stadium rose to its feet as the underdog equalised in the final minute of the match.",
+      "expected": null,
+      "metadata": {
+        "domain": "sports_commentary",
+        "difficulty": "hard",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "sports and live-event commentary"
+      },
+      "labels": [
+        "translation"
+      ]
+    },
+    {
+      "id": "seed-translation-bs-0161",
+      "task_family": "translation",
+      "prompt": "How many more overs does the fielding side need to take the remaining three wickets?",
+      "expected": null,
+      "metadata": {
+        "domain": "sports_commentary",
+        "difficulty": "easy",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "sports and live-event commentary"
+      },
+      "labels": [
+        "translation"
+      ]
+    },
+    {
+      "id": "seed-classification-bs-0151",
+      "task_family": "classification",
+      "prompt": "A student sends this message to their professor: 'Sir, I am sorry to disturb you. Would it be possible to get a short extension on the assignment? I have been unwell this week.' Classify the tone of the student's message. Options: Polite, Rude.",
+      "expected": "Polite",
+      "metadata": {
+        "domain": "education",
+        "difficulty": "easy",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "politeness — classify a short message as polite or rude (no slurs; keep it mild)"
+      },
+      "labels": [
+        "Polite",
+        "Rude"
+      ]
+    },
+    {
+      "id": "seed-classification-bs-0152",
+      "task_family": "classification",
+      "prompt": "A customer says to a cashier at a grocery store: 'Are you not paying attention? I was standing here before that other person. Do your job properly.' Classify the tone of the customer's message. Options: Polite, Rude.",
+      "expected": "Rude",
+      "metadata": {
+        "domain": "retail",
+        "difficulty": "easy",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "politeness — classify a short message as polite or rude (no slurs; keep it mild)"
+      },
+      "labels": [
+        "Polite",
+        "Rude"
+      ]
+    },
+    {
+      "id": "seed-classification-bs-0153",
+      "task_family": "classification",
+      "prompt": "A resident slips this written note under a neighbor's door: 'Your music is too loud. Turn it down.' No greeting, no signature. Classify the tone of the note. Options: Polite, Rude.",
+      "expected": "Rude",
+      "metadata": {
+        "domain": "community",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "politeness — classify a short message as polite or rude (no slurs; keep it mild)"
+      },
+      "labels": [
+        "Polite",
+        "Rude"
+      ]
+    },
+    {
+      "id": "seed-classification-bs-0154",
+      "task_family": "classification",
+      "prompt": "An employee sends this message to their manager: 'I wanted to bring to your attention that the meeting room appears to be double-booked for Thursday afternoon. Could you kindly help resolve this when you have a moment?' Classify the tone of the employee's message. Options: Polite, Rude.",
+      "expected": "Polite",
+      "metadata": {
+        "domain": "workplace",
+        "difficulty": "easy",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "politeness — classify a short message as polite or rude (no slurs; keep it mild)"
+      },
+      "labels": [
+        "Polite",
+        "Rude"
+      ]
+    },
+    {
+      "id": "seed-classification-bs-0155",
+      "task_family": "classification",
+      "prompt": "During a group planning discussion, one participant responds to a colleague's suggestion: 'That idea makes no sense at all. Stop wasting everyone's time with such nonsense.' Classify the tone of this response. Options: Polite, Rude.",
+      "expected": "Rude",
+      "metadata": {
+        "domain": "social",
+        "difficulty": "easy",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "politeness — classify a short message as polite or rude (no slurs; keep it mild)"
+      },
+      "labels": [
+        "Polite",
+        "Rude"
+      ]
+    },
+    {
+      "id": "seed-classification-bs-0156",
+      "task_family": "classification",
+      "prompt": "A customer wrote: 'The basmati rice is genuinely fragrant and cooks evenly, but at 380 rupees per kilogram it is nearly double what comparable brands charge at the same shop.' Which single aspect of the product does this review primarily address? Options: price, quality, service, delivery.",
+      "expected": "price",
+      "metadata": {
+        "domain": "retail/grocery",
+        "difficulty": "easy",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "review aspect — is a product/service review mainly about price, quality, service, or delivery?"
+      },
+      "labels": [
+        "price",
+        "quality",
+        "service",
+        "delivery"
+      ]
+    },
+    {
+      "id": "seed-classification-bs-0157",
+      "task_family": "classification",
+      "prompt": "A customer wrote: 'The ceiling fan ran smoothly for exactly eleven days before the motor began making a grinding noise and eventually stopped. The blades also wobble noticeably at medium speed.' Which single aspect of the product does this review primarily address? Options: price, quality, service, delivery.",
+      "expected": "quality",
+      "metadata": {
+        "domain": "home appliances",
+        "difficulty": "easy",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "review aspect — is a product/service review mainly about price, quality, service, or delivery?"
+      },
+      "labels": [
+        "price",
+        "quality",
+        "service",
+        "delivery"
+      ]
+    },
+    {
+      "id": "seed-classification-bs-0158",
+      "task_family": "classification",
+      "prompt": "A customer wrote: 'I placed the order ten days before my nephew's birthday so there would be plenty of time. The parcel was marked as dispatched on day eight and finally reached me two days after the birthday.' Which single aspect of the purchase experience does this review primarily address? Options: price, quality, service, delivery.",
+      "expected": "delivery",
+      "metadata": {
+        "domain": "e-commerce",
+        "difficulty": "easy",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "review aspect — is a product/service review mainly about price, quality, service, or delivery?"
+      },
+      "labels": [
+        "price",
+        "quality",
+        "service",
+        "delivery"
+      ]
+    },
+    {
+      "id": "seed-classification-bs-0159",
+      "task_family": "classification",
+      "prompt": "A customer wrote: 'I called the telecom helpline four times over three days about an incorrect charge on my bill. Each time I was transferred to a different department and had to repeat my account details from the beginning. The charge was never corrected.' Which single aspect of the experience does this review primarily address? Options: price, quality, service, delivery.",
+      "expected": "service",
+      "metadata": {
+        "domain": "telecom/customer care",
+        "difficulty": "easy",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "review aspect — is a product/service review mainly about price, quality, service, or delivery?"
+      },
+      "labels": [
+        "price",
+        "quality",
+        "service",
+        "delivery"
+      ]
+    },
+    {
+      "id": "seed-classification-bs-0160",
+      "task_family": "classification",
+      "prompt": "A diner wrote: 'The dal was watery and under-salted, the roti arrived cold with a faint sour smell, and the paneer in the curry was rubbery. None of the three dishes met a basic standard of preparation.' Which single aspect of the dining experience does this review primarily address? Options: price, quality, service, delivery.",
+      "expected": "quality",
+      "metadata": {
+        "domain": "food/restaurant",
+        "difficulty": "easy",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "review aspect — is a product/service review mainly about price, quality, service, or delivery?"
+      },
+      "labels": [
+        "price",
+        "quality",
+        "service",
+        "delivery"
+      ]
+    },
+    {
+      "id": "seed-classification-bs-0161",
+      "task_family": "classification",
+      "prompt": "Classify the following SMS as spam or legitimate. Message: 'Congratulations! You have been selected as the lucky winner of Rs 5,00,000 in our Diwali Prize Draw. Call 9876543210 within 48 hours and provide your bank account number to claim your reward.' Options: spam, legitimate.",
+      "expected": "spam",
+      "metadata": {
+        "domain": "messaging/fraud-detection",
+        "difficulty": "easy",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "spam vs legitimate for a short message"
+      },
+      "labels": [
+        "spam",
+        "legitimate"
+      ]
+    },
+    {
+      "id": "seed-classification-bs-0162",
+      "task_family": "classification",
+      "prompt": "Classify the following SMS as spam, transactional, or promotional. Message: 'Your OTP for SBI Net Banking login is 572948. This code is valid for 10 minutes. Do not share it with anyone, including bank staff. -State Bank of India' Options: spam, transactional, promotional.",
+      "expected": "transactional",
+      "metadata": {
+        "domain": "banking/messaging",
+        "difficulty": "easy",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "spam vs legitimate for a short message"
+      },
+      "labels": [
+        "spam",
+        "transactional",
+        "promotional"
+      ]
+    },
+    {
+      "id": "seed-classification-bs-0163",
+      "task_family": "classification",
+      "prompt": "Classify the following WhatsApp message as spam or legitimate. Message: 'URGENT HIRING! Work from home and earn Rs 20,000 to Rs 80,000 per day. No qualifications required. Only 1 to 2 hours of daily work needed. Register now — offer valid today only!' Options: spam, legitimate.",
+      "expected": "spam",
+      "metadata": {
+        "domain": "employment/messaging",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "spam vs legitimate for a short message"
+      },
+      "labels": [
+        "spam",
+        "legitimate"
+      ]
+    },
+    {
+      "id": "seed-classification-bs-0164",
+      "task_family": "classification",
+      "prompt": "Classify the following SMS as spam, promotional, or legitimate. Message: 'Your Flipkart order #OD-318847229 is out for delivery and will arrive today between 2 PM and 6 PM. Track your order in the Flipkart app. For help, contact support at 1800-202-9898.' Options: spam, promotional, legitimate.",
+      "expected": "legitimate",
+      "metadata": {
+        "domain": "e-commerce/messaging",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "spam vs legitimate for a short message"
+      },
+      "labels": [
+        "spam",
+        "promotional",
+        "legitimate"
+      ]
+    },
+    {
+      "id": "seed-classification-bs-0165",
+      "task_family": "classification",
+      "prompt": "Classify the following SMS as spam or legitimate. Message: 'Dear Beneficiary, your name appears on the PM Awas Yojana approved list for a housing grant of Rs 1,20,000. Submit your Aadhaar number and bank IFSC code at bit.ly/pmay-claim before 31 July to avoid cancellation of your application.' Options: spam, legitimate.",
+      "expected": "spam",
+      "metadata": {
+        "domain": "government-services/fraud-detection",
+        "difficulty": "hard",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "spam vs legitimate for a short message"
+      },
+      "labels": [
+        "spam",
+        "legitimate"
+      ]
+    },
+    {
+      "id": "seed-classification-bs-0166",
+      "task_family": "classification",
+      "prompt": "Microfinance institutions are expanding loan products specifically designed for small and marginal farmers to purchase drip irrigation equipment at subsidized interest rates. Which of the following sectors does this initiative primarily belong to? Options: agriculture, health, technology, education, finance.",
+      "expected": "finance",
+      "metadata": {
+        "domain": "cross-sector policy",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "topic among an unusual set: agriculture, health, technology, education, finance"
+      },
+      "labels": [
+        "agriculture",
+        "health",
+        "technology",
+        "education",
+        "finance"
+      ]
+    },
+    {
+      "id": "seed-classification-bs-0167",
+      "task_family": "classification",
+      "prompt": "A state government has mandated that all primary school teachers must complete a 40-hour digital literacy certification course before the end of the current academic year. Which of the following sectors does this policy primarily belong to? Options: agriculture, health, technology, education, finance.",
+      "expected": "education",
+      "metadata": {
+        "domain": "public policy",
+        "difficulty": "easy",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "topic among an unusual set: agriculture, health, technology, education, finance"
+      },
+      "labels": [
+        "agriculture",
+        "health",
+        "technology",
+        "education",
+        "finance"
+      ]
+    },
+    {
+      "id": "seed-classification-bs-0168",
+      "task_family": "classification",
+      "prompt": "Researchers have developed a low-cost wireless sensor array that monitors soil moisture and temperature in real time and transmits alerts directly to farmers' mobile phones. Which of the following sectors does this development primarily belong to? Options: agriculture, health, technology, education, finance.",
+      "expected": "technology",
+      "metadata": {
+        "domain": "applied research",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "topic among an unusual set: agriculture, health, technology, education, finance"
+      },
+      "labels": [
+        "agriculture",
+        "health",
+        "technology",
+        "education",
+        "finance"
+      ]
+    },
+    {
+      "id": "seed-classification-bs-0169",
+      "task_family": "classification",
+      "prompt": "A national health authority issued new regulations requiring all registered insurance providers to cover outpatient consultations for patients with chronic kidney disease without prior authorization. Which of the following sectors does this regulation primarily belong to? Options: agriculture, health, technology, education, finance.",
+      "expected": "health",
+      "metadata": {
+        "domain": "public health regulation",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "topic among an unusual set: agriculture, health, technology, education, finance"
+      },
+      "labels": [
+        "agriculture",
+        "health",
+        "technology",
+        "education",
+        "finance"
+      ]
+    },
+    {
+      "id": "seed-classification-bs-0170",
+      "task_family": "classification",
+      "prompt": "A cooperative of paddy farmers in a southern state established a community-owned milling facility, enabling members to process and package rice for direct sale to urban retailers rather than through intermediaries. Which of the following sectors does this cooperative primarily operate in? Options: agriculture, health, technology, education, finance.",
+      "expected": "agriculture",
+      "metadata": {
+        "domain": "rural economy",
+        "difficulty": "easy",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "topic among an unusual set: agriculture, health, technology, education, finance"
+      },
+      "labels": [
+        "agriculture",
+        "health",
+        "technology",
+        "education",
+        "finance"
+      ]
+    },
+    {
+      "id": "seed-summarization-bs-0134",
+      "task_family": "summarization",
+      "prompt": "Savitribai Phule (1831–1897) was a pioneering Indian educator and social reformer from Maharashtra. She co-founded the first school for girls in Pune in 1848, together with her husband Jyotirao Phule, at a time when educating girls was widely opposed. She faced public harassment while walking to school but continued her work regardless. Later in life she managed clinics during the bubonic plague epidemic and died of plague after nursing a sick child. She is widely regarded as the first modern female teacher of India.",
+      "expected": "Savitribai Phule was a nineteenth-century Indian reformer who co-founded the country's first girls' school and spent her life working for women's education and public health despite strong social opposition.",
+      "metadata": {
+        "domain": "biography",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "a short biography or profile of a notable person (Indian or world)"
+      },
+      "labels": [
+        "summarization"
+      ]
+    },
+    {
+      "id": "seed-summarization-bs-0135",
+      "task_family": "summarization",
+      "prompt": "Marie Curie (1867–1934) was a Polish-born physicist and chemist who conducted most of her scientific career in France. She was the first person to win Nobel Prizes in two different scientific fields—Physics in 1903 and Chemistry in 1911. Her research led to the discovery of two new elements, polonium and radium. During the First World War she developed mobile X-ray units, known as 'petites Curies,' to help treat wounded soldiers. She died in 1934 from aplastic anaemia caused by years of exposure to radioactive materials.",
+      "expected": "Marie Curie was a pioneering scientist who discovered two elements and became the first person to receive Nobel Prizes in both Physics and Chemistry, though her lifelong work with radioactive substances ultimately caused her death.",
+      "metadata": {
+        "domain": "biography",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "a short biography or profile of a notable person (Indian or world)"
+      },
+      "labels": [
+        "summarization"
+      ]
+    },
+    {
+      "id": "seed-summarization-bs-0136",
+      "task_family": "summarization",
+      "prompt": "Viswanathan Anand, born in 1969 in Chennai, India, became the first Asian player to win the World Chess Championship under the modern knockout format in 2000. He held the undisputed World Chess Championship title five times between 2000 and 2013. Anand was known for his exceptional speed of calculation, earning him the nickname 'Lightning Kid' early in his career. He was awarded the Rajiv Gandhi Khel Ratna, India's highest sporting honour, in 1991–92. His success helped make chess a widely followed competitive sport in India.",
+      "expected": "Viswanathan Anand is an Indian chess grandmaster from Chennai who became the first Asian undisputed World Chess Champion and won the title five times, transforming chess into a popular sport in India.",
+      "metadata": {
+        "domain": "biography",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "a short biography or profile of a notable person (Indian or world)"
+      },
+      "labels": [
+        "summarization"
+      ]
+    },
+    {
+      "id": "seed-summarization-bs-0137",
+      "task_family": "summarization",
+      "prompt": "Wangari Maathai (1940–2011) was a Kenyan environmental and political activist who founded the Green Belt Movement in 1977. The movement mobilised women across rural Kenya to plant trees, conserve the environment, and build community networks. She was the first African woman to receive the Nobel Peace Prize, awarded in 2004, with the Nobel Committee linking environmental conservation directly to peace and human rights. She also served as a member of Kenya's parliament and as assistant minister for the environment. She planted over 30 million trees across Africa during her lifetime.",
+      "expected": "Wangari Maathai was a Kenyan activist who founded the Green Belt Movement to promote reforestation and women's empowerment, and in 2004 became the first African woman to win the Nobel Peace Prize.",
+      "metadata": {
+        "domain": "biography",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "a short biography or profile of a notable person (Indian or world)"
+      },
+      "labels": [
+        "summarization"
+      ]
+    },
+    {
+      "id": "seed-summarization-bs-0138",
+      "task_family": "summarization",
+      "prompt": "Srinivasa Ramanujan (1887–1920) was an Indian mathematician from Erode, Tamil Nadu, who made extraordinary contributions to number theory, infinite series, and continued fractions with almost no formal training in pure mathematics. After years of working in isolation, he wrote a letter in 1913 to the British mathematician G. H. Hardy, who recognised his genius and invited him to Cambridge University. In just five years of collaboration Ramanujan produced nearly 3,900 results, many of which were proved correct only decades after his death. He was elected a Fellow of the Royal Society in 1918, becoming one of the youngest Fellows in history. He died at the age of 32.",
+      "expected": "Srinivasa Ramanujan was a self-taught Indian mathematical genius who, despite little formal education, made thousands of significant discoveries in number theory and was elected a Fellow of the Royal Society before his early death at thirty-two.",
+      "metadata": {
+        "domain": "biography",
+        "difficulty": "hard",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "a short biography or profile of a notable person (Indian or world)"
+      },
+      "labels": [
+        "summarization"
+      ]
+    },
+    {
+      "id": "seed-summarization-bs-0139",
+      "task_family": "summarization",
+      "prompt": "A solid-state drive, or SSD, stores data on interconnected flash-memory chips rather than on spinning magnetic platters. Because there are no moving parts, an SSD can read and write data far faster than a traditional hard-disk drive and is also more resistant to physical shock. SSDs consume less power, which extends battery life in laptops and mobile devices. Their main disadvantage compared to hard-disk drives is a higher cost per gigabyte of storage capacity.",
+      "expected": "An SSD stores data on flash-memory chips instead of spinning platters, making it faster, more durable, and more power-efficient than a traditional hard drive, though it costs more per gigabyte.",
+      "metadata": {
+        "domain": "technology",
+        "difficulty": "easy",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "a technology or gadget explainer"
+      },
+      "labels": [
+        "summarization"
+      ]
+    },
+    {
+      "id": "seed-summarization-bs-0140",
+      "task_family": "summarization",
+      "prompt": "A QR code is a two-dimensional barcode that encodes information as a pattern of black squares arranged on a white grid. A smartphone camera captures the pattern, and decoding software converts it into text, a web address, or other data within milliseconds. QR codes can store far more information than a one-dimensional barcode and can still be read even when up to thirty percent of the pattern is damaged. They became widely adopted across India during the rollout of UPI-based payment systems, where merchants display a code that customers scan to complete a transaction.",
+      "expected": "A QR code is a two-dimensional barcode that encodes data as a grid of squares, can be decoded instantly by a smartphone camera, and became especially prominent in India as a tool for UPI digital payments.",
+      "metadata": {
+        "domain": "technology",
+        "difficulty": "easy",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "a technology or gadget explainer"
+      },
+      "labels": [
+        "summarization"
+      ]
+    },
+    {
+      "id": "seed-summarization-bs-0141",
+      "task_family": "summarization",
+      "prompt": "Noise-cancelling headphones use a small microphone on the outside of each ear cup to continuously sample ambient sound. An internal processor generates an audio signal that is the exact inverse of the recorded noise, and this inverted signal is mixed into the audio the listener hears. When the two signals combine, they cancel each other out, greatly reducing background sounds such as engine hum or crowd noise. The technology is most effective against steady, low-frequency sounds and less effective against sudden or irregular noises such as a spoken conversation nearby.",
+      "expected": "Noise-cancelling headphones reduce unwanted background sound by capturing ambient noise with a microphone and playing back an inverted signal that cancels it out, working best against steady low-frequency noise.",
+      "metadata": {
+        "domain": "technology",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "a technology or gadget explainer"
+      },
+      "labels": [
+        "summarization"
+      ]
+    },
+    {
+      "id": "seed-summarization-bs-0142",
+      "task_family": "summarization",
+      "prompt": "A lithium-ion battery stores energy through the movement of lithium ions between a positive electrode made of a metal oxide and a negative electrode made of graphite. During charging, an external current forces the ions from the positive electrode into the graphite; during discharge, the ions move back and release electrical energy. The chemistry allows lithium-ion cells to be recharged hundreds of times before capacity degrades significantly. Because the energy density is high relative to weight, lithium-ion batteries are the standard choice for smartphones, laptops, and electric vehicles.",
+      "expected": "A lithium-ion battery works by shuttling lithium ions between two electrodes to store and release energy, offering a high energy-to-weight ratio that makes it the dominant battery type in consumer electronics and electric vehicles.",
+      "metadata": {
+        "domain": "technology",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "a technology or gadget explainer"
+      },
+      "labels": [
+        "summarization"
+      ]
+    },
+    {
+      "id": "seed-summarization-bs-0143",
+      "task_family": "summarization",
+      "prompt": "A GPS receiver determines its location by measuring the time it takes for radio signals to arrive from at least four satellites orbiting Earth. Each satellite continuously broadcasts its precise position and the exact time the signal was sent. The receiver calculates the distance to each satellite based on the signal travel time, then uses a mathematical process called trilateration to pinpoint its own coordinates. Atmospheric interference and the number of satellites in view affect the accuracy of the position fix, which typically falls within a few meters for consumer devices.",
+      "expected": "A GPS receiver finds its location by measuring how long radio signals take to arrive from multiple satellites and then using trilateration to calculate its coordinates, typically accurate to within a few meters.",
+      "metadata": {
+        "domain": "technology",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "a technology or gadget explainer"
+      },
+      "labels": [
+        "summarization"
+      ]
+    },
+    {
+      "id": "seed-summarization-bs-0144",
+      "task_family": "summarization",
+      "prompt": "Oral rehydration therapy is a low-cost treatment for dehydration caused by diarrheal illness. It involves drinking a solution of water, salt, and sugar in precise proportions to restore the fluids and electrolytes the body loses during diarrhea. The World Health Organization credits this therapy with saving millions of lives since its introduction in the 1970s, particularly among children under five in low-income countries. In South Asia, diarrheal disease remains a leading cause of child mortality, so governments distribute pre-measured oral rehydration salt packets through primary health centers. When packets are unavailable, health workers recommend a home solution of one liter of clean water, six teaspoons of sugar, and half a teaspoon of salt.",
+      "expected": "Oral rehydration therapy, a simple solution of water, salt, and sugar, has saved millions of lives since the 1970s by treating dehydration from diarrheal disease, and South Asian governments distribute pre-measured packets to reduce child mortality.",
+      "metadata": {
+        "domain": "public_health",
+        "difficulty": "easy",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "a public-health or medical topic"
+      },
+      "labels": [
+        "summarization"
+      ]
+    },
+    {
+      "id": "seed-summarization-bs-0145",
+      "task_family": "summarization",
+      "prompt": "India accounts for approximately one-quarter of the global tuberculosis burden, with an estimated 2.8 million new cases diagnosed each year. Tuberculosis is a bacterial infection spread through airborne droplets when an infected person coughs or sneezes, making crowded housing a significant risk factor. Standard treatment requires a combination of four antibiotics taken daily for at least six months, and patients who stop treatment early without completing the full course risk developing drug-resistant strains. Drug-resistant tuberculosis is far more difficult and expensive to treat, requiring up to two years of second-line therapy. India's national elimination program provides free diagnosis and treatment through public health facilities and monitors patients through directly observed therapy to reduce treatment dropout.",
+      "expected": "India carries roughly one-quarter of the world's tuberculosis cases, and incomplete antibiotic treatment has contributed to drug-resistant strains, prompting a national program that offers free care and directly observed therapy to ensure patients complete the full course.",
+      "metadata": {
+        "domain": "infectious_disease",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "a public-health or medical topic"
+      },
+      "labels": [
+        "summarization"
+      ]
+    },
+    {
+      "id": "seed-summarization-bs-0146",
+      "task_family": "summarization",
+      "prompt": "The cold chain is the system of temperature-controlled storage and transport that keeps vaccines potent from the manufacturing facility to the point of injection. Most vaccines must be kept between 2 degrees Celsius and 8 degrees Celsius at every stage; exposure to heat or accidental freezing can destroy their effectiveness without any visible change in appearance. Maintaining an unbroken cold chain across India's rural and remote areas is a major logistical challenge, especially during power outages that can last many hours. To address this, the government has deployed solar-powered refrigerators at rural health subcenters and trained community health workers to record temperature logs at each handover point. Breaks in the cold chain are among the leading causes of vaccine wastage worldwide.",
+      "expected": "The cold chain, a system of refrigerated storage and transport between 2°C and 8°C, is essential for vaccine potency, and India has deployed solar-powered refrigerators and trained health workers to maintain it across remote areas with unreliable electricity.",
+      "metadata": {
+        "domain": "immunization_logistics",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "a public-health or medical topic"
+      },
+      "labels": [
+        "summarization"
+      ]
+    },
+    {
+      "id": "seed-summarization-bs-0147",
+      "task_family": "summarization",
+      "prompt": "Iron-deficiency anemia is the most widespread nutritional deficiency in the world, affecting an estimated 1.2 billion people. It develops when the body lacks sufficient iron to produce hemoglobin, the protein in red blood cells that carries oxygen to tissues, causing fatigue, weakness, and impaired cognitive function. Women of reproductive age, pregnant women, and children under five face the highest risk because their bodies require more iron than a typical diet often supplies. India's National Family Health Survey has repeatedly found that more than half of women and young children are anemic, driven largely by low consumption of iron-rich foods such as meat, legumes, and green leafy vegetables. The government's Anemia Mukt Bharat program distributes iron and folic acid supplements to adolescent girls, pregnant women, and children as a preventive measure.",
+      "expected": "Iron-deficiency anemia, the world's most common nutritional deficiency, affects over half of Indian women and young children due to low dietary iron intake, and the government's Anemia Mukt Bharat program distributes supplements to the most vulnerable groups.",
+      "metadata": {
+        "domain": "nutrition_health",
+        "difficulty": "easy",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "a public-health or medical topic"
+      },
+      "labels": [
+        "summarization"
+      ]
+    },
+    {
+      "id": "seed-summarization-bs-0148",
+      "task_family": "summarization",
+      "prompt": "Dengue fever is a viral illness transmitted by the Aedes aegypti mosquito, which breeds in small pools of stagnant water found in flower pots, discarded containers, and water storage vessels near homes. The disease causes sudden high fever, severe muscle and joint pain, and in serious cases a potentially fatal complication called dengue hemorrhagic fever, in which blood plasma leaks from vessels. No specific antiviral drug exists for dengue, so treatment focuses on managing symptoms through rest and fluid replacement to prevent dangerous drops in blood pressure. Because the mosquito breeds close to human settlements, the primary public health response is community-based elimination of standing water and periodic insecticide fogging in high-transmission areas. Researchers at the Indian Council of Medical Research have documented a pattern of seasonal peaks in dengue cases following monsoon rains, when standing water accumulates rapidly in urban areas.",
+      "expected": "Dengue fever, transmitted by Aedes aegypti mosquitoes that breed in stagnant water near homes, has no antiviral treatment, so public health efforts focus on eliminating breeding sites and insecticide fogging, with cases in India peaking after monsoon rains.",
+      "metadata": {
+        "domain": "vector_borne_disease",
+        "difficulty": "easy",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "a public-health or medical topic"
+      },
+      "labels": [
+        "summarization"
+      ]
+    },
+    {
+      "id": "seed-summarization-bs-0149",
+      "task_family": "summarization",
+      "prompt": "Sachin Tendulkar scored his 100th international century in March 2012 during a One Day International match between India and Bangladesh in Mirpur. The milestone came after nearly 23 years of international competition across both Test and ODI formats. No other cricketer in the history of the sport has reached this mark at the international level. The achievement drew widespread recognition from cricket boards and former players across the world.",
+      "expected": "Sachin Tendulkar became the first cricketer in history to score 100 international centuries, achieving the milestone in a 2012 ODI match against Bangladesh in Mirpur.",
+      "metadata": {
+        "domain": "sports",
+        "difficulty": "easy",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "a sports event or sporting achievement"
+      },
+      "labels": [
+        "summarization"
+      ]
+    },
+    {
+      "id": "seed-summarization-bs-0150",
+      "task_family": "summarization",
+      "prompt": "Neeraj Chopra won the gold medal in the javelin throw at the 2020 Tokyo Olympics, which were held in August 2021 after a one-year postponement due to the pandemic. His winning throw measured 87.58 meters, placing him ahead of competitors from the Czech Republic and Germany. It was the first time India had won an Olympic gold medal in any track and field event. Chopra was 23 years old at the time and had previously served as a soldier in the Indian Army.",
+      "expected": "Neeraj Chopra won India's first-ever Olympic gold medal in athletics at the 2020 Tokyo Games, claiming the javelin throw title with a distance of 87.58 meters.",
+      "metadata": {
+        "domain": "sports",
+        "difficulty": "easy",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "a sports event or sporting achievement"
+      },
+      "labels": [
+        "summarization"
+      ]
+    },
+    {
+      "id": "seed-summarization-bs-0151",
+      "task_family": "summarization",
+      "prompt": "Kenyan runner Eliud Kipchoge completed a marathon in 1 hour, 59 minutes, and 40.2 seconds in Vienna, Austria in October 2019, becoming the first person to run the distance in under two hours. The event, called the Ineos 1:59 Challenge, used rotating pacemakers and precisely calculated conditions that are not permitted under standard race rules. Because of these conditions, World Athletics did not ratify the time as an official world record. Kipchoge had set the official marathon world record separately at the 2018 Berlin Marathon.",
+      "expected": "Eliud Kipchoge ran a marathon in under two hours at a 2019 Vienna time trial, but the mark was not recognized as an official world record because the controlled conditions did not meet World Athletics standards.",
+      "metadata": {
+        "domain": "sports",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "a sports event or sporting achievement"
+      },
+      "labels": [
+        "summarization"
+      ]
+    },
+    {
+      "id": "seed-summarization-bs-0152",
+      "task_family": "summarization",
+      "prompt": "Gukesh Dommaraju of India became the youngest undisputed World Chess Champion in history in December 2024, defeating reigning champion Ding Liren of China in a 14-game classical match held in Singapore. The final score was 7.5 to 6.5 in Gukesh's favor, with the decisive point coming after Ding made a critical error in an endgame that had appeared likely to be drawn. Gukesh was 18 years old at the time of his victory. The previous record for youngest world champion had been held by Garry Kasparov, who won the title in 1985 at the age of 22.",
+      "expected": "Eighteen-year-old Gukesh Dommaraju became the youngest undisputed World Chess Champion in history in December 2024, defeating Ding Liren of China 7.5–6.5 in a 14-game match in Singapore.",
+      "metadata": {
+        "domain": "sports",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "a sports event or sporting achievement"
+      },
+      "labels": [
+        "summarization"
+      ]
+    },
+    {
+      "id": "seed-summarization-bs-0153",
+      "task_family": "summarization",
+      "prompt": "India's men's kabaddi team has won the gold medal at every Asian Games since the sport was introduced to the competition in 1990. The team claimed their ninth consecutive gold medal at the 2023 Hangzhou Asian Games, defeating Iran in the final. Kabaddi is a contact sport that originated in ancient India and requires a raider to tag opposing defenders and return to their own half of the court before taking a breath. The sport now has organized professional leagues in several countries, with India's Pro Kabaddi League drawing large television audiences since its launch in 2014.",
+      "expected": "India's men's kabaddi team has won gold at every Asian Games since the sport's introduction in 1990, extending their record to nine consecutive titles with a victory over Iran at the 2023 Hangzhou Games.",
+      "metadata": {
+        "domain": "sports",
+        "difficulty": "easy",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "a sports event or sporting achievement"
+      },
+      "labels": [
+        "summarization"
+      ]
+    },
+    {
+      "id": "seed-instruction-bs-0152",
+      "task_family": "instruction",
+      "prompt": "You are a doctor. Your patient has just been told their blood pressure is 145/95 and they look worried but do not know what those two numbers mean. Explain what each number represents, why a reading in that range is a concern, and what practical lifestyle changes can help bring it down. Use no medical jargon.",
+      "expected": null,
+      "metadata": {
+        "domain": "health",
+        "difficulty": "easy",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "role-play a helpful expert answering a layperson's question"
+      },
+      "labels": [
+        "role-play",
+        "expert-layperson",
+        "explanation"
+      ]
+    },
+    {
+      "id": "seed-instruction-bs-0153",
+      "task_family": "instruction",
+      "prompt": "You are a structural engineer. Your neighbor has just watched a news clip showing a tall building swaying visibly during an earthquake and asks: 'Shouldn't buildings be rigid so they do not collapse?' Explain, without equations or technical terms, why engineers sometimes design structures to flex rather than stand completely still, and what would happen if they did not.",
+      "expected": null,
+      "metadata": {
+        "domain": "engineering",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "role-play a helpful expert answering a layperson's question"
+      },
+      "labels": [
+        "role-play",
+        "expert-layperson",
+        "explanation"
+      ]
+    },
+    {
+      "id": "seed-instruction-bs-0154",
+      "task_family": "instruction",
+      "prompt": "You are a defense lawyer. Your client cannot understand why, if a crime clearly happened, the accused person is not required to prove their own innocence in court. Explain the concept of burden of proof, why it is placed on the prosecution, and what would go wrong for ordinary people if the rule were reversed. Use a concrete everyday analogy.",
+      "expected": null,
+      "metadata": {
+        "domain": "law",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "role-play a helpful expert answering a layperson's question"
+      },
+      "labels": [
+        "role-play",
+        "expert-layperson",
+        "explanation"
+      ]
+    },
+    {
+      "id": "seed-instruction-bs-0155",
+      "task_family": "instruction",
+      "prompt": "You are an agronomist advising a smallholder farmer who grows wheat. The farmer asks why they should rotate to a legume crop next season instead of planting wheat again, since wheat sells well and they already know how to grow it. Give a clear, practical explanation of what crop rotation does for soil health and long-term yield, requiring no scientific background to follow.",
+      "expected": null,
+      "metadata": {
+        "domain": "agriculture",
+        "difficulty": "easy",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "role-play a helpful expert answering a layperson's question"
+      },
+      "labels": [
+        "role-play",
+        "expert-layperson",
+        "explanation"
+      ]
+    },
+    {
+      "id": "seed-instruction-bs-0156",
+      "task_family": "instruction",
+      "prompt": "You are an economist. A family member shows you their grocery receipt and points out that a bag of rice that cost 40 rupees last year now costs 58 rupees, while their salary has not changed. They ask why prices keep rising even when people are not earning more. Explain what causes inflation, how it affects purchasing power, and what, if anything, an ordinary household can do to protect itself.",
+      "expected": null,
+      "metadata": {
+        "domain": "economics",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "role-play a helpful expert answering a layperson's question"
+      },
+      "labels": [
+        "role-play",
+        "expert-layperson",
+        "explanation"
+      ]
+    },
+    {
+      "id": "seed-instruction-bs-0157",
+      "task_family": "instruction",
+      "prompt": "Plan a wedding reception for 150 guests with a total budget of 80,000 rupees. The menu must be fully vegetarian, the venue must be within 5 kilometers of the city center, and the event must end by 10 p.m. List the main cost categories, assign a rupee estimate to each, name the trade-offs you made to stay within budget, and identify any item you would cut first if costs run over.",
+      "expected": null,
+      "metadata": {
+        "domain": "event_planning",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "plan an event or trip within stated constraints"
+      },
+      "labels": [
+        "planning",
+        "event",
+        "budget",
+        "constraints",
+        "logistics"
+      ]
+    },
+    {
+      "id": "seed-instruction-bs-0158",
+      "task_family": "instruction",
+      "prompt": "Plan a 7-day solo trip starting from Chennai that visits at least two hill stations in Tamil Nadu. You may use only state buses and trains — no taxis or private vehicles. Your total spending on food, accommodation, and local transport must not exceed 3,500 rupees for the entire trip. Provide a day-by-day itinerary, justify each accommodation choice, and describe how you would handle a missed connection.",
+      "expected": null,
+      "metadata": {
+        "domain": "travel_planning",
+        "difficulty": "hard",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "plan an event or trip within stated constraints"
+      },
+      "labels": [
+        "planning",
+        "travel",
+        "budget",
+        "constraints",
+        "solo"
+      ]
+    },
+    {
+      "id": "seed-instruction-bs-0159",
+      "task_family": "instruction",
+      "prompt": "A neighborhood committee has collected 25,000 rupees to hold a one-day harvest festival for 60 families. The event must include separate activities for children and for elderly residents, all decorations must be made from natural or recycled materials, and the event must end by 9 p.m. because of local noise rules. Write a full schedule from morning to close, a line-item budget, and a list of three risks that could disrupt the event along with a contingency for each.",
+      "expected": null,
+      "metadata": {
+        "domain": "event_planning",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "plan an event or trip within stated constraints"
+      },
+      "labels": [
+        "planning",
+        "event",
+        "community",
+        "budget",
+        "constraints"
+      ]
+    },
+    {
+      "id": "seed-instruction-bs-0160",
+      "task_family": "instruction",
+      "prompt": "Plan a 3-day trip to a coastal area in Kerala for eight people: two grandparents (one uses a wheelchair), three adults, and three children under age 10. The total cost for the group must stay within 18,000 rupees. Every planned activity must be reachable without walking more than 400 meters continuously, and at least one activity each day must engage the children. Write the itinerary and explain how each activity is accessible to all members of the group.",
+      "expected": null,
+      "metadata": {
+        "domain": "travel_planning",
+        "difficulty": "hard",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "plan an event or trip within stated constraints"
+      },
+      "labels": [
+        "planning",
+        "travel",
+        "accessibility",
+        "family",
+        "budget",
+        "constraints"
+      ]
+    },
+    {
+      "id": "seed-instruction-bs-0161",
+      "task_family": "instruction",
+      "prompt": "Plan a two-day school excursion from Lucknow to Agra for 40 students aged 12 to 14. The cost per student must not exceed 1,200 rupees including transport, meals, and entry fees. The itinerary must include at least two sites with clear educational value, and the group must be back at the school by 7 p.m. on the second day. Write a hour-by-hour schedule for both days and a cost breakdown showing how you reach the per-student limit.",
+      "expected": null,
+      "metadata": {
+        "domain": "education",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "plan an event or trip within stated constraints"
+      },
+      "labels": [
+        "planning",
+        "education",
+        "travel",
+        "budget",
+        "constraints",
+        "logistics"
+      ]
+    },
+    {
+      "id": "seed-instruction-bs-0162",
+      "task_family": "instruction",
+      "prompt": "Write a short persuasive appeal (about 80–100 words) directed at neighbors, encouraging them to donate blood at a community blood donation camp this weekend. Explain why their participation matters and what they should bring.",
+      "expected": null,
+      "metadata": {
+        "domain": "civic",
+        "difficulty": "easy",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "write a short persuasive appeal for a good cause"
+      },
+      "labels": [
+        "persuasive_writing",
+        "community",
+        "health"
+      ]
+    },
+    {
+      "id": "seed-instruction-bs-0163",
+      "task_family": "instruction",
+      "prompt": "Write a brief persuasive speech (100–120 words) that a student could deliver to classmates, urging them to stop buying single-use plastic water bottles and to carry a reusable bottle instead. Give at least two concrete reasons.",
+      "expected": null,
+      "metadata": {
+        "domain": "environment",
+        "difficulty": "easy",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "write a short persuasive appeal for a good cause"
+      },
+      "labels": [
+        "persuasive_writing",
+        "environment",
+        "youth"
+      ]
+    },
+    {
+      "id": "seed-instruction-bs-0164",
+      "task_family": "instruction",
+      "prompt": "Write a short fundraising appeal (90–110 words) addressed to local business owners, asking them to sponsor midday meals for children at an underfunded government primary school. Make clear how even a small contribution helps and what recognition donors will receive.",
+      "expected": null,
+      "metadata": {
+        "domain": "education",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "write a short persuasive appeal for a good cause"
+      },
+      "labels": [
+        "persuasive_writing",
+        "education",
+        "fundraising"
+      ]
+    },
+    {
+      "id": "seed-instruction-bs-0165",
+      "task_family": "instruction",
+      "prompt": "Write a persuasive public notice (80–100 words) to be posted on a community board, encouraging residents of a housing society to contribute old but usable textbooks and stationery for children in a nearby village school. Mention where and when items can be dropped off.",
+      "expected": null,
+      "metadata": {
+        "domain": "education",
+        "difficulty": "easy",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "write a short persuasive appeal for a good cause"
+      },
+      "labels": [
+        "persuasive_writing",
+        "education",
+        "community"
+      ]
+    },
+    {
+      "id": "seed-instruction-bs-0166",
+      "task_family": "instruction",
+      "prompt": "Write a short persuasive appeal (100–120 words) on behalf of a local animal welfare group, directed at apartment residents, urging them to allow a community feeding station for stray dogs and cats in the building's parking area. Address the most common objection people raise.",
+      "expected": null,
+      "metadata": {
+        "domain": "civic",
+        "difficulty": "medium",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "write a short persuasive appeal for a good cause"
+      },
+      "labels": [
+        "persuasive_writing",
+        "animal_welfare",
+        "community"
+      ]
+    },
+    {
+      "id": "seed-instruction-bs-0167",
+      "task_family": "instruction",
+      "prompt": "Explain step by step how to sharpen a kitchen knife using a whetstone. Include how to hold the knife, the correct angle, how many strokes to use on each side, and how to test whether the edge is sharp enough.",
+      "expected": null,
+      "metadata": {
+        "domain": "household",
+        "difficulty": "beginner",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "teach a practical everyday skill step by step"
+      },
+      "labels": [
+        "how-to",
+        "step-by-step",
+        "practical-skill"
+      ]
+    },
+    {
+      "id": "seed-instruction-bs-0168",
+      "task_family": "instruction",
+      "prompt": "Describe the complete process of reading a monthly electricity bill. Explain each section a typical bill contains, what numbers to pay attention to, how to detect billing errors, and what to do if the amount seems unusually high.",
+      "expected": null,
+      "metadata": {
+        "domain": "financial_literacy",
+        "difficulty": "beginner",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "teach a practical everyday skill step by step"
+      },
+      "labels": [
+        "how-to",
+        "step-by-step",
+        "practical-skill"
+      ]
+    },
+    {
+      "id": "seed-instruction-bs-0169",
+      "task_family": "instruction",
+      "prompt": "Walk through how to treat a minor burn from a hot surface or liquid at home. Cover what to do immediately after the burn, what to apply or not apply to the skin, when the injury requires a doctor, and how to keep the area clean while it heals.",
+      "expected": null,
+      "metadata": {
+        "domain": "health_first_aid",
+        "difficulty": "beginner",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "teach a practical everyday skill step by step"
+      },
+      "labels": [
+        "how-to",
+        "step-by-step",
+        "practical-skill"
+      ]
+    },
+    {
+      "id": "seed-instruction-bs-0170",
+      "task_family": "instruction",
+      "prompt": "Teach someone how to hand-wash delicate fabric clothing without damaging it. Include water temperature, which cleaning agents to use, how to handle the garment during washing, how to remove excess water without wringing, and how to dry it correctly.",
+      "expected": null,
+      "metadata": {
+        "domain": "household",
+        "difficulty": "beginner",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "teach a practical everyday skill step by step"
+      },
+      "labels": [
+        "how-to",
+        "step-by-step",
+        "practical-skill"
+      ]
+    },
+    {
+      "id": "seed-instruction-bs-0171",
+      "task_family": "instruction",
+      "prompt": "Explain how to plan and pack a bag for a two-day trip using only carry-on luggage. Cover how to choose what to bring, techniques for folding or rolling clothes to save space, which items must be accessible quickly, and how to keep the bag within typical airline weight limits.",
+      "expected": null,
+      "metadata": {
+        "domain": "travel",
+        "difficulty": "beginner",
+        "source": "creative:claude-cli:sonnet",
+        "angle": "teach a practical everyday skill step by step"
+      },
+      "labels": [
+        "how-to",
+        "step-by-step",
+        "practical-skill"
+      ]
+    }
+  ]
+}
