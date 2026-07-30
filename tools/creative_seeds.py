@@ -148,6 +148,18 @@ def main():
     client = build_client(TEACHER)
     out_seeds = []
 
+    # Fresh-angle override: on later rounds the built-in angles start to re-mine
+    # earlier creative batches (finite sub-topics like classical dances), so a
+    # rotation file lets each day supply new sub-domains. ANGLES_FILE points at a
+    # JSON map {task_family_value: [angle, ...]} overriding the built-ins per family.
+    af = os.environ.get("ANGLES_FILE")
+    if af:
+        override = json.load(open(af, encoding="utf-8"))
+        for _t, _cfg in FAMILIES.items():
+            if _t.value in override and override[_t.value]:
+                _cfg["angles"] = override[_t.value]
+        print(f"[angles] overrode {sorted(k for k in override)} from {af}", flush=True)
+
     for task, cfg in FAMILIES.items():
         result = BootstrapResult(task=task, seeds=[], requested=PER_FAMILY)
         seen_local = set()
