@@ -60,7 +60,6 @@
 - [ ] `README.md` — reproduction instructions, CLI reference, dataset links, citation
 - [ ] `DESIGN.md` — answers all 5 design questions from SPEC.md (seed strategy, direct-gen vs. translate, filter aggressiveness, bias inheritance, evaluation approach)
 - [ ] `METHODOLOGY.md` — 2,500–3,500 word paper-style writeup covering background, approach, results, limitations, future work; suitable for blog or arXiv
-- [ ] `TIMELINE.md` — project plan (this exists)
 - [ ] `REQUIREMENTS.md` — this file
 
 ### R3.4 — Jupyter Notebook

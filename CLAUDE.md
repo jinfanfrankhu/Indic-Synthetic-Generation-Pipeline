@@ -33,7 +33,6 @@ pyproject.toml     # deps + `syndata` console entry point
 README.md          # install, API key, CLI usage, module map
 SPEC.md            # project spec from manager
 REQUIREMENTS.md    # formal requirements with checkboxes
-TIMELINE.md        # week-by-week plan with exit criteria
 DESIGN.md          # (to be written in Week 2) — answers the 5 methodology questions
 ```
 
