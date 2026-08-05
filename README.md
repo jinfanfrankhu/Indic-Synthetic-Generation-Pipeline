@@ -160,7 +160,23 @@ python -m pytest tests/        # deterministic filters, chain, retention, back-t
 To print Indic scripts to the console, run with `PYTHONUTF8=1` (or
 `PYTHONIOENCODING=utf-8`). Output **files** are always UTF-8 regardless.
 
-## Roadmap
+## Corpus
 
-See [TIMELINE.md](TIMELINE.md). Threshold calibration against the human gold set and
-full-scale generation are the active Week 5 work.
+Final corpus: **5,101 items** across 4 languages × 6 task families.
+
+| Task | hi | ur | ta | ml |
+| --- | --- | --- | --- | --- |
+| classification | 216 | 218 | 216 | 216 |
+| instruction | 220 | 219 | 220 | 219 |
+| qa | 191 | 193 | 191 | 193 |
+| reasoning | 216 | 221 | 219 | 222 |
+| summarization | 216 | 218 | 218 | 218 |
+| translation | 209 | 210 | 210 | 212 |
+| **total** | **1,268** | **1,279** | **1,274** | **1,280** |
+
+Quality metrics snapshot (see [docs/quality_metrics_latest.md](docs/quality_metrics_latest.md)):
+- Filter retention: ~99–100% across all language × task combos
+- Back-translation cosine similarity: 0.86 mean / 0.89 median (4,000 items, NLLB-200)
+- LLM judge ensemble score: 0.94 mean (3,079 items with ≥2 judges)
+
+Full methodology: [DESIGN.md](DESIGN.md). Error taxonomy from the Week 6 surrogate review: [docs/error_taxonomy.md](docs/error_taxonomy.md).
